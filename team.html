@@ -3,18 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Team — Hai Ngo Ngoc</title>
+  <title>Our Team — USAC Astrophysics Research Group</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     .team-page {
       position: relative;
       z-index: 1;
-      padding: calc(var(--nav-h) + 80px) 60px 100px;
-      max-width: 1200px;
+      padding: calc(var(--nav-h) + 90px) 60px 110px;
+      max-width: 1300px;
       margin: 0 auto;
+      text-align: center;
     }
-    /* Mission strip */
+    .group-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .group-eyebrow::before, .group-eyebrow::after {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .group-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 500;
+      color: var(--heading);
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+    .group-title em { font-style: italic; color: var(--gold); }
+    .group-subtitle {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+    .group-desc {
+      max-width: 640px;
+      margin: 0 auto 70px;
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.9;
+    }
+    .team-section-label {
+      font-family: var(--font-mono);
+      font-size: 0.67rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+    .team-section-label::before, .team-section-label::after {
+      content: '';
+      flex: 0 0 80px;
+      height: 1px;
+      background: var(--border);
+    }
+    .supervisors-grid {
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 64px;
+    }
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 260px));
+      gap: 24px;
+      justify-content: center;
+      margin-bottom: 72px;
+    }
+    .team-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.35s, border-color 0.35s, box-shadow 0.35s;
+      text-align: center;
+    }
+    .team-card:hover {
+      transform: translateY(-9px);
+      border-color: var(--border-accent);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+    }
+    .supervisor-card {
+      width: 290px;
+      border-color: rgba(212,168,67,0.2);
+    }
+    .supervisor-card:hover { border-color: rgba(212,168,67,0.5); }
+    .card-photo-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1;
+    }
+    .supervisor-card .card-photo-wrap { aspect-ratio: 0.92; }
+    .card-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      filter: grayscale(20%) brightness(0.83);
+      transition: filter 0.45s, transform 0.45s;
+    }
+    .team-card:hover .card-photo-wrap img {
+      filter: grayscale(0%) brightness(1);
+      transform: scale(1.06);
+    }
+    .card-photo-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 55%;
+      background: linear-gradient(to top, rgba(4,7,14,0.7), transparent);
+      pointer-events: none;
+    }
+    .card-body { padding: 20px 16px 26px; }
+    .card-role {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .supervisor-card .card-role { color: var(--gold-light); }
+    .card-name {
+      font-family: var(--font-display);
+      font-size: 1.28rem;
+      font-weight: 600;
+      color: var(--heading);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .supervisor-card .card-name { font-size: 1.4rem; }
+    .card-affil-line {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .deg {
+      display: inline-block;
+      font-family: var(--font-body, sans-serif);
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+      color: var(--teal);
+      background: rgba(110,206,206,0.07);
+      border: 1px solid rgba(110,206,206,0.18);
+      border-radius: 3px;
+      padding: 2px 9px;
+      margin-top: 7px;
+      margin-bottom: 3px;
+    }
+    .leadership-box {
+      max-width: 700px;
+      margin: 0 auto 48px;
+      padding: 32px 40px;
+      background: linear-gradient(135deg, rgba(212,168,67,0.07), rgba(110,206,206,0.04));
+      border: 1px solid rgba(212,168,67,0.28);
+      border-radius: 14px;
+    }
+    .lb-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .lb-title {
+      font-family: var(--font-display);
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: var(--heading);
+      margin-bottom: 10px;
+    }
+    .lb-desc {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+    }
+    .lb-desc em { color: var(--teal); font-style: normal; }
     .mission-strip {
       position: relative;
       z-index: 1;
@@ -33,228 +218,204 @@
     }
     .mission-text h2 {
       font-family: var(--font-display);
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-size: clamp(1.8rem,3vw,2.5rem);
       font-weight: 500;
       color: var(--heading);
       line-height: 1.25;
       margin-bottom: 20px;
     }
-    .mission-text p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.9;
-    }
-    .mission-pillars {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+    .mission-text p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.9; }
+    .mission-pillars { display: flex; flex-direction: column; gap: 20px; }
     .mission-pillar {
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-      padding: 20px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      transition: border-color 0.3s;
+      display: flex; gap: 18px; align-items: flex-start;
+      padding: 20px; background: var(--bg-card);
+      border: 1px solid var(--border); border-radius: 10px;
+      transition: border-color 0.3s; text-align: left;
     }
     .mission-pillar:hover { border-color: var(--border-accent); }
-    .mission-pillar-icon {
-      font-size: 1.3rem;
-      min-width: 32px;
-      padding-top: 2px;
-    }
-    .mission-pillar h4 {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--heading);
-      margin-bottom: 4px;
-    }
-    .mission-pillar p {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      line-height: 1.65;
-    }
-
-    /* Enhanced team cards */
-    .team-grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-      gap: 20px;
-      margin-top: 56px;
-    }
-    .team-card-2 {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    }
-    .team-card-2:hover {
-      transform: translateY(-8px);
-      border-color: var(--border-accent);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-    }
-    .team-card-2.supervisor {
-      border-color: rgba(212,168,67,0.2);
-    }
-    .team-photo-wrap {
-      position: relative;
-      aspect-ratio: 1;
-      overflow: hidden;
-    }
-    .team-photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
-      filter: grayscale(25%) brightness(0.85);
-      transition: filter 0.4s, transform 0.4s;
-    }
-    .team-card-2:hover .team-photo-wrap img {
-      filter: grayscale(0%) brightness(1);
-      transform: scale(1.06);
-    }
-    .team-photo-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(4,7,14,0.7) 0%, transparent 50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .team-card-2:hover .team-photo-overlay { opacity: 1; }
-
-    .team-card-2-body {
-      padding: 18px 16px 22px;
-    }
-    .team-card-2-role {
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 5px;
-    }
-    .supervisor .team-card-2-role { color: var(--gold-light); }
-
-    .team-card-2-name {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--heading);
-      margin-bottom: 5px;
-    }
-    .team-card-2-affil {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* Supervisor section header */
-    .team-section-label {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-top: 48px;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .team-section-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    @media (max-width: 768px) {
+    .mission-pillar-icon { font-size: 1.3rem; min-width: 32px; padding-top: 2px; }
+    .mission-pillar h4 { font-size: 0.93rem; font-weight: 500; color: var(--heading); margin-bottom: 4px; }
+    .mission-pillar p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.65; }
+    @media (max-width: 900px) {
       .team-page, .mission-strip { padding-left: 24px; padding-right: 24px; }
       .mission-inner { grid-template-columns: 1fr; gap: 40px; }
+      .supervisor-card { width: 100%; max-width: 320px; }
+      .members-grid { grid-template-columns: repeat(auto-fill, minmax(170px,1fr)); }
     }
   </style>
 </head>
 <body>
   <div class="page-content">
-
     <div class="team-page">
-      <!-- HEADER -->
-      <div class="team-intro" style="max-width:580px">
-        <div class="section-tag fade-in">NDDieu Teams</div>
-        <h1 class="section-title fade-in fade-in-delay-1">About Us</h1>
-        <p class="section-subtitle fade-in fade-in-delay-2">
-          Our research aims to understand central black holes of galaxies, how they formed and co-evolved
-          with the host using the strongest telescopes: ELT, HST, JWST, ALMA, and more.
-        </p>
+
+      <div class="group-eyebrow fade-in">USAC Astrophysics Research Group</div>
+      <h1 class="group-title fade-in fade-in-delay-1">
+        USAC <em>Astrophysics</em><br>Research Group
+      </h1>
+      <div class="group-subtitle fade-in fade-in-delay-1">
+        University of Science Astronomy Club &nbsp;·&nbsp; Ho Chi Minh City, Vietnam
       </div>
+      <p class="group-desc fade-in fade-in-delay-2">
+        Our research aims to understand central black holes of galaxies — how they formed and
+        co-evolved with their hosts — using the world's strongest telescopes: ELT, JWST, HST,
+        ALMA, and VLT.
+      </p>
 
       <!-- SUPERVISORS -->
       <div class="team-section-label fade-in">Supervisors</div>
-      <div class="team-grid-2">
-        <div class="team-card-2 supervisor fade-in fade-in-delay-2">
-          <div class="team-photo-wrap">
+      <div class="supervisors-grid">
+
+        <div class="team-card supervisor-card fade-in fade-in-delay-1">
+          <div class="card-photo-wrap">
             <img src="assets/team_dieu.jpg" alt="Dieu Nguyen"
-              onerror="this.style.background='linear-gradient(135deg,#0D2040,#1A3060)'; this.style.display='block';" />
-            <div class="team-photo-overlay"></div>
+              onerror="this.style.background='linear-gradient(160deg,#0D2040,#1A3060)';this.style.display='block';" />
           </div>
-          <div class="team-card-2-body">
-            <div class="team-card-2-role">Supervisor</div>
-            <div class="team-card-2-name">Dieu Nguyen</div>
-            <div class="team-card-2-affil">CRAL / Université de Lyon, France</div>
+          <div class="card-body">
+            <div class="card-role">Supervisor</div>
+            <div class="card-name">Dieu D. Nguyen</div>
+            <div class="card-affil-line">PhD · University of Utah (USA)</div>
+            <div class="card-affil-line" style="margin-top:5px">Research Fellow · University of Michigan (USA)</div>
           </div>
+        </div>
+
+      </div>
+
+      <!-- COLLABORATORS -->
+      <div class="team-section-label fade-in">Collaborators</div>
+      <div class="supervisors-grid">
+
+        <div class="team-card supervisor-card fade-in fade-in-delay-1">
+          <div class="card-photo-wrap">
+            <img src="assets/team_cappellari.jpg" alt="Michele Cappellari"
+              onerror="this.style.background='linear-gradient(160deg,#0D2040,#1A3060)';this.style.display='block';" />
+          </div>
+          <div class="card-body">
+            <div class="card-role">Collaborator</div>
+            <div class="card-name">Michele Cappellari</div>
+            <div class="card-affil-line">Professor · University of Oxford (UK)</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- LEADERSHIP BOX -->
+      <div class="leadership-box fade-in">
+        <div class="lb-label">Group Leadership &amp; USAC Advisor</div>
+        <div class="lb-title">Hai Ngoc Ngo</div>
+        <div class="lb-desc">
+          <em>Team Leader</em> of the USAC Astrophysics Research Group and
+          <em>Faculty Advisor</em> of the
+          <em>University of Science Astronomy Club (USAC)</em> ·
+          PhD Student in Astronomy &amp; Astrophysics,
+          University of Michigan, Ann Arbor (USA)
         </div>
       </div>
 
       <!-- MEMBERS -->
       <div class="team-section-label fade-in">Team Members</div>
-      <div class="team-grid-2" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+      <div class="members-grid">
 
-        <div class="team-card-2 fade-in fade-in-delay-1">
-          <div class="team-photo-wrap">
-            <img src="assets/photo.jpg" alt="Hai Ngo Ngoc"
-              onerror="this.style.background='linear-gradient(135deg,#0D2040,#182840)'; this.style.display='block';" />
-            <div class="team-photo-overlay"></div>
+        <div class="team-card fade-in fade-in-delay-1">
+          <div class="card-photo-wrap">
+            <img src="assets/team_tuan.jpg" alt="Tuan N. Le"
+              onerror="this.style.background='linear-gradient(160deg,#0D1E38,#182840)';this.style.display='block';" />
           </div>
-          <div class="team-card-2-body">
-            <div class="team-card-2-role">Team Leader</div>
-            <div class="team-card-2-name">Hai Ngo Ngoc</div>
-            <div class="team-card-2-affil">University of Science · VNU HCMC</div>
+          <div class="card-body">
+            <div class="card-role">Member</div>
+            <div class="card-name">Tuan N. Le</div>
+            <span class="deg">BSc. Mech. Eng.</span>
+            <div class="card-affil-line">VNUHCM – University of Technology</div>
+            <span class="deg">MSc. Theoretical Physics</span>
+            <div class="card-affil-line">VNUHCM – University of Science</div>
           </div>
         </div>
 
-        <div class="team-card-2 fade-in fade-in-delay-2">
-          <div class="team-photo-wrap">
-            <img src="assets/team_tinh.jpg" alt="Tinh Thong Quoc Le"
-              onerror="this.style.background='linear-gradient(135deg,#0D2040,#182840)'; this.style.display='block';" />
-            <div class="team-photo-overlay"></div>
+        <div class="team-card fade-in fade-in-delay-1">
+          <div class="card-photo-wrap">
+            <img src="assets/team_huy.jpg" alt="Huy G. Tong"
+              onerror="this.style.background='linear-gradient(160deg,#0D1E38,#182840)';this.style.display='block';" />
           </div>
-          <div class="team-card-2-body">
-            <div class="team-card-2-role">Member</div>
-            <div class="team-card-2-name">Tinh Thong Quoc Le</div>
-            <div class="team-card-2-affil">International University · VNU HCMC</div>
+          <div class="card-body">
+            <div class="card-role">Member</div>
+            <div class="card-name">Huy G. Tong</div>
+            <span class="deg">BSc. Info. Tech.</span>
+            <div class="card-affil-line">VNUHCM – University of Science</div>
+            <span class="deg">Scholar Fellow Intern</span>
+            <div class="card-affil-line">ASIAA (Taiwan)</div>
           </div>
         </div>
 
-        <div class="team-card-2 fade-in fade-in-delay-3">
-          <div class="team-photo-wrap">
-            <img src="assets/team_huy.jpg" alt="Huy Gia Tong"
-              onerror="this.style.background='linear-gradient(135deg,#0D2040,#182840)'; this.style.display='block';" />
-            <div class="team-photo-overlay"></div>
+        <div class="team-card fade-in fade-in-delay-2">
+          <div class="card-photo-wrap">
+            <img src="assets/team_tinh.jpg" alt="Tinh Q. T. Le"
+              onerror="this.style.background='linear-gradient(160deg,#0D1E38,#182840)';this.style.display='block';" />
           </div>
-          <div class="team-card-2-body">
-            <div class="team-card-2-role">Member</div>
-            <div class="team-card-2-name">Huy Gia Tong</div>
-            <div class="team-card-2-affil">University of Science · VNU HCMC</div>
+          <div class="card-body">
+            <div class="card-role">Member</div>
+            <div class="card-name">Tinh Q. T. Le</div>
+            <span class="deg">BSc. Space Eng.</span>
+            <div class="card-affil-line">VNUHCM – International University</div>
+            <span class="deg">Researcher</span>
+            <div class="card-affil-line">ICISE &amp; VNSC (Vietnam)</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-in fade-in-delay-2">
+          <div class="card-photo-wrap">
+            <img src="assets/team_tien.jpg" alt="Tien H. T. Ho"
+              onerror="this.style.background='linear-gradient(160deg,#0D1E38,#182840)';this.style.display='block';" />
+          </div>
+          <div class="card-body">
+            <div class="card-role">Member</div>
+            <div class="card-name">Tien H. T. Ho</div>
+            <span class="deg">BSc. Physics</span>
+            <div class="card-affil-line">VNUHCM – University of Science</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-in fade-in-delay-3">
+          <div class="card-photo-wrap">
+            <img src="assets/team_long.jpg" alt="Long Q. T. Nguyen"
+              onerror="this.style.background='linear-gradient(160deg,#0D1E38,#182840)';this.style.display='block';" />
+          </div>
+          <div class="card-body">
+            <div class="card-role">Member</div>
+            <div class="card-name">Long Q. T. Nguyen</div>
+            <span class="deg">BSc. Physics</span>
+            <div class="card-affil-line">VNUHCM – University of Science</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-in fade-in-delay-3">
+          <div class="card-photo-wrap">
+            <img src="assets/team_nghi.jpg" alt="Nghi K. N. Le"
+              onerror="this.style.background='linear-gradient(160deg,#0D1E38,#182840)';this.style.display='block';" />
+          </div>
+          <div class="card-body">
+            <div class="card-role">Member</div>
+            <div class="card-name">Nghi K. N. Le</div>
+            <span class="deg">BSc. Physics</span>
+            <div class="card-affil-line">VNUHCM – University of Science</div>
+          </div>
+        </div>
+
+        <div class="team-card fade-in fade-in-delay-3">
+          <div class="card-photo-wrap">
+            <img src="assets/team_thanh.jpg" alt="Thanh N. Huynh"
+              onerror="this.style.background='linear-gradient(160deg,#0D1E38,#182840)';this.style.display='block';" />
+          </div>
+          <div class="card-body">
+            <div class="card-role">Member</div>
+            <div class="card-name">Thanh N. Huynh</div>
+            <span class="deg">BSc. Physics</span>
+            <div class="card-affil-line">VNUHCM – University of Science</div>
           </div>
         </div>
 
       </div>
-    </div><!-- /team-page -->
+    </div>
 
-    <!-- MISSION SECTION -->
+    <!-- MISSION STRIP -->
     <div class="mission-strip">
       <div class="mission-inner">
         <div class="mission-text fade-in">
@@ -296,7 +457,7 @@
 
     <footer>
       <div class="footer-inner">
-        <div class="footer-copy">© 2025 Hai Ngo Ngoc — ELT/HARMONI Science Group</div>
+        <div class="footer-copy">© 2025 Hai Ngoc Ngo — USAC Astrophysics Research Group</div>
         <div class="footer-links">
           <a href="index.html">Home</a>
           <a href="research.html">Research</a>
