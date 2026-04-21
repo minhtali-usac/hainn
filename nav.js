@@ -6,7 +6,7 @@
 function injectNav(activePage) {
   const navHTML = `
     <nav id="main-nav">
-      <a class="nav-logo" href="index.html">HAI <span>NGOC</span> NGO</a>
+      <a class="nav-logo" href="index.html">HAI <span>NGO</span> NGOC</a>
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html" ${activePage === 'home' ? 'class="active"' : ''}>Home</a></li>
         <li class="nav-dropdown">
