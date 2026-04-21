@@ -1,4 +1,4 @@
-# Hai Ngoc Ngo — Research Group Website
+# Hai Ngo Ngo — Research Group Website
 
 ## Structure
 
