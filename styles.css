@@ -18,7 +18,7 @@
   --teal: #6ECECE;
   --teal-dark: #3A9A9A;
   --text: #ffffff;
-  --text-muted: #6E7A9A;
+  --text-muted: #ffffff;
   --text-bright: #EEF1FA;
   --heading: #F5F0E8;
   --font-display: 'Cormorant Garamond', serif;
@@ -123,7 +123,7 @@ nav {
   display: block;
   padding: 6px 16px;
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -156,7 +156,7 @@ nav {
 .nav-dropdown-menu a {
   display: block;
   padding: 8px 18px;
-  font-size: 0.78rem;
+  font-size: 1rem;
   border-radius: 0;
   color: var(--text);
 }
@@ -197,7 +197,7 @@ nav {
 
 .hero-label {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 1rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
@@ -233,7 +233,7 @@ nav {
 }
 
 .hero-title {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--text-muted);
   margin-bottom: 28px;
   line-height: 1.6;
@@ -272,7 +272,7 @@ nav {
   border-radius: 6px;
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
   transition: all 0.2s;
 }
 .hero-socials a:hover {
@@ -321,14 +321,14 @@ nav {
 }
 .hero-photo-badge .badge-role {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 1rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 2px;
 }
 .hero-photo-badge .badge-inst {
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--text);
 }
 
@@ -344,7 +344,7 @@ nav {
   gap: 8px;
   color: var(--text-muted);
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 1rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   animation: scrollBounce 2s ease-in-out infinite;
@@ -369,7 +369,7 @@ section {
 
 .section-tag {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 1rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--gold);
@@ -396,7 +396,7 @@ section {
 }
 
 .section-subtitle {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text-muted);
   max-width: 560px;
   line-height: 1.8;
@@ -448,7 +448,7 @@ section {
   margin-bottom: 14px;
 }
 .interest-card p {
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.85;
 }
@@ -495,7 +495,7 @@ section {
 }
 .research-card-tag {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 1rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--teal);
@@ -510,7 +510,7 @@ section {
   line-height: 1.3;
 }
 .research-card p {
-  font-size: 0.83rem;
+  font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.8;
   flex: 1;
@@ -520,7 +520,7 @@ section {
   align-items: center;
   gap: 6px;
   margin-top: 20px;
-  font-size: 0.78rem;
+  font-size: 1rem;
   font-family: var(--font-mono);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -545,7 +545,7 @@ section {
 
 .facilities-desc {
   max-width: 640px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.85;
   margin-top: 20px;
@@ -582,7 +582,7 @@ section {
   background: linear-gradient(to top, rgba(4,7,14,0.9), transparent);
   padding: 16px 12px 10px;
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: 1rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gold-light);
@@ -608,7 +608,7 @@ section {
 
 .pub-num {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--gold);
   padding-top: 3px;
   text-align: right;
@@ -622,7 +622,7 @@ section {
   line-height: 1.4;
 }
 .pub-authors {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--text-muted);
   margin-bottom: 6px;
 }
@@ -636,13 +636,13 @@ section {
 }
 .pub-journal {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 1rem;
   color: var(--text-muted);
   font-style: italic;
 }
 .pub-badge {
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: 1rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 2px 8px;
@@ -658,7 +658,7 @@ section {
 }
 .pub-doi {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 1rem;
   color: var(--text-muted);
   text-decoration: none;
   transition: color 0.2s;
@@ -701,7 +701,7 @@ section {
   align-items: flex-start;
   gap: 12px;
   margin-bottom: 14px;
-  font-size: 0.82rem;
+  font-size: 1rem;
 }
 .cv-contact-item:last-child { margin-bottom: 0; }
 .cv-contact-icon { color: var(--gold); min-width: 16px; margin-top: 2px; }
@@ -713,14 +713,14 @@ section {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.82rem;
+  font-size: 1rem;
   color: var(--text-muted);
   padding: 5px 0;
 }
 .cv-skill-list li::before {
   content: '◆';
   color: var(--gold);
-  font-size: 0.45rem;
+  font-size: 1rem;
 }
 
 .cv-section {
@@ -760,31 +760,31 @@ section {
 }
 .cv-entry-year {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 1rem;
   letter-spacing: 0.1em;
   color: var(--gold);
   margin-bottom: 4px;
 }
 .cv-entry-title {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--heading);
   margin-bottom: 2px;
 }
 .cv-entry-sub {
-  font-size: 0.82rem;
+  font-size: 1rem;
   color: var(--text-muted);
   margin-bottom: 8px;
 }
 .cv-entry-desc {
-  font-size: 0.82rem;
+  font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.8;
 }
 .cv-entry-instrument {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 1rem;
   letter-spacing: 0.1em;
   color: var(--teal);
   background: rgba(110,206,206,0.08);
@@ -804,7 +804,7 @@ section {
   border-radius: 6px;
   color: var(--gold);
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -863,7 +863,7 @@ section {
 
 .team-card-role {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
+  font-size: 1rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--gold);
@@ -877,7 +877,7 @@ section {
   margin-bottom: 4px;
 }
 .team-card-affil {
-  font-size: 0.78rem;
+  font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.5;
 }
@@ -931,7 +931,7 @@ section {
   margin-bottom: 20px;
 }
 .research-project-content p {
-  font-size: 0.87rem;
+  font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.9;
   margin-bottom: 28px;
@@ -945,7 +945,7 @@ section {
   padding: 12px 24px;
   border-radius: 5px;
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -976,7 +976,7 @@ section {
   background: transparent;
   color: var(--text-muted);
   border: 1px solid var(--border);
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
 .btn-ghost:hover { color: var(--text-bright); border-color: rgba(255,255,255,0.15); }
 
@@ -999,7 +999,7 @@ footer {
 }
 
 .footer-copy {
-  font-size: 0.78rem;
+  font-size: 1rem;
   color: var(--text-muted);
 }
 .footer-copy a { color: var(--gold); text-decoration: none; }
@@ -1009,7 +1009,7 @@ footer {
   gap: 24px;
 }
 .footer-links a {
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--text-muted);
   text-decoration: none;
   transition: color 0.2s;
@@ -1056,7 +1056,7 @@ footer {
 }
 .stat-num em { font-style: normal; font-size: 1.4rem; }
 .stat-label {
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
   letter-spacing: 0.1em;
