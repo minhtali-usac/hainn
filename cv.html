@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curriculum Vitae — Hai Ngo Ngoc</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .cv-page-wrap {
+      position: relative;
+      z-index: 1;
+      padding: calc(var(--nav-h) + 60px) 60px 100px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .cv-page-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 300;
+      color: var(--heading);
+      margin-bottom: 6px;
+    }
+    .cv-page-title strong { font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .cv-page-wrap { padding-left: 24px; padding-right: 24px; }
+      .cv-layout { grid-template-columns: 1fr !important; }
+      .cv-sidebar { position: static !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-content">
+    <div class="cv-page-wrap">
+
+      <div class="section-tag fade-in">Curriculum Vitae</div>
+      <h1 class="cv-page-title fade-in fade-in-delay-1"><strong>Ngo Ngoc</strong> Hai</h1>
+      <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:60px;" class="fade-in fade-in-delay-2">
+        NDDieu Teams &nbsp;·&nbsp; University of Michigan, Ann Arbor, US
+      </p>
+
+      <div class="cv-layout" style="display:grid; grid-template-columns: 280px 1fr; gap:60px; margin-top:0;">
+
+        <!-- SIDEBAR -->
+        <div class="cv-sidebar fade-in">
+          <img src="assets/photo.jpg" alt="Hai Ngo Ngoc" class="cv-photo"
+            onerror="this.style.background='linear-gradient(135deg,#0D2240,#1A4A80)'; this.style.display='block';" />
+
+          <div class="cv-contact">
+            <div class="cv-contact-item">
+              <i class="fas fa-envelope cv-contact-icon"></i>
+              <span class="cv-contact-text">hai10hoalk@gmail.com</span>
+            </div>
+            <div class="cv-contact-item">
+              <i class="fas fa-phone cv-contact-icon"></i>
+              <span class="cv-contact-text">+84 8531 9898</span>
+            </div>
+            <div class="cv-contact-item">
+              <i class="fas fa-map-marker-alt cv-contact-icon"></i>
+              <span class="cv-contact-text">Ann Arbor, Michigan, US</span>
+            </div>
+            <div class="cv-contact-item">
+              <i class="fas fa-flask cv-contact-icon"></i>
+              <span class="cv-contact-text">NDDieu Teams</span>
+            </div>
+          </div>
+
+          <div class="cv-skills" style="margin-top:16px">
+            <div class="section-tag" style="font-size:0.65rem; margin-bottom:0;">Skills</div>
+            <ul class="cv-skill-list" style="margin-top:14px">
+              <li>Python</li>
+              <li>Microsoft Office</li>
+              <li>LaTeX</li>
+              <li>Adobe Suite</li>
+              <li>Dynamical Modeling</li>
+              <li>IFS Data Reduction</li>
+            </ul>
+          </div>
+
+          <a href="#" class="cv-download-btn" style="margin-top:24px; display:inline-flex;">
+            <i class="fas fa-download"></i> Download CV
+          </a>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div>
+
+          <!-- Education -->
+          <div class="cv-section fade-in">
+            <h2 class="cv-section-title">Education</h2>
+            <div class="cv-entry">
+              <div class="cv-entry-year">2016 — 2020</div>
+              <div class="cv-entry-title">Bachelor of Science</div>
+              <div class="cv-entry-sub">Vietnam National University Ho Chi Minh City, University of Science (VNUHCM-US)</div>
+              <div class="cv-entry-desc">Faculty of Chemitry</div>
+              <div class="cv-entry-desc">Advisor: PhD. Nhi - Nguyen Thi Y · </div>
+            </div>
+            <div class="cv-entry">
+              <div class="cv-entry-year">Present</div>
+              <div class="cv-entry-title">Ph.D. in Astronomy & Astrophysics</div>
+              <div class="cv-entry-sub">University of Michigan, Ann Arbor, US</div>
+              <div class="cv-entry-desc">Advisor: Prof. Dieu D. Nguyen · </div>
+            </div>
+          </div>
+
+          <!-- Research Interests -->
+          <div class="cv-section fade-in">
+            <h2 class="cv-section-title">Research Interests</h2>
+
+            <div class="cv-entry">
+              <div class="cv-entry-year">Theme 01</div>
+              <span class="cv-entry-instrument">ELT / HARMONI</span>
+              <div class="cv-entry-title">Intermediate-mass black holes in nuclear star clusters</div>
+              <div class="cv-entry-desc">
+                Simulating the ELT observation, using high-resolution imaging and spectroscopy and the proximity of our low-mass early-type galaxy sample, I examine in detail their NSCs morphology, composition, kinematics, and dynamical masses to shed a light on their formation origins either gas in situ or stellar migration.
+              </div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-year">Theme 02</div>
+              <span class="cv-entry-instrument">ELT / HARMONI + ALMA</span>
+              <div class="cv-entry-title">The formation and co-evolution of central massive black holes and their host galaxies</div>
+              <div class="cv-entry-desc">
+                Studying galaxy and massive black hole's evolution by MBH–σ correlation. Scaling relations between central black hole mass and host galaxy properties, e.g., the bulge mass component and bulge velocity dispersion of stars, hint to a joint evolution of black holes and galaxies. Estimating the dynamical mass of black holes and their host galaxies at different redshifts is fundamental to establish their growth scenarios over the cosmic time.
+              </div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-year">Theme 03</div>
+              <span class="cv-entry-instrument">ELT / HARMONI + ALMA</span>
+              <div class="cv-entry-title">Ultra-massive black holes at the highest galactic-mass ladder</div>
+              <div class="cv-entry-desc">
+                There are evidences of most massive galaxies showing that the central black hole mass positive outliers from the Mbh-sigma or Mbh-Lk relation. It argues that they assemble their matter, changing from a sequence of bulge growth to dry-merger growth. The expectation that BH will increase their mass through coalescence with other similar size black holes. The most massive galaxies is the key for our understanding about galaxy evolution and in particular how ultramassive black holes can form.
+              </div>
+            </div>
+          </div>
+
+          <!-- Publications (condensed) -->
+          <div class="cv-section fade-in">
+            <h2 class="cv-section-title">Selected Publications</h2>
+
+            <div class="cv-entry">
+              <div class="cv-entry-year">2025</div>
+              <div class="cv-entry-title">Revisiting the supermassive black hole mass of NGC 7052 with ALMA</div>
+              <div class="cv-entry-sub">The Astrophysical Journal &nbsp;·&nbsp; <a href="https://doi.org/10.48550/arXiv.2509.02956" style="color:var(--gold);font-size:0.78rem;" target="_blank">arXiv:2509.02956</a></div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-year">2025</div>
+              <div class="cv-entry-title">Detecting IMBHs out to 20 Mpc with ELT/HARMONI: FCC 119</div>
+              <div class="cv-entry-sub">Universe 2025, 11(11), 360 &nbsp;·&nbsp; <a href="https://doi.org/10.3390/universe11110360" style="color:var(--gold);font-size:0.78rem;" target="_blank">doi</a></div>
+            </div>
+
+            <div class="cv-entry">
+              <div class="cv-entry-year">2025</div>
+              <div class="cv-entry-title">Supermassive BH mass in NGC 4736 with JWST/NIRSpec stellar kinematics</div>
+              <div class="cv-entry-sub">Astronomy &amp; Astrophysics 698, L9 (2025) &nbsp;·&nbsp; <a href="https://doi.org/10.1051/0004-6361/202554672" style="color:var(--gold);font-size:0.78rem;" target="_blank">doi</a></div>
+            </div>
+
+            <div style="margin-top:24px">
+              <a href="publications.html" class="btn btn-outline">View All 14 Publications →</a>
+            </div>
+          </div>
+
+        </div><!-- /main -->
+      </div><!-- /cv-layout -->
+    </div>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-copy">
+          © 2022 by NGO NGOC HAI @ University of Science HCMC &nbsp;·&nbsp; Last modified June 09, 2025
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="publications.html">Publications</a>
+          <a href="team.html">Team</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="nav.js"></script>
+  <script>initPage('cv');</script>
+</body>
+</html>

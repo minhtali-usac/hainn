@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team — Hai Ngo Ngoc</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .team-page {
+      position: relative;
+      z-index: 1;
+      padding: calc(var(--nav-h) + 80px) 60px 100px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    /* Mission strip */
+    .mission-strip {
+      position: relative;
+      z-index: 1;
+      padding: 80px 60px;
+      background: var(--bg-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .mission-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .mission-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 500;
+      color: var(--heading);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .mission-text p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.9;
+    }
+    .mission-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .mission-pillar {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: border-color 0.3s;
+    }
+    .mission-pillar:hover { border-color: var(--border-accent); }
+    .mission-pillar-icon {
+      font-size: 1.3rem;
+      min-width: 32px;
+      padding-top: 2px;
+    }
+    .mission-pillar h4 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--heading);
+      margin-bottom: 4px;
+    }
+    .mission-pillar p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Enhanced team cards */
+    .team-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 20px;
+      margin-top: 56px;
+    }
+    .team-card-2 {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+    .team-card-2:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-accent);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .team-card-2.supervisor {
+      border-color: rgba(212,168,67,0.2);
+    }
+    .team-photo-wrap {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+    .team-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      filter: grayscale(25%) brightness(0.85);
+      transition: filter 0.4s, transform 0.4s;
+    }
+    .team-card-2:hover .team-photo-wrap img {
+      filter: grayscale(0%) brightness(1);
+      transform: scale(1.06);
+    }
+    .team-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(4,7,14,0.7) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .team-card-2:hover .team-photo-overlay { opacity: 1; }
+
+    .team-card-2-body {
+      padding: 18px 16px 22px;
+    }
+    .team-card-2-role {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+    .supervisor .team-card-2-role { color: var(--gold-light); }
+
+    .team-card-2-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--heading);
+      margin-bottom: 5px;
+    }
+    .team-card-2-affil {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Supervisor section header */
+    .team-section-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 48px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .team-section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .team-page, .mission-strip { padding-left: 24px; padding-right: 24px; }
+      .mission-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-content">
+
+    <div class="team-page">
+      <!-- HEADER -->
+      <div class="team-intro" style="max-width:580px">
+        <div class="section-tag fade-in">ELT/HARMONI Science Group</div>
+        <h1 class="section-title fade-in fade-in-delay-1">About Us</h1>
+        <p class="section-subtitle fade-in fade-in-delay-2">
+          Our research aims to understand central black holes of galaxies, how they formed and co-evolved
+          with the host using the strongest telescopes: ELT, HST, JWST, ALMA, and more.
+        </p>
+      </div>
+
+      <!-- SUPERVISORS -->
+      <div class="team-section-label fade-in">Supervisors</div>
+      <div class="team-grid-2">
+        <div class="team-card-2 supervisor fade-in fade-in-delay-1">
+          <div class="team-photo-wrap">
+            <img src="assets/team_cappellari.jpg" alt="Michele Cappellari"
+              onerror="this.style.background='linear-gradient(135deg,#0D2040,#1A3060)'; this.style.display='block';" />
+            <div class="team-photo-overlay"></div>
+          </div>
+          <div class="team-card-2-body">
+            <div class="team-card-2-role">Supervisor</div>
+            <div class="team-card-2-name">Michele Cappellari</div>
+            <div class="team-card-2-affil">University of Oxford, UK</div>
+          </div>
+        </div>
+        <div class="team-card-2 supervisor fade-in fade-in-delay-2">
+          <div class="team-photo-wrap">
+            <img src="assets/team_dieu.jpg" alt="Dieu Nguyen"
+              onerror="this.style.background='linear-gradient(135deg,#0D2040,#1A3060)'; this.style.display='block';" />
+            <div class="team-photo-overlay"></div>
+          </div>
+          <div class="team-card-2-body">
+            <div class="team-card-2-role">Supervisor</div>
+            <div class="team-card-2-name">Dieu Nguyen</div>
+            <div class="team-card-2-affil">CRAL / Université de Lyon, France</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEMBERS -->
+      <div class="team-section-label fade-in">Team Members</div>
+      <div class="team-grid-2" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+
+        <div class="team-card-2 fade-in fade-in-delay-1">
+          <div class="team-photo-wrap">
+            <img src="assets/photo.jpg" alt="Hai Ngo Ngoc"
+              onerror="this.style.background='linear-gradient(135deg,#0D2040,#182840)'; this.style.display='block';" />
+            <div class="team-photo-overlay"></div>
+          </div>
+          <div class="team-card-2-body">
+            <div class="team-card-2-role">Team Leader</div>
+            <div class="team-card-2-name">Hai Ngo Ngoc</div>
+            <div class="team-card-2-affil">University of Science · VNU HCMC</div>
+          </div>
+        </div>
+
+        <div class="team-card-2 fade-in fade-in-delay-2">
+          <div class="team-photo-wrap">
+            <img src="assets/team_tinh.jpg" alt="Tinh Thong Quoc Le"
+              onerror="this.style.background='linear-gradient(135deg,#0D2040,#182840)'; this.style.display='block';" />
+            <div class="team-photo-overlay"></div>
+          </div>
+          <div class="team-card-2-body">
+            <div class="team-card-2-role">Member</div>
+            <div class="team-card-2-name">Tinh Thong Quoc Le</div>
+            <div class="team-card-2-affil">International University · VNU HCMC</div>
+          </div>
+        </div>
+
+        <div class="team-card-2 fade-in fade-in-delay-3">
+          <div class="team-photo-wrap">
+            <img src="assets/team_huy.jpg" alt="Huy Gia Tong"
+              onerror="this.style.background='linear-gradient(135deg,#0D2040,#182840)'; this.style.display='block';" />
+            <div class="team-photo-overlay"></div>
+          </div>
+          <div class="team-card-2-body">
+            <div class="team-card-2-role">Member</div>
+            <div class="team-card-2-name">Huy Gia Tong</div>
+            <div class="team-card-2-affil">University of Science · VNU HCMC</div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /team-page -->
+
+    <!-- MISSION SECTION -->
+    <div class="mission-strip">
+      <div class="mission-inner">
+        <div class="mission-text fade-in">
+          <div class="section-tag" style="margin-bottom:16px">Our Mission</div>
+          <h2>Understanding How Black Holes Shape Their Cosmic Hosts</h2>
+          <p>
+            Using the world's most powerful telescopes, we push the frontier of dynamical
+            black hole mass measurements — from the lowest-mass galaxies in the nearby universe
+            to the most massive ellipticals at cosmic distances. Our work constrains the
+            co-evolutionary link between black holes and galaxies across 13 billion years of
+            cosmic history.
+          </p>
+        </div>
+        <div class="mission-pillars fade-in fade-in-delay-1">
+          <div class="mission-pillar">
+            <span class="mission-pillar-icon">🔭</span>
+            <div>
+              <h4>Cutting-Edge Instrumentation</h4>
+              <p>ELT/HARMONI, JWST/NIRSpec, ALMA — the most powerful tools in observational astrophysics.</p>
+            </div>
+          </div>
+          <div class="mission-pillar">
+            <span class="mission-pillar-icon">💻</span>
+            <div>
+              <h4>Advanced Simulations</h4>
+              <p>Mock observations and dynamical modeling to push measurement limits and plan future observations.</p>
+            </div>
+          </div>
+          <div class="mission-pillar">
+            <span class="mission-pillar-icon">🌏</span>
+            <div>
+              <h4>International Collaboration</h4>
+              <p>A global team spanning Oxford, Lyon, Michigan, HCMC — united by a passion for the unknown.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-copy">© 2025 Hai Ngo Ngoc — ELT/HARMONI Science Group</div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="publications.html">Publications</a>
+          <a href="cv.html">CV</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="nav.js"></script>
+  <script>initPage('team');</script>
+</body>
+</html>
