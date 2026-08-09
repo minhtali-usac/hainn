@@ -10,7 +10,7 @@ function injectNav(activePage) {
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html" ${activePage === 'home' ? 'class="active"' : ''}>Home</a></li>
         <li class="nav-dropdown">
-          <a href="research.html" ${activePage === 'research' ? 'class="active"' : ''}>Research ▾</a>
+          <a href="research.html" class="nav-dropdown-link ${activePage === 'research' ? 'active' : ''}">Research <i class="fas fa-chevron-down nav-dropdown-caret"></i></a>
           <div class="nav-dropdown-menu">
             <a href="research.html#star-clusters">IMBHs in Star Clusters</a>
             <a href="research.html#dwarf-galaxies">BH in Dwarf Galaxies</a>
@@ -21,14 +21,32 @@ function injectNav(activePage) {
         <li><a href="cv.html" ${activePage === 'cv' ? 'class="active"' : ''}>CV</a></li>
         <li><a href="team.html" ${activePage === 'team' ? 'class="active"' : ''}>Our Team</a></li>
       </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
     </nav>
   `;
   document.body.insertAdjacentHTML('afterbegin', navHTML);
 
-  // Mobile toggle
-  document.getElementById('nav-toggle').addEventListener('click', () => {
-    document.getElementById('nav-links').classList.toggle('open');
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+
+  // Mobile menu open/close
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.innerHTML = open ? '<i class="fas fa-xmark"></i>' : '<i class="fas fa-bars"></i>';
+    navToggle.setAttribute('aria-expanded', open);
+  });
+
+  // On mobile, tapping "Research" expands the submenu instead of navigating away,
+  // since the submenu normally only opens on :hover (unavailable on touch).
+  document.querySelector('.nav-dropdown').addEventListener('click', (e) => {
+    if (!isMobile()) return;
+    const link = e.target.closest('.nav-dropdown-link');
+    if (!link) return;
+    e.preventDefault();
+    link.closest('.nav-dropdown').classList.toggle('open');
   });
 }
 
