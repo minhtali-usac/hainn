@@ -4,36 +4,51 @@
 
 ```
 /
-├── index.html          ← Home page
-├── research.html       ← Research projects detail
-├── publications.html   ← Full publication list with filter
-├── cv.html             ← Curriculum Vitae
-├── team.html           ← Team page + About Us
-├── styles.css          ← Global dark-cosmos stylesheet
-├── nav.js              ← Shared nav + starfield + fade-in animations
-└── assets/             ← All images go here
+├── index.html            ← Home page
+├── research.html         ← Research projects detail
+├── publications.html     ← Full publication list with filter
+├── cv.html               ← Curriculum Vitae
+├── team.html             ← Team page + About Us
+├── outreach.html         ← Redirect stub → outreach/index.html (keeps old links alive)
+├── outreach-usactalk-04.html ← Redirect stub → outreach/usactalk-04.html
+├── styles.css            ← Global dark-cosmos stylesheet
+├── nav.js                ← Shared nav + starfield + fade-in animations (basePath-aware)
+├── outreach/              ← All outreach / USACTalk recap pages
+│   ├── index.html         ← Outreach listing page
+│   └── usactalk-04.html   ← USACTalk #04 recap
+└── assets/                ← All images, grouped by purpose
+    ├── img/                ← Profile photo + general science images
+    ├── fac/                ← Facility / telescope photos
+    ├── team/                ← Team member photos
+    └── outreach/            ← Outreach event photos, one subfolder per talk
+        └── usactalk-04/
 ```
+
+Pages nested one level deep (e.g. `outreach/*.html`) call `initPage(activePage, '../')` so
+`nav.js` can prefix links back to the site root correctly.
 
 ## Assets Needed
 
-Place the following image files in the `assets/` folder.
+Place the following image files under `assets/`.
 All images gracefully degrade with colored fallbacks if missing.
 
-| File                   | Description                            |
-|------------------------|----------------------------------------|
-| `photo.jpg`            | Your main profile photo                |
-| `img_cluster.jpg`      | Nuclear star cluster (e.g. HST image)  |
-| `img_dwarf.jpg`        | Dwarf/spiral galaxy image              |
-| `img_merger.jpg`       | Merging galaxies image                 |
-| `fac_elt.jpg`          | ELT telescope photo                    |
-| `fac_alma.jpg`         | ALMA array photo                       |
-| `fac_vlt.jpg`          | VLT photo                              |
-| `fac_hst.jpg`          | Hubble Space Telescope photo           |
-| `fac_jwst.jpg`         | JWST photo                             |
-| `team_cappellari.jpg`  | Michele Cappellari photo               |
-| `team_dieu.jpg`        | Dieu Nguyen photo                      |
-| `team_tinh.jpg`        | Tinh Le photo                          |
-| `team_huy.jpg`         | Huy Tong photo                         |
+| File                                          | Description                            |
+|------------------------------------------------|----------------------------------------|
+| `img/photo.jpg`                                | Your main profile photo                |
+| `img/cluster.jpg`                              | Nuclear star cluster (e.g. HST image)  |
+| `img/dwarf.jpg`                                | Dwarf/spiral galaxy image              |
+| `img/merger.jpg`                               | Merging galaxies image                 |
+| `fac/elt.jpg`                                  | ELT telescope photo                    |
+| `fac/alma.jpg`                                 | ALMA array photo                       |
+| `fac/vlt.jpg`                                  | VLT photo                              |
+| `fac/hst.jpg`                                  | Hubble Space Telescope photo           |
+| `fac/jwst.jpg`                                 | JWST photo                             |
+| `team/cappellari.jpg`                          | Michele Cappellari photo               |
+| `team/dieu.jpg`                                | Dieu Nguyen photo                      |
+| `team/tinh.jpg`                                | Tinh Le photo                          |
+| `team/huy.jpg`                                 | Huy Tong photo                         |
+| `outreach/usactalk-04/cover.jpg`               | USACTalk #04 cover photo               |
+| `outreach/usactalk-04/photo-1.jpg` … `photo-4.jpg` | USACTalk #04 event photos          |
 
 ## Design Theme
 

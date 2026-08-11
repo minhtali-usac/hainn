@@ -901,6 +901,137 @@ section {
 }
 .team-card.supervisor .team-card-role { color: var(--gold-light); }
 
+/* ===== OUTREACH CARD ===== */
+.outreach-featured {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 44px;
+  align-items: center;
+  margin-top: 48px;
+}
+.outreach-featured-text p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+.outreach-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.outreach-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-accent);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+}
+.outreach-card-thumb {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(212,168,67,0.35) 0%, transparent 42%),
+    radial-gradient(circle at 30% 100%, rgba(110,206,206,0.15) 0%, transparent 55%),
+    radial-gradient(ellipse at center, #0c1830 0%, #04070E 75%);
+  overflow: hidden;
+}
+.outreach-card-thumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-radial-gradient(circle at 78% 18%, transparent 0, transparent 14px, rgba(212,168,67,0.05) 15px);
+  opacity: 0.6;
+}
+.outreach-card-thumb-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.outreach-card:hover .outreach-card-thumb-img { transform: scale(1.06); }
+.outreach-card-thumb-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(4,7,14,0.15) 0%, rgba(4,7,14,0.55) 55%, rgba(4,7,14,0.92) 100%);
+}
+.outreach-card-badge {
+  position: relative;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0A0C12;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: auto;
+}
+.outreach-card-thumb-title {
+  position: relative;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold) 60%, #E8935A);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 8px;
+}
+.outreach-card-thumb-sub {
+  position: relative;
+  font-size: 0.78rem;
+  color: var(--text-bright);
+  line-height: 1.4;
+  max-width: 90%;
+}
+.outreach-card-body { padding: 20px 22px 24px; }
+.outreach-card-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+.outreach-card-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--heading);
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.outreach-card-body p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+.outreach-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+.outreach-card-meta i { color: var(--gold); }
+
 /* ===== RESEARCH PAGE ===== */
 .research-project {
   display: grid;
@@ -1149,6 +1280,8 @@ footer {
   .facilities-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { flex-direction: column; text-align: center; }
   section, .facilities-wrap, .full-strip { padding-top: 64px; padding-bottom: 64px; }
+  .outreach-featured { grid-template-columns: 1fr; }
+  .outreach-card-thumb { aspect-ratio: 16 / 10; }
 }
 
 @media (max-width: 480px) {

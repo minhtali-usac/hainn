@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Outreach - Hai Ngo Ngoc</title>
+  <meta name="description" content="Public talks, seminars, and community astronomy outreach led by Hai Ngo Ngoc with the University of Science Astronomy Club (USAC)." />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .outreach-hero {
+      padding: calc(var(--nav-h) + 80px) 60px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .outreach-wrap {
+      position: relative;
+      z-index: 1;
+      padding: 0 60px 110px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .outreach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+      margin-top: 20px;
+    }
+    .outreach-empty-note {
+      margin-top: 40px;
+      padding: 20px 24px;
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 640px;
+    }
+
+    @media (max-width: 768px) {
+      .outreach-hero, .outreach-wrap { padding-left: 24px; padding-right: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-content">
+
+    <div class="outreach-hero">
+      <div class="section-tag fade-in">Outreach</div>
+      <h1 class="section-title fade-in fade-in-delay-1">Public Talks &amp; Community Science</h1>
+      <p class="section-subtitle fade-in fade-in-delay-2">
+        Hai Ngo Ngoc is the founder (since 2016) and current Scientific Advisor of the
+        <span style="color:var(--teal)">University of Science Astronomy Club (USAC)</span>, bringing
+        black hole astrophysics to students and the public through seminars, USACTalks, and outreach activities.
+      </p>
+    </div>
+
+    <div class="outreach-wrap">
+      <div class="outreach-grid">
+
+        <a class="outreach-card fade-in fade-in-delay-1" href="usactalk-04.html">
+          <div class="outreach-card-thumb">
+            <img class="outreach-card-thumb-img" src="../assets/outreach/usactalk-04/cover.jpg" alt="USACTalk #04: Beyond the Darkness cover photo" loading="lazy" />
+            <div class="outreach-card-thumb-scrim"></div>
+            <span class="outreach-card-badge">USACTalk #04</span>
+            <div class="outreach-card-thumb-title">Beyond the Darkness</div>
+            <div class="outreach-card-thumb-sub">What has JWST seen at the edge of the universe?</div>
+          </div>
+          <div class="outreach-card-body">
+            <div class="outreach-card-tag">Outreach · Public Seminar</div>
+            <h3>Beyond the Darkness: What Has JWST Seen at the Edge of the Universe?</h3>
+            <p>
+              A USAC seminar on how JWST is rewriting the timeline of the earliest galaxies and
+              supermassive black holes - from Little Red Dots to the race between light and heavy seeds.
+            </p>
+            <div class="outreach-card-meta"><i class="fas fa-calendar"></i> April 19, 2026 &nbsp;·&nbsp; VNUHCM - US</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-copy">© 2026 Hai Ngo Ngoc - USAC Astrophysics Research Group</div>
+        <div class="footer-links">
+          <a href="../index.html">Home</a>
+          <a href="../research.html">Research</a>
+          <a href="../publications.html">Publications</a>
+          <a href="../cv.html">CV</a>
+          <a href="../team.html">Team</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="../nav.js"></script>
+  <script>initPage('outreach', '../');</script>
+</body>
+</html>

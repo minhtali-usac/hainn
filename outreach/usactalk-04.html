@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>USACTalk #04: Beyond the Darkness - Hai Ngo Ngoc</title>
+  <meta name="description" content="Recap of USACTalk #04, 'Beyond the Darkness: What Has JWST Seen at the Edge of the Universe?', presented by Hai Ngo Ngoc for the University of Science Astronomy Club." />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .article-hero {
+      position: relative;
+      z-index: 1;
+      padding: calc(var(--nav-h) + 70px) 60px 70px;
+      background:
+        radial-gradient(circle at 82% 10%, rgba(212,168,67,0.16) 0%, transparent 45%),
+        radial-gradient(circle at 10% 90%, rgba(110,206,206,0.08) 0%, transparent 50%);
+      border-bottom: 1px solid var(--border);
+    }
+    .article-hero-inner { max-width: 820px; margin: 0 auto; }
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 28px;
+      transition: color 0.2s, gap 0.2s;
+    }
+    .article-back:hover { color: var(--gold); gap: 12px; }
+    .article-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #0A0C12;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 22px;
+    }
+    .article-title {
+      font-family: var(--font-body);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: clamp(1.9rem, 4.2vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold) 55%, #E8935A);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 16px;
+    }
+    .article-subtitle {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--text-bright);
+      margin-bottom: 30px;
+      max-width: 620px;
+    }
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .article-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .article-meta-item i { color: var(--gold); width: 16px; text-align: center; }
+    .article-meta-item strong { color: var(--heading); font-weight: 500; }
+
+    .article-cover {
+      max-width: 820px;
+      margin: -30px auto 0;
+      padding: 0 60px;
+      position: relative;
+      z-index: 1;
+    }
+    .article-cover img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+    }
+
+    .article-wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 70px 60px 40px;
+    }
+    .article-wrap p {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.95;
+      margin-bottom: 26px;
+    }
+    .article-wrap h2 {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 500;
+      color: var(--heading);
+      margin: 48px 0 20px;
+      line-height: 1.3;
+    }
+    .article-lede {
+      font-size: 1.08rem !important;
+      color: var(--text-bright) !important;
+    }
+
+    .seed-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 8px 0 32px;
+    }
+    .seed-card {
+      padding: 22px 22px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: border-color 0.3s;
+    }
+    .seed-card:hover { border-color: var(--border-accent); }
+    .seed-card-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .seed-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--heading);
+      margin-bottom: 8px;
+    }
+    .seed-card p {
+      font-size: 0.85rem !important;
+      color: var(--text-muted);
+      line-height: 1.7 !important;
+      margin-bottom: 0 !important;
+    }
+
+    .pullquote {
+      margin: 8px 0 36px;
+      padding: 26px 30px;
+      border-left: 3px solid var(--gold);
+      background: var(--bg-card);
+      border-radius: 0 10px 10px 0;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--text-bright);
+      line-height: 1.6;
+    }
+
+    .article-closing {
+      margin-top: 44px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .article-closing p { font-size: 0.95rem; }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 28px 0 8px;
+    }
+    .article-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: var(--teal);
+      background: rgba(110,206,206,0.08);
+      border: 1px solid rgba(110,206,206,0.2);
+      border-radius: 4px;
+      padding: 4px 11px;
+    }
+
+    .article-contact {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .article-contact a { color: var(--gold); text-decoration: none; }
+    .article-contact a:hover { text-decoration: underline; }
+    .article-contact i { color: var(--gold); }
+
+    .article-nav-more {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 20px 60px 100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .article-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 8px 0 32px;
+    }
+    .article-gallery figure {
+      margin: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 4 / 3;
+    }
+    .article-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .article-gallery figure:hover img { transform: scale(1.05); }
+    .article-gallery-caption {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: -22px 0 32px;
+    }
+
+    @media (max-width: 768px) {
+      .article-hero, .article-wrap, .article-nav-more { padding-left: 24px; padding-right: 24px; }
+      .article-cover { padding-left: 24px; padding-right: 24px; margin-top: -18px; }
+      .seed-grid { grid-template-columns: 1fr; }
+      .pullquote { padding: 20px 22px; font-size: 1.03rem; }
+      .article-gallery { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-content">
+
+    <div class="article-hero">
+      <div class="article-hero-inner">
+        <a class="article-back fade-in" href="index.html"><i class="fas fa-arrow-left"></i> All Outreach</a>
+        <span class="article-badge fade-in fade-in-delay-1">USACTalk #04</span>
+        <h1 class="article-title fade-in fade-in-delay-1">Beyond the Darkness</h1>
+        <p class="article-subtitle fade-in fade-in-delay-2">What Has JWST Seen at the Edge of the Universe?</p>
+        <div class="article-meta fade-in fade-in-delay-2">
+          <div class="article-meta-item"><i class="fas fa-user"></i> Speaker: <strong>Hai Ngo Ngoc</strong>, Ph.D. Candidate, University of Michigan, Ann Arbor</div>
+          <div class="article-meta-item"><i class="fas fa-calendar"></i> <strong>April 19, 2026</strong></div>
+          <div class="article-meta-item"><i class="fas fa-location-dot"></i> VNUHCM - University of Science, Campus 2</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-cover fade-in fade-in-delay-2">
+      <img src="../assets/outreach/usactalk-04/cover.jpg" alt="USACTalk #04: Beyond the Darkness cover photo" loading="lazy" />
+    </div>
+
+    <div class="article-wrap">
+
+      <p class="fade-in article-lede">
+        On April 19, 2026, the University of Science Astronomy Club (USAC), in collaboration with the
+        Faculty of Physics and Engineering Physics, hosted <strong style="color:var(--heading)">USACTalk #04</strong>
+        in a packed, lively room for a session titled <em>"Beyond the Darkness: What Has JWST Seen at the
+        Edge of the Universe?"</em>, presented by <strong style="color:var(--teal)">Hai Ngo Ngoc</strong>,
+        a Ph.D. candidate at the University of Michigan, Ann Arbor.
+      </p>
+
+      <p class="fade-in">
+        The talk opened by sparking the audience's curiosity with foundational yet fascinating physics
+        concepts such as escape velocity and the bending of light. Revisiting the historic 1919 solar
+        eclipse experiment, Hai emphasized that the curvature of spacetime itself laid the groundwork for
+        how we understand black holes and other large-scale cosmic structures today.
+      </p>
+
+      <h2 class="fade-in">Into the Dark Ages</h2>
+      <p class="fade-in">
+        The heart of the talk carried the audience deep into the <strong style="color:var(--heading)">"Dark
+        Ages"</strong> — the era in which the universe transformed from primordial clouds of gas into
+        brilliant, star-filled galaxies. With the help of the James Webb Space Telescope, the speaker
+        revealed striking results: galaxies formed far earlier than theoretical models had predicted.
+        Objects such as <strong style="color:var(--teal)">JADES-GS-z13-0</strong> (observed just 300
+        million years after the Big Bang) and <strong style="color:var(--teal)">GN-z11</strong> have
+        shattered previous observational limits, raising major questions for cosmologists about just how
+        quickly the early universe assembled itself.
+      </p>
+
+      <p class="fade-in">
+        A particular highlight that drew strong interest was the discovery of
+        <strong style="color:var(--heading)">"Little Red Dots" (LRDs)</strong> — extremely compact
+        galaxies that appear to host rapidly growing black holes at their centers. The detection of LRDs,
+        together with traces of oxygen found only 300 million years after the Big Bang, shows that the
+        very first generation of stars formed, died, and recycled matter at a stunning pace — far faster
+        than earlier scenarios had assumed.
+      </p>
+
+      <div class="article-gallery fade-in">
+        <figure><img src="../assets/outreach/usactalk-04/photo-1.jpg" alt="USACTalk #04 event photo 1" loading="lazy" /></figure>
+        <figure><img src="../assets/outreach/usactalk-04/photo-2.jpg" alt="USACTalk #04 event photo 2" loading="lazy" /></figure>
+        <figure><img src="../assets/outreach/usactalk-04/photo-3.jpg" alt="USACTalk #04 event photo 3" loading="lazy" /></figure>
+        <figure><img src="../assets/outreach/usactalk-04/photo-4.jpg" alt="USACTalk #04 event photo 4" loading="lazy" /></figure>
+      </div>
+      <p class="article-gallery-caption fade-in">Moments from USACTalk #04 — VNUHCM, University of Science, Campus 2</p>
+
+      <h2 class="fade-in">The Race Between Black Hole "Seeds"</h2>
+      <p class="fade-in">
+        The talk then turned to the competition between different black hole <em>"seed"</em> scenarios.
+        To explain how supermassive black holes could already exist at the edge of the observable
+        universe, two leading hypotheses sparked lively discussion:
+      </p>
+
+      <div class="seed-grid fade-in">
+        <div class="seed-card">
+          <div class="seed-card-label">Hypothesis 01</div>
+          <h4>Light Seeds</h4>
+          <p>Form from the collapsed remnants of the very first stars, then grow larger over cosmic time through repeated mergers and accretion.</p>
+        </div>
+        <div class="seed-card">
+          <div class="seed-card-label">Hypothesis 02</div>
+          <h4>Heavy Seeds</h4>
+          <p>Form directly from the direct collapse of massive primordial gas clouds, skipping the intermediate stellar stage entirely.</p>
+        </div>
+      </div>
+
+      <div class="pullquote fade-in">
+        New observations suggest that black holes and their host galaxies may have "co-evolved,"
+        interacting closely from the very earliest moments of cosmic history.
+      </div>
+
+      <h2 class="fade-in">Looking Ahead</h2>
+      <p class="fade-in">
+        The seminar didn't stop at present-day discoveries — it also looked to the future. As JWST
+        continues to probe deeper into the cosmos, accretion models such as
+        <strong style="color:var(--heading)">Bondi–Hoyle–Lyttleton</strong> will be put to the test,
+        helping us understand more precisely how black holes devour surrounding matter to grow.
+      </p>
+
+      <p class="fade-in">
+        USACTalk #04 closed on a message that resonated throughout the room: humanity's enduring
+        curiosity and drive to push beyond the darkness. The seminar wrapped up with an extended Q&amp;A
+        session covering everything from the nature of the event horizon to the most advanced infrared
+        observing techniques available today.
+      </p>
+
+      <div class="article-closing fade-in">
+        <p>
+          USAC would like to sincerely thank <strong style="color:var(--heading)">Hai Ngo Ngoc</strong>
+          for his in-depth, passionate sharing. We hope to welcome him back for many more engaging talks
+          in the future. ✨
+        </p>
+      </div>
+
+    </div>
+
+    <div class="article-nav-more fade-in">
+      <a class="btn btn-outline" href="index.html"><i class="fas fa-arrow-left"></i> Back to Outreach</a>
+    </div>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-copy">© 2026 Hai Ngo Ngoc - USAC Astrophysics Research Group</div>
+        <div class="footer-links">
+          <a href="../index.html">Home</a>
+          <a href="../research.html">Research</a>
+          <a href="../publications.html">Publications</a>
+          <a href="../cv.html">CV</a>
+          <a href="../team.html">Team</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="../nav.js"></script>
+  <script>initPage('outreach', '../');</script>
+</body>
+</html>

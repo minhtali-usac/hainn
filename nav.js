@@ -3,23 +3,25 @@
 // ============================================
 
 // Inject nav HTML into page
-function injectNav(activePage) {
+// basePath: relative prefix to the site root ('' at root, '../' one level down, etc.)
+function injectNav(activePage, basePath = '') {
   const navHTML = `
     <nav id="main-nav">
-      <a class="nav-logo" href="index.html">HAI <span>NGO</span> NGOC</a>
+      <a class="nav-logo" href="${basePath}index.html">HAI <span>NGO</span> NGOC</a>
       <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" ${activePage === 'home' ? 'class="active"' : ''}>Home</a></li>
+        <li><a href="${basePath}index.html" ${activePage === 'home' ? 'class="active"' : ''}>Home</a></li>
         <li class="nav-dropdown">
-          <a href="research.html" class="nav-dropdown-link ${activePage === 'research' ? 'active' : ''}">Research <i class="fas fa-chevron-down nav-dropdown-caret"></i></a>
+          <a href="${basePath}research.html" class="nav-dropdown-link ${activePage === 'research' ? 'active' : ''}">Research <i class="fas fa-chevron-down nav-dropdown-caret"></i></a>
           <div class="nav-dropdown-menu">
-            <a href="research.html#star-clusters">IMBHs in Star Clusters</a>
-            <a href="research.html#dwarf-galaxies">BH in Dwarf Galaxies</a>
-            <a href="research.html#smbh-evolution">SMBH Evolution</a>
+            <a href="${basePath}research.html#star-clusters">IMBHs in Star Clusters</a>
+            <a href="${basePath}research.html#dwarf-galaxies">BH in Dwarf Galaxies</a>
+            <a href="${basePath}research.html#smbh-evolution">SMBH Evolution</a>
           </div>
         </li>
-        <li><a href="publications.html" ${activePage === 'publications' ? 'class="active"' : ''}>Publications</a></li>
-        <li><a href="cv.html" ${activePage === 'cv' ? 'class="active"' : ''}>CV</a></li>
-        <li><a href="team.html" ${activePage === 'team' ? 'class="active"' : ''}>Our Team</a></li>
+        <li><a href="${basePath}publications.html" ${activePage === 'publications' ? 'class="active"' : ''}>Publications</a></li>
+        <li><a href="${basePath}outreach/index.html" ${activePage === 'outreach' ? 'class="active"' : ''}>Outreach</a></li>
+        <li><a href="${basePath}cv.html" ${activePage === 'cv' ? 'class="active"' : ''}>CV</a></li>
+        <li><a href="${basePath}team.html" ${activePage === 'team' ? 'class="active"' : ''}>Our Team</a></li>
       </ul>
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
         <i class="fas fa-bars"></i>
@@ -138,8 +140,8 @@ function initNavScroll() {
 }
 
 // Init all
-function initPage(activePage) {
-  injectNav(activePage);
+function initPage(activePage, basePath = '') {
+  injectNav(activePage, basePath);
   initStarfield();
   initNebula();
   document.addEventListener('DOMContentLoaded', () => {
