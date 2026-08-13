@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Research - Hai Ngo Ngoc</title>
+  <meta name="description" content="Research programme of Hai Ngo Ngoc: dynamical mass measurements of intermediate-mass, supermassive, and ultramassive black holes with ELT/HARMONI, JWST/NIRSpec, and ALMA, and their co-evolution with host galaxies." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
@@ -14,9 +15,7 @@
       position: relative;
       z-index: 1;
     }
-    .research-hero-inner {
-      max-width: 640px;
-    }
+    .research-hero-inner { max-width: 680px; }
     .research-projects-wrap {
       position: relative;
       z-index: 1;
@@ -32,6 +31,7 @@
       overflow: hidden;
       margin-bottom: 60px;
       transition: border-color 0.3s;
+      scroll-margin-top: calc(var(--nav-h) + 24px);
     }
     .project-block:hover { border-color: var(--border-accent); }
     .project-block.flip { direction: rtl; }
@@ -104,14 +104,15 @@
       color: var(--teal);
       background: rgba(110,206,206,0.06);
     }
+    .project-links { display: flex; flex-wrap: wrap; gap: 12px; }
 
-    /* Facilities section */
     .fac-section {
       position: relative;
       z-index: 1;
       padding: 100px 60px;
       background: var(--bg-2);
       border-top: 1px solid var(--border);
+      scroll-margin-top: var(--nav-h);
     }
     .fac-inner { max-width: 1200px; margin: 0 auto; }
     .fac-cards {
@@ -172,214 +173,295 @@
       margin-bottom: 6px;
     }
 
+    .badge { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; }
+    .props-section { position: relative; z-index: 1; padding: 100px 60px; max-width: 1200px; margin: 0 auto; scroll-margin-top: var(--nav-h); }
+    .prop-full { padding: 28px 0; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 60px 1fr; gap: 24px; transition: transform 0.2s; }
+    .prop-full:hover { transform: translateX(8px); }
+    .prop-full:first-child { border-top: 1px solid var(--border); }
+    .prop-idx { font-family: var(--font-mono); font-size: 0.72rem; color: var(--gold); padding-top: 4px; text-align: right; }
+    .prop-main-title { font-family: var(--font-display); font-size: 1.08rem; font-weight: 500; color: var(--heading); line-height: 1.4; margin-bottom: 8px; }
+    .prop-authors { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 8px; line-height: 1.6; }
+    .prop-authors strong { color: var(--teal); font-weight: 500; }
+    .prop-meta { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .prop-facility-name { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); font-style: italic; }
+    .badge-accepted { background: rgba(212,168,67,0.1); color: var(--gold); border: 1px solid rgba(212,168,67,0.25); }
+
+    .res-cross-wrap { position: relative; z-index: 1; padding: 0 60px 110px; max-width: 1200px; margin: 0 auto; }
+    .res-cross { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+
     @media (max-width: 900px) {
       .project-block, .project-block.flip { grid-template-columns: 1fr; direction: ltr; }
       .project-img-wrap { min-height: 240px; }
       .project-content { padding: 36px 28px; }
       .fac-cards { grid-template-columns: repeat(2, 1fr); }
-      .research-hero, .research-projects-wrap { padding-left: 24px; padding-right: 24px; }
+      .research-hero, .research-projects-wrap, .res-cross-wrap { padding-left: 24px; padding-right: 24px; }
       .fac-section { padding-left: 24px; padding-right: 24px; }
+    }
+    @media (max-width: 768px) {
+      .prop-full { grid-template-columns: 1fr; }
+      .prop-idx { text-align: left; }
     }
     @media (max-width: 480px) {
       .project-content { padding: 26px 20px; }
       .project-img-wrap { min-height: 200px; }
       .project-content h2 { font-size: 1.4rem; }
     }
-  .badge{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;padding:2px 8px;border-radius:3px;} .props-section{position:relative;z-index:1;padding:100px 60px;max-width:1200px;margin:0 auto;} .prop-full{padding:28px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:60px 1fr;gap:24px;transition:transform 0.2s;} .prop-full:hover{transform:translateX(8px);} .prop-full:first-child{border-top:1px solid var(--border);} .prop-idx{font-family:var(--font-mono);font-size:0.72rem;color:var(--gold);padding-top:4px;text-align:right;} .prop-main-title{font-family:var(--font-display);font-size:1.08rem;font-weight:500;color:var(--heading);line-height:1.4;margin-bottom:8px;} .prop-authors{font-size:0.82rem;color:var(--text-muted);margin-bottom:8px;line-height:1.6;} .prop-authors strong{color:var(--teal);font-weight:500;} .prop-meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;} .prop-facility-name{font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);font-style:italic;} .badge-accepted{background:rgba(212,168,67,0.1);color:var(--gold);border:1px solid rgba(212,168,67,0.25);} @media (max-width:768px){.prop-full{grid-template-columns:1fr;} .prop-idx{text-align:left;}} </style>
+  </style>
 </head>
 <body>
-  <div class="page-content">
+<div class="page-content">
 
-    <!-- PAGE HERO -->
-    <div class="research-hero">
-      <div class="research-hero-inner">
-        <div class="section-tag fade-in">Research</div>
-        <h1 class="section-title fade-in fade-in-delay-1">
-          Black Holes &<br>Their Cosmic Hosts
-        </h1>
-        <p class="section-subtitle fade-in fade-in-delay-2">
-          Our group investigates the mass spectrum of central black holes - from intermediate-mass
-          to ultramassive - and how they co-evolve with their host galaxies across billions of years
-          of cosmic history.
-        </p>
-      </div>
+  <!-- PAGE HERO -->
+  <div class="research-hero">
+    <div class="research-hero-inner">
+      <div class="section-tag fade-in">Research</div>
+      <h1 class="section-title fade-in fade-in-delay-1">
+        Black Holes &amp;<br>Their Cosmic Hosts
+      </h1>
+      <p class="section-subtitle fade-in fade-in-delay-2">
+        Our programme addresses the mass spectrum of central black holes &mdash; from the
+        intermediate-mass regime to the ultramassive end &mdash; and the ways in which these
+        objects co-evolve with their host galaxies over billions of years of cosmic history.
+      </p>
     </div>
+  </div>
+
+  <div class="research-projects-wrap">
 
     <!-- PROJECT 1 -->
-    <div class="research-projects-wrap">
-
-      <div class="project-block fade-in" id="star-clusters">
-        <div class="project-img-wrap">
-          <img src="assets/img/cluster.jpg" alt="Nuclear star cluster"
-            onerror="this.style.background='linear-gradient(160deg,#071828,#122040)'; this.style.display='block';" />
-          <div class="project-img-credit">Credit: NASA/ESA HST</div>
-        </div>
-        <div class="project-content">
-          <div class="section-tag" style="margin-bottom:16px">01</div>
-          <h2>Intermediate-Mass Black Holes in Nuclear Star Clusters</h2>
-          <p>
-            Nuclear star clusters (NSCs) are known to co-exist in some cases with massive black holes,
-            including in the Milky Way. But the relationship between NSCs and BHs is not well understood.
-            Finding and weighing central BHs in lower-mass galaxies is challenging due to the difficulty
-            of dynamically detecting the low-mass BHs they host.
-          </p>
-          <p>
-            Simulating ELT observations with HARMONI's high-resolution imaging and spectroscopy, and
-            the proximity of our low-mass early-type galaxy sample, we examine in detail their NSCs
-            morphology, composition, kinematics, and dynamical masses - shedding light on their formation
-            origins either via gas in situ or stellar migration.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag highlight">ELT / HARMONI</span>
-            <span class="project-tag">IFS Spectroscopy</span>
-            <span class="project-tag">Dynamical Modeling</span>
-            <span class="project-tag">Low-Mass Galaxies</span>
-          </div>
-          <a href="publications.html" class="btn btn-outline">Related Publications →</a>
-        </div>
+    <div class="project-block fade-in" id="star-clusters">
+      <div class="project-img-wrap">
+        <img src="assets/img/cluster.jpg" alt="Nuclear star cluster"
+             onerror="this.style.background='linear-gradient(160deg,#071828,#122040)'; this.style.display='block';" />
+        <div class="project-img-credit">Credit: NASA/ESA HST</div>
       </div>
-
-      <div class="project-block flip fade-in" id="dwarf-galaxies">
-        <div class="project-img-wrap">
-          <img src="assets/img/dwarf.jpg" alt="Dwarf galaxy"
-            onerror="this.style.background='linear-gradient(160deg,#0a1020,#12204a)'; this.style.display='block';" />
-          <div class="project-img-credit">M33 - Credit: NASA/ESA HST</div>
-        </div>
-        <div class="project-content">
-          <div class="section-tag" style="margin-bottom:16px">02</div>
-          <h2>Supermassive Black Holes in Dwarf Galaxies</h2>
-          <p>
-            Scaling relations between central black hole mass and host galaxy properties - e.g., the
-            bulge mass component and bulge velocity dispersion of stars - hint at joint evolution of
-            black holes and galaxies.
-          </p>
-          <p>
-            Estimating the dynamical mass of black holes and their host galaxies at different redshifts
-            is fundamental to establishing their growth scenarios over the cosmic time. We extend these
-            measurements into the dwarf galaxy regime, pushing observational limits with ELT/HARMONI
-            and ALMA.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag highlight">ELT / HARMONI</span>
-            <span class="project-tag highlight">ALMA</span>
-            <span class="project-tag">MBH–σ Correlation</span>
-            <span class="project-tag">Molecular Gas</span>
-          </div>
-          <a href="publications.html" class="btn btn-outline">Related Publications →</a>
-        </div>
-      </div>
-
-      <div class="project-block fade-in" id="smbh-evolution">
-        <div class="project-img-wrap">
-          <img src="assets/img/merger.jpg" alt="Merging galaxies"
-            onerror="this.style.background='linear-gradient(160deg,#0c0c20,#1a1a40)'; this.style.display='block';" />
-          <div class="project-img-credit">Credit: NASA/ESA HST</div>
-        </div>
-        <div class="project-content">
-          <div class="section-tag" style="margin-bottom:16px">03</div>
-          <h2>Supermassive Black Hole Evolutions</h2>
-          <p>
-            The most massive galaxies obey a well-defined scaling relation between galaxy mass and central
-            black hole mass or galaxy mass and velocity dispersion. This reveals the co-evolutions of
-            central black holes and their hosts. However, the relation and evolution at low-mass and
-            ultramassive regimes remains not well understood.
-          </p>
-          <p>
-            Evidences from most massive galaxies show that the central black hole mass positive outliers
-            from the Mbh-sigma or Mbh-Lk relation suggest they assemble their matter via a sequence of
-            bulge growth to dry-merger growth. We study how the most massive black holes can form at
-            the highest galactic-mass ladder.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag highlight">ELT / HARMONI</span>
-            <span class="project-tag highlight">ALMA</span>
-            <span class="project-tag">Ultramassive BHs</span>
-            <span class="project-tag">Scaling Relations</span>
-            <span class="project-tag">Dry Mergers</span>
-          </div>
-          <a href="publications.html" class="btn btn-outline">Related Publications →</a>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- FACILITIES -->
-    <div class="fac-section">
-      <div class="fac-inner">
-        <div class="section-tag fade-in">Instruments & Facilities</div>
-        <h2 class="section-title fade-in fade-in-delay-1">Our Observational Arsenal</h2>
-        <p class="section-subtitle fade-in fade-in-delay-2" style="margin-bottom:0">
-          State-of-the-art telescopes spanning radio to optical wavelengths, giving us an unprecedented
-          multi-wavelength view of black holes and their host galaxies.
+      <div class="project-content">
+        <div class="section-tag" style="margin-bottom:16px">01</div>
+        <h2>Intermediate-Mass Black Holes in Nuclear Star Clusters</h2>
+        <p>
+          Nuclear star clusters (NSCs) are the densest stellar systems known, and in a number of
+          galaxies &mdash; the Milky Way among them &mdash; they are observed to coexist with a
+          massive black hole. The physical relationship between the two components nevertheless
+          remains poorly constrained, chiefly because the low-mass black holes hosted by lower-mass
+          galaxies are exceedingly difficult to detect dynamically.
         </p>
-        <div class="fac-cards">
-          <div class="fac-card fade-in fade-in-delay-1">
-            <img src="assets/fac/elt.jpg" alt="ELT"
-              onerror="this.style.background='#0A1628'; this.style.display='block'; this.style.minHeight='120px';" />
-            <div class="fac-card-body">
-              <div class="fac-card-name">ELT</div>
-              <div class="fac-card-desc">Extremely Large Telescope - ESO's 39m behemoth</div>
-            </div>
-          </div>
-          <div class="fac-card fade-in fade-in-delay-1">
-            <img src="assets/fac/alma.jpg" alt="ALMA"
-              onerror="this.style.background='#0D1F35'; this.style.display='block'; this.style.minHeight='120px';" />
-            <div class="fac-card-body">
-              <div class="fac-card-name">ALMA</div>
-              <div class="fac-card-desc">Atacama Large Millimeter/submillimeter Array</div>
-            </div>
-          </div>
-          <div class="fac-card fade-in fade-in-delay-2">
-            <img src="assets/fac/vlt.jpg" alt="VLT"
-              onerror="this.style.background='#0F1D30'; this.style.display='block'; this.style.minHeight='120px';" />
-            <div class="fac-card-body">
-              <div class="fac-card-name">VLT</div>
-              <div class="fac-card-desc">Very Large Telescope - ESO Paranal Observatory</div>
-            </div>
-          </div>
-          <div class="fac-card fade-in fade-in-delay-2">
-            <img src="assets/fac/hst.jpg" alt="HST"
-              onerror="this.style.background='#0A1828'; this.style.display='block'; this.style.minHeight='120px';" />
-            <div class="fac-card-body">
-              <div class="fac-card-name">HST</div>
-              <div class="fac-card-desc">Hubble Space Telescope - NASA/ESA flagship</div>
-            </div>
-          </div>
-          <div class="fac-card fade-in fade-in-delay-3">
-            <img src="assets/fac/jwst.jpg" alt="JWST"
-              onerror="this.style.background='#0C1A30'; this.style.display='block'; this.style.minHeight='120px';" />
-            <div class="fac-card-body">
-              <div class="fac-card-name">JWST</div>
-              <div class="fac-card-desc">James Webb Space Telescope - infrared pioneer</div>
-            </div>
-          </div>
-          <div class="fac-card fac-card-stat fade-in fade-in-delay-3">
-            <div class="fac-card-stat-body">
-              <div class="fac-card-stat-num">2</div>
-              <div class="fac-card-name">Proposals</div>
-              <div class="fac-card-desc">Accepted time on HST (Cycle 34) &amp; ALMA (Cycle 13)</div>
-            </div>
-          </div>
+        <p>
+          Using end-to-end simulations of ELT/HARMONI imaging and integral-field spectroscopy, and
+          exploiting the proximity of our sample of low-mass early-type galaxies, we characterise the
+          morphology, stellar content, internal kinematics, and dynamical masses of their NSCs. Such
+          measurements discriminate between the two principal formation channels: in situ star
+          formation from infalling gas, and the inspiral of globular clusters through stellar
+          migration.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag highlight">ELT / HARMONI</span>
+          <span class="project-tag">Integral-Field Spectroscopy</span>
+          <span class="project-tag">Dynamical Modelling</span>
+          <span class="project-tag">Low-Mass Early-Type Galaxies</span>
+        </div>
+        <div class="project-links">
+          <a href="publications.html?topic=nsc" class="btn btn-outline">Related Publications &rarr;</a>
         </div>
       </div>
     </div>
 
-    <div class="props-section"><div class="section-tag fade-in">Proposals</div><h2 class="section-title fade-in fade-in-delay-1">Accepted Observing Time</h2><p class="section-subtitle fade-in fade-in-delay-2" style="margin-bottom:0">Competitively awarded observing proposals on world-class facilities supporting our black hole mass measurement program.</p><div id="prop-list" style="margin-top:48px"><div class="prop-full fade-in"><span class="prop-idx">01</span><div><div class="prop-main-title">Cross-Calibrating Black Hole Mass Methods in Seyfert AGN with ALMA Atomic-[C I](1-0) Gas Dynamics</div><div class="prop-authors">Dieu Nguyen (PI), Elena Gallo, Fabio Pacucci, Tintin Nguyen, <strong>Hai N. Ngo</strong>, Sabine Thater, Michele Cappellari</div><div class="prop-meta"><span class="prop-facility-name">ALMA Cycle 13 &mdash; Proposal 2026.1.00913.S</span><span class="badge badge-accepted">Accepted</span></div></div></div><div class="prop-full fade-in"><span class="prop-idx">02</span><div><div class="prop-main-title">Resolving the Most Massive Black Holes: Testing a Fundamental Break in Black Hole-Galaxy Scaling Relations</div><div class="prop-authors">Dieu Nguyen (PI), University of Michigan</div><div class="prop-meta"><span class="prop-facility-name">Hubble Space Telescope Cycle 34 &mdash; GO 18383 &middot; 20 orbits</span><span class="badge badge-accepted">Accepted</span></div></div></div></div></div><footer>
-      <div class="footer-inner">
-        <div class="footer-copy">© 2026 Hai Ngo Ngoc - NDDieu Team</div>
-        <div class="footer-copy">USAC Astrophysics Research Group</div>
-        <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="publications.html">Publications</a>
-          <a href="outreach/index.html">Outreach</a>
-          <a href="cv.html">CV</a>
-          <a href="team.html">Team</a>
+    <!-- PROJECT 2 -->
+    <div class="project-block flip fade-in" id="dwarf-galaxies">
+      <div class="project-img-wrap">
+        <img src="assets/img/dwarf.jpg" alt="Dwarf galaxy"
+             onerror="this.style.background='linear-gradient(160deg,#0a1020,#12204a)'; this.style.display='block';" />
+        <div class="project-img-credit">M33 &mdash; Credit: NASA/ESA HST</div>
+      </div>
+      <div class="project-content">
+        <div class="section-tag" style="margin-bottom:16px">02</div>
+        <h2>Massive Black Holes in Dwarf and Low-Mass Galaxies</h2>
+        <p>
+          Scaling relations between central black hole mass and the global properties of the host
+          galaxy &mdash; notably bulge stellar mass and central stellar velocity dispersion &mdash;
+          provide the strongest available evidence that black holes and galaxies grow in concert.
+        </p>
+        <p>
+          Measuring dynamical black hole masses across a broad range of host mass and redshift is
+          therefore essential to establishing their growth histories over cosmic time. We extend such
+          measurements into the dwarf and low-mass regime using ELT/HARMONI stellar kinematics and
+          ALMA molecular gas dynamics, where the sphere of influence of the black hole subtends only
+          a few tens of milliarcseconds.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag highlight">ELT / HARMONI</span>
+          <span class="project-tag highlight">ALMA</span>
+          <span class="project-tag">M<sub>BH</sub>&ndash;&sigma; Relation</span>
+          <span class="project-tag">Molecular Gas Dynamics</span>
+        </div>
+        <div class="project-links">
+          <a href="publications.html?topic=dwarf" class="btn btn-outline">Related Publications &rarr;</a>
         </div>
       </div>
-    </footer>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-block fade-in" id="smbh-evolution">
+      <div class="project-img-wrap">
+        <img src="assets/img/merger.jpg" alt="Merging galaxies"
+             onerror="this.style.background='linear-gradient(160deg,#0c0c20,#1a1a40)'; this.style.display='block';" />
+        <div class="project-img-credit">Credit: NASA/ESA HST</div>
+      </div>
+      <div class="project-content">
+        <div class="section-tag" style="margin-bottom:16px">03</div>
+        <h2>Ultramassive Black Holes and the High-Mass End of the Scaling Relations</h2>
+        <p>
+          The most massive early-type galaxies follow well-defined relations between galaxy mass,
+          stellar velocity dispersion, and central black hole mass, which testify to the coupled
+          growth of the two components. Both the low-mass and the ultramassive ends of these
+          relations, however, remain poorly constrained.
+        </p>
+        <p>
+          Positive outliers from the M<sub>BH</sub>&ndash;&sigma; and M<sub>BH</sub>&ndash;L<sub>K</sub>
+          relations among the most massive galaxies suggest a transition from bulge-dominated growth
+          to assembly through successive dry mergers, in which black holes gain mass by coalescing
+          with comparably massive companions. We measure black hole masses at the top of the galaxy
+          mass ladder in order to test this scenario.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag highlight">ELT / HARMONI</span>
+          <span class="project-tag highlight">ALMA</span>
+          <span class="project-tag">Ultramassive Black Holes</span>
+          <span class="project-tag">Scaling Relations</span>
+          <span class="project-tag">Dry Mergers</span>
+        </div>
+        <div class="project-links">
+          <a href="publications.html?topic=umbh" class="btn btn-outline">Related Publications &rarr;</a>
+        </div>
+      </div>
+    </div>
 
   </div>
-  <script src="nav.js"></script>
-  <script>initPage('research');</script>
+
+  <!-- FACILITIES -->
+  <div class="fac-section" id="facilities">
+    <div class="fac-inner">
+      <div class="section-tag fade-in">Instruments &amp; Facilities</div>
+      <h2 class="section-title fade-in fade-in-delay-1">Instrumentation and Facilities</h2>
+      <p class="section-subtitle fade-in fade-in-delay-2" style="margin-bottom:0">
+        Ground- and space-based facilities spanning millimetre to optical wavelengths provide the
+        multi-wavelength coverage required to model both the stellar and the gaseous tracers of
+        central black hole masses.
+      </p>
+      <div class="fac-cards">
+        <div class="fac-card fade-in fade-in-delay-1">
+          <img src="assets/fac/elt.jpg" alt="ELT"
+               onerror="this.style.background='#0A1628'; this.style.display='block'; this.style.minHeight='120px';" />
+          <div class="fac-card-body">
+            <div class="fac-card-name">ELT</div>
+            <div class="fac-card-desc">Extremely Large Telescope &mdash; ESO's 39-m aperture (HARMONI, MICADO)</div>
+          </div>
+        </div>
+        <div class="fac-card fade-in fade-in-delay-1">
+          <img src="assets/fac/alma.jpg" alt="ALMA"
+               onerror="this.style.background='#0D1F35'; this.style.display='block'; this.style.minHeight='120px';" />
+          <div class="fac-card-body">
+            <div class="fac-card-name">ALMA</div>
+            <div class="fac-card-desc">Atacama Large Millimeter/submillimeter Array</div>
+          </div>
+        </div>
+        <div class="fac-card fade-in fade-in-delay-2">
+          <img src="assets/fac/vlt.jpg" alt="VLT"
+               onerror="this.style.background='#0F1D30'; this.style.display='block'; this.style.minHeight='120px';" />
+          <div class="fac-card-body">
+            <div class="fac-card-name">VLT</div>
+            <div class="fac-card-desc">Very Large Telescope &mdash; ESO Paranal Observatory</div>
+          </div>
+        </div>
+        <div class="fac-card fade-in fade-in-delay-2">
+          <img src="assets/fac/hst.jpg" alt="HST"
+               onerror="this.style.background='#0A1828'; this.style.display='block'; this.style.minHeight='120px';" />
+          <div class="fac-card-body">
+            <div class="fac-card-name">HST</div>
+            <div class="fac-card-desc">Hubble Space Telescope &mdash; NASA/ESA optical imaging</div>
+          </div>
+        </div>
+        <div class="fac-card fade-in fade-in-delay-3">
+          <img src="assets/fac/jwst.jpg" alt="JWST"
+               onerror="this.style.background='#0C1A30'; this.style.display='block'; this.style.minHeight='120px';" />
+          <div class="fac-card-body">
+            <div class="fac-card-name">JWST</div>
+            <div class="fac-card-desc">James Webb Space Telescope &mdash; NIRSpec infrared spectroscopy</div>
+          </div>
+        </div>
+        <a class="fac-card fac-card-stat fade-in fade-in-delay-3" href="#proposals" style="text-decoration:none">
+          <div class="fac-card-stat-body">
+            <div class="fac-card-stat-num">2</div>
+            <div class="fac-card-name">Proposals</div>
+            <div class="fac-card-desc">Accepted time on HST (Cycle 34) &amp; ALMA (Cycle 13)</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROPOSALS -->
+  <div class="props-section" id="proposals">
+    <div class="section-tag fade-in">Proposals</div>
+    <h2 class="section-title fade-in fade-in-delay-1">Accepted Observing Time</h2>
+    <p class="section-subtitle fade-in fade-in-delay-2" style="margin-bottom:0">
+      Competitively awarded programmes on world-class facilities that underpin our black hole mass
+      measurement campaign.
+    </p>
+    <div id="prop-list" style="margin-top:48px">
+      <div class="prop-full fade-in">
+        <span class="prop-idx">01</span>
+        <div>
+          <div class="prop-main-title">Cross-Calibrating Black Hole Mass Methods in Seyfert AGN with ALMA Atomic [C&nbsp;I](1&ndash;0) Gas Dynamics</div>
+          <div class="prop-authors">Dieu Nguyen (PI), Elena Gallo, Fabio Pacucci, Tintin Nguyen, <strong>Hai N. Ngo</strong>, Sabine Thater, Michele Cappellari</div>
+          <div class="prop-meta">
+            <span class="prop-facility-name">ALMA Cycle 13 &mdash; Proposal 2026.1.00913.S</span>
+            <span class="badge badge-accepted">Accepted</span>
+          </div>
+        </div>
+      </div>
+      <div class="prop-full fade-in">
+        <span class="prop-idx">02</span>
+        <div>
+          <div class="prop-main-title">Resolving the Most Massive Black Holes: Testing a Fundamental Break in the Black Hole&ndash;Galaxy Scaling Relations</div>
+          <div class="prop-authors">Dieu Nguyen (PI), University of Michigan</div>
+          <div class="prop-meta">
+            <span class="prop-facility-name">Hubble Space Telescope Cycle 34 &mdash; GO 18383 &middot; 20 orbits</span>
+            <span class="badge badge-accepted">Accepted</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CROSS-LINKS -->
+  <div class="res-cross-wrap">
+    <div class="section-tag fade-in">Related Pages</div>
+    <h2 class="section-title fade-in fade-in-delay-1">Continue Reading</h2>
+    <div class="res-cross fade-in fade-in-delay-2">
+      <a href="publications.html" class="btn btn-outline">Full Publication List &rarr;</a>
+      <a href="cv.html" class="btn btn-ghost">Curriculum Vitae &rarr;</a>
+      <a href="team.html" class="btn btn-ghost">Research Group &rarr;</a>
+      <a href="outreach/index.html" class="btn btn-ghost">Outreach &rarr;</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Hai Ngo Ngoc &middot; NDDieu Group</div>
+      <div class="footer-copy">USAC Astrophysics Research Group</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="outreach/index.html">Outreach</a>
+        <a href="cv.html">CV</a>
+        <a href="team.html">Team</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<script src="nav.js"></script>
+<script>initPage('research');</script>
 </body>
 </html>
