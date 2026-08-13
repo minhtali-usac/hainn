@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Team - USAC Astrophysics Research Group</title>
+  <meta name="description" content="The USAC Astrophysics Research Group, led by Hai Ngo Ngoc, measures the dynamical masses of central black holes and studies their co-evolution with host galaxies using ELT, JWST, HST, ALMA, and VLT observations." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
@@ -51,11 +52,24 @@
       margin-bottom: 28px;
     }
     .group-desc {
-      max-width: 640px;
-      margin: 0 auto 70px;
+      max-width: 680px;
+      margin: 0 auto 34px;
       font-size: 1rem;
       color: var(--text-muted);
       line-height: 1.9;
+    }
+    .group-links {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 70px;
+    }
+    .team-cross {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
     .team-section-label {
       font-family: var(--font-mono);
@@ -74,13 +88,6 @@
       flex: 0 0 80px;
       height: 1px;
       background: var(--border);
-    }
-    .supervisors-grid {
-      display: flex;
-      gap: 28px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 64px;
     }
     .members-grid {
       display: grid;
@@ -102,17 +109,11 @@
       border-color: var(--border-accent);
       box-shadow: 0 24px 64px rgba(0,0,0,0.5);
     }
-    .supervisor-card {
-      width: 290px;
-      border-color: rgba(212,168,67,0.2);
-    }
-    .supervisor-card:hover { border-color: rgba(212,168,67,0.5); }
     .card-photo-wrap {
       position: relative;
       overflow: hidden;
       aspect-ratio: 1;
     }
-    .supervisor-card .card-photo-wrap { aspect-ratio: 0.92; }
     .card-photo-wrap img {
       width: 100%;
       height: 100%;
@@ -143,7 +144,6 @@
       color: var(--gold);
       margin-bottom: 8px;
     }
-    .supervisor-card .card-role { color: var(--gold-light); }
     .card-name {
       font-family: var(--font-display);
       font-size: 1.28rem;
@@ -152,7 +152,6 @@
       margin-bottom: 10px;
       line-height: 1.2;
     }
-    .supervisor-card .card-name { font-size: 1.4rem; }
     .card-affil-line {
       font-size: 0.82rem;
       color: var(--text-muted);
@@ -200,6 +199,17 @@
       line-height: 1.85;
     }
     .lb-desc em { color: var(--teal); font-style: normal; }
+    .lb-link {
+      display: inline-block;
+      margin-top: 16px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .lb-link:hover { color: var(--gold-light); }
     .mission-strip {
       position: relative;
       z-index: 1;
@@ -233,13 +243,12 @@
       transition: border-color 0.3s; text-align: left;
     }
     .mission-pillar:hover { border-color: var(--border-accent); }
-    .mission-pillar-icon { font-size: 1.3rem; min-width: 32px; padding-top: 2px; }
+    .mission-pillar-icon { font-size: 1.15rem; min-width: 32px; padding-top: 4px; color: var(--gold); }
     .mission-pillar h4 { font-size: 0.93rem; font-weight: 500; color: var(--heading); margin-bottom: 4px; }
     .mission-pillar p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.65; }
     @media (max-width: 900px) {
       .team-page, .mission-strip { padding-left: 24px; padding-right: 24px; }
       .mission-inner { grid-template-columns: 1fr; gap: 40px; }
-      .supervisor-card { width: 100%; max-width: 320px; }
       .members-grid { grid-template-columns: repeat(auto-fill, minmax(170px,1fr)); }
     }
     @media (max-width: 480px) {
@@ -250,158 +259,169 @@
   </style>
 </head>
 <body>
-  <div class="page-content">
-    <div class="team-page">
+<div class="page-content">
+  <div class="team-page">
 
-      <div class="group-eyebrow fade-in">USAC Astrophysics Research Group</div>
-      <h1 class="group-title fade-in fade-in-delay-1">
-        USAC <em>Astrophysics</em><br>Research Group
-      </h1>
-      <div class="group-subtitle fade-in fade-in-delay-1">
-        University of Science Astronomy Club &nbsp;·&nbsp; Ho Chi Minh City, Vietnam
-      </div>
-      <p class="group-desc fade-in fade-in-delay-2">
-        Our research aims to understand central black holes of galaxies - how they formed and
-        co-evolved with their hosts - using the world's strongest telescopes: ELT, JWST, HST,
-        ALMA, and VLT.
-      </p>
-
-      <!-- SUPERVISORS -->
-
-      <!-- COLLABORATORS -->
-
-      <!-- LEADERSHIP BOX -->
-      <div class="leadership-box fade-in">
-        <div class="lb-label">Group Leadership &amp; USAC Advisor</div>
-        <div class="lb-title">Hai Ngo Ngoc</div>
-        <div class="lb-desc">
-          <em>Team Leader</em> of the USAC Astrophysics Research Group and
-          <em>Scientific Advisor</em> of the
-          <em>University of Science Astronomy Club (USAC)</em> of Faculty Physics and Engineering Physics
-          <em> Vietnam National University Ho Chi Minh City, University of Science</em>
-        </div>
-      </div>
-
-      <!-- MEMBERS -->
-      <div class="team-section-label fade-in">Team Members</div>
-      <div class="members-grid">
-
-        <div class="team-card fade-in fade-in-delay-1">
-          <div class="card-photo-wrap">
-            <img src="assets/team/tuan.jpg" alt="Tuan N. Le"
-              onerror="this.style.background='linear-gradient(160deg,#0D1E38,#182840)';this.style.display='block';" />
-          </div>
-          <div class="card-body">
-            <div class="card-role">Member</div>
-            <div class="card-name">Tuan N. Le</div>
-            <span class="deg">BSc. Mech. Eng.</span>
-            <div class="card-affil-line">VNUHCM – University of Technology</div>
-            <span class="deg">MSc. Theoretical Physics</span>
-            <div class="card-affil-line">VNUHCM – University of Science</div>
-          </div>
-        </div>
-
-        <div class="team-card fade-in fade-in-delay-1">
-          <div class="card-photo-wrap">
-            <img src="assets/team/huy.jpg" alt="Huy G. Tong"
-              onerror="this.style.background='linear-gradient(160deg,#0D1E38,#182840)';this.style.display='block';" />
-          </div>
-          <div class="card-body">
-            <div class="card-role">Member</div>
-            <div class="card-name">Huy G. Tong</div>
-            <span class="deg">BSc. Info. Tech.</span>
-            <div class="card-affil-line">VNUHCM – University of Science</div>
-            <span class="deg">MSc. Student</span>
-            <div class="card-affil-line">National Tsing Hua University (Taiwan)</div>
-          </div>
-        </div>
-
-        <div class="team-card fade-in fade-in-delay-2">
-          <div class="card-photo-wrap">
-            <img src="assets/team/tinh.jpg" alt="Tinh Q. T. Le"
-              onerror="this.style.background='linear-gradient(160deg,#0D1E38,#182840)';this.style.display='block';" />
-          </div>
-          <div class="card-body">
-            <div class="card-role">Member</div>
-            <div class="card-name">Tinh Q. T. Le</div>
-            <span class="deg">BSc. Space Eng.</span>
-            <div class="card-affil-line">VNUHCM – International University</div>
-            <span class="deg">Researcher</span>
-            <div class="card-affil-line">ICISE &amp; VNSC (Vietnam)</div>
-          </div>
-        </div>
-
-        <div class="team-card fade-in fade-in-delay-3">
-          <div class="card-photo-wrap">
-            <img src="assets/team/nghi.jpg" alt="Nghi K. N. Le"
-              onerror="this.style.background='linear-gradient(160deg,#0D1E38,#182840)';this.style.display='block';" />
-          </div>
-          <div class="card-body">
-            <div class="card-role">Member</div>
-            <div class="card-name">Nghi K. N. Le</div>
-            <span class="deg">BSc. Physics</span>
-            <div class="card-affil-line">Ludwig-Maximilians-Universität München (Germany)</div>
-          </div>
-        </div>
-
-      </div>
+    <div class="group-eyebrow fade-in">USAC Astrophysics Research Group</div>
+    <h1 class="group-title fade-in fade-in-delay-1">
+      USAC <em>Astrophysics</em><br>Research Group
+    </h1>
+    <div class="group-subtitle fade-in fade-in-delay-1">
+      University of Science Astronomy Club &nbsp;&middot;&nbsp; Ho Chi Minh City, Vietnam
+    </div>
+    <p class="group-desc fade-in fade-in-delay-2">
+      The group investigates the central black holes of galaxies &mdash; how they form, how they
+      grow, and how they co-evolve with their host systems &mdash; through dynamical mass
+      measurements obtained with the world's leading observatories: the ELT, JWST, HST, ALMA,
+      and the VLT.
+    </p>
+    <div class="group-links fade-in fade-in-delay-2">
+      <a href="research.html" class="btn btn-outline">Research Programme &rarr;</a>
+      <a href="publications.html" class="btn btn-ghost">Publications &rarr;</a>
     </div>
 
-    <!-- MISSION STRIP -->
-    <div class="mission-strip">
-      <div class="mission-inner">
-        <div class="mission-text fade-in">
-          <div class="section-tag" style="margin-bottom:16px">Our Mission</div>
-          <h2>Understanding How Black Holes Shape Their Cosmic Hosts</h2>
-          <p>
-            Using the world's most powerful telescopes, we push the frontier of dynamical
-            black hole mass measurements - from the lowest-mass galaxies in the nearby universe
-            to the most massive ellipticals at cosmic distances. Our work constrains the
-            co-evolutionary link between black holes and galaxies across 13 billion years of
-            cosmic history.
-          </p>
-        </div>
-        <div class="mission-pillars fade-in fade-in-delay-1">
-          <div class="mission-pillar">
-            <span class="mission-pillar-icon">🔭</span>
-            <div>
-              <h4>Cutting-Edge Instrumentation</h4>
-              <p>ELT/HARMONI, JWST/NIRSpec, ALMA - the most powerful tools in observational astrophysics.</p>
-            </div>
-          </div>
-          <div class="mission-pillar">
-            <span class="mission-pillar-icon">💻</span>
-            <div>
-              <h4>Advanced Simulations</h4>
-              <p>Mock observations and dynamical modeling to push measurement limits and plan future observations.</p>
-            </div>
-          </div>
-          <div class="mission-pillar">
-            <span class="mission-pillar-icon">🌏</span>
-            <div>
-              <h4>International Collaboration</h4>
-              <p>A global team spanning Oxford, Lyon, Michigan, HCMC - united by a passion for the unknown.</p>
-            </div>
-          </div>
-        </div>
+    <div class="leadership-box fade-in">
+      <div class="lb-label">Group Leadership &amp; USAC Scientific Advisor</div>
+      <div class="lb-title">Hai Ngo Ngoc</div>
+      <div class="lb-desc">
+        <em>Team Leader</em> of the USAC Astrophysics Research Group and <em>Scientific Advisor</em>
+        to the <em>University of Science Astronomy Club (USAC)</em>, Faculty of Physics and
+        Engineering Physics, Vietnam National University Ho Chi Minh City &ndash; University of
+        Science. Ph.D. student in Astronomy &amp; Astrophysics at the University of Michigan,
+        Ann Arbor.
       </div>
+      <a class="lb-link" href="cv.html">Curriculum Vitae &rarr;</a>
     </div>
 
-    <footer>
-      <div class="footer-inner">
-        <div class="footer-copy">© 2025 Hai Ngo Ngoc - USAC Astrophysics Research Group</div>
-        <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="research.html">Research</a>
-          <a href="publications.html">Publications</a>
-          <a href="outreach/index.html">Outreach</a>
-          <a href="cv.html">CV</a>
+    <div class="team-section-label fade-in">Team Members</div>
+    <div class="members-grid">
+
+      <div class="team-card fade-in fade-in-delay-1">
+        <div class="card-photo-wrap">
+          <img src="assets/team/tuan.jpg" alt="Tuan N. Le"
+               onerror="this.style.background='linear-gradient(160deg,#0D1E38,#182840)';this.style.display='block';" />
+        </div>
+        <div class="card-body">
+          <div class="card-role">Member</div>
+          <div class="card-name">Tuan N. Le</div>
+          <span class="deg">BSc. Mech. Eng.</span>
+          <div class="card-affil-line">VNUHCM &ndash; University of Technology</div>
+          <span class="deg">MSc. Theoretical Physics</span>
+          <div class="card-affil-line">VNUHCM &ndash; University of Science</div>
         </div>
       </div>
-    </footer>
+
+      <div class="team-card fade-in fade-in-delay-1">
+        <div class="card-photo-wrap">
+          <img src="assets/team/huy.jpg" alt="Huy G. Tong"
+               onerror="this.style.background='linear-gradient(160deg,#0D1E38,#182840)';this.style.display='block';" />
+        </div>
+        <div class="card-body">
+          <div class="card-role">Member</div>
+          <div class="card-name">Huy G. Tong</div>
+          <span class="deg">BSc. Info. Tech.</span>
+          <div class="card-affil-line">VNUHCM &ndash; University of Science</div>
+          <span class="deg">MSc. Student</span>
+          <div class="card-affil-line">National Tsing Hua University (Taiwan)</div>
+        </div>
+      </div>
+
+      <div class="team-card fade-in fade-in-delay-2">
+        <div class="card-photo-wrap">
+          <img src="assets/team/tinh.jpg" alt="Tinh Q. T. Le"
+               onerror="this.style.background='linear-gradient(160deg,#0D1E38,#182840)';this.style.display='block';" />
+        </div>
+        <div class="card-body">
+          <div class="card-role">Member</div>
+          <div class="card-name">Tinh Q. T. Le</div>
+          <span class="deg">BSc. Space Eng.</span>
+          <div class="card-affil-line">VNUHCM &ndash; International University</div>
+          <span class="deg">Researcher</span>
+          <div class="card-affil-line">ICISE &amp; VNSC (Vietnam)</div>
+        </div>
+      </div>
+
+      <div class="team-card fade-in fade-in-delay-3">
+        <div class="card-photo-wrap">
+          <img src="assets/team/nghi.jpg" alt="Nghi K. N. Le"
+               onerror="this.style.background='linear-gradient(160deg,#0D1E38,#182840)';this.style.display='block';" />
+        </div>
+        <div class="card-body">
+          <div class="card-role">Member</div>
+          <div class="card-name">Nghi K. N. Le</div>
+          <span class="deg">BSc. Physics</span>
+          <div class="card-affil-line">Ludwig-Maximilians-Universit&auml;t M&uuml;nchen (Germany)</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="team-section-label fade-in">Where To Go Next</div>
+    <div class="team-cross fade-in">
+      <a href="research.html#star-clusters" class="btn btn-outline">Research Themes &rarr;</a>
+      <a href="publications.html" class="btn btn-outline">Publication List &rarr;</a>
+      <a href="research.html#proposals" class="btn btn-ghost">Accepted Proposals &rarr;</a>
+      <a href="outreach/index.html" class="btn btn-ghost">Outreach &rarr;</a>
+    </div>
+
   </div>
 
-  <script src="nav.js"></script>
-  <script>initPage('team');</script>
+  <div class="mission-strip">
+    <div class="mission-inner">
+      <div class="mission-text fade-in">
+        <div class="section-tag" style="margin-bottom:16px">Our Mission</div>
+        <h2>Understanding How Black Holes Shape Their Cosmic Hosts</h2>
+        <p>
+          Using the most capable telescopes now available, the group extends the frontier of
+          dynamical black hole mass measurements &mdash; from the lowest-mass galaxies of the local
+          volume to the most massive early-type galaxies at cosmological distances. These
+          measurements constrain the co-evolutionary link between black holes and their host
+          galaxies over nearly 13 billion years of cosmic history.
+        </p>
+      </div>
+      <div class="mission-pillars fade-in fade-in-delay-1">
+        <div class="mission-pillar">
+          <span class="mission-pillar-icon"><i class="fas fa-satellite-dish"></i></span>
+          <div>
+            <h4>State-of-the-Art Instrumentation</h4>
+            <p>Integral-field spectroscopy with ELT/HARMONI and JWST/NIRSpec, complemented by millimetre interferometry with ALMA.</p>
+          </div>
+        </div>
+        <div class="mission-pillar">
+          <span class="mission-pillar-icon"><i class="fas fa-laptop-code"></i></span>
+          <div>
+            <h4>Mock Observations &amp; Dynamical Modelling</h4>
+            <p>End-to-end simulations of forthcoming observations, combined with dynamical modelling, establish realistic detection limits and inform observing strategies.</p>
+          </div>
+        </div>
+        <div class="mission-pillar">
+          <span class="mission-pillar-icon"><i class="fas fa-earth-asia"></i></span>
+          <div>
+            <h4>International Collaboration</h4>
+            <p>Sustained collaboration with colleagues in Oxford, Lyon, Michigan, and Ho Chi Minh City.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Hai Ngo Ngoc &middot; NDDieu Group</div>
+      <div class="footer-copy">USAC Astrophysics Research Group</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="outreach/index.html">Outreach</a>
+        <a href="cv.html">CV</a>
+        <a href="team.html">Team</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="nav.js"></script>
+<script>initPage('team');</script>
 </body>
 </html>
