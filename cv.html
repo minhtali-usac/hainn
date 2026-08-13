@@ -167,7 +167,7 @@
             </div>
 
             <div style="margin-top:24px">
-              <a href="publications.html" class="btn btn-outline">View All 14 Publications →</a>
+              <a href="publications.html" class="btn btn-outline">View All <span id="cv-pub-count">14</span> Publications →</a>
             </div>
           </div>
 
@@ -190,5 +190,20 @@
 
   <script src="nav.js"></script>
   <script>initPage('cv');</script>
-</body>
+    <script>
+      (function () {
+        fetch('publications.html')
+        .then(function (res) { return res.text(); })
+        .then(function (html) {
+          var doc = new DOMParser().parseFromString(html, 'text/html');
+          var count = doc.querySelectorAll('.pub-full').length;
+          if (count > 0) {
+            var el = document.getElementById('cv-pub-count');
+            if (el) el.textContent = count;
+          }
+        })
+        .catch(function (err) { console.warn('Publication auto-count failed:', err); });
+      })();
+    </script>
+  </body>
 </html>
