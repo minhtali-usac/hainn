@@ -55,12 +55,12 @@
     <div style="position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 60px;">
       <div class="stats-bar fade-in">
         <div class="stat-item">
-          <div class="stat-num">14</div>
+          <div class="stat-num" id="stat-pub-count">14</div>
           <div class="stat-label">Publications</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">3</div>
-          <div class="stat-label">Research Themes</div>
+          <div class="stat-num">2</div>
+          <div class="stat-label">Accepted Proposals</div>
         </div>
         <div class="stat-item">
           <div class="stat-num">5<em>+</em></div>
@@ -182,6 +182,12 @@
               onerror="this.src=''; this.style.background='#0C1A30'; this.style.display='block';" />
             <div class="facility-label">JWST</div>
           </div>
+          <div class="facility-item facility-item-stat fade-in fade-in-delay-3">
+            <div class="facility-stat-inner">
+              <div class="facility-stat-num">2</div>
+              <div class="facility-stat-label">Proposals</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -289,5 +295,21 @@
 
   <script src="nav.js"></script>
   <script>initPage('home');</script>
+  <script>
+    (function () {
+      fetch('publications.html')
+      .then(function (res) { return res.text(); })
+      .then(function (html) {
+        var doc = new DOMParser().parseFromString(html, 'text/html');
+        var count = doc.querySelectorAll('.pub-full').length;
+        if (count > 0) {
+          var el = document.getElementById('stat-pub-count');
+          if (el) el.textContent = count;
+        }
+      })
+      .catch(function (err) { console.warn('Publication auto-count failed:', err); });
+    })();
+  </script>
+  </script>
 </body>
 </html>
