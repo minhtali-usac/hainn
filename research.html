@@ -116,7 +116,7 @@
     .fac-inner { max-width: 1200px; margin: 0 auto; }
     .fac-cards {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 16px;
       margin-top: 48px;
     }
@@ -152,6 +152,24 @@
       font-size: 0.72rem;
       color: var(--text-muted);
       line-height: 1.5;
+    }
+    .fac-card.fac-card-stat {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(160deg, rgba(212,168,67,0.08), rgba(110,206,206,0.05));
+    }
+    .fac-card-stat-body {
+      padding: 20px 14px;
+      text-align: center;
+    }
+    .fac-card-stat-num {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 6px;
     }
 
     @media (max-width: 900px) {
@@ -333,6 +351,13 @@
             <div class="fac-card-body">
               <div class="fac-card-name">JWST</div>
               <div class="fac-card-desc">James Webb Space Telescope - infrared pioneer</div>
+            </div>
+          </div>
+          <div class="fac-card fac-card-stat fade-in fade-in-delay-3">
+            <div class="fac-card-stat-body">
+              <div class="fac-card-stat-num">2</div>
+              <div class="fac-card-name">Proposals</div>
+              <div class="fac-card-desc">Accepted time on HST (Cycle 34) &amp; ALMA (Cycle 13)</div>
             </div>
           </div>
         </div>
