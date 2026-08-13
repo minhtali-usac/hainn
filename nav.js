@@ -139,9 +139,9 @@ function initNavScroll() {
   });
 }
 
-// Init all
+function loadKaTeX(){var link=document.createElement('link');link.rel='stylesheet';link.href='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css';document.head.appendChild(link);var script=document.createElement('script');script.src='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js';script.onload=function(){var auto=document.createElement('script');auto.src='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js';auto.onload=function(){renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});};document.head.appendChild(auto);};document.head.appendChild(script);} // Init all
 function initPage(activePage, basePath = '') {
-  injectNav(activePage, basePath);
+  injectNav(activePage, basePath); loadKaTeX();
   initStarfield();
   initNebula();
   document.addEventListener('DOMContentLoaded', () => {
