@@ -1,512 +1,512 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Publications - Hai Ngo Ngoc</title>
-  <meta name="description" content="Refereed journal articles, conference proceedings, and preprints by Hai N. Ngo on dynamical black hole mass measurements with ELT/HARMONI, JWST/NIRSpec, and ALMA." />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    .pubs-hero {
-      padding: calc(var(--nav-h) + 80px) 60px 60px;
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-    .pubs-wrap {
-      position: relative;
-      z-index: 1;
-      padding: 0 60px 100px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .filter-group { margin-bottom: 18px; }
-    .filter-legend {
-      font-family: var(--font-mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 10px;
-    }
-    .filter-bar {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .filter-btn {
-      padding: 7px 18px;
-      border-radius: 4px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--text-muted);
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .filter-btn:hover,
-    .filter-btn.active {
-      color: var(--gold);
-      border-color: var(--border-accent);
-      background: rgba(212,168,67,0.06);
-    }
-    .filter-count {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      margin: 26px 0 32px;
-    }
-    .scholar-links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Publications - Hai Ngo Ngoc</title>
+<meta name="description" content="Refereed journal articles, conference proceedings, and preprints by Hai N. Ngo on dynamical black hole mass measurements with ELT/HARMONI, JWST/NIRSpec, and ALMA." />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+.pubs-hero {
+padding: calc(var(--nav-h) + 80px) 60px 60px;
+max-width: 1200px;
+margin: 0 auto;
+position: relative;
+z-index: 1;
+}
+.pubs-wrap {
+position: relative;
+z-index: 1;
+padding: 0 60px 100px;
+max-width: 1200px;
+margin: 0 auto;
+}
+.filter-group { margin-bottom: 18px; }
+.filter-legend {
+font-family: var(--font-mono);
+font-size: 0.62rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(--gold);
+margin-bottom: 10px;
+}
+.filter-bar {
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+}
+.filter-btn {
+padding: 7px 18px;
+border-radius: 4px;
+border: 1px solid var(--border);
+background: transparent;
+color: var(--text-muted);
+font-family: var(--font-mono);
+font-size: 0.7rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+cursor: pointer;
+transition: all 0.2s;
+}
+.filter-btn:hover,
+.filter-btn.active {
+color: var(--gold);
+border-color: var(--border-accent);
+background: rgba(212,168,67,0.06);
+}
+.filter-count {
+font-family: var(--font-mono);
+font-size: 0.7rem;
+color: var(--text-muted);
+margin: 26px 0 32px;
+}
+.scholar-links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
 
-    .pub-full {
-      padding: 28px 0;
-      border-bottom: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: 60px 1fr;
-      gap: 24px;
-      transition: transform 0.2s;
-    }
-    .pub-full:hover { transform: translateX(8px); }
-    .pub-idx {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--gold);
-      padding-top: 4px;
-      text-align: right;
-    }
-    .pub-main-title {
-      font-family: var(--font-display);
-      font-size: 1.08rem;
-      font-weight: 500;
-      color: var(--heading);
-      line-height: 1.4;
-      margin-bottom: 8px;
-    }
-    .pub-full-authors {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-      line-height: 1.6;
-    }
-    .pub-full-authors strong {
-      color: var(--teal);
-      font-weight: 500;
-    }
-    .pub-full-meta {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .pub-journal-name {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      font-style: italic;
-    }
-    .pub-year {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      color: var(--text-muted);
-    }
-    .badge {
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 2px 8px;
-      border-radius: 3px;
-    }
-    .badge-pub { background: rgba(212,168,67,0.1); color: var(--gold); border: 1px solid rgba(212,168,67,0.25); }
-    .badge-submitted { background: rgba(110,206,206,0.08); color: var(--teal); border: 1px solid rgba(110,206,206,0.2); }
-    .badge-prep { background: rgba(150,150,200,0.08); color: #9898C8; border: 1px solid rgba(150,150,200,0.2); }
-    .badge-proceedings { background: rgba(180,120,80,0.1); color: #D4946A; border: 1px solid rgba(180,120,80,0.25); }
-    .badge-topic { background: rgba(255,255,255,0.04); color: var(--text-muted); border: 1px solid var(--border); }
+.pub-full {
+padding: 28px 0;
+border-bottom: 1px solid var(--border);
+display: grid;
+grid-template-columns: 60px 1fr;
+gap: 24px;
+transition: transform 0.2s;
+}
+.pub-full:hover { transform: translateX(8px); }
+.pub-idx {
+font-family: var(--font-mono);
+font-size: 0.72rem;
+color: var(--gold);
+padding-top: 4px;
+text-align: right;
+}
+.pub-main-title {
+font-family: var(--font-display);
+font-size: 1.08rem;
+font-weight: 500;
+color: var(--heading);
+line-height: 1.4;
+margin-bottom: 8px;
+}
+.pub-full-authors {
+font-size: 0.82rem;
+color: var(--text-muted);
+margin-bottom: 8px;
+line-height: 1.6;
+}
+.pub-full-authors strong {
+color: var(--teal);
+font-weight: 500;
+}
+.pub-full-meta {
+display: flex;
+gap: 12px;
+align-items: center;
+flex-wrap: wrap;
+}
+.pub-journal-name {
+font-family: var(--font-mono);
+font-size: 0.7rem;
+color: var(--text-muted);
+font-style: italic;
+}
+.pub-year {
+font-family: var(--font-mono);
+font-size: 0.68rem;
+color: var(--text-muted);
+}
+.badge {
+font-family: var(--font-mono);
+font-size: 0.6rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+padding: 2px 8px;
+border-radius: 3px;
+}
+.badge-pub { background: rgba(212,168,67,0.1); color: var(--gold); border: 1px solid rgba(212,168,67,0.25); }
+.badge-submitted { background: rgba(110,206,206,0.08); color: var(--teal); border: 1px solid rgba(110,206,206,0.2); }
+.badge-prep { background: rgba(150,150,200,0.08); color: #9898C8; border: 1px solid rgba(150,150,200,0.2); }
+.badge-proceedings { background: rgba(180,120,80,0.1); color: #D4946A; border: 1px solid rgba(180,120,80,0.25); }
+.badge-topic { background: rgba(255,255,255,0.04); color: var(--text-muted); border: 1px solid var(--border); }
 
-    .pub-doi-link {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .pub-doi-link:hover { color: var(--gold); }
+.pub-doi-link {
+font-family: var(--font-mono);
+font-size: 0.68rem;
+color: var(--text-muted);
+text-decoration: none;
+transition: color 0.2s;
+}
+.pub-doi-link:hover { color: var(--gold); }
 
-    .pubs-cross { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 60px; }
+.pubs-cross { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 60px; }
 
-    @media (max-width: 768px) {
-      .pubs-hero, .pubs-wrap { padding-left: 24px; padding-right: 24px; }
-      .pub-full { grid-template-columns: 1fr; }
-      .pub-idx { text-align: left; }
-    }
-  </style>
+@media (max-width: 768px) {
+.pubs-hero, .pubs-wrap { padding-left: 24px; padding-right: 24px; }
+.pub-full { grid-template-columns: 1fr; }
+.pub-idx { text-align: left; }
+}
+</style>
 </head>
 <body>
 <div class="page-content">
 
-  <div class="pubs-hero">
-    <div class="section-tag fade-in">Publications</div>
-    <h1 class="section-title fade-in fade-in-delay-1">Research Output</h1>
-    <p class="section-subtitle fade-in fade-in-delay-2">
-      Refereed journal articles, conference proceedings, and manuscripts in preparation, listed in
-      reverse chronological order. Author names in <span style="color:var(--teal)">teal</span> denote
-      Hai N. Ngo.
-    </p>
-    <div class="scholar-links fade-in fade-in-delay-2">
-      <a class="btn btn-outline" href="https://scholar.google.com/citations?user=rnTm16cAAAAJ" target="_blank" rel="noopener">Google Scholar Profile &rarr;</a>
-      <a class="btn btn-ghost" href="research.html">Research Themes &rarr;</a>
-    </div>
-  </div>
+<div class="pubs-hero">
+<div class="section-tag fade-in">Publications</div>
+<h1 class="section-title fade-in fade-in-delay-1">Research Output</h1>
+<p class="section-subtitle fade-in fade-in-delay-2">
+Refereed journal articles, conference proceedings, and manuscripts in preparation, listed in
+reverse chronological order. Author names in <span style="color:var(--teal)">teal</span> denote
+Hai N. Ngo.
+</p>
+<div class="scholar-links fade-in fade-in-delay-2">
+<a class="btn btn-outline" href="https://scholar.google.com/citations?user=rnTm16cAAAAJ" target="_blank" rel="noopener">Google Scholar Profile &rarr;</a>
+<a class="btn btn-ghost" href="research.html">Research Themes &rarr;</a>
+</div>
+</div>
 
-  <div class="pubs-wrap">
+<div class="pubs-wrap">
 
-    <div class="filter-group fade-in">
-      <div class="filter-legend">Filter by status</div>
-      <div class="filter-bar" id="status-bar">
-        <button class="filter-btn active" data-status="all">All</button>
-        <button class="filter-btn" data-status="published">Published</button>
-        <button class="filter-btn" data-status="submitted">Submitted</button>
-        <button class="filter-btn" data-status="prep">In Prep.</button>
-        <button class="filter-btn" data-status="proceedings">Proceedings</button>
-      </div>
-    </div>
+<div class="filter-group fade-in">
+<div class="filter-legend">Filter by status</div>
+<div class="filter-bar" id="status-bar">
+<button class="filter-btn active" data-status="all">All</button>
+<button class="filter-btn" data-status="published">Published</button>
+<button class="filter-btn" data-status="submitted">Submitted</button>
+<button class="filter-btn" data-status="prep">In Prep.</button>
+<button class="filter-btn" data-status="proceedings">Proceedings</button>
+</div>
+</div>
 
-    <div class="filter-group fade-in">
-      <div class="filter-legend">Filter by research theme</div>
-      <div class="filter-bar" id="topic-bar">
-        <button class="filter-btn active" data-topic="all">All Themes</button>
-        <button class="filter-btn" data-topic="nsc">IMBHs &amp; Nuclear Star Clusters</button>
-        <button class="filter-btn" data-topic="dwarf">Dwarf &amp; Low-Mass Galaxies</button>
-        <button class="filter-btn" data-topic="umbh">Ultramassive Black Holes</button>
-      </div>
-    </div>
+<div class="filter-group fade-in">
+<div class="filter-legend">Filter by research theme</div>
+<div class="filter-bar" id="topic-bar">
+<button class="filter-btn active" data-topic="all">All Themes</button>
+<button class="filter-btn" data-topic="nsc">IMBHs &amp; Nuclear Star Clusters</button>
+<button class="filter-btn" data-topic="dwarf">Dwarf &amp; Low-Mass Galaxies</button>
+<button class="filter-btn" data-topic="umbh">Ultramassive Black Holes</button>
+</div>
+</div>
 
-    <div class="filter-count" id="pub-count-note"></div>
+<div class="filter-count" id="pub-count-note"></div>
 
-    <div id="pub-list">
+<div id="pub-list">
 
-      <div class="pub-full fade-in" data-status="published" data-topic="umbh">
-        <span class="pub-idx">01</span>
-        <div>
-          <div class="pub-main-title">Dynamical Evidence for a Billion Solar-Mass Black Hole in the Galaxy NGC 4061 from ALMA <sup>12</sup>CO(2&ndash;1) Kinematics</div>
-          <div class="pub-full-authors">Dieu D. Nguyen, Long Q. T. Nguyen, Elena Gallo, <strong>Hai N. Ngo</strong>, Que T. Le, Fabio Pacucci, Tinh Q. T. Le, Tuan N. Le, Tien H. T. Ho, Sabine Thater, Huy G. Tong, and Nghi K. N. Le</div>
-          <div class="pub-full-meta">
-            <span class="pub-journal-name">The Astrophysical Journal 1005, 94</span>
-            <span class="pub-year">2026</span>
-            <span class="badge badge-pub">Published</span>
-            <span class="badge badge-topic">Ultramassive BHs</span>
-            <a href="https://doi.org/10.3847/1538-4357/ae771c" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
-          </div>
-        </div>
-      </div>
+<div class="pub-full fade-in" data-status="published" data-topic="umbh">
+<span class="pub-idx">01</span>
+<div>
+<div class="pub-main-title">Dynamical Evidence for a Billion Solar-Mass Black Hole in the Galaxy NGC 4061 from ALMA <sup>12</sup>CO(2&ndash;1) Kinematics</div>
+<div class="pub-full-authors">Dieu D. Nguyen, Long Q. T. Nguyen, Elena Gallo, <strong>Hai N. Ngo</strong>, Que T. Le, Fabio Pacucci, Tinh Q. T. Le, Tuan N. Le, Tien H. T. Ho, Sabine Thater, Huy G. Tong, and Nghi K. N. Le</div>
+<div class="pub-full-meta">
+<span class="pub-journal-name">The Astrophysical Journal 1005, 94</span>
+<span class="pub-year">2026</span>
+<span class="badge badge-pub">Published</span>
+<span class="badge badge-topic">Ultramassive BHs</span>
+<a href="https://doi.org/10.3847/1538-4357/ae771c" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
+</div>
+</div>
+</div>
 
-      <div class="pub-full fade-in" data-status="published" data-topic="dwarf">
-        <span class="pub-idx">02</span>
-        <div>
-          <div class="pub-main-title">The Supermassive Black Hole in the Nearby Spiral Galaxy M81: A Robust Mass from JWST/NIRSpec Stellar Dynamics</div>
-          <div class="pub-full-authors">Dieu D. Nguyen, Tuan N. Le, Michele Cappellari, <strong>Hai N. Ngo</strong>, Tinh Q. T. Le, Tien H. T. Ho, Long Q. T. Nguyen, Elena Gallo, Fan Zou, Michele Perna, Niranjan Thatte, and Miguel Pereira-Santaella</div>
-          <div class="pub-full-meta">
-            <span class="pub-journal-name">The Astrophysical Journal 1003, 98</span>
-            <span class="pub-year">2026</span>
-            <span class="badge badge-pub">Published</span>
-            <span class="badge badge-topic">Nearby Galaxies</span>
-            <a href="https://doi.org/10.3847/1538-4357/ae64f0" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
-          </div>
-        </div>
-      </div>
+<div class="pub-full fade-in" data-status="published" data-topic="dwarf">
+<span class="pub-idx">02</span>
+<div>
+<div class="pub-main-title">The Supermassive Black Hole in the Nearby Spiral Galaxy M81: A Robust Mass from JWST/NIRSpec Stellar Dynamics</div>
+<div class="pub-full-authors">Dieu D. Nguyen, Tuan N. Le, Michele Cappellari, <strong>Hai N. Ngo</strong>, Tinh Q. T. Le, Tien H. T. Ho, Long Q. T. Nguyen, Elena Gallo, Fan Zou, Michele Perna, Niranjan Thatte, and Miguel Pereira-Santaella</div>
+<div class="pub-full-meta">
+<span class="pub-journal-name">The Astrophysical Journal 1003, 98</span>
+<span class="pub-year">2026</span>
+<span class="badge badge-pub">Published</span>
+<span class="badge badge-topic">Nearby Galaxies</span>
+<a href="https://doi.org/10.3847/1538-4357/ae64f0" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
+</div>
+</div>
+</div>
 
-      <div class="pub-full fade-in" data-status="published" data-topic="dwarf">
-        <span class="pub-idx">03</span>
-        <div>
-          <div class="pub-main-title">Measuring the Central Dark Mass in NGC 4258 with JWST/NIRSpec Stellar Kinematics</div>
-          <div class="pub-full-authors">Dieu D. Nguyen, <strong>Hai N. Ngo</strong>, Michele Cappellari et al.</div>
-          <div class="pub-full-meta">
-            <span class="pub-journal-name">The Astrophysical Journal 999, 97</span>
-            <span class="pub-year">2026</span>
-            <span class="badge badge-pub">Published</span>
-            <span class="badge badge-topic">Nearby Galaxies</span>
-            <a href="https://doi.org/10.3847/1538-4357/ae32f2" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
-          </div>
-        </div>
-      </div>
+<div class="pub-full fade-in" data-status="published" data-topic="dwarf">
+<span class="pub-idx">03</span>
+<div>
+<div class="pub-main-title">Measuring the Central Dark Mass in NGC 4258 with JWST/NIRSpec Stellar Kinematics</div>
+<div class="pub-full-authors">Dieu D. Nguyen, <strong>Hai N. Ngo</strong>, Michele Cappellari et al.</div>
+<div class="pub-full-meta">
+<span class="pub-journal-name">The Astrophysical Journal 999, 97</span>
+<span class="pub-year">2026</span>
+<span class="badge badge-pub">Published</span>
+<span class="badge badge-topic">Nearby Galaxies</span>
+<a href="https://doi.org/10.3847/1538-4357/ae32f2" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
+</div>
+</div>
+</div>
 
-      <div class="pub-full fade-in" data-status="published" data-topic="umbh">
-        <span class="pub-idx">04</span>
-        <div>
-          <div class="pub-main-title">Extending the Frontier of Spatially Resolved Supermassive Black Hole Mass Measurements to 1 &lt; z &lt; 2: Simulations with ELT/MICADO High-Resolution Mass Models and HARMONI Integral-Field Stellar Kinematics</div>
-          <div class="pub-full-authors">Dieu D. Nguyen, Michele Cappellari, Tinh Q. T. Le, <strong>Hai N. Ngo</strong>, Elena Gallo, Niranjan Thatte, Fan Zou, Tien H. T. Ho, Tuan N. Le, Huy G. Tong, and Miguel Pereira-Santaella</div>
-          <div class="pub-full-meta">
-            <span class="pub-journal-name">Monthly Notices of the Royal Astronomical Society 546, 4</span>
-            <span class="pub-year">2026</span>
-            <span class="badge badge-pub">Published</span>
-            <span class="badge badge-topic">High Redshift</span>
-            <a href="https://doi.org/10.1093/mnras/stag238" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
-          </div>
-        </div>
-      </div>
+<div class="pub-full fade-in" data-status="published" data-topic="umbh">
+<span class="pub-idx">04</span>
+<div>
+<div class="pub-main-title">Extending the Frontier of Spatially Resolved Supermassive Black Hole Mass Measurements to 1 &lt; z &lt; 2: Simulations with ELT/MICADO High-Resolution Mass Models and HARMONI Integral-Field Stellar Kinematics</div>
+<div class="pub-full-authors">Dieu D. Nguyen, Michele Cappellari, Tinh Q. T. Le, <strong>Hai N. Ngo</strong>, Elena Gallo, Niranjan Thatte, Fan Zou, Tien H. T. Ho, Tuan N. Le, Huy G. Tong, and Miguel Pereira-Santaella</div>
+<div class="pub-full-meta">
+<span class="pub-journal-name">Monthly Notices of the Royal Astronomical Society 546, 4</span>
+<span class="pub-year">2026</span>
+<span class="badge badge-pub">Published</span>
+<span class="badge badge-topic">High Redshift</span>
+<a href="https://doi.org/10.1093/mnras/stag238" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
+</div>
+</div>
+</div>
 
-      <div class="pub-full fade-in" data-status="published" data-topic="nsc">
-        <span class="pub-idx">05</span>
-        <div>
-          <div class="pub-main-title">Probing the Effect of the Inner Surface-Brightness Profile of Nuclear Star Clusters on Intermediate-Mass Black Hole Mass Measurements using Mock ELT/MICADO and HARMONI Observations</div>
-          <div class="pub-full-authors">Tinh Q. T. Le, Dieu D. Nguyen, <strong>Hai N. Ngo</strong>, Tien H. T. Ho, Tuan N. Le, and Long Q. T. Nguyen</div>
-          <div class="pub-full-meta">
-            <span class="pub-journal-name">Universe 12(6), 160</span>
-            <span class="pub-year">2026</span>
-            <span class="badge badge-pub">Published</span>
-            <span class="badge badge-topic">IMBHs &amp; NSCs</span>
-            <a href="https://doi.org/10.3390/universe12060160" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
-          </div>
-        </div>
-      </div>
+<div class="pub-full fade-in" data-status="published" data-topic="nsc">
+<span class="pub-idx">05</span>
+<div>
+<div class="pub-main-title">Probing the Effect of the Inner Surface-Brightness Profile of Nuclear Star Clusters on Intermediate-Mass Black Hole Mass Measurements using Mock ELT/MICADO and HARMONI Observations</div>
+<div class="pub-full-authors">Tinh Q. T. Le, Dieu D. Nguyen, <strong>Hai N. Ngo</strong>, Tien H. T. Ho, Tuan N. Le, and Long Q. T. Nguyen</div>
+<div class="pub-full-meta">
+<span class="pub-journal-name">Universe 12(6), 160</span>
+<span class="pub-year">2026</span>
+<span class="badge badge-pub">Published</span>
+<span class="badge badge-topic">IMBHs &amp; NSCs</span>
+<a href="https://doi.org/10.3390/universe12060160" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
+</div>
+</div>
+</div>
 
-      <div class="pub-full fade-in" data-status="published" data-topic="umbh">
-        <span class="pub-idx">06</span>
-        <div>
-          <div class="pub-main-title">Revisiting the Supermassive Black Hole Mass of NGC 7052 using High Spatial Resolution Molecular Gas Observed with ALMA</div>
-          <div class="pub-full-authors"><strong>Hai N. Ngo</strong>, Dieu D. Nguyen, Tinh Q. T. Le, Khue N. H. Ho, Tien H. T. Ho, Elena Gallo, Kristina Nyland, Masatoshi Imanishi, Kouichiro Nakanishi, Que T. Le, Fabio Pacucci, and Eden Girma</div>
-          <div class="pub-full-meta">
-            <span class="pub-journal-name">The Astrophysical Journal 992, 211</span>
-            <span class="pub-year">2025</span>
-            <span class="badge badge-pub">Published</span>
-            <span class="badge badge-topic">Molecular Gas Dynamics</span>
-            <a href="https://doi.org/10.3847/1538-4357/ae0455" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
-          </div>
-        </div>
-      </div>
+<div class="pub-full fade-in" data-status="published" data-topic="umbh">
+<span class="pub-idx">06</span>
+<div>
+<div class="pub-main-title">Revisiting the Supermassive Black Hole Mass of NGC 7052 using High Spatial Resolution Molecular Gas Observed with ALMA</div>
+<div class="pub-full-authors"><strong>Hai N. Ngo</strong>, Dieu D. Nguyen, Tinh Q. T. Le, Khue N. H. Ho, Tien H. T. Ho, Elena Gallo, Kristina Nyland, Masatoshi Imanishi, Kouichiro Nakanishi, Que T. Le, Fabio Pacucci, and Eden Girma</div>
+<div class="pub-full-meta">
+<span class="pub-journal-name">The Astrophysical Journal 992, 211</span>
+<span class="pub-year">2025</span>
+<span class="badge badge-pub">Published</span>
+<span class="badge badge-topic">Molecular Gas Dynamics</span>
+<a href="https://doi.org/10.3847/1538-4357/ae0455" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
+</div>
+</div>
+</div>
 
-      <div class="pub-full fade-in" data-status="published" data-topic="nsc">
-        <span class="pub-idx">07</span>
-        <div>
-          <div class="pub-main-title">Detecting Intermediate-Mass Black Holes out to 20 Mpc with ELT/HARMONI: The Case of FCC 119</div>
-          <div class="pub-full-authors"><strong>Hai N. Ngo</strong>, Dieu D. Nguyen, Tinh Q. T. Le, Tien H. T. Ho, Truong N. Nguyen, and Trung H. Dang</div>
-          <div class="pub-full-meta">
-            <span class="pub-journal-name">Universe 11(11), 360</span>
-            <span class="pub-year">2025</span>
-            <span class="badge badge-pub">Published</span>
-            <span class="badge badge-topic">IMBHs &amp; NSCs</span>
-            <a href="https://doi.org/10.3390/universe11110360" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
-          </div>
-        </div>
-      </div>
+<div class="pub-full fade-in" data-status="published" data-topic="nsc">
+<span class="pub-idx">07</span>
+<div>
+<div class="pub-main-title">Detecting Intermediate-Mass Black Holes out to 20 Mpc with ELT/HARMONI: The Case of FCC 119</div>
+<div class="pub-full-authors"><strong>Hai N. Ngo</strong>, Dieu D. Nguyen, Tinh Q. T. Le, Tien H. T. Ho, Truong N. Nguyen, and Trung H. Dang</div>
+<div class="pub-full-meta">
+<span class="pub-journal-name">Universe 11(11), 360</span>
+<span class="pub-year">2025</span>
+<span class="badge badge-pub">Published</span>
+<span class="badge badge-topic">IMBHs &amp; NSCs</span>
+<a href="https://doi.org/10.3390/universe11110360" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
+</div>
+</div>
+</div>
 
-      <div class="pub-full fade-in" data-status="published" data-topic="nsc">
-        <span class="pub-idx">08</span>
-        <div>
-          <div class="pub-main-title">Simulating Intermediate-Mass Black Hole Mass Measurements for a Sample of Galaxies with Nuclear Star Clusters using ELT/HARMONI High Spatial Resolution Integral-Field Stellar Kinematics</div>
-          <div class="pub-full-authors">Dieu D. Nguyen, Michele Cappellari, <strong>Hai N. Ngo</strong> et al.</div>
-          <div class="pub-full-meta">
-            <span class="pub-journal-name">The Astronomical Journal</span>
-            <span class="pub-year">2025</span>
-            <span class="badge badge-pub">Published</span>
-            <span class="badge badge-topic">IMBHs &amp; NSCs</span>
-            <a href="https://doi.org/10.3847/1538-3881/ade9ba" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
-          </div>
-        </div>
-      </div>
+<div class="pub-full fade-in" data-status="published" data-topic="nsc">
+<span class="pub-idx">08</span>
+<div>
+<div class="pub-main-title">Simulating Intermediate-Mass Black Hole Mass Measurements for a Sample of Galaxies with Nuclear Star Clusters using ELT/HARMONI High Spatial Resolution Integral-Field Stellar Kinematics</div>
+<div class="pub-full-authors">Dieu D. Nguyen, Michele Cappellari, <strong>Hai N. Ngo</strong> et al.</div>
+<div class="pub-full-meta">
+<span class="pub-journal-name">The Astronomical Journal</span>
+<span class="pub-year">2025</span>
+<span class="badge badge-pub">Published</span>
+<span class="badge badge-topic">IMBHs &amp; NSCs</span>
+<a href="https://doi.org/10.3847/1538-3881/ade9ba" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
+</div>
+</div>
+</div>
 
-      <div class="pub-full fade-in" data-status="published" data-topic="dwarf">
-        <span class="pub-idx">09</span>
-        <div>
-          <div class="pub-main-title">Supermassive Black Hole Mass Measurement in the Spiral Galaxy NGC 4736 using JWST/NIRSpec Stellar Kinematics</div>
-          <div class="pub-full-authors">Dieu D. Nguyen, <strong>Hai N. Ngo</strong>, Tinh Q. T. Le, Alister W. Graham, Roberto Soria, Igor V. Chilingarian, Niranjan Thatte, N. T. Phuong, Thiem Hoang, Miguel Pereira-Santaella, Mark Durre, Diep N. Pham, Le Ngoc Tram, Nguyen B. Ngoc, and Ng&acirc;n L&ecirc;</div>
-          <div class="pub-full-meta">
-            <span class="pub-journal-name">Astronomy &amp; Astrophysics 698, L9</span>
-            <span class="pub-year">2025</span>
-            <span class="badge badge-pub">Published</span>
-            <span class="badge badge-topic">Nearby Galaxies</span>
-            <a href="https://doi.org/10.1051/0004-6361/202554672" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
-          </div>
-        </div>
-      </div>
+<div class="pub-full fade-in" data-status="published" data-topic="dwarf">
+<span class="pub-idx">09</span>
+<div>
+<div class="pub-main-title">Supermassive Black Hole Mass Measurement in the Spiral Galaxy NGC 4736 using JWST/NIRSpec Stellar Kinematics</div>
+<div class="pub-full-authors">Dieu D. Nguyen, <strong>Hai N. Ngo</strong>, Tinh Q. T. Le, Alister W. Graham, Roberto Soria, Igor V. Chilingarian, Niranjan Thatte, N. T. Phuong, Thiem Hoang, Miguel Pereira-Santaella, Mark Durre, Diep N. Pham, Le Ngoc Tram, Nguyen B. Ngoc, and Ng&acirc;n L&ecirc;</div>
+<div class="pub-full-meta">
+<span class="pub-journal-name">Astronomy &amp; Astrophysics 698, L9</span>
+<span class="pub-year">2025</span>
+<span class="badge badge-pub">Published</span>
+<span class="badge badge-topic">Nearby Galaxies</span>
+<a href="https://doi.org/10.1051/0004-6361/202554672" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
+</div>
+</div>
+</div>
 
-      <div class="pub-full fade-in" data-status="published" data-topic="umbh">
-        <span class="pub-idx">10</span>
-        <div>
-          <div class="pub-main-title">Simulating Supermassive Black Hole Mass Measurements for a Sample of Ultramassive Galaxies using ELT/HARMONI High Spatial Resolution Integral-Field Stellar Kinematics</div>
-          <div class="pub-full-authors">Dieu D. Nguyen, Michele Cappellari, and Miguel Pereira-Santaella</div>
-          <div class="pub-full-meta">
-            <span class="pub-journal-name">Monthly Notices of the Royal Astronomical Society</span>
-            <span class="pub-year">2023</span>
-            <span class="badge badge-pub">Published</span>
-            <span class="badge badge-topic">Ultramassive BHs</span>
-            <a href="https://doi.org/10.1093/mnras/stad2860" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
-          </div>
-        </div>
-      </div>
+<div class="pub-full fade-in" data-status="published" data-topic="umbh">
+<span class="pub-idx">10</span>
+<div>
+<div class="pub-main-title">Simulating Supermassive Black Hole Mass Measurements for a Sample of Ultramassive Galaxies using ELT/HARMONI High Spatial Resolution Integral-Field Stellar Kinematics</div>
+<div class="pub-full-authors">Dieu D. Nguyen, Michele Cappellari, and Miguel Pereira-Santaella</div>
+<div class="pub-full-meta">
+<span class="pub-journal-name">Monthly Notices of the Royal Astronomical Society</span>
+<span class="pub-year">2023</span>
+<span class="badge badge-pub">Published</span>
+<span class="badge badge-topic">Ultramassive BHs</span>
+<a href="https://doi.org/10.1093/mnras/stad2860" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
+</div>
+</div>
+</div>
 
-      <div class="pub-full fade-in" data-status="published" data-topic="other">
-        <span class="pub-idx">11</span>
-        <div>
-          <div class="pub-main-title">First Detection of an Exoplanet Transit in Vietnam</div>
-          <div class="pub-full-authors">Tue Nguyen-Van, <strong>Hai Ngo-Ngoc</strong>, Yuya Hirano, Yoichi Itoh, Thuy Le-Quang, An Nguyen-Khanh, Felix Wood, John Hoang, D. N. Hoang, Thierry Montmerle, and Quang Nguyen-Luong</div>
-          <div class="pub-full-meta">
-            <span class="pub-journal-name">Stars and Galaxies 6, 7</span>
-            <span class="pub-year">2023</span>
-            <span class="badge badge-pub">Published</span>
-            <span class="badge badge-topic">Exoplanets</span>
-            <a href="https://doi.org/10.32231/starsandgalaxies.6.0_7" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
-          </div>
-        </div>
-      </div>
+<div class="pub-full fade-in" data-status="published" data-topic="other">
+<span class="pub-idx">11</span>
+<div>
+<div class="pub-main-title">First Detection of an Exoplanet Transit in Vietnam</div>
+<div class="pub-full-authors">Tue Nguyen-Van, <strong>Hai Ngo-Ngoc</strong>, Yuya Hirano, Yoichi Itoh, Thuy Le-Quang, An Nguyen-Khanh, Felix Wood, John Hoang, D. N. Hoang, Thierry Montmerle, and Quang Nguyen-Luong</div>
+<div class="pub-full-meta">
+<span class="pub-journal-name">Stars and Galaxies 6, 7</span>
+<span class="pub-year">2023</span>
+<span class="badge badge-pub">Published</span>
+<span class="badge badge-topic">Exoplanets</span>
+<a href="https://doi.org/10.32231/starsandgalaxies.6.0_7" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
+</div>
+</div>
+</div>
 
-      <div class="pub-full fade-in" data-status="proceedings" data-topic="umbh">
-        <span class="pub-idx">12</span>
-        <div>
-          <div class="pub-main-title">ELT High Spatial Resolution IFS Survey of Ultramassive Galaxies: Observational Strategy and First Simulated Results on Stellar Kinematics and SMBH Mass Measurements</div>
-          <div class="pub-full-authors"><strong>Hai N. Ngo</strong>, Dieu D. Nguyen, Michele Cappellari, and Miguel Pereira-Santaella</div>
-          <div class="pub-full-meta">
-            <span class="pub-journal-name">Windows on the Universe (conference proceedings)</span>
-            <span class="badge badge-proceedings">Proceeding</span>
-            <span class="badge badge-topic">Ultramassive BHs</span>
-            <a href="https://doi.org/10.58027/aqp1-1s17.295" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
-          </div>
-        </div>
-      </div>
+<div class="pub-full fade-in" data-status="proceedings" data-topic="umbh">
+<span class="pub-idx">12</span>
+<div>
+<div class="pub-main-title">ELT High Spatial Resolution IFS Survey of Ultramassive Galaxies: Observational Strategy and First Simulated Results on Stellar Kinematics and SMBH Mass Measurements</div>
+<div class="pub-full-authors"><strong>Hai N. Ngo</strong>, Dieu D. Nguyen, Michele Cappellari, and Miguel Pereira-Santaella</div>
+<div class="pub-full-meta">
+<span class="pub-journal-name">Windows on the Universe (conference proceedings)</span>
+<span class="badge badge-proceedings">Proceeding</span>
+<span class="badge badge-topic">Ultramassive BHs</span>
+<a href="https://doi.org/10.58027/aqp1-1s17.295" class="pub-doi-link" target="_blank" rel="noopener">doi &nearr;</a>
+</div>
+</div>
+</div>
 
-      <div class="pub-full fade-in" data-status="submitted" data-topic="nsc">
-        <span class="pub-idx">13</span>
-        <div>
-          <div class="pub-main-title">Extending Simulations of Intermediate-Mass Black Hole Mass Measurements to the Virgo Cluster using ELT/HARMONI High-Resolution Integral-Field Stellar Kinematics</div>
-          <div class="pub-full-authors"><strong>Hai N. Ngo</strong>, Dieu D. Nguyen et al.</div>
-          <div class="pub-full-meta">
-            <span class="badge badge-submitted">Submitted</span>
-            <span class="badge badge-topic">IMBHs &amp; NSCs</span>
-            <a href="https://arxiv.org/abs/2509.03364" class="pub-doi-link" target="_blank" rel="noopener">arXiv:2509.03364 &nearr;</a>
-          </div>
-        </div>
-      </div>
+<div class="pub-full fade-in" data-status="submitted" data-topic="nsc">
+<span class="pub-idx">13</span>
+<div>
+<div class="pub-main-title">Extending Simulations of Intermediate-Mass Black Hole Mass Measurements to the Virgo Cluster using ELT/HARMONI High-Resolution Integral-Field Stellar Kinematics</div>
+<div class="pub-full-authors"><strong>Hai N. Ngo</strong>, Dieu D. Nguyen et al.</div>
+<div class="pub-full-meta">
+<span class="badge badge-submitted">Submitted</span>
+<span class="badge badge-topic">IMBHs &amp; NSCs</span>
+<a href="https://arxiv.org/abs/2509.03364" class="pub-doi-link" target="_blank" rel="noopener">arXiv:2509.03364 &nearr;</a>
+</div>
+</div>
+</div>
 
-      <div class="pub-full fade-in" data-status="prep" data-topic="umbh">
-        <span class="pub-idx">14</span>
-        <div>
-          <div class="pub-main-title">Resolving One-Tenth of the Sphere-of-Influence Radius: The M87 Supermassive Black Hole Mass from JWST/NIRSpec Stellar Kinematics</div>
-          <div class="pub-full-authors"><strong>Hai N. Ngo</strong>, Dieu D. Nguyen, Michele Cappellari et al.</div>
-          <div class="pub-full-meta">
-            <span class="badge badge-prep">In Prep.</span>
-            <span class="badge badge-topic">Ultramassive BHs</span>
-          </div>
-        </div>
-      </div>
+<div class="pub-full fade-in" data-status="prep" data-topic="umbh">
+<span class="pub-idx">14</span>
+<div>
+<div class="pub-main-title">Resolving One-Tenth of the Sphere-of-Influence Radius: The M87 Supermassive Black Hole Mass from JWST/NIRSpec Stellar Kinematics</div>
+<div class="pub-full-authors"><strong>Hai N. Ngo</strong>, Dieu D. Nguyen, Michele Cappellari et al.</div>
+<div class="pub-full-meta">
+<span class="badge badge-prep">In Prep.</span>
+<span class="badge badge-topic">Ultramassive BHs</span>
+</div>
+</div>
+</div>
 
-      <div class="pub-full fade-in" data-status="prep" data-topic="umbh">
-        <span class="pub-idx">15</span>
-        <div>
-          <div class="pub-main-title">A High-Precision Mass Measurement of the Central Black Hole in the Massive Elliptical NGC 2513 with ALMA Molecular Gas Dynamics</div>
-          <div class="pub-full-authors">Shelley-Anne Harrisberg, Sabine Thater, Dieu D. Nguyen, Alvaro Hacar, and <strong>Hai N. Ngo</strong></div>
-          <div class="pub-full-meta">
-            <span class="badge badge-prep">In Prep.</span>
-            <span class="badge badge-topic">Molecular Gas Dynamics</span>
-          </div>
-        </div>
-      </div>
+<div class="pub-full fade-in" data-status="prep" data-topic="umbh">
+<span class="pub-idx">15</span>
+<div>
+<div class="pub-main-title">A High-Precision Mass Measurement of the Central Black Hole in the Massive Elliptical NGC 2513 with ALMA Molecular Gas Dynamics</div>
+<div class="pub-full-authors">Shelley-Anne Harrisberg, Sabine Thater, Dieu D. Nguyen, Alvaro Hacar, and <strong>Hai N. Ngo</strong></div>
+<div class="pub-full-meta">
+<span class="badge badge-prep">In Prep.</span>
+<span class="badge badge-topic">Molecular Gas Dynamics</span>
+</div>
+</div>
+</div>
 
-    </div><!-- /pub-list -->
+</div><!-- /pub-list -->
 
-    <div class="pubs-cross fade-in">
-      <a href="research.html" class="btn btn-outline">Research Themes &rarr;</a>
-      <a href="research.html#proposals" class="btn btn-ghost">Accepted Proposals &rarr;</a>
-      <a href="cv.html" class="btn btn-ghost">Curriculum Vitae &rarr;</a>
-      <a href="team.html" class="btn btn-ghost">Research Group &rarr;</a>
-    </div>
-  </div>
+<div class="pubs-cross fade-in">
+<a href="research.html" class="btn btn-outline">Research Themes &rarr;</a>
+<a href="research.html#proposals" class="btn btn-ghost">Accepted Proposals &rarr;</a>
+<a href="cv.html" class="btn btn-ghost">Curriculum Vitae &rarr;</a>
+<a href="team.html" class="btn btn-ghost">Research Group &rarr;</a>
+</div>
+</div>
 
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-copy">&copy; 2026 Hai Ngo Ngoc &middot; NDDieu Group</div>
-      <div class="footer-copy">USAC Astrophysics Research Group</div>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="outreach/index.html">Outreach</a>
-        <a href="cv.html">CV</a>
-        <a href="team.html">Team</a>
-      </div>
-    </div>
-  </footer>
+<footer>
+<div class="footer-inner">
+<div class="footer-copy">&copy; 2026 Hai Ngo Ngoc &middot; Galaxy Dynamics Lab</div>
+<div class="footer-copy">USAC Astrophysics Research Group</div>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="research.html">Research</a>
+<a href="publications.html">Publications</a>
+<a href="outreach/index.html">Outreach</a>
+<a href="cv.html">CV</a>
+<a href="team.html">Team</a>
+</div>
+</div>
+</footer>
 
 </div>
 <script src="nav.js"></script>
 <script>
-  initPage('publications');
+initPage('publications');
 
-  var curStatus = 'all';
-  var curTopic = 'all';
+var curStatus = 'all';
+var curTopic = 'all';
 
-  function labelFor(el) { return el.textContent.trim(); }
+function labelFor(el) { return el.textContent.trim(); }
 
-  function applyFilters() {
-    var items = document.querySelectorAll('.pub-full');
-    var visible = 0;
-    items.forEach(function (p) {
-      var okStatus = (curStatus === 'all') || (p.dataset.status === curStatus);
-      var topics = (p.dataset.topic || '').split(' ');
-      var okTopic = (curTopic === 'all') || (topics.indexOf(curTopic) !== -1);
-      if (okStatus && okTopic) {
-        p.style.display = 'grid';
-        visible++;
-        p.querySelector('.pub-idx').textContent = (visible < 10 ? '0' : '') + visible;
-        p.style.borderTop = (visible === 1) ? '1px solid var(--border)' : 'none';
-      } else {
-        p.style.display = 'none';
-      }
-    });
-    var note = document.getElementById('pub-count-note');
-    if (note) {
-      note.textContent = visible + (visible === 1 ? ' item' : ' items') + ' shown of ' + items.length + ' total';
-    }
-  }
+function applyFilters() {
+var items = document.querySelectorAll('.pub-full');
+var visible = 0;
+items.forEach(function (p) {
+var okStatus = (curStatus === 'all') || (p.dataset.status === curStatus);
+var topics = (p.dataset.topic || '').split(' ');
+var okTopic = (curTopic === 'all') || (topics.indexOf(curTopic) !== -1);
+if (okStatus && okTopic) {
+p.style.display = 'grid';
+visible++;
+p.querySelector('.pub-idx').textContent = (visible < 10 ? '0' : '') + visible;
+p.style.borderTop = (visible === 1) ? '1px solid var(--border)' : 'none';
+} else {
+p.style.display = 'none';
+}
+});
+var note = document.getElementById('pub-count-note');
+if (note) {
+note.textContent = visible + (visible === 1 ? ' item' : ' items') + ' shown of ' + items.length + ' total';
+}
+}
 
-  function bindBar(barId, key) {
-    var bar = document.getElementById(barId);
-    if (!bar) return;
-    bar.addEventListener('click', function (e) {
-      var btn = e.target.closest('.filter-btn');
-      if (!btn) return;
-      bar.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      if (key === 'status') { curStatus = btn.dataset.status; } else { curTopic = btn.dataset.topic; }
-      applyFilters();
-      var params = new URLSearchParams();
-      if (curStatus !== 'all') params.set('status', curStatus);
-      if (curTopic !== 'all') params.set('topic', curTopic);
-      var qs = params.toString();
-      history.replaceState(null, '', qs ? ('?' + qs) : location.pathname);
-    });
-  }
+function bindBar(barId, key) {
+var bar = document.getElementById(barId);
+if (!bar) return;
+bar.addEventListener('click', function (e) {
+var btn = e.target.closest('.filter-btn');
+if (!btn) return;
+bar.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+btn.classList.add('active');
+if (key === 'status') { curStatus = btn.dataset.status; } else { curTopic = btn.dataset.topic; }
+applyFilters();
+var params = new URLSearchParams();
+if (curStatus !== 'all') params.set('status', curStatus);
+if (curTopic !== 'all') params.set('topic', curTopic);
+var qs = params.toString();
+history.replaceState(null, '', qs ? ('?' + qs) : location.pathname);
+});
+}
 
-  function initFromUrl() {
-    var params = new URLSearchParams(location.search);
-    var s = params.get('status');
-    var t = params.get('topic');
-    if (s) {
-      var sb = document.querySelector('#status-bar .filter-btn[data-status="' + s + '"]');
-      if (sb) {
-        document.querySelectorAll('#status-bar .filter-btn').forEach(function (b) { b.classList.remove('active'); });
-        sb.classList.add('active');
-        curStatus = s;
-      }
-    }
-    if (t) {
-      var tb = document.querySelector('#topic-bar .filter-btn[data-topic="' + t + '"]');
-      if (tb) {
-        document.querySelectorAll('#topic-bar .filter-btn').forEach(function (b) { b.classList.remove('active'); });
-        tb.classList.add('active');
-        curTopic = t;
-      }
-    }
-  }
+function initFromUrl() {
+var params = new URLSearchParams(location.search);
+var s = params.get('status');
+var t = params.get('topic');
+if (s) {
+var sb = document.querySelector('#status-bar .filter-btn[data-status="' + s + '"]');
+if (sb) {
+document.querySelectorAll('#status-bar .filter-btn').forEach(function (b) { b.classList.remove('active'); });
+sb.classList.add('active');
+curStatus = s;
+}
+}
+if (t) {
+var tb = document.querySelector('#topic-bar .filter-btn[data-topic="' + t + '"]');
+if (tb) {
+document.querySelectorAll('#topic-bar .filter-btn').forEach(function (b) { b.classList.remove('active'); });
+tb.classList.add('active');
+curTopic = t;
+}
+}
+}
 
-  bindBar('status-bar', 'status');
-  bindBar('topic-bar', 'topic');
-  initFromUrl();
-  applyFilters();
+bindBar('status-bar', 'status');
+bindBar('topic-bar', 'topic');
+initFromUrl();
+applyFilters();
 </script>
 </body>
 </html>
