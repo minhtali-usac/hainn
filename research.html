@@ -189,6 +189,16 @@ margin-bottom: 6px;
 .res-cross-wrap { position: relative; z-index: 1; padding: 0 60px 110px; max-width: 1200px; margin: 0 auto; }
 .res-cross { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
 
+.theme-details { border-top: 1px solid var(--border); margin: 0 0 26px; }
+.theme-details summary { list-style: none; cursor: pointer; font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--gold); padding: 14px 0 2px; display: inline-flex; align-items: center; gap: 9px; }
+.theme-details summary::-webkit-details-marker { display: none; }
+.theme-details summary::after { content: '+'; font-size: 0.95rem; line-height: 1; color: var(--teal); }
+.theme-details[open] summary::after { content: '−'; }
+.theme-detail-body { padding: 6px 0 10px; }
+.theme-detail-body p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.95; margin-bottom: 16px; }
+.theme-detail-body p.detail-label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
+.theme-detail-body p:last-child { margin-bottom: 0; }
+
 @media (max-width: 900px) {
 .project-block, .project-block.flip { grid-template-columns: 1fr; direction: ltr; }
 .project-img-wrap { min-height: 240px; }
@@ -226,33 +236,47 @@ We measure central black&#8209;hole masses across the full mass spectrum &mdash;
 
 <div class="research-projects-wrap">
 
-<!-- PROJECT 1 -->
-<div class="project-block fade-in" id="star-clusters">
+<!-- THEME 01 -->
+<div class="project-block fade-in" id="bh-formation-growth">
 <div class="project-img-wrap">
-<img src="assets/img/cluster.jpg" alt="Nuclear star cluster"
+<img src="assets/img/cluster.jpg" alt="Black hole seed formation"
 onerror="this.style.background='linear-gradient(160deg,#071828,#122040)'; this.style.display='block';" />
 <div class="project-img-credit">Credit: NASA/ESA HST</div>
 </div>
 <div class="project-content">
 <div class="section-tag" style="margin-bottom:16px">01</div>
-<h2>Intermediate-Mass Black Holes in Nuclear Star Clusters</h2>
+<h2>Black Hole Formation and Growth</h2>
 <p>
-Nuclear star clusters (NSCs) are among the densest stellar systems known and sometimes coexist with central black holes. We combine end&#8209;to&#8209;end ELT/HARMONI simulations with dynamical modelling of resolved stellar kinematics to measure black&#8209;hole masses and discriminate NSC formation channels (in&#8209;situ star formation versus cluster inspiral).
+Where do the seeds of today's massive black holes come from, and how do they grow into the giants we observe? I use precise dynamical masses of nearby black holes as fossil records of their formation and growth history.
 </p>
 <div class="project-tags">
-<span class="project-tag highlight">ELT / HARMONI</span>
-<span class="project-tag">Integral-Field Spectroscopy</span>
-<span class="project-tag">Dynamical Modelling</span>
-<span class="project-tag">Low-Mass Early-Type Galaxies</span>
+<span class="project-tag highlight">Seeding Channels</span>
+<span class="project-tag">Accretion &amp; Mergers</span>
+<span class="project-tag">High-z Quasars</span>
+<span class="project-tag">Occupation Fraction</span>
 </div>
+<details class="theme-details">
+<summary>Details</summary>
+<div class="theme-detail-body">
+<p class="detail-label">Overview</p>
+<p>
+Essentially every massive galaxy hosts a central black hole, yet the origin of these objects remains one of the central open problems in astrophysics. Three families of seeding channels are usually considered: light seeds of order 10<sup>2</sup> M<sub>&odot;</sub> left behind by the first generation of metal-free stars, heavy seeds of 10<sup>4</sup>&ndash;10<sup>5</sup> M<sub>&odot;</sub> produced by the direct collapse of pristine gas clouds, and intermediate seeds built by runaway stellar and stellar-remnant mergers in the dense cores of young clusters. Each scenario predicts a distinct black hole occupation fraction and mass distribution in low-mass galaxies today, and each is subsequently reshaped by gas accretion and by galaxy&ndash;galaxy mergers. The existence of billion-solar-mass quasars already at z &gt; 6 demands extremely rapid early growth, while the black holes in nearby dwarf galaxies and star clusters are the least-evolved relics available and therefore retain the clearest memory of the seeds themselves.
+</p>
+<p class="detail-label">My Research</p>
+<p>
+My work attacks this problem from the observational side by building homogeneous, dynamically measured black hole masses across the whole accessible mass range. Using JWST/NIRSpec and NIRCam data, ALMA molecular-gas observations, and end-to-end simulations of ELT instruments, I measure masses in systems from dwarf galaxies and nuclear star clusters up to giant ellipticals, so that the low-mass end of the local mass function &mdash; the regime that discriminates most strongly between seeding channels &mdash; can be populated with reliable measurements rather than upper limits.
+</p>
+</div>
+</details>
 <div class="project-links">
-<a href="publications.html?topic=nsc" class="btn btn-outline">Related Publications &rarr;</a>
+<a href="research-bh-formation-growth.html" class="btn btn-outline">Detail Description &rarr;</a>
+<a href="publications.html" class="btn btn-ghost">Related Publications &rarr;</a>
 </div>
 </div>
 </div>
 
-<!-- PROJECT 2 -->
-<div class="project-block flip fade-in" id="dwarf-galaxies">
+<!-- THEME 02 -->
+<div class="project-block flip fade-in" id="bh-mass-spectrum">
 <div class="project-img-wrap">
 <img src="assets/img/dwarf.jpg" alt="Dwarf galaxy"
 onerror="this.style.background='linear-gradient(160deg,#0a1020,#12204a)'; this.style.display='block';" />
@@ -260,24 +284,39 @@ onerror="this.style.background='linear-gradient(160deg,#0a1020,#12204a)'; this.s
 </div>
 <div class="project-content">
 <div class="section-tag" style="margin-bottom:16px">02</div>
-<h2>Massive Black Holes in Dwarf and Low-Mass Galaxies</h2>
+<h2>Massive Black Holes Across the Mass Spectrum</h2>
 <p>
-We extend dynamical black&#8209;hole mass measurements into the dwarf and low&#8209;mass regime using ELT stellar kinematics and ALMA molecular&#8209;gas dynamics, where the sphere of influence subtends only a few tens of milliarcseconds.
+Measuring black hole masses continuously from the intermediate-mass regime in dwarf galaxies and star clusters up to the supermassive black holes of giant ellipticals, with a single, consistent dynamical approach.
 </p>
 <div class="project-tags">
-<span class="project-tag highlight">ELT / HARMONI</span>
-<span class="project-tag highlight">ALMA</span>
-<span class="project-tag">M<sub>BH</sub>&ndash;&sigma; Relation</span>
-<span class="project-tag">Molecular Gas Dynamics</span>
+<span class="project-tag highlight">Intermediate-Mass Black Holes</span>
+<span class="project-tag">Supermassive Black Holes</span>
+<span class="project-tag">JWST / NIRSpec</span>
+<span class="project-tag">ALMA</span>
+<span class="project-tag">ELT / HARMONI</span>
 </div>
+<details class="theme-details">
+<summary>Details</summary>
+<div class="theme-detail-body">
+<p class="detail-label">Overview</p>
+<p>
+Known massive black holes span roughly eight decades in mass, but the census is far from uniform. The interval between about 10<sup>2</sup> and 10<sup>5</sup> M<sub>&odot;</sub> &mdash; the intermediate-mass black holes &mdash; remains almost empty, not necessarily because such objects are rare but because their gravitational sphere of influence subtends only a few tens of milliarcseconds even in the nearest dwarf galaxies, nuclear star clusters and globular clusters. At the opposite extreme, the most massive black holes in brightest cluster galaxies probe the limits of accretion and merger-driven growth. Because different mass ranges are traditionally studied with different techniques &mdash; stellar dynamics, cold-gas dynamics, reverberation mapping, single-epoch AGN scaling &mdash; systematic offsets between methods can easily masquerade as physical structure in the mass function. Applying one carefully controlled dynamical framework across the full spectrum is therefore essential.
+</p>
+<p class="detail-label">My Research</p>
+<p>
+I am developing a Python pipeline that separates the AGN continuum from the underlying stellar light in JWST/NIRSpec and NIRCam data, which is the key step for extracting uncontaminated stellar kinematics in active nuclei, and I lead supermassive black hole mass measurements in NGC 4258 and M87. In parallel I model ALMA datacubes with KinMS to determine black hole masses in NGC 7052, NGC 4061, NGC 2513 and Circinus. On the intermediate-mass side, I simulate mock HARMONI integral-field datacubes and MICADO imaging of dwarf galaxies, nuclear star clusters and globular clusters, recover the input masses through dynamical modelling, and map out where the ELT will and will not be able to detect intermediate-mass black holes within about 20 Mpc.
+</p>
+</div>
+</details>
 <div class="project-links">
-<a href="publications.html?topic=dwarf" class="btn btn-outline">Related Publications &rarr;</a>
+<a href="research-bh-mass-spectrum.html" class="btn btn-outline">Detail Description &rarr;</a>
+<a href="publications.html" class="btn btn-ghost">Related Publications &rarr;</a>
 </div>
 </div>
 </div>
 
-<!-- PROJECT 3 -->
-<div class="project-block fade-in" id="smbh-evolution">
+<!-- THEME 03 -->
+<div class="project-block fade-in" id="bh-galaxy-coevolution">
 <div class="project-img-wrap">
 <img src="assets/img/merger.jpg" alt="Merging galaxies"
 onerror="this.style.background='linear-gradient(160deg,#0c0c20,#1a1a40)'; this.style.display='block';" />
@@ -285,19 +324,149 @@ onerror="this.style.background='linear-gradient(160deg,#0c0c20,#1a1a40)'; this.s
 </div>
 <div class="project-content">
 <div class="section-tag" style="margin-bottom:16px">03</div>
-<h2>Ultramassive Black Holes and the High-Mass End of the Scaling Relations</h2>
+<h2>Black Hole and Galaxy Coevolution</h2>
 <p>
-At the highest galaxy masses we test for departures from canonical M<sub>BH</sub>&ndash;&sigma; and M<sub>BH</sub>&ndash;L relations, investigating whether ultramassive black holes arise from dry&#8209;merger driven assembly or alternate growth pathways.
+Black holes and their host galaxies appear to grow together. I test how tightly that coupling holds across morphology, mass and environment using dynamical masses paired with detailed host measurements.
 </p>
 <div class="project-tags">
-<span class="project-tag highlight">ELT / HARMONI</span>
-<span class="project-tag highlight">ALMA</span>
-<span class="project-tag">Ultramassive Black Holes</span>
-<span class="project-tag">Scaling Relations</span>
-<span class="project-tag">Dry Mergers</span>
+<span class="project-tag highlight">AGN Feedback</span>
+<span class="project-tag">Quenching</span>
+<span class="project-tag">Galaxy Assembly</span>
+<span class="project-tag">Cosmic Noon</span>
 </div>
+<details class="theme-details">
+<summary>Details</summary>
+<div class="theme-detail-body">
+<p class="detail-label">Overview</p>
+<p>
+The energy released by an accreting black hole is far larger than the binding energy of its host galaxy, which makes it plausible that black holes regulate the star formation and gas content of the systems in which they live. This idea underpins the feedback prescriptions of essentially all modern cosmological simulations, and it is invoked to explain the quenching of massive galaxies and the shape of the galaxy stellar mass function. The observational picture, however, is still ambiguous: correlations between black hole mass and host properties could reflect genuine causal coupling, or they could emerge statistically from repeated mergers averaging over initially uncorrelated distributions. Distinguishing these possibilities requires accurate black hole masses in galaxies of many different types, together with equally careful measurements of the stellar structure, kinematics and stellar populations of the hosts.
+</p>
+<p class="detail-label">My Research</p>
+<p>
+For every galaxy in my samples I combine the dynamical black hole mass with a full structural and kinematic description of the host: multi-Gaussian expansion models of the surface photometry, stellar population and kinematic measurements from integral-field spectroscopy, and molecular-gas distributions from ALMA. This lets me look for systematic differences between quiescent ellipticals, gas-rich spirals and dwarfs. I am also quantifying, through simulated HARMONI observations, how far beyond 100 Mpc dynamical mass measurements can be pushed, since reaching those distances begins to probe the era when black hole and galaxy growth were most vigorous.
+</p>
+</div>
+</details>
 <div class="project-links">
-<a href="publications.html?topic=umbh" class="btn btn-outline">Related Publications &rarr;</a>
+<a href="research-bh-galaxy-coevolution.html" class="btn btn-outline">Detail Description &rarr;</a>
+<a href="publications.html" class="btn btn-ghost">Related Publications &rarr;</a>
+</div>
+</div>
+</div>
+
+<!-- THEME 04 -->
+<div class="project-block flip fade-in" id="bh-scaling-relations">
+<div class="project-img-wrap">
+<img src="assets/fac/hst.jpg" alt="Hubble Space Telescope"
+onerror="this.style.background='linear-gradient(160deg,#0a1828,#132a44)'; this.style.display='block';" />
+<div class="project-img-credit">Credit: NASA/ESA</div>
+</div>
+<div class="project-content">
+<div class="section-tag" style="margin-bottom:16px">04</div>
+<h2>Black Hole Scaling Relations and Their Evolution</h2>
+<p>
+Testing whether the black hole&ndash;galaxy scaling relations are truly universal, or whether they break, bend and scatter at the extremes of the mass range.
+</p>
+<div class="project-tags">
+<span class="project-tag highlight">M<sub>BH</sub>&ndash;&sigma;</span>
+<span class="project-tag">M<sub>BH</sub>&ndash;L</span>
+<span class="project-tag">Intrinsic Scatter</span>
+<span class="project-tag">Selection Bias</span>
+</div>
+<details class="theme-details">
+<summary>Details</summary>
+<div class="theme-detail-body">
+<p class="detail-label">Overview</p>
+<p>
+Black hole mass correlates remarkably well with the velocity dispersion, luminosity and stellar mass of the host spheroid, and these relations are the workhorse used to estimate black hole masses in the vast majority of galaxies and to calibrate feedback models. Their reliability at the extremes is much less certain. At the low-mass end, dwarf galaxies and nucleated systems may deviate from the local relations or show a much larger intrinsic scatter, and dynamical measurements there are heavily affected by resolution-limited selection effects. At the high-mass end, the most massive galaxies host black holes that appear to lie above the standard relations, hinting at a fundamental break associated with dry-merger driven assembly. Because different mass estimators are calibrated against each other, systematic biases can propagate through the entire framework, so cross-calibration between independent methods is as important as extending the dynamic range.
+</p>
+<p class="detail-label">My Research</p>
+<p>
+I contribute homogeneous dynamical masses at both extremes of the relations. I am a member of the team on an accepted Hubble Space Telescope Cycle 34 programme (GO 18383) designed to test a fundamental break in the black hole&ndash;galaxy scaling relations for the most massive black holes, and on an accepted ALMA Cycle 13 programme (2026.1.00913.S) that cross-calibrates black hole mass methods in Seyfert nuclei using atomic [C I](1&ndash;0) gas dynamics. My simulation work quantifies the selection biases that spatial resolution imposes on such samples, which is a prerequisite for interpreting any measured scatter or break as physical.
+</p>
+</div>
+</details>
+<div class="project-links">
+<a href="research-bh-scaling-relations.html" class="btn btn-outline">Detail Description &rarr;</a>
+<a href="publications.html" class="btn btn-ghost">Related Publications &rarr;</a>
+</div>
+</div>
+</div>
+
+<!-- THEME 05 -->
+<div class="project-block fade-in" id="kinematics-galaxy-dynamics">
+<div class="project-img-wrap">
+<img src="assets/fac/alma.jpg" alt="ALMA antennas"
+onerror="this.style.background='linear-gradient(160deg,#0d1f35,#16304f)'; this.style.display='block';" />
+<div class="project-img-credit">Credit: ESO/ALMA</div>
+</div>
+<div class="project-content">
+<div class="section-tag" style="margin-bottom:16px">05</div>
+<h2>Stellar and Gas Kinematics and Galaxy Dynamics</h2>
+<p>
+Kinematics is the most direct probe of mass. I model stellar and cold-gas motions in galactic nuclei to weigh central black holes and to characterise the dynamical structure of their hosts.
+</p>
+<div class="project-tags">
+<span class="project-tag highlight">Integral-Field Spectroscopy</span>
+<span class="project-tag">JAM Modelling</span>
+<span class="project-tag">Molecular Gas Dynamics</span>
+<span class="project-tag">pPXF</span>
+</div>
+<details class="theme-details">
+<summary>Details</summary>
+<div class="theme-detail-body">
+<p class="detail-label">Overview</p>
+<p>
+A dynamical mass measurement rests on resolving the region where the black hole dominates the gravitational potential and on modelling the motions of tracers within it. Stellar kinematics extracted from integral-field spectroscopy can be combined with photometric mass models through Jeans anisotropic or Schwarzschild orbit-superposition methods, and are available in essentially every galaxy, at the cost of degeneracies with the mass-to-light ratio, orbital anisotropy and dark matter. Cold molecular and atomic gas offers an attractive alternative, since gas discs in relaxed nuclei follow nearly circular, close to Keplerian orbits and are observable at very high angular resolution, but the interpretation must account for inclination, turbulence, non-circular motions and inflow. Using both tracers on the same galaxies is the most reliable route to controlling these systematic effects.
+</p>
+<p class="detail-label">My Research</p>
+<p>
+My analysis toolkit combines MGEfit for surface photometry, pPXF for stellar kinematics, JAM for dynamical models and KinMS for gas-disc modelling, applied to ALMA datacubes, JWST/NIRSpec integral-field data, VLT/MUSE and Keck/OSIRIS spectroscopy, and HST and JWST/NIRCam imaging. My master's thesis measured the supermassive black hole mass of NGC 7052 from high spatial resolution molecular gas observed with ALMA, and I am extending the same approach to a larger sample so that stellar and gas-based masses can be compared galaxy by galaxy.
+</p>
+</div>
+</details>
+<div class="project-links">
+<a href="research-kinematics-galaxy-dynamics.html" class="btn btn-outline">Detail Description &rarr;</a>
+<a href="publications.html" class="btn btn-ghost">Related Publications &rarr;</a>
+</div>
+</div>
+</div>
+
+<!-- THEME 06 -->
+<div class="project-block flip fade-in" id="computational-astrophysics">
+<div class="project-img-wrap">
+<img src="assets/fac/elt.jpg" alt="Extremely Large Telescope"
+onerror="this.style.background='linear-gradient(160deg,#0a1628,#12233f)'; this.style.display='block';" />
+<div class="project-img-credit">Credit: ESO</div>
+</div>
+<div class="project-content">
+<div class="section-tag" style="margin-bottom:16px">06</div>
+<h2>Computational Astrophysics, Simulations, and Modelling</h2>
+<p>
+Building simulation and modelling tools that predict what future instruments can actually measure, and turning raw datacubes into physical parameters through forward modelling.
+</p>
+<div class="project-tags">
+<span class="project-tag highlight">HSIM / SimCADO</span>
+<span class="project-tag">Forward Modelling</span>
+<span class="project-tag">Bayesian Inference</span>
+<span class="project-tag">Observing Strategy</span>
+</div>
+<details class="theme-details">
+<summary>Details</summary>
+<div class="theme-detail-body">
+<p class="detail-label">Overview</p>
+<p>
+Extracting a black hole mass from observations is fundamentally a forward-modelling problem: a physical model is convolved with the instrument response and the atmosphere, compared with the data, and explored statistically. End-to-end instrument simulators make it possible to ask, before any telescope time is awarded, whether a given target can be measured at all, what exposure time and spectral setup are required, and how the recovered parameters are biased by point-spread function structure, spectral resolution and signal-to-noise. The same machinery is needed after the fact to propagate realistic uncertainties. This makes reproducible, well-tested code an integral part of the science rather than a side activity.
+</p>
+<p class="detail-label">My Research</p>
+<p>
+I work in Python with numpy, astropy, matplotlib and pandas, and in Matlab, and I develop pipelines that decompose AGN and stellar light in JWST data, generate mock HARMONI integral-field datacubes with HSIM and MICADO images with SimCADO, and fit kinematic models with KinMS. With these tools I design observing strategies for detecting the kinematic signatures of intermediate-mass black holes within about 20 Mpc, assess the limitations of HARMONI for that science case, and forecast dynamical mass measurements of supermassive black holes in quiescent ellipticals beyond 100 Mpc.
+</p>
+</div>
+</details>
+<div class="project-links">
+<a href="research-computational-astrophysics.html" class="btn btn-outline">Detail Description &rarr;</a>
+<a href="publications.html" class="btn btn-ghost">Related Publications &rarr;</a>
 </div>
 </div>
 </div>
@@ -432,3 +601,5 @@ measurement campaign.
 <script>initPage('research');</script>
 </body>
 </html>
+
+Stop Claude
