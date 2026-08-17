@@ -16,7 +16,6 @@ function injectNav(activePage, basePath = '') {
             <a href="${basePath}research.html#bh-formation-growth">Black Hole Formation &amp; Growth</a>
             <a href="${basePath}research.html#bh-mass-spectrum">Massive BHs Across the Mass Spectrum</a>
             <a href="${basePath}research.html#bh-galaxy-coevolution">BH &amp; Galaxy Coevolution</a>
-            <a href="${basePath}research.html#bh-scaling-relations">BH Scaling Relations</a>
             <a href="${basePath}research.html#kinematics-galaxy-dynamics">Kinematics &amp; Galaxy Dynamics</a>
             <a href="${basePath}research.html#computational-astrophysics">Computational Astrophysics</a>
           </div>
