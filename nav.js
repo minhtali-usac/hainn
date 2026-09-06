@@ -8,26 +8,31 @@ function injectNav(activePage, basePath = '') {
   const navHTML = `
     <nav id="main-nav">
       <a class="nav-logo" href="${basePath}index.html">HAI <span>NGO</span> NGOC</a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="${basePath}index.html" ${activePage === 'home' ? 'class="active"' : ''}>Home</a></li>
-        <li class="nav-dropdown">
-          <a href="${basePath}research.html" class="nav-dropdown-link ${activePage === 'research' ? 'active' : ''}">Research <i class="fas fa-chevron-down nav-dropdown-caret"></i></a>
-          <div class="nav-dropdown-menu">
-            <a href="${basePath}research.html#bh-formation-growth">Black Hole Formation &amp; Growth</a>
-            <a href="${basePath}research.html#bh-mass-spectrum">Massive BHs Across the Mass Spectrum</a>
-            <a href="${basePath}research.html#bh-galaxy-coevolution">BH &amp; Galaxy Coevolution</a>
-            <a href="${basePath}research.html#kinematics-galaxy-dynamics">Kinematics &amp; Galaxy Dynamics</a>
-            <a href="${basePath}research.html#computational-astrophysics">Computational Astrophysics</a>
-          </div>
-        </li>
-        <li><a href="${basePath}publications.html" ${activePage === 'publications' ? 'class="active"' : ''}>Publications</a></li>
-        <li><a href="${basePath}outreach/index.html" ${activePage === 'outreach' ? 'class="active"' : ''}>Outreach</a></li>
-        <li><a href="${basePath}cv.html" ${activePage === 'cv' ? 'class="active"' : ''}>CV</a></li>
-        <li><a href="${basePath}team.html" ${activePage === 'team' ? 'class="active"' : ''}>Our Team</a></li>
-      </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
-        <i class="fas fa-bars"></i>
-      </button>
+      <div class="nav-right">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="${basePath}index.html" ${activePage === 'home' ? 'class="active"' : ''}>Home</a></li>
+          <li class="nav-dropdown">
+            <a href="${basePath}research.html" class="nav-dropdown-link ${activePage === 'research' ? 'active' : ''}">Research <i class="fas fa-chevron-down nav-dropdown-caret"></i></a>
+            <div class="nav-dropdown-menu">
+              <a href="${basePath}research.html#bh-formation-growth">Black Hole Formation &amp; Growth</a>
+              <a href="${basePath}research.html#bh-mass-spectrum">Massive BHs Across the Mass Spectrum</a>
+              <a href="${basePath}research.html#bh-galaxy-coevolution">BH &amp; Galaxy Coevolution</a>
+              <a href="${basePath}research.html#kinematics-galaxy-dynamics">Kinematics &amp; Galaxy Dynamics</a>
+              <a href="${basePath}research.html#computational-astrophysics">Computational Astrophysics</a>
+            </div>
+          </li>
+          <li><a href="${basePath}publications.html" ${activePage === 'publications' ? 'class="active"' : ''}>Publications</a></li>
+          <li><a href="${basePath}outreach/index.html" ${activePage === 'outreach' ? 'class="active"' : ''}>Outreach</a></li>
+          <li><a href="${basePath}cv.html" ${activePage === 'cv' ? 'class="active"' : ''}>CV</a></li>
+          <li><a href="${basePath}team.html" ${activePage === 'team' ? 'class="active"' : ''}>Our Team</a></li>
+        </ul>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme" title="Toggle light/dark theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
     </nav>
   `;
   document.body.insertAdjacentHTML('afterbegin', navHTML);
@@ -51,6 +56,28 @@ function injectNav(activePage, basePath = '') {
     if (!link) return;
     e.preventDefault();
     link.closest('.nav-dropdown').classList.toggle('open');
+  });
+}
+
+// Light/dark theme toggle, persisted in localStorage
+function initThemeToggle() {
+  const root = document.documentElement;
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  const icon = btn.querySelector('i');
+
+  function apply(theme) {
+    root.setAttribute('data-theme', theme);
+    icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+  }
+
+  apply(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+
+  btn.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    apply(next);
   });
 }
 
@@ -133,17 +160,14 @@ function initFadeIn() {
 function initNavScroll() {
   const nav = document.getElementById('main-nav');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      nav.style.background = 'rgba(4, 7, 14, 0.96)';
-    } else {
-      nav.style.background = 'rgba(4, 7, 14, 0.85)';
-    }
+    nav.classList.toggle('scrolled', window.scrollY > 40);
   });
 }
 
 function loadKaTeX(){var link=document.createElement('link');link.rel='stylesheet';link.href='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css';document.head.appendChild(link);var script=document.createElement('script');script.src='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js';script.onload=function(){var auto=document.createElement('script');auto.src='https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js';auto.onload=function(){renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});};document.head.appendChild(auto);};document.head.appendChild(script);} // Init all
 function initPage(activePage, basePath = '') {
   injectNav(activePage, basePath); loadKaTeX();
+  initThemeToggle();
   initStarfield();
   initNebula();
   document.addEventListener('DOMContentLoaded', () => {

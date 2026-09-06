@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+  <script id="theme-fouc-guard">(function(){try{var t=localStorage.getItem("theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Curriculum Vitae - Hai Ngo Ngoc</title>
 <link rel="stylesheet" href="styles.css" />
@@ -36,20 +37,20 @@ display: inline-flex;
 align-items: center;
 gap: 6px;
 padding: 6px 14px;
-border: 1px solid rgba(212,168,67,0.35);
-border-radius: 20px;
+border: 1px solid rgba(var(--gold-rgb),0.35);
+border-radius: 0;
 transition: background 0.25s, color 0.25s;
 }
 .cv-interest-details summary::-webkit-details-marker { display: none; }
-.cv-interest-details summary:hover { background: rgba(212,168,67,0.1); }
+.cv-interest-details summary:hover { background: rgba(var(--gold-rgb),0.1); }
 .cv-interest-details summary::after { content: '+'; margin-left: 4px; font-size: 0.9rem; }
 .cv-interest-details[open] summary::after { content: '−'; }
 .cv-interest-detail-body {
 margin-top: 16px;
 padding: 18px 22px;
-background: rgba(255,255,255,0.02);
-border-left: 2px solid rgba(110,206,206,0.35);
-border-radius: 0 8px 8px 0;
+background: var(--bg-2);
+border-left: 2px solid rgba(var(--teal-rgb),0.35);
+border-radius: 0;
 }
 .cv-detail-label {
 font-family: var(--font-mono);
