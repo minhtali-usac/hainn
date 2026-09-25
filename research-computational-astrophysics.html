@@ -4,25 +4,84 @@
 <meta charset="UTF-8" />
   <script id="theme-fouc-guard">(function(){try{var t=localStorage.getItem("theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Computational Astrophysics, Simulations, and Modelling - Hai Ngo Ngoc</title>
-<meta name="description" content="Detailed research theme page for Computational Astrophysics, Simulations, and Modelling: literature review and research findings by Hai Ngo Ngoc." />
+<title>Simulating the ELT - Hai Ngo Ngoc</title>
+<meta name="description" content="Virtual observations with ELT/HARMONI and MICADO to find out which black holes the Extremely Large Telescope will be able to weigh, from dwarf galaxies nearby to giant galaxies in the distant Universe." />
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <style>
 .article-hero { position: relative; z-index: 1; padding: calc(var(--nav-h) + 70px) 60px 60px; background: radial-gradient(circle at 82% 10%, rgba(var(--gold-rgb),0.14) 0%, transparent 45%), radial-gradient(circle at 10% 90%, rgba(var(--teal-rgb),0.08) 0%, transparent 50%); border-bottom: 1px solid var(--border); }
-.article-hero-inner { max-width: 820px; margin: 0 auto; }
-.article-back { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; margin-bottom: 28px; transition: color 0.2s, gap 0.2s; }
+.article-hero-inner { max-width: 860px; margin: 0 auto; }
+.article-back { display: flex; width: fit-content; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; margin-bottom: 28px; transition: color 0.2s, gap 0.2s; }
 .article-back:hover { color: var(--gold); gap: 12px; }
 .article-badge { display: inline-block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-accent); background: linear-gradient(135deg, var(--gold-light), var(--gold)); padding: 5px 14px; border-radius: 0; margin-bottom: 22px; }
 .article-title { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.9rem, 4.2vw, 2.7rem); line-height: 1.15; color: var(--heading); margin-bottom: 16px; }
-.article-subtitle { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
-.article-wrap { position: relative; z-index: 1; max-width: 780px; margin: 0 auto; padding: 60px 60px 40px; }
-.article-wrap p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.95; margin-bottom: 26px; text-align: justify; }
-.article-wrap h2 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; color: var(--heading); margin: 44px 0 18px; line-height: 1.3; }
-.placeholder-note { padding: 22px 26px; background: var(--bg-card); border: 1px dashed var(--border-accent); border-radius: 0; }
-.placeholder-note p { margin-bottom: 0 !important; font-size: 0.88rem !important; font-style: italic; }
-.article-nav-more { max-width: 780px; margin: 0 auto; padding: 10px 60px 100px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; position: relative; z-index: 1; }
-@media (max-width: 768px) { .article-hero, .article-wrap, .article-nav-more { padding-left: 24px; padding-right: 24px; } }
+.article-lede { font-size: 1.02rem; line-height: 1.8; color: var(--text-muted); max-width: 760px; }
+.article-toc { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.article-toc a { display: inline-block; padding: 7px 14px; border: 1px solid var(--border); background: var(--bg-card); font-size: 0.8rem; color: var(--heading); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.article-toc a:hover { border-color: var(--border-accent); color: var(--gold); }
+
+.article-wrap { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; padding: 60px 60px 40px; }
+.article-wrap p { font-size: 0.97rem; color: var(--text-muted); line-height: 1.9; margin-bottom: 20px; }
+.article-wrap h2 { font-family: var(--font-display); font-size: 1.6rem; font-weight: 500; color: var(--heading); margin: 64px 0 18px; line-height: 1.3; scroll-margin-top: calc(var(--nav-h) + 24px); }
+.article-wrap h2:first-child { margin-top: 0; }
+.article-wrap h3 { font-family: var(--font-display); font-size: 1.22rem; font-weight: 500; color: var(--heading); margin: 40px 0 12px; scroll-margin-top: calc(var(--nav-h) + 24px); }
+.article-wrap a.cite { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(var(--gold-rgb),0.3); white-space: nowrap; }
+.article-wrap a.cite:hover { border-bottom-color: var(--gold); }
+
+/* instruments */
+.inst-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 6px 0 24px; }
+.inst { border: 1px solid var(--border); background: var(--bg-card); padding: 20px 22px; }
+.inst-name { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.inst-what { font-family: var(--font-display); font-size: 1.08rem; color: var(--heading); margin-bottom: 6px; }
+.inst p { font-size: 0.88rem !important; line-height: 1.7 !important; margin-bottom: 0 !important; }
+
+/* 4-step workflow */
+.steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 8px 0 26px; counter-reset: step; }
+.step { position: relative; border: 1px solid var(--border); background: var(--bg-card); padding: 18px 16px 18px; counter-increment: step; }
+.step::before { content: counter(step); display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--gold); color: var(--on-accent); font-family: var(--font-mono); font-size: 0.8rem; margin-bottom: 10px; }
+.step:not(:last-child)::after { content: '\2192'; position: absolute; right: -13px; top: 50%; transform: translateY(-50%); color: var(--gold); font-size: 1rem; background: var(--bg); line-height: 1; padding: 2px 0; z-index: 1; }
+.step-title { font-family: var(--font-display); font-size: 1rem; color: var(--heading); margin-bottom: 6px; line-height: 1.3; }
+.step-text { font-size: 0.82rem; line-height: 1.6; color: var(--text-muted); }
+.step-tool { display: block; margin-top: 8px; font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.08em; color: var(--teal); }
+
+/* findings */
+.finds { list-style: none; margin: 4px 0 24px; border-top: 1px solid var(--border); }
+.finds li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; padding: 13px 0; border-bottom: 1px solid var(--border); font-size: 0.93rem; line-height: 1.75; color: var(--text-muted); }
+.finds li::before { content: '\2713'; color: var(--gold); font-weight: 600; }
+.finds strong { color: var(--heading); font-weight: 600; }
+.lead-flag { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 1px 6px; border: 1px solid rgba(var(--teal-rgb),0.4); color: var(--teal); white-space: nowrap; }
+
+/* figures */
+.fig { margin: 8px 0 30px; border: 1px solid var(--border); background: var(--bg-card); padding: 20px 20px 14px; }
+.fig img { display: block; width: 100%; height: auto; }
+.fig figcaption { font-size: 0.84rem; color: var(--text-muted); line-height: 1.7; margin-top: 12px; }
+.fig figcaption b { color: var(--heading); font-weight: 600; }
+.fig figcaption .credit { display: block; margin-top: 4px; font-size: 0.76rem; font-style: italic; }
+
+/* tools */
+.tools { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 20px; }
+.tools span { font-family: var(--font-mono); font-size: 0.72rem; padding: 5px 12px; border: 1px solid var(--border); background: var(--bg-card); color: var(--heading); }
+
+/* papers */
+.pubs { list-style: none; border-top: 1px solid var(--border); }
+.pubs li { padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 0.86rem; line-height: 1.65; color: var(--text-muted); }
+.pubs .pt { display: block; color: var(--heading); font-family: var(--font-display); font-size: 1rem; margin-bottom: 2px; }
+.pubs a { font-family: var(--font-mono); font-size: 0.7rem; color: var(--gold); text-decoration: none; margin-left: 6px; }
+
+.article-nav-more { max-width: 980px; margin: 0 auto; padding: 10px 60px 100px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; position: relative; z-index: 1; }
+@media (max-width: 860px) {
+  .steps { grid-template-columns: 1fr 1fr; }
+  .step:nth-child(2)::after { display: none; }
+}
+@media (max-width: 768px) {
+  .article-hero, .article-wrap, .article-nav-more { padding-left: 24px; padding-right: 24px; }
+  .inst-grid { grid-template-columns: 1fr; }
+  .fig { padding: 12px 12px 10px; }
+}
+@media (max-width: 480px) {
+  .steps { grid-template-columns: 1fr; }
+  .step::after { display: none; }
+}
 </style>
 </head>
 <body>
@@ -31,44 +90,157 @@
 <div class="article-hero">
 <div class="article-hero-inner">
 <a class="article-back fade-in" href="research.html#computational-astrophysics"><i class="fas fa-arrow-left"></i> Back to Research</a>
-<span class="article-badge fade-in fade-in-delay-1">Theme 05 &middot; Simulations</span>
+<span class="article-badge fade-in fade-in-delay-1">Theme 04 &middot; ELT Simulations</span>
 <h1 class="article-title fade-in fade-in-delay-1">Computational Astrophysics, Simulations, and Modelling</h1>
+<p class="article-lede fade-in fade-in-delay-2">The Extremely Large Telescope (ELT) will be the largest optical telescope ever built. Before it starts observing, I create realistic <em>virtual observations</em> to find out which black holes it will be able to weigh, from small black holes in nearby dwarf galaxies to giant ones in the distant Universe.</p>
+<ul class="article-toc fade-in fade-in-delay-2">
+  <li><a href="#why">Why simulate?</a></li>
+  <li><a href="#how">How it works</a></li>
+  <li><a href="#dwarfs">Black holes in dwarf galaxies</a></li>
+  <li><a href="#distant">Distant giants</a></li>
+  <li><a href="#papers">Papers</a></li>
+</ul>
 </div>
 </div>
 
 <div class="article-wrap">
 
-<h2 class="fade-in">Overview</h2>
+<!-- ===================== WHY ===================== -->
+<h2 class="fade-in" id="why">Why Simulate a Telescope That Is Not Finished Yet?</h2>
 <p class="fade-in">
-Extracting a black hole mass from observations is fundamentally a forward-modelling problem: a physical model is convolved with the instrument response and the atmosphere, compared with the data, and explored statistically. End-to-end instrument simulators make it possible to ask, before any telescope time is awarded, whether a given target can be measured at all, what exposure time and spectral setup are required, and how the recovered parameters are biased by point-spread function structure, spectral resolution and signal-to-noise. The same machinery is needed after the fact to propagate realistic uncertainties. This makes reproducible, well-tested code an integral part of the science rather than a side activity.
+The ELT is being built by the European Southern Observatory in the Atacama Desert in Chile. Its main mirror is 39 metres across, and its adaptive optics will correct for the blurring of Earth's atmosphere. Together these will give images far sharper than any telescope today. Two of its first instruments are at the heart of my work:
+</p>
+<div class="inst-grid fade-in">
+  <div class="inst">
+    <div class="inst-name">HARMONI</div>
+    <div class="inst-what">A spectrum for every pixel</div>
+    <p>An integral-field spectrograph. It records a full spectrum at every point of the image, so we can map how fast the stars are moving across the centre of a galaxy.</p>
+  </div>
+  <div class="inst">
+    <div class="inst-name">MICADO</div>
+    <div class="inst-what">Razor-sharp images</div>
+    <p>A high-resolution camera. Its images show precisely how the stars are distributed, which tells us how much of the mass at the centre is in stars.</p>
+  </div>
+</div>
+<p class="fade-in">
+Time on the world's largest telescopes is extremely competitive, and every hour counts. Simulations let us answer the key questions in advance: which galaxies are worth observing, which instrument settings to use, how long to observe, and, most importantly, whether the black hole mass we measure can be trusted.
 </p>
 
-<h2 class="fade-in">My Research</h2>
+<!-- ===================== HOW ===================== -->
+<h2 class="fade-in" id="how">How It Works</h2>
 <p class="fade-in">
-I work in Python with numpy, astropy, matplotlib and pandas, and in Matlab, and I develop pipelines that decompose AGN and stellar light in JWST data, generate mock HARMONI integral-field datacubes with HSIM and MICADO images with SimCADO, and fit kinematic models with KinMS. With these tools I design observing strategies for detecting the kinematic signatures of intermediate-mass black holes within about 20 Mpc, assess the limitations of HARMONI for that science case, and forecast dynamical mass measurements of supermassive black holes in quiescent ellipticals beyond 100 Mpc.
+The idea is simple: we put a black hole of a known mass into a model galaxy, &ldquo;observe&rdquo; it with a virtual ELT, and check whether we can get the same mass back out.
+</p>
+<ol class="steps fade-in">
+  <li class="step">
+    <div class="step-title">Start from a real galaxy</div>
+    <div class="step-text">Hubble Space Telescope images tell us how the stars are spread out in the galaxy.</div>
+    <span class="step-tool">HST imaging &middot; MGE</span>
+  </li>
+  <li class="step">
+    <div class="step-title">Add a black hole</div>
+    <div class="step-text">We place a black hole of chosen mass at the centre and compute how the stars should move.</div>
+    <span class="step-tool">JAM dynamical models</span>
+  </li>
+  <li class="step">
+    <div class="step-title">Observe with a virtual ELT</div>
+    <div class="step-text">Simulators add realistic blurring, atmosphere, noise and exposure time.</div>
+    <span class="step-tool">HSIM &middot; SimCADO</span>
+  </li>
+  <li class="step">
+    <div class="step-title">Measure and compare</div>
+    <div class="step-text">We analyse the fake data exactly like real data and check whether the mass we recover matches the one we put in.</div>
+    <span class="step-tool">pPXF &middot; JAM + MCMC</span>
+  </li>
+</ol>
+
+<!-- ===================== DWARFS ===================== -->
+<h2 class="fade-in" id="findings">What I Have Found</h2>
+
+<h3 class="fade-in" id="dwarfs">Hidden black holes in dwarf galaxies</h3>
+<p class="fade-in">
+Many small galaxies have a dense, bright ball of millions of stars at their very centre, called a <em>nuclear star cluster</em> (Fig.&nbsp;1). These clusters are among the best places to look for <em>intermediate-mass black holes</em>, the &ldquo;missing link&rdquo; between the black holes left behind by single stars and the supermassive giants in large galaxies. They are hard to find because their gravity dominates only a tiny region, too small for today's telescopes to resolve.
 </p>
 
-<h2 class="fade-in">Literature Review</h2>
-<div class="placeholder-note fade-in">
-<p>Literature review for this theme is in preparation and will be added here.</p>
+<figure class="fig fade-in">
+  <img src="fig/sim-fcc119-hst-nsc.webp" width="1400" height="607" loading="lazy" alt="Hubble image of the dwarf galaxy FCC 119, with a zoom into its bright nuclear star cluster" />
+  <figcaption><b>Fig. 1 &mdash; A dwarf galaxy and its nuclear star cluster.</b> Hubble image of FCC 119, a faint dwarf galaxy in the Fornax Cluster about 20&nbsp;Mpc (65 million light-years) away. The zoom on the right shows its compact nuclear star cluster (NSC), where an intermediate-mass black hole could hide.<span class="credit">From Ngo, Nguyen, Le et al. 2025, Universe, 11, 360.</span></figcaption>
+</figure>
+
+<p class="fade-in">
+In our virtual HARMONI observations, a black hole reveals itself as a &ldquo;hot spot&rdquo; at the centre of the map: close to the black hole, stars move faster (Fig.&nbsp;2). The heavier the black hole, the stronger the signal.
+</p>
+
+<figure class="fig fade-in">
+  <img src="fig/sim-ngc300-harmoni-kinematics.webp" width="1500" height="1095" loading="lazy" alt="Simulated HARMONI maps of stellar motions at the centre of NGC 300 for three black hole masses; a central hot spot appears as the black hole mass increases" />
+  <figcaption><b>Fig. 2 &mdash; What HARMONI would see.</b> Simulated maps of stellar motions in the centre of the nearby galaxy NGC 300, for no black hole (top), and a black hole weighing 0.5% (middle) or 1% (bottom) of the star cluster's mass. From left to right: rotation, random motions ($\sigma$), and their combination ($V_{\rm rms}$). The black hole shows up as the growing red spot at the centre.<span class="credit">From Nguyen, Cappellari, Ngo et al. 2025, AJ.</span></figcaption>
+</figure>
+
+<ul class="finds fade-in">
+  <li><span><strong>Very small black holes are within reach.</strong> Of 44 dwarf galaxies with nuclear star clusters within about 10&nbsp;Mpc (33 million light-years), HARMONI can detect black holes weighing as little as about 0.5% of their star cluster (<a class="cite" href="https://doi.org/10.3847/1538-3881/ade9ba" target="_blank" rel="noopener">AJ 2025</a>).</span></li>
+  <li><span><strong>Out to the Fornax Cluster.</strong> Even in FCC 119, about 20&nbsp;Mpc away, HARMONI can detect and weigh black holes above about 100,000 solar masses (<a class="cite" href="https://doi.org/10.3390/universe11110360" target="_blank" rel="noopener">Universe 2025</a>) <span class="lead-flag">Lead author</span></span></li>
+  <li><span><strong>And the Virgo Cluster.</strong> In VCC 1861, one of the faintest Virgo galaxies, black holes of about 5% of the cluster mass are detectable (<a class="cite" href="https://arxiv.org/abs/2509.03364" target="_blank" rel="noopener">submitted</a>) <span class="lead-flag">Lead author</span></span></li>
+  <li><span><strong>Sharper images help.</strong> Adding MICADO images shows how tightly the stars are packed in the cluster core, and this matters for getting the black hole mass right (<a class="cite" href="https://doi.org/10.3390/universe12060160" target="_blank" rel="noopener">Universe 2026</a>).</span></li>
+</ul>
+
+<!-- ===================== DISTANT ===================== -->
+<h3 class="fade-in" id="distant">Giant black holes in the distant Universe</h3>
+<p class="fade-in">
+Today, this kind of direct black hole weighing only works for galaxies relatively close to us, within about 100&nbsp;Mpc. We asked whether the ELT can push it much further, to galaxies at redshift 1&ndash;2, whose light left them roughly 8 to 10 billion years ago, when galaxies and their black holes were growing fastest.
+</p>
+
+<figure class="fig fade-in">
+  <img src="fig/sim-hst-vs-micado.webp" width="1600" height="604" loading="lazy" alt="A distant galaxy at redshift 0.82 seen by Hubble and in a simulated MICADO image that zooms ten times closer into its centre" />
+  <figcaption><b>Fig. 3 &mdash; Hubble today vs. the ELT tomorrow.</b> The massive galaxy LEGAC-86906, seen when the Universe was about half its present age. <em>Left:</em> the real Hubble image (scale bar: 1&nbsp;kpc). <em>Right:</em> a simulated MICADO image of just the central region (scale bar: 100&nbsp;pc), with pixels about ten times finer than Hubble's.<span class="credit">From Nguyen, Cappellari, Le, Ngo et al. 2026, MNRAS, 546, 4.</span></figcaption>
+</figure>
+
+<ul class="finds fade-in">
+  <li><span><strong>Black hole masses to about 10%.</strong> For five massive galaxies at redshift 1&ndash;2, combining MICADO images with HARMONI spectra recovers the black hole mass to about 10% accuracy (<a class="cite" href="https://doi.org/10.1093/mnras/stag238" target="_blank" rel="noopener">MNRAS 2026</a>).</span></li>
+  <li><span><strong>Realistic observing times.</strong> MICADO needs about one hour per galaxy, and HARMONI about 5&ndash;7.5 hours, depending on the galaxy's brightness.</span></li>
+  <li><span><strong>A survey plan.</strong> I also developed the observing strategy for an ELT survey of the most massive galaxies (<a class="cite" href="https://doi.org/10.58027/aqp1-1s17.295" target="_blank" rel="noopener">proceedings</a>) <span class="lead-flag">Lead author</span></span></li>
+</ul>
+
+<h3 class="fade-in">Does it work?</h3>
+<p class="fade-in">
+Yes. In both cases, the black hole masses we recover from the virtual observations match the masses we put in: the points in Fig.&nbsp;4 lie along the dashed one-to-one line. When there is no black hole, the analysis correctly returns only an upper limit.
+</p>
+
+<figure class="fig fade-in">
+  <img src="fig/sim-mass-recovery.webp" width="1500" height="603" loading="lazy" alt="Input versus recovered black hole masses: small black holes in two dwarf galaxies (left) and giant black holes in five distant galaxies (right) lie on the one-to-one line" />
+  <figcaption><b>Fig. 4 &mdash; Putting in a mass, getting it back.</b> Black hole mass put into the simulation (vertical axis) versus the mass recovered from the virtual observations (horizontal axis). <em>Left:</em> intermediate-mass black holes in the dwarf galaxies NGC 300 and NGC 3115 dw01. <em>Right:</em> billion-solar-mass black holes in five galaxies at redshift 1&ndash;2.<span class="credit">Left: Nguyen, Cappellari, Ngo et al. 2025, AJ. Right: Nguyen, Cappellari, Le, Ngo et al. 2026, MNRAS, 546, 4.</span></figcaption>
+</figure>
+
+<!-- ===================== TOOLS ===================== -->
+<h2 class="fade-in">Tools I Use</h2>
+<p class="fade-in">
+I write and run these pipelines mainly in Python, combining community tools for instrument simulation, dynamical modelling and Bayesian fitting.
+</p>
+<div class="tools fade-in">
+  <span>Python</span><span>NumPy</span><span>Astropy</span><span>Matplotlib</span><span>HSIM (HARMONI)</span><span>SimCADO (MICADO)</span><span>MGE</span><span>JAM</span><span>pPXF</span><span>MCMC (AdaMet)</span>
 </div>
 
-<h2 class="fade-in">Summary of Findings</h2>
-<div class="placeholder-note fade-in">
-<p>A summary of key results and findings for this theme is in preparation and will be added here.</p>
-</div>
+<!-- ===================== PAPERS ===================== -->
+<h2 class="fade-in" id="papers">Papers in This Theme</h2>
+<ul class="pubs fade-in">
+  <li><span class="pt">Simulating Intermediate-Mass Black Hole Mass Measurements for a Sample of Galaxies with Nuclear Star Clusters using ELT/HARMONI</span>Nguyen, D. D., Cappellari, M., <strong>Ngo, H. N.</strong>, et al. 2025, AJ<a href="https://doi.org/10.3847/1538-3881/ade9ba" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">Detecting Intermediate-Mass Black Holes out to 20 Mpc with ELT/HARMONI: The Case of FCC 119</span><strong>Ngo, H. N.</strong>, Nguyen, D. D., et al. 2025, Universe, 11, 360<a href="https://doi.org/10.3390/universe11110360" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">Extending Simulations of Intermediate-Mass Black Hole Mass Measurements to the Virgo Cluster using ELT/HARMONI</span><strong>Ngo, H. N.</strong>, Nguyen, D. D., et al., submitted<a href="https://arxiv.org/abs/2509.03364" target="_blank" rel="noopener">arXiv&nearr;</a></li>
+  <li><span class="pt">Probing the Effect of the Inner Surface-Brightness Profile of Nuclear Star Clusters on IMBH Mass Measurements using Mock ELT/MICADO and HARMONI Observations</span>Le, T. Q. T., Nguyen, D. D., <strong>Ngo, H. N.</strong>, et al. 2026, Universe, 12, 160<a href="https://doi.org/10.3390/universe12060160" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">Extending the Frontier of Spatially Resolved SMBH Mass Measurements to 1 &lt; z &lt; 2 with ELT/MICADO and HARMONI</span>Nguyen, D. D., Cappellari, M., Le, T. Q. T., <strong>Ngo, H. N.</strong>, et al. 2026, MNRAS, 546, 4<a href="https://doi.org/10.1093/mnras/stag238" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">ELT High Spatial Resolution IFS Survey of Ultramassive Galaxies: Observational Strategy and First Simulated Results</span><strong>Ngo, H. N.</strong>, Nguyen, D. D., Cappellari, M., &amp; Pereira-Santaella, M., Windows on the Universe (proceedings)<a href="https://doi.org/10.58027/aqp1-1s17.295" target="_blank" rel="noopener">doi&nearr;</a></li>
+</ul>
 
 </div>
 
 <div class="article-nav-more fade-in">
-<a class="btn btn-outline" href="research-kinematics-galaxy-dynamics.html"><i class="fas fa-arrow-left"></i> Stellar and Gas Kinematics and Galaxy Dynamics</a>
+<a class="btn btn-outline" href="research-bh-galaxy-coevolution.html"><i class="fas fa-arrow-left"></i> Black Hole and Galaxy Coevolution</a>
 <a class="btn btn-outline" href="research.html">Back to Research <i class="fas fa-arrow-right"></i></a>
 </div>
 
 <footer>
 <div class="footer-inner">
-<div class="footer-copy">&copy; 2026 Hai Ngo Ngoc &middot; Galaxy Dynamics Lab</div>
-<div class="footer-copy">USAC Astrophysics Research Group</div>
+<div class="footer-copy">&copy; 2026 Hai Ngo Ngoc</div>
+<div class="footer-copy">Galaxy Dynamics Lab, University of Michigan</div>
 <div class="footer-links">
 <a href="index.html">Home</a>
 <a href="research.html">Research</a>

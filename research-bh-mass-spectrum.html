@@ -5,24 +5,107 @@
   <script id="theme-fouc-guard">(function(){try{var t=localStorage.getItem("theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Massive Black Holes Across the Mass Spectrum - Hai Ngo Ngoc</title>
-<meta name="description" content="Detailed research theme page for Massive Black Holes Across the Mass Spectrum: literature review and research findings by Hai Ngo Ngoc." />
+<meta name="description" content="Dynamical black hole mass measurements from intermediate-mass to billion-solar-mass black holes, using JWST/NIRSpec stellar kinematics with JAM and ALMA CO(2-1) molecular gas dynamics." />
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <style>
 .article-hero { position: relative; z-index: 1; padding: calc(var(--nav-h) + 70px) 60px 60px; background: radial-gradient(circle at 82% 10%, rgba(var(--gold-rgb),0.14) 0%, transparent 45%), radial-gradient(circle at 10% 90%, rgba(var(--teal-rgb),0.08) 0%, transparent 50%); border-bottom: 1px solid var(--border); }
-.article-hero-inner { max-width: 820px; margin: 0 auto; }
-.article-back { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; margin-bottom: 28px; transition: color 0.2s, gap 0.2s; }
+.article-hero-inner { max-width: 860px; margin: 0 auto; }
+.article-back { display: flex; width: fit-content; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; margin-bottom: 28px; transition: color 0.2s, gap 0.2s; }
 .article-back:hover { color: var(--gold); gap: 12px; }
 .article-badge { display: inline-block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-accent); background: linear-gradient(135deg, var(--gold-light), var(--gold)); padding: 5px 14px; border-radius: 0; margin-bottom: 22px; }
 .article-title { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.9rem, 4.2vw, 2.7rem); line-height: 1.15; color: var(--heading); margin-bottom: 16px; }
-.article-subtitle { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
-.article-wrap { position: relative; z-index: 1; max-width: 780px; margin: 0 auto; padding: 60px 60px 40px; }
-.article-wrap p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.95; margin-bottom: 26px; text-align: justify; }
-.article-wrap h2 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; color: var(--heading); margin: 44px 0 18px; line-height: 1.3; }
+.article-lede { font-size: 1rem; line-height: 1.8; color: var(--text-muted); max-width: 760px; }
+.article-toc { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.article-toc a { display: inline-block; padding: 7px 14px; border: 1px solid var(--border); background: var(--bg-card); font-size: 0.8rem; color: var(--heading); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.article-toc a:hover { border-color: var(--border-accent); color: var(--gold); }
+.article-toc a.soon { color: var(--text-muted); border-style: dashed; }
+
+.article-wrap { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; padding: 60px 60px 40px; }
+.article-wrap p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.95; margin-bottom: 22px; text-align: justify; }
+.article-wrap h2 { font-family: var(--font-display); font-size: 1.55rem; font-weight: 500; color: var(--heading); margin: 64px 0 18px; line-height: 1.3; scroll-margin-top: calc(var(--nav-h) + 24px); }
+.article-wrap h2:first-child { margin-top: 0; }
+.article-wrap h3 { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin: 34px 0 12px; }
+.article-wrap ul.plain { margin: 0 0 22px 1.1em; }
+.article-wrap ul.plain li { font-size: 0.95rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 8px; }
+.article-wrap a.cite { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(var(--gold-rgb),0.3); }
+.article-wrap a.cite:hover { border-bottom-color: var(--gold); }
+
+.method-label { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: -6px; }
+.method-label .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); }
+.method-label.gas .dot { border-radius: 0; transform: rotate(45deg); background: var(--teal); }
+.method-label.stellar { color: var(--gold); }
+.method-label.gas { color: var(--teal); }
+
+/* comparison + results tables */
+.tbl-wrap { overflow-x: auto; margin: 8px 0 28px; border: 1px solid var(--border); background: var(--bg-card); }
+table.tbl { width: 100%; border-collapse: collapse; font-size: 0.86rem; line-height: 1.6; }
+.tbl th, .tbl td { text-align: left; vertical-align: top; padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+.tbl tr:last-child td { border-bottom: none; }
+.tbl thead th { font-family: var(--font-mono); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--heading); background: var(--bg-2); }
+.tbl tbody th { font-family: var(--font-mono); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+.tbl td.num { white-space: nowrap; color: var(--heading); font-variant-numeric: tabular-nums; }
+.tbl td.gal { white-space: nowrap; color: var(--heading); font-weight: 500; }
+.tbl .tag-s, .tbl .tag-g { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.06em; white-space: nowrap; }
+.tbl .tag-s { color: var(--gold); }
+.tbl .tag-g { color: var(--teal); }
+
+/* result callouts */
+.result { border-left: 2px solid var(--gold); padding: 4px 0 4px 18px; margin: 0 0 22px; }
+.result.gas { border-left-color: var(--teal); }
+.result-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 6px; }
+.result-name { font-family: var(--font-display); font-size: 1.1rem; color: var(--heading); }
+.result-mass { font-family: var(--font-mono); font-size: 0.8rem; color: var(--heading); }
+.result-ref { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); }
+.result-ref a { color: var(--gold); text-decoration: none; }
+.result p { margin-bottom: 0 !important; font-size: 0.9rem !important; line-height: 1.8 !important; }
+.lead-flag { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 1px 6px; border: 1px solid rgba(var(--teal-rgb),0.4); color: var(--teal); }
+
+/* figure */
+.fig { margin: 8px 0 30px; border: 1px solid var(--border); background: var(--bg-card); padding: 22px 22px 16px; }
+.fig-scroll { overflow-x: auto; }
+.fig svg { display: block; width: 100%; min-width: 640px; height: auto; }
+.fig figcaption { font-size: 0.84rem; color: var(--text-muted); line-height: 1.7; margin-top: 12px; }
+.fig figcaption b { color: var(--heading); font-weight: 600; }
+
+.fig img { display: block; width: 100%; height: auto; }
+.fig-grid { display: grid; gap: 16px; align-items: start; }
+.fig-grid.g-2 { grid-template-columns: 1fr 1fr; }
+.fig-grid.g-sig { grid-template-columns: 1fr 1.23fr; }
+.fig-grid.g-gas { grid-template-columns: 0.75fr 1.25fr; align-items: center; }
+.fig figcaption .credit { display: block; margin-top: 4px; font-size: 0.76rem; font-style: italic; }
+.result .fig { margin: 16px 0 6px; }
+@media (max-width: 640px) { .fig-grid.g-2, .fig-grid.g-sig, .fig-grid.g-gas { grid-template-columns: 1fr; } }
+
+/* upcoming methods */
+.soon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 8px 0 22px; }
 .placeholder-note { padding: 22px 26px; background: var(--bg-card); border: 1px dashed var(--border-accent); border-radius: 0; }
-.placeholder-note p { margin-bottom: 0 !important; font-size: 0.88rem !important; font-style: italic; }
-.article-nav-more { max-width: 780px; margin: 0 auto; padding: 10px 60px 100px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; position: relative; z-index: 1; }
-@media (max-width: 768px) { .article-hero, .article-wrap, .article-nav-more { padding-left: 24px; padding-right: 24px; } }
+.placeholder-note .pn-tag { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+.placeholder-note .pn-title { font-family: var(--font-display); font-size: 1.1rem; color: var(--heading); margin-bottom: 6px; }
+.placeholder-note p { margin-bottom: 0 !important; font-size: 0.86rem !important; font-style: italic; text-align: left !important; }
+
+/* literature references */
+.lit-refs { margin: 8px 0 20px; border-top: 1px solid var(--border); padding-top: 20px; display: grid; gap: 12px; }
+.lit-refs-title { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.lit-ref { display: grid; grid-template-columns: 150px 1fr; gap: 16px; font-size: 0.86rem; line-height: 1.65; color: var(--text-muted); }
+.lit-ref-key { font-family: var(--font-mono); font-size: 0.76rem; color: var(--teal); }
+@media (max-width: 600px) { .lit-ref { grid-template-columns: 1fr; gap: 2px; } }
+
+/* publication list */
+.pubs { list-style: none; counter-reset: pub; border-top: 1px solid var(--border); }
+.pubs li { padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 0.86rem; line-height: 1.65; color: var(--text-muted); }
+.pubs .pt { display: block; color: var(--heading); font-family: var(--font-display); font-size: 1rem; margin-bottom: 2px; }
+.pubs a { font-family: var(--font-mono); font-size: 0.7rem; color: var(--gold); text-decoration: none; margin-left: 6px; }
+.pubs-group { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin: 26px 0 8px; }
+.pubs-group.gas { color: var(--teal); }
+
+.article-nav-more { max-width: 980px; margin: 0 auto; padding: 10px 60px 100px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; position: relative; z-index: 1; }
+@media (max-width: 768px) {
+  .article-hero, .article-wrap, .article-nav-more { padding-left: 24px; padding-right: 24px; }
+  .article-wrap p { text-align: left; }
+  .soon-grid { grid-template-columns: 1fr; }
+  .fig { padding: 14px 14px 12px; }
+}
 </style>
 </head>
 <body>
@@ -31,8 +114,17 @@
 <div class="article-hero">
 <div class="article-hero-inner">
 <a class="article-back fade-in" href="research.html#bh-mass-spectrum"><i class="fas fa-arrow-left"></i> Back to Research</a>
-<span class="article-badge fade-in fade-in-delay-1">Theme 02 &middot; JWST / ALMA</span>
+<span class="article-badge fade-in fade-in-delay-1">Theme 02 &middot; JWST / ALMA / ELT</span>
 <h1 class="article-title fade-in fade-in-delay-1">Massive Black Holes Across the Mass Spectrum</h1>
+<p class="article-lede fade-in fade-in-delay-2">Weighing black holes from about 10<sup>7</sup> to a few 10<sup>9</sup> M<sub>&#9737;</sub> today, and preparing to reach the intermediate-mass regime with the ELT, using two complementary dynamical tracers: stars and cold molecular gas.</p>
+<ul class="article-toc fade-in fade-in-delay-2">
+  <li><a href="#methods">Methods</a></li>
+  <li><a href="#stellar">01 &middot; Stellar kinematics (JAM)</a></li>
+  <li><a href="#gas">02 &middot; Molecular gas (CO 2&ndash;1)</a></li>
+  <li><a class="soon" href="#more-methods">03&ndash;04 &middot; Lensing &amp; emission lines</a></li>
+  <li><a href="#findings">Findings</a></li>
+  <li><a href="#papers">Papers</a></li>
+</ul>
 </div>
 </div>
 
@@ -43,19 +135,257 @@
 Known massive black holes span roughly eight decades in mass, but the census is far from uniform. The interval between about 10<sup>2</sup> and 10<sup>5</sup> M<sub>&#9737;</sub> &mdash; the intermediate-mass black holes &mdash; remains almost empty, not necessarily because such objects are rare but because their gravitational sphere of influence subtends only a few tens of milliarcseconds even in the nearest dwarf galaxies, nuclear star clusters and globular clusters. At the opposite extreme, the most massive black holes in brightest cluster galaxies probe the limits of accretion and merger-driven growth. Because different mass ranges are traditionally studied with different techniques &mdash; stellar dynamics, cold-gas dynamics, reverberation mapping, single-epoch AGN scaling &mdash; systematic offsets between methods can easily masquerade as physical structure in the mass function. Applying one carefully controlled dynamical framework across the full spectrum is therefore essential.
 </p>
 
-<h2 class="fade-in">My Research</h2>
+<!-- ===================== METHODS ===================== -->
+<h2 class="fade-in" id="methods">Measuring Black Hole Masses Dynamically</h2>
 <p class="fade-in">
-I am developing a Python pipeline that separates the AGN continuum from the underlying stellar light in JWST/NIRSpec and NIRCam data, which is the key step for extracting uncontaminated stellar kinematics in active nuclei, and I lead supermassive black hole mass measurements in NGC 4258 and M87. In parallel I model ALMA datacubes with KinMS to determine black hole masses in NGC 7052, NGC 4061, NGC 2513 and Circinus. On the intermediate-mass side, I simulate mock HARMONI integral-field datacubes and MICADO imaging of dwarf galaxies, nuclear star clusters and globular clusters, recover the input masses through dynamical modelling, and map out where the ELT will and will not be able to detect intermediate-mass black holes within about 20 Mpc.
+A black hole can be weighed directly only where its gravity dominates the motions of the surrounding matter, inside the sphere of influence $r_{\rm SOI} = G M_{\rm BH}/\sigma^2$, where $\sigma$ is the stellar velocity dispersion of the host. The central observational challenge is angular resolution: the sphere of influence must be resolved, or nearly so, and it shrinks rapidly with decreasing black hole mass and increasing distance. Our programme uses two complementary tracers of the central potential, stars and cold molecular gas, and models each with a well-tested forward-modelling framework.
+</p>
+<p class="fade-in">
+Stars and gas in a galaxy move in two ways: ordered rotation and random motion. Both leave an imprint on the spectrum through the Doppler effect. Rotation shifts spectral lines by an amount that changes with position across the galaxy, while random motions broaden the lines, and the line width measures the velocity dispersion $\sigma$ (Fig.&nbsp;1). Close to a massive black hole, stars and gas must move faster to stay in orbit, so rotation and dispersion both rise sharply toward the centre (Fig.&nbsp;2). Integral-field spectroscopy records a spectrum in every spatial pixel, turning this signature into two-dimensional maps that dynamical models can fit.
+</p>
+
+<figure class="fig fade-in">
+  <div class="fig-grid g-2">
+    <img src="fig/concept-rotating-galaxy.webp" width="777" height="437" loading="lazy" alt="Animation of a rotating spiral galaxy" />
+    <img src="fig/concept-dispersion-rotation.webp" width="1241" height="744" loading="lazy" alt="Schematic: (a) random stellar motions broaden an absorption line; (b) a rotating disk produces a rotation curve" />
+  </div>
+  <figcaption><b>Fig. 1 &mdash; Two kinds of motion.</b> <em>Left:</em> illustration of a rotating disk galaxy. <em>Right:</em> (a) in a system dominated by random motions, each star's spectrum is Doppler-shifted by a different amount, so the combined absorption line is broadened, and its width measures $\sigma$; (b) in a rotating disk, the line centre shifts systematically with position, tracing a rotation curve.<span class="credit">Right panel: Mo, van den Bosch &amp; White (2010), <em>Galaxy Formation and Evolution</em>, Cambridge University Press.</span></figcaption>
+</figure>
+
+<figure class="fig fade-in">
+  <div class="fig-grid g-sig">
+    <img src="fig/concept-bh-signature-m33-ngc205.webp" width="463" height="420" loading="lazy" alt="Comparison of M33, with no central black hole, and NGC 205, with a black hole: stars near the black hole move faster and the central velocity profile rises" />
+    <img src="fig/concept-hubble-two-methods.webp" width="432" height="321" loading="lazy" alt="Hubble illustration of two methods: spectra of individual stars in globular cluster M15, and the combined light of many stars in G1" />
+  </div>
+  <figcaption><b>Fig. 2 &mdash; The kinematic signature of a black hole.</b> <em>Left:</em> without a central black hole (M33), stellar velocities stay low toward the centre; with a black hole (NGC 205), stars close to it move faster and the central velocity profile rises. <em>Right:</em> in the nearest systems the spectra of individual stars can be measured, while in more distant nuclei only the combined light of many stars is available, whose &ldquo;smeared&rdquo; absorption lines encode the distribution of stellar velocities.<span class="credit">Right panel: NASA/STScI.</span></figcaption>
+</figure>
+
+<div class="tbl-wrap fade-in">
+<table class="tbl">
+  <thead>
+    <tr><th></th><th>01 &middot; Stellar kinematics</th><th>02 &middot; Molecular gas</th></tr>
+  </thead>
+  <tbody>
+    <tr><th>Tracer</th><td>Stellar absorption lines, mainly the CO band heads at ~2.3&nbsp;&micro;m</td><td>$^{12}$CO(2&ndash;1) line emission from a circumnuclear gas disk</td></tr>
+    <tr><th>Data</th><td>JWST/NIRSpec IFU; ELT/HARMONI (simulated)</td><td>ALMA high-resolution interferometry</td></tr>
+    <tr><th>Model</th><td>Jeans Anisotropic Models (JAM) + MGE mass model</td><td>KinMS forward model of the full 3D data cube</td></tr>
+    <tr><th>Strengths</th><td>Stars exist in every galaxy; near-infrared data see through nuclear dust</td><td>Cold gas moves on near-circular orbits, so its kinematics are simple and very precise</td></tr>
+    <tr><th>Challenges</th><td>Degeneracies with orbital anisotropy and mass-to-light ratio; AGN continuum contamination</td><td>Requires a regularly rotating, relaxed gas disk; turbulence and non-circular motions</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ===================== METHOD 01 ===================== -->
+<h2 class="fade-in" id="stellar"><span class="method-label stellar"><span class="dot"></span>Method 01</span><br>Stellar Kinematics with Jeans Anisotropic Models</h2>
+
+<h3 class="fade-in">How it works</h3>
+<p class="fade-in">
+We start from high-resolution imaging, mainly from HST, and describe the galaxy's surface brightness with a Multi-Gaussian Expansion (MGE), which can be deprojected analytically into a three-dimensional stellar density. Jeans Anisotropic Models (JAM) solve the axisymmetric Jeans equations for this density plus a central point mass, and predict the second velocity moment $V_{\rm rms} = \sqrt{V^2 + \sigma^2}$ on the sky after convolution with the instrumental point-spread function. The model is then compared with the observed two-dimensional kinematics, and the free parameters (black hole mass $M_{\rm BH}$, stellar mass-to-light ratio $M/L$, orbital anisotropy and inclination) are constrained within a Bayesian framework using Markov chain Monte Carlo sampling.
+</p>
+<p class="fade-in">
+For nearby nuclei we use the JWST/NIRSpec integral-field unit. In the near-infrared, the stellar CO band-head absorption features at ~2.3&nbsp;&micro;m, a &ldquo;gold-standard&rdquo; tracer, penetrate the obscuring nuclear dust, and the spectra let us separate the stellar light from the non-thermal AGN continuum before extracting the kinematics with pPXF. To treat systematic uncertainties honestly, we do not rely on the formal errors of a single preferred model. Instead we fit an ensemble of models that vary the point-spread function, the $M/L$ profile and the anisotropy assumptions, and quote the ensemble median and spread.
+</p>
+
+<figure class="fig fade-in">
+  <img src="fig/ngc4258-nirspec-kinematics.webp" width="1600" height="1056" loading="lazy" alt="NGC 4258 JWST/NIRSpec data: intensity map, a pPXF fit to the CO band heads, and maps of velocity, velocity dispersion, Vrms and stellar light fraction" />
+  <figcaption><b>Fig. 3 &mdash; From spectra to kinematic maps (NGC 4258, JWST/NIRSpec).</b> (A) Integrated intensity of the NIRSpec G235H/F170LP data cube. (B) pPXF fit to the stellar CO band heads at ~2.3&nbsp;&micro;m in one Voronoi bin: data (black), best-fitting template (red) and residuals (green). (C&ndash;F) Maps of the mean velocity $V$, velocity dispersion $\sigma$, $V_{\rm rms}$, and the fraction of light contributed by stars, $\gamma$.<span class="credit">From Nguyen, Ngo, Cappellari et al. 2026, ApJ, 999, 97.</span></figcaption>
+</figure>
+
+<figure class="fig fade-in">
+  <img src="fig/ngc4258-jam-vrms-fits.webp" width="1600" height="662" loading="lazy" alt="Vrms profiles of NGC 4258 along the major and minor axes with best-fitting JAM models for three point-spread functions" />
+  <figcaption><b>Fig. 4 &mdash; Fitting JAM models to the data (NGC 4258).</b> $V_{\rm rms}$ along the major axis (red, offset by +35&nbsp;km&nbsp;s$^{-1}$) and minor axis (blue), compared with the best-fitting JAM models for three assumed point-spread functions. The sharp central rise is driven by the black hole. Shown here are spherically aligned models with a radial $M/L$ gradient and a logistic anisotropy profile, one of four model families in the 12-model ensemble.<span class="credit">From Nguyen, Ngo, Cappellari et al. 2026, ApJ, 999, 97.</span></figcaption>
+</figure>
+
+<h3 class="fade-in">Results with JWST/NIRSpec</h3>
+
+<div class="result fade-in">
+  <div class="result-head"><span class="result-name">NGC 4736 (M94)</span><span class="result-mass">$M_{\rm BH} = (1.60 \pm 0.16)\times10^7\,M_\odot$</span><span class="result-ref">A&amp;A 698, L9 (2025) &middot; <a href="https://doi.org/10.1051/0004-6361/202554672" target="_blank" rel="noopener">doi&nearr;</a></span></div>
+  <p>The first dynamical mass for this black hole from NIRSpec stellar kinematics, which easily resolve its sphere of influence. The result is consistent with the $M_{\rm BH}$&ndash;$\sigma$ and $M_{\rm BH}$&ndash;$M_\star$ relations and settles a long-standing inconsistency between emission-line estimates and the $M_{\rm BH}$&ndash;$\sigma$ prediction. It also shows that NIRSpec can detect black holes of $\approx 5\times10^6\,M_\odot$ in galaxies within 5&nbsp;Mpc with $\sigma \approx 100$&nbsp;km&nbsp;s$^{-1}$.</p>
+</div>
+
+<div class="result fade-in">
+  <div class="result-head"><span class="result-name">NGC 4258</span><span class="result-mass">$M_{\rm BH} = (4.08^{+0.19}_{-0.33})\times10^7\,M_\odot$</span><span class="result-ref">ApJ 999, 97 (2026) &middot; <a href="https://doi.org/10.3847/1538-4357/ae32f2" target="_blank" rel="noopener">doi&nearr;</a></span></div>
+  <p>NGC 4258 is the benchmark for extragalactic black hole masses because its water-maser disk gives an independent, geometric measurement. From an ensemble of 12 JAM models, our stellar-dynamical mass is only 5% larger than, and consistent with, the maser value. This validates JWST/NIRSpec stellar kinematics as a route to robust masses, even in the presence of significant AGN continuum emission.</p>
+  <figure class="fig">
+    <img src="fig/ngc4258-mbh-ensemble.webp" width="1100" height="1289" loading="lazy" alt="Black hole masses of NGC 4258 from 12 JAM models compared with previous maser, stellar and gas measurements" style="max-width:520px;margin:0 auto" />
+    <figcaption><b>Fig. 5 &mdash; A robust mass from a model ensemble.</b> Black hole masses for NGC 4258 from our 12 JAM models (red: cylindrically aligned; blue: spherically aligned), under different assumptions for the PSF and the $M/L$ profile, compared with earlier estimates. The solid line and grey band show our adopted mass and its 68% bootstrap interval; the dashed line marks the water-maser benchmark.<span class="credit">From Nguyen, Ngo, Cappellari et al. 2026, ApJ, 999, 97.</span></figcaption>
+  </figure>
+</div>
+
+<div class="result fade-in">
+  <div class="result-head"><span class="result-name">M81 (NGC 3031)</span><span class="result-mass">$M_{\rm BH} = (4.78^{+0.07}_{-0.10})\times10^7\,M_\odot$</span><span class="result-ref">ApJ 1003, 98 (2026) &middot; <a href="https://doi.org/10.3847/1538-4357/ae64f0" target="_blank" rel="noopener">doi&nearr;</a></span></div>
+  <p>Despite its proximity, M81 lacked a reliable dynamical mass. Our ensemble of JAM models, spanning different point-spread functions, anisotropies and mass-to-light ratios, shows that a central dark mass unambiguously drives the rise in velocity dispersion. The result provides a reliable anchor point for the black hole&ndash;galaxy scaling relations.</p>
+</div>
+
+<div class="result fade-in">
+  <div class="result-head"><span class="result-name">M87</span><span class="lead-flag">Lead author</span><span class="result-ref">In preparation</span></div>
+  <p>Using JWST/NIRSpec stellar kinematics that resolve about one-tenth of the sphere-of-influence radius, we are measuring the mass of the black hole at the upper end of the local mass function.</p>
+</div>
+
+<h3 class="fade-in">Looking ahead: the same method on the ELT</h3>
+<p class="fade-in">
+Because JAM only needs a mass model and resolved stellar kinematics, the same pipeline can be run end-to-end on simulated observations. We create mock ELT/HARMONI integral-field data cubes with HSIM and mock ELT/MICADO images with SimCADO, analyse them as if they were real data, and ask which black hole masses the ELT will be able to recover.
+</p>
+<ul class="plain fade-in">
+  <li><strong>Intermediate-mass black holes in nuclear star clusters.</strong> From a sample of 44 dwarf galaxies with nuclear star clusters within 10&nbsp;Mpc, HARMONI can resolve the sphere of influence and recover black hole masses down to &approx;0.5% of the cluster mass (<a class="cite" href="https://doi.org/10.3847/1538-3881/ade9ba" target="_blank" rel="noopener">AJ 2025</a>).</li>
+  <li><strong>Out to 20&nbsp;Mpc.</strong> For FCC 119, one of the faintest dwarfs in the Fornax Cluster, HARMONI can detect the kinematic signature of an IMBH and measure its mass for $M_{\rm BH} \gtrsim 10^5\,M_\odot$ (<a class="cite" href="https://doi.org/10.3390/universe11110360" target="_blank" rel="noopener">Universe 2025</a>, lead author). For VCC 1861 in the Virgo Cluster, IMBHs of 5% of the nuclear-cluster mass are detectable (<a class="cite" href="https://arxiv.org/abs/2509.03364" target="_blank" rel="noopener">arXiv:2509.03364</a>, lead author, submitted).</li>
+  <li><strong>The inner profile of the cluster.</strong> Combining MICADO-based mass models with HARMONI kinematics shows how the inner surface-brightness slope of the nuclear star cluster affects the recovered IMBH mass (<a class="cite" href="https://doi.org/10.3390/universe12060160" target="_blank" rel="noopener">Universe 2026</a>).</li>
+  <li><strong>Beyond the local Universe.</strong> For massive quiescent galaxies at $1 \lesssim z \lesssim 2$, MICADO mass models plus HARMONI kinematics recover black hole masses to ~10%, with ~1&nbsp;h of MICADO imaging and 5&ndash;7.5&nbsp;h of HARMONI integration (<a class="cite" href="https://doi.org/10.1093/mnras/stag238" target="_blank" rel="noopener">MNRAS 2026</a>).</li>
+</ul>
+
+<!-- ===================== METHOD 02 ===================== -->
+<h2 class="fade-in" id="gas"><span class="method-label gas"><span class="dot"></span>Method 02</span><br>Molecular Gas Dynamics with ALMA CO(2&ndash;1)</h2>
+
+<h3 class="fade-in">How it works</h3>
+<p class="fade-in">
+Many early-type galaxies host a compact disk of cold molecular gas in their nucleus, often visible as a dust lane in HST images. Unlike stars, which move on a wide range of orbits, this gas settles onto nearly circular orbits, so its rotation traces the enclosed mass directly. We observe the $^{12}$CO(2&ndash;1) line with ALMA at high angular resolution, ideally with a synthesized beam comparable to or smaller than the black hole's sphere of influence.
+</p>
+<p class="fade-in">
+Rather than fitting a one-dimensional rotation curve, we forward-model the full three-dimensional ALMA data cube with KinMS. The circular velocity comes from the stellar mass (an MGE model scaled by $M/L$), the molecular gas mass, and the central black hole. The model gas disk, with its own surface-brightness distribution, velocity dispersion, inclination and position angle, is then convolved with the synthesized beam and channelised like the real data. The black hole mass, $M/L$ and disk geometry are constrained with a Bayesian analysis, and we test different prescriptions for the gas distribution to quantify systematic uncertainties.
+</p>
+
+<figure class="fig fade-in">
+  <div class="fig-grid g-gas">
+    <img src="fig/ngc7052-hst-co-overlay.webp" width="900" height="793" loading="lazy" alt="ALMA CO(2-1) contours of NGC 7052 overlaid on the HST F814W image, following the nuclear dust disk" />
+    <img src="fig/ngc7052-alma-moment-maps.webp" width="1400" height="1552" loading="lazy" alt="NGC 7052 ALMA continuum, CO intensity, velocity and dispersion maps, integrated spectrum and position-velocity diagram" />
+  </div>
+  <figcaption><b>Fig. 6 &mdash; The circumnuclear CO disk of NGC 7052 (ALMA).</b> <em>Left:</em> ALMA $^{12}$CO(2&ndash;1) integrated intensity (contours) over the HST/WFPC2 F814W image; the molecular gas coincides with the dust disk. <em>Right:</em> 1.3&nbsp;mm continuum (A); CO integrated intensity (B), mean line-of-sight velocity (C) and velocity dispersion (D); the integrated spectrum (E); and the position&ndash;velocity diagram along the major axis (F). The ellipse in each map shows the synthesized beam.<span class="credit">From Ngo, Nguyen, Le et al. 2025, ApJ, 992, 211.</span></figcaption>
+</figure>
+
+<h3 class="fade-in">Results with ALMA</h3>
+
+<div class="result gas fade-in">
+  <div class="result-head"><span class="result-name">NGC 7052</span><span class="lead-flag">Lead author</span><span class="result-mass">$M_{\rm BH} \approx (2.50 \pm 0.37_{\rm stat} \pm 0.8_{\rm sys})\times10^9\,M_\odot$</span><span class="result-ref">ApJ 992, 211 (2025) &middot; <a href="https://doi.org/10.3847/1538-4357/ae0455" target="_blank" rel="noopener">doi&nearr;</a></span></div>
+  <p>With ALMA Cycle 7 data at a resolution of 0.29&Prime;&nbsp;&times;&nbsp;0.22&Prime; (97&nbsp;&times;&nbsp;73&nbsp;pc<sup>2</sup>), we still resolve the sphere of influence, whose radius is 1.5 times larger than the resolution element. The mass (3$\sigma$ intervals) is fully consistent with the previous determination, while the $I$-band mass-to-light ratio ($\approx 4.08\,M_\odot/L_\odot$) is 10% lower. The difference comes from an improved galaxy mass model that includes the molecular gas and the extended stellar mass in the outer galaxy, components that earlier models neglected.</p>
+  <figure class="fig">
+    <img src="fig/ngc7052-pvd-bh-models.webp" width="1600" height="727" loading="lazy" alt="Major-axis position-velocity diagrams of NGC 7052 compared with KinMS models without a black hole, with the best-fitting black hole, and with an overly massive black hole" />
+    <figcaption><b>Fig. 7 &mdash; Weighing the black hole with the position&ndash;velocity diagram.</b> ALMA CO data along the major axis of NGC 7052 (orange filled contours) compared with KinMS models (blue contours) with no black hole (left), our best-fitting $M_{\rm BH} = 2.50\times10^9\,M_\odot$ (centre), and an overly massive $4.50\times10^9\,M_\odot$ black hole (right). Only the best-fitting model reproduces the gas velocities close to the centre.<span class="credit">From Ngo, Nguyen, Le et al. 2025, ApJ, 992, 211.</span></figcaption>
+  </figure>
+</div>
+
+<div class="result gas fade-in">
+  <div class="result-head"><span class="result-name">NGC 4061</span><span class="result-mass">$M_{\rm BH} = (1.17^{+0.08}_{-0.10}{}_{\rm stat} \pm 0.43_{\rm sys})\times10^9\,M_\odot$</span><span class="result-ref">ApJ 1005, 94 (2026) &middot; <a href="https://doi.org/10.3847/1538-4357/ae771c" target="_blank" rel="noopener">doi&nearr;</a></span></div>
+  <p>Combining archival Cycle 6 and new Cycle 7 data gives a beam of 0.16&Prime;&nbsp;&times;&nbsp;0.13&Prime;, comparable to the expected sphere of influence. The CO disk rotates regularly and is aligned with the dust lane in HST imaging. The mass is stable across different models of the gas distribution and plausible radial variations of $M/L$. This first robust dynamical mass resolves a long-standing discrepancy between earlier indirect estimates and shows that the exceptionally large velocity dispersion reported in the literature is likely spurious.</p>
+</div>
+
+<div class="result gas fade-in">
+  <div class="result-head"><span class="result-name">Ongoing</span><span class="result-ref">NGC 2513 (in prep.) &middot; Circinus</span></div>
+  <p>A high-precision ALMA molecular-gas mass for the massive elliptical NGC 2513, together with KinMS modelling of the Circinus galaxy. As a next step, our accepted ALMA Cycle 13 programme will <a class="cite" href="research.html#proposals">cross-calibrate black hole mass methods in Seyfert nuclei</a> using atomic [C&nbsp;I](1&ndash;0) gas.</p>
+</div>
+
+<!-- ===================== METHODS 03-04 ===================== -->
+<h2 class="fade-in" id="more-methods">Further Methods</h2>
+<div class="soon-grid fade-in">
+  <div class="placeholder-note">
+    <div class="pn-tag">Method 03</div>
+    <div class="pn-title">Gravitational Lensing</div>
+    <p>This section is in preparation and will be added here.</p>
+  </div>
+  <div class="placeholder-note">
+    <div class="pn-tag">Method 04</div>
+    <div class="pn-title">Ionised-Gas Emission Lines</div>
+    <p>This section is in preparation and will be added here.</p>
+  </div>
+</div>
+
+<!-- ===================== FINDINGS ===================== -->
+<h2 class="fade-in" id="findings">Summary of Findings</h2>
+
+<figure class="fig fade-in">
+<div class="fig-scroll">
+<svg viewBox="0 0 900 310" role="img" aria-labelledby="massfig-t massfig-d" xmlns="http://www.w3.org/2000/svg" font-family="var(--font-body)">
+  <title id="massfig-t">Our dynamical black hole masses along the mass spectrum</title>
+  <desc id="massfig-d">Stellar-kinematic masses for NGC 4736, NGC 4258 and M81 lie between 1 and 5 times 10 to the 7 solar masses; molecular-gas masses for NGC 4061 and NGC 7052 lie between 1 and 3 times 10 to the 9. ELT/HARMONI simulations extend stellar-kinematic detections to intermediate-mass black holes above about 10 to the 5 solar masses.</desc>
+  <!-- regime shading + labels (sit just above the axis, clear of the data) -->
+  <rect x="60" y="62" width="228.6" height="178" fill="var(--gold)" opacity="0.06"/>
+  <text x="174.3" y="230" fill="var(--text-muted)" font-size="12" text-anchor="middle" font-family="var(--font-mono)" letter-spacing="1.5">INTERMEDIATE-MASS</text>
+  <text x="631.4" y="230" fill="var(--text-muted)" font-size="12" text-anchor="middle" font-family="var(--font-mono)" letter-spacing="1.5">SUPERMASSIVE</text>
+  <!-- legend -->
+  <circle cx="68" cy="28" r="6.5" fill="var(--gold)"/>
+  <text x="82" y="33" fill="var(--heading)" font-size="14">Stellar · NIRSpec + JAM</text>
+  <path d="M326,20 L334,28 L326,36 L318,28 Z" fill="var(--teal)"/>
+  <text x="342" y="33" fill="var(--heading)" font-size="14">Molecular gas · ALMA CO(2–1)</text>
+  <rect x="610" y="20" width="24" height="16" fill="var(--gold)" fill-opacity="0.08" stroke="var(--gold)" stroke-dasharray="4 3"/>
+  <text x="642" y="33" fill="var(--heading)" font-size="14">ELT/HARMONI (simulated)</text>
+  <!-- ELT forecast band, stellar lane -->
+  <rect x="288.6" y="118" width="190" height="22" fill="var(--gold)" fill-opacity="0.08" stroke="var(--gold)" stroke-dasharray="4 3"/>
+  <text x="292" y="162" fill="var(--text-muted)" font-size="13">IMBHs ≳ 10⁵ M☉ out to ~20 Mpc →</text>
+  <!-- stellar measurements -->
+  <circle cx="540.5" cy="129" r="6.5" fill="var(--gold)"/>
+  <circle cx="586.9" cy="129" r="6.5" fill="var(--gold)" stroke="var(--bg-card)" stroke-width="1.2"/>
+  <circle cx="594.8" cy="129" r="6.5" fill="var(--gold)" stroke="var(--bg-card)" stroke-width="1.2"/>
+  <text x="533" y="112" fill="var(--heading)" font-size="14" text-anchor="end">NGC 4736</text>
+  <line x1="586.9" y1="121" x2="586.9" y2="96" stroke="var(--text-muted)" stroke-width="0.8"/>
+  <text x="586.9" y="90" fill="var(--heading)" font-size="14" text-anchor="middle">NGC 4258</text>
+  <text x="603" y="112" fill="var(--heading)" font-size="14">M81</text>
+  <!-- gas measurements -->
+  <path d="M753.5,178 L761.5,186 L753.5,194 L745.5,186 Z" fill="var(--teal)"/>
+  <path d="M791.2,178 L799.2,186 L791.2,194 L783.2,186 Z" fill="var(--teal)"/>
+  <text x="744" y="170" fill="var(--heading)" font-size="14" text-anchor="end">NGC 4061</text>
+  <text x="801" y="170" fill="var(--heading)" font-size="14">NGC 7052</text>
+  <!-- axis -->
+  <line x1="60" y1="240" x2="860" y2="240" stroke="var(--text-muted)" stroke-width="1"/>
+  <g stroke="var(--text-muted)" stroke-width="1">
+    <line x1="60" y1="240" x2="60" y2="246"/><line x1="174.3" y1="240" x2="174.3" y2="246"/><line x1="288.6" y1="240" x2="288.6" y2="246"/><line x1="402.9" y1="240" x2="402.9" y2="246"/><line x1="517.1" y1="240" x2="517.1" y2="246"/><line x1="631.4" y1="240" x2="631.4" y2="246"/><line x1="745.7" y1="240" x2="745.7" y2="246"/><line x1="860" y1="240" x2="860" y2="246"/>
+  </g>
+  <g fill="var(--text-muted)" font-size="14" text-anchor="middle">
+    <text x="60" y="266">10³</text><text x="174.3" y="266">10⁴</text><text x="288.6" y="266">10⁵</text><text x="402.9" y="266">10⁶</text><text x="517.1" y="266">10⁷</text><text x="631.4" y="266">10⁸</text><text x="745.7" y="266">10⁹</text><text x="860" y="266">10¹⁰</text>
+  </g>
+  <text x="460" y="298" fill="var(--heading)" font-size="14" text-anchor="middle">Black hole mass  M<tspan baseline-shift="sub" font-size="10">BH</tspan>  (M☉)</text>
+</svg>
+</div>
+<figcaption><b>Fig. 8 &mdash; Our dynamical masses along the mass spectrum.</b> Symbols mark best-fitting masses; uncertainties are given in the table below. The dashed box marks the regime that our ELT/HARMONI simulations show will become accessible with stellar kinematics.</figcaption>
+</figure>
+
+<div class="tbl-wrap fade-in">
+<table class="tbl">
+  <thead><tr><th>Galaxy</th><th>Method</th><th>$M_{\rm BH}$ ($M_\odot$)</th><th>Key point</th></tr></thead>
+  <tbody>
+    <tr><td class="gal">NGC 4736</td><td><span class="tag-s">NIRSpec + JAM</span></td><td class="num">$(1.60 \pm 0.16)\times10^7$</td><td>First NIRSpec stellar-dynamical mass; resolves an emission-line vs. $M$&ndash;$\sigma$ tension</td></tr>
+    <tr><td class="gal">NGC 4258</td><td><span class="tag-s">NIRSpec + JAM</span></td><td class="num">$(4.08^{+0.19}_{-0.33})\times10^7$</td><td>Within 5% of the maser benchmark; validates the method</td></tr>
+    <tr><td class="gal">M81</td><td><span class="tag-s">NIRSpec + JAM</span></td><td class="num">$(4.78^{+0.07}_{-0.10})\times10^7$</td><td>First robust stellar-dynamical mass</td></tr>
+    <tr><td class="gal">NGC 4061</td><td><span class="tag-g">ALMA CO(2&ndash;1)</span></td><td class="num">$(1.17^{+0.08}_{-0.10} \pm 0.43)\times10^9$</td><td>First robust dynamical mass; earlier high $\sigma$ likely spurious</td></tr>
+    <tr><td class="gal">NGC 7052</td><td><span class="tag-g">ALMA CO(2&ndash;1)</span></td><td class="num">$(2.50 \pm 0.37 \pm 0.8)\times10^9$</td><td>Consistent with earlier mass; improved mass model lowers $M/L$ by 10%</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="fade-in">
+Taken together, these measurements show that a single, carefully controlled dynamical approach, with ensembles of models to capture systematic uncertainties, can deliver reliable masses from ~10<sup>7</sup> to a few 10<sup>9</sup>&nbsp;M<sub>&#9737;</sub>. Where an independent benchmark exists (the NGC 4258 maser), the stellar-dynamical mass agrees to within 5%. In several galaxies (NGC 4736, M81, NGC 4061), the new masses resolve long-standing discrepancies between earlier estimates. Our ELT simulations show that the same stellar-kinematic method can extend this census down into the intermediate-mass regime.
 </p>
 
 <h2 class="fade-in">Literature Review</h2>
-<div class="placeholder-note fade-in">
-<p>Literature review for this theme is in preparation and will be added here.</p>
+<p class="fade-in">Progress hinges on how the masses are measured. Stellar-dynamical modelling (Schwarzschild orbit superposition and Jeans anisotropic models) and ionised-gas kinematics were the early workhorses, complemented by the exquisite geometry of nuclear water megamasers where they exist.</p>
+<p class="fade-in">More recently, ALMA has opened cold molecular gas as a clean dynamical tracer, resolving regular circumnuclear disks whose rotation pins down the enclosed mass (e.g. Davis et al. 2013; Nguyen et al. 2021). JWST/NIRSpec now pushes spatially resolved stellar kinematics to fainter, more distant nuclei. My own work sits within this multi-tracer effort, cross-calibrating methods on the same targets to expose systematic differences.</p>
+<div class="lit-refs fade-in">
+  <div class="lit-refs-title">Selected References</div>
+  <div class="lit-ref"><span class="lit-ref-key">Davis+ 13</span><span>Davis, T. A., et al. 2013, Nature/MNRAS — black hole masses from molecular-gas dynamics with (sub)mm interferometry.</span></div>
 </div>
 
-<h2 class="fade-in">Summary of Findings</h2>
-<div class="placeholder-note fade-in">
-<p>A summary of key results and findings for this theme is in preparation and will be added here.</p>
+<!-- ===================== PAPERS ===================== -->
+<h2 class="fade-in" id="papers">Papers in This Theme</h2>
+<div class="fade-in">
+<div class="pubs-group">Stellar kinematics &middot; JWST/NIRSpec + JAM</div>
+<ul class="pubs">
+  <li><span class="pt">Supermassive Black Hole Mass Measurement in the Spiral Galaxy NGC 4736 using JWST/NIRSpec Stellar Kinematics</span>Nguyen, D. D., <strong>Ngo, H. N.</strong>, et al. 2025, A&amp;A, 698, L9<a href="https://doi.org/10.1051/0004-6361/202554672" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">Measuring the Central Dark Mass in NGC 4258 with JWST/NIRSpec Stellar Kinematics</span>Nguyen, D. D., <strong>Ngo, H. N.</strong>, Cappellari, M., et al. 2026, ApJ, 999, 97<a href="https://doi.org/10.3847/1538-4357/ae32f2" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">The Supermassive Black Hole in the Nearby Spiral Galaxy M81: A Robust Mass from JWST/NIRSpec Stellar Dynamics</span>Nguyen, D. D., Le, T. N., Cappellari, M., <strong>Ngo, H. N.</strong>, et al. 2026, ApJ, 1003, 98<a href="https://doi.org/10.3847/1538-4357/ae64f0" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">Resolving One-Tenth of the Sphere-of-Influence Radius: The M87 Supermassive Black Hole Mass from JWST/NIRSpec Stellar Kinematics</span><strong>Ngo, H. N.</strong>, Nguyen, D. D., Cappellari, M., et al., in preparation</li>
+</ul>
+<div class="pubs-group">Stellar kinematics &middot; ELT simulations</div>
+<ul class="pubs">
+  <li><span class="pt">Simulating Intermediate-Mass Black Hole Mass Measurements for a Sample of Galaxies with Nuclear Star Clusters using ELT/HARMONI</span>Nguyen, D. D., Cappellari, M., <strong>Ngo, H. N.</strong>, et al. 2025, AJ<a href="https://doi.org/10.3847/1538-3881/ade9ba" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">Detecting Intermediate-Mass Black Holes out to 20 Mpc with ELT/HARMONI: The Case of FCC 119</span><strong>Ngo, H. N.</strong>, Nguyen, D. D., et al. 2025, Universe, 11, 360<a href="https://doi.org/10.3390/universe11110360" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">Extending Simulations of Intermediate-Mass Black Hole Mass Measurements to the Virgo Cluster using ELT/HARMONI</span><strong>Ngo, H. N.</strong>, Nguyen, D. D., et al., submitted<a href="https://arxiv.org/abs/2509.03364" target="_blank" rel="noopener">arXiv&nearr;</a></li>
+  <li><span class="pt">Probing the Effect of the Inner Surface-Brightness Profile of Nuclear Star Clusters on IMBH Mass Measurements using Mock ELT/MICADO and HARMONI Observations</span>Le, T. Q. T., Nguyen, D. D., <strong>Ngo, H. N.</strong>, et al. 2026, Universe, 12, 160<a href="https://doi.org/10.3390/universe12060160" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">Extending the Frontier of Spatially Resolved SMBH Mass Measurements to 1 &lt; z &lt; 2 with ELT/MICADO and HARMONI</span>Nguyen, D. D., Cappellari, M., Le, T. Q. T., <strong>Ngo, H. N.</strong>, et al. 2026, MNRAS, 546, 4<a href="https://doi.org/10.1093/mnras/stag238" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">ELT High Spatial Resolution IFS Survey of Ultramassive Galaxies: Observational Strategy and First Simulated Results</span><strong>Ngo, H. N.</strong>, Nguyen, D. D., Cappellari, M., &amp; Pereira-Santaella, M., Windows on the Universe (proceedings)<a href="https://doi.org/10.58027/aqp1-1s17.295" target="_blank" rel="noopener">doi&nearr;</a></li>
+</ul>
+<div class="pubs-group gas">Molecular gas &middot; ALMA CO(2&ndash;1)</div>
+<ul class="pubs">
+  <li><span class="pt">Revisiting the Supermassive Black Hole Mass of NGC 7052 using High Spatial Resolution Molecular Gas Observed with ALMA</span><strong>Ngo, H. N.</strong>, Nguyen, D. D., et al. 2025, ApJ, 992, 211<a href="https://doi.org/10.3847/1538-4357/ae0455" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">Dynamical Evidence for a Billion Solar-Mass Black Hole in the Galaxy NGC 4061 from ALMA $^{12}$CO(2&ndash;1) Kinematics</span>Nguyen, D. D., Nguyen, L. Q. T., Gallo, E., <strong>Ngo, H. N.</strong>, et al. 2026, ApJ, 1005, 94<a href="https://doi.org/10.3847/1538-4357/ae771c" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">A High-Precision Mass Measurement of the Central Black Hole in the Massive Elliptical NGC 2513 with ALMA Molecular Gas Dynamics</span>Harrisberg, S.-A., Thater, S., Nguyen, D. D., Hacar, A., &amp; <strong>Ngo, H. N.</strong>, in preparation</li>
+</ul>
 </div>
 
 </div>
@@ -67,8 +397,8 @@ I am developing a Python pipeline that separates the AGN continuum from the unde
 
 <footer>
 <div class="footer-inner">
-<div class="footer-copy">&copy; 2026 Hai Ngo Ngoc &middot; Galaxy Dynamics Lab</div>
-<div class="footer-copy">USAC Astrophysics Research Group</div>
+<div class="footer-copy">&copy; 2026 Hai Ngo Ngoc</div>
+<div class="footer-copy">Galaxy Dynamics Lab, University of Michigan</div>
 <div class="footer-links">
 <a href="index.html">Home</a>
 <a href="research.html">Research</a>

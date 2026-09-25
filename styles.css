@@ -134,7 +134,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 60px;
+  /* align logo and links with the 1080px content column used site-wide */
+  padding: 0 max(60px, calc((100% - 1080px) / 2));
   background: var(--nav-bg);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
@@ -281,12 +282,12 @@ nav {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: calc(var(--nav-h) + 60px) 60px 80px;
+  padding: calc(var(--nav-h) + 60px) 60px 16px;
   position: relative;
 }
 
 .hero-inner {
-  max-width: 1200px;
+  max-width: 1080px;
   margin: 0 auto;
   width: 100%;
   display: grid;
@@ -337,7 +338,7 @@ nav {
   color: var(--text-muted);
   margin-bottom: 28px;
   line-height: 1.6;
-  max-width: 480px;
+  max-width: 620px;
 }
 .hero-title em {
   color: var(--um-blue);
@@ -428,34 +429,6 @@ nav {
 .hero-photo-badge .badge-inst {
   font-size: 0.85rem;
   color: var(--text);
-}
-
-/* Scroll hint */
-.scroll-hint {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  animation: scrollBounce 2s ease-in-out infinite;
-}
-.scroll-hint::after {
-  content: '';
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, var(--text-muted), transparent);
-}
-@keyframes scrollBounce {
-  0%, 100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
-  50% { opacity: 0.8; transform: translateX(-50%) translateY(8px); }
 }
 
 /* ===== SECTION COMMONS ===== */
@@ -559,6 +532,9 @@ section {
   margin-top: 56px;
 }
 
+.research-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 768px) { .research-grid.cols-2 { grid-template-columns: 1fr; } }
+
 .research-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -637,7 +613,7 @@ section {
 }
 
 .facilities-inner {
-  max-width: 1200px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 
@@ -1230,7 +1206,7 @@ footer {
 }
 
 .footer-inner {
-  max-width: 1200px;
+  max-width: 1080px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -1247,7 +1223,8 @@ footer {
 
 .footer-links {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 8px 24px;
 }
 .footer-links a {
   font-size: 0.85rem;
@@ -1267,11 +1244,12 @@ footer {
   padding: 100px 60px;
 }
 .full-strip-inner {
-  max-width: 1200px;
+  max-width: 1080px;
   margin: 0 auto;
 }
 
 /* ===== STATS BAR ===== */
+.stats-wrap { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 60px; }
 .stats-bar {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1280,7 +1258,7 @@ footer {
   border: 1px solid var(--border);
   border-radius: 0;
   overflow: hidden;
-  margin-top: 80px;
+  margin-top: 16px;
 }
 .stat-item {
   background: var(--bg);
@@ -1332,7 +1310,8 @@ footer {
 }
 
 @media (max-width: 768px) {
-  nav { padding: 0 20px; }
+  nav { padding: 0 24px; }
+  .stats-wrap { padding: 0 24px; }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex;
@@ -1373,8 +1352,8 @@ footer {
   .nav-dropdown.open .nav-dropdown-menu { display: block; }
   .nav-dropdown-menu a { padding: 11px 14px; font-size: 0.85rem; color: var(--text-muted); }
   .nav-toggle { display: flex; }
-  section, .facilities-wrap, .full-strip, footer { padding-left: 20px; padding-right: 20px; }
-  .hero { padding-left: 20px; padding-right: 20px; padding-top: calc(var(--nav-h) + 40px); min-height: auto; }
+  section, .facilities-wrap, .full-strip, footer { padding-left: 24px; padding-right: 24px; }
+  .hero { padding-left: 24px; padding-right: 24px; padding-top: calc(var(--nav-h) + 40px); min-height: auto; }
   .hero-visual { margin-top: 40px; }
   .hero-photo-wrap { width: 230px; height: 290px; margin: 0 auto; }
   .hero-photo-badge { left: 0; }
@@ -1383,6 +1362,9 @@ footer {
   .research-grid { grid-template-columns: 1fr; }
   .facilities-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { flex-direction: column; text-align: center; }
+  .footer-links { justify-content: center; }
+  /* justified text leaves large word gaps in a narrow column */
+  .page-content .article-wrap p { text-align: left; }
   section, .facilities-wrap, .full-strip { padding-top: 64px; padding-bottom: 64px; }
   .outreach-featured { grid-template-columns: 1fr; }
   .outreach-card-thumb { aspect-ratio: 16 / 10; }

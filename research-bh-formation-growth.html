@@ -10,25 +10,31 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <style>
 .article-hero { position: relative; z-index: 1; padding: calc(var(--nav-h) + 70px) 60px 60px; background: radial-gradient(circle at 82% 10%, rgba(var(--gold-rgb),0.14) 0%, transparent 45%), radial-gradient(circle at 10% 90%, rgba(var(--teal-rgb),0.08) 0%, transparent 50%); border-bottom: 1px solid var(--border); }
-.article-hero-inner { max-width: 1200px; margin: 0 auto; }
-.article-back { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; margin-bottom: 28px; transition: color 0.2s, gap 0.2s; }
+.article-hero-inner { max-width: 860px; margin: 0 auto; }
+.article-back { display: flex; width: fit-content; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; margin-bottom: 28px; transition: color 0.2s, gap 0.2s; }
 .article-back:hover { color: var(--gold); gap: 12px; }
 .article-badge { display: inline-block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-accent); background: linear-gradient(135deg, var(--gold-light), var(--gold)); padding: 5px 14px; border-radius: 0; margin-bottom: 22px; }
 .article-title { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.9rem, 4.2vw, 2.7rem); line-height: 1.15; color: var(--heading); margin-bottom: 16px; }
 .article-subtitle { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
-.article-wrap { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 60px 60px 10px; }
+.article-wrap { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; padding: 60px 60px 10px; }
 .article-wrap + .article-wrap { padding-top: 0; }
 .article-wrap p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.95; margin-bottom: 26px; text-align: justify; }
 .article-wrap h2 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; color: var(--heading); margin: 44px 0 18px; line-height: 1.3; }
 .rn-figure { overflow: hidden; margin-bottom: 12px; }
 .rn-figure img, .rn-figure svg { display: block; width: 100%; height: auto; }
-.rn-figure-wide { max-width: 1200px; margin: 0 auto 56px; padding: 0 60px; box-sizing: border-box; }
+.rn-figure-wide { max-width: 980px; margin: 0 auto 56px; padding: 0 60px; box-sizing: border-box; }
 .rn-fig-caption { font-size: 0.82rem; color: var(--text-muted); padding: 14px 0px 0; line-height: 1.6; }
 .rn-fig-caption .rn-fig-name { font-weight: 700; color: var(--um-blue); }
 .rn-fig-caption span { display: block; margin-top: 4px; }
 .placeholder-note { padding: 22px 26px; background: var(--bg-card); border: 1px dashed var(--border-accent); border-radius: 0; }
 .placeholder-note p { margin-bottom: 0 !important; font-size: 0.88rem !important; font-style: italic; }
-.article-nav-more { max-width: 1200px; margin: 0 auto; padding: 10px 60px 100px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; position: relative; z-index: 1; }
+.rn-figure-narrow { max-width: 820px; }
+.lit-refs { margin: 8px 0 20px; border-top: 1px solid var(--border); padding-top: 24px; display: grid; gap: 12px; }
+.lit-refs-title { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.lit-ref { display: grid; grid-template-columns: 180px 1fr; gap: 16px; font-size: 0.86rem; line-height: 1.65; color: var(--text-muted); }
+.lit-ref-key { font-family: var(--font-mono); font-size: 0.76rem; color: var(--teal); }
+@media (max-width: 600px) { .lit-ref { grid-template-columns: 1fr; gap: 2px; } }
+.article-nav-more { max-width: 980px; margin: 0 auto; padding: 10px 60px 100px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; position: relative; z-index: 1; }
 @media (max-width: 768px) { .article-hero, .article-wrap, .article-nav-more, .rn-figure-wide { padding-left: 24px; padding-right: 24px; } }
 </style>
 </head>
@@ -40,6 +46,7 @@
 <a class="article-back fade-in" href="research.html#bh-formation-growth"><i class="fas fa-arrow-left"></i> Back to Research</a>
 <span class="article-badge fade-in fade-in-delay-1">Theme 01 &middot; Seeds &amp; Growth</span>
 <h1 class="article-title fade-in fade-in-delay-1">Black Hole Formation and Growth</h1>
+</div>
 </div>
 
 <div class="article-wrap">
@@ -55,27 +62,52 @@
 
 <figure class="rn-figure rn-figure-wide">
   <img src="fig/BH-gal_correlation.jpg" alt="Compiled dynamical black hole masses versus stellar velocity dispersion, host stellar mass, and a near-fundamental-plane combination of K-band luminosity and effective radius" loading="lazy" />
-  <figcaption class="rn-fig-caption"><span class="rn-fig-name">Fig. 2 — Black hole&ndash;galaxy scaling relations.</span> <span>Compiled dynamical masses versus stellar velocity dispersion (left), host stellar mass (middle), and a near&ndash;fundamental-plane combination of <em>K</em>-band luminosity and effective radius (right). Colours mark the tracer &mdash; masers, cold gas, stars, or reverberation mapping &mdash; and the tight, near-linear correlations across nine orders of magnitude in mass are the empirical backbone of black hole&ndash;galaxy coevolution.</span></figcaption>
+  <figcaption class="rn-fig-caption"><span class="rn-fig-name">Fig. 1 — Black hole&ndash;galaxy scaling relations.</span> <span>Compiled dynamical masses versus stellar velocity dispersion (left), host stellar mass (middle), and a near&ndash;fundamental-plane combination of <em>K</em>-band luminosity and effective radius (right). Colours mark the tracer &mdash; masers, cold gas, stars, or reverberation mapping &mdash; and the tight, near-linear correlations across nine orders of magnitude in mass are the empirical backbone of black hole&ndash;galaxy coevolution.</span></figcaption>
 </figure>
 
 
 
 
+<div class="article-wrap">
 <h2 class="fade-in">My Research</h2>
 <p class="fade-in">
 My work attacks this problem from the observational side by building homogeneous, dynamically measured black hole masses across the whole accessible mass range. Using JWST/NIRSpec and NIRCam data, ALMA molecular-gas observations, and end-to-end simulations of ELT instruments, I measure masses in systems from dwarf galaxies and nuclear star clusters up to giant ellipticals, so that the low-mass end of the local mass function &mdash; the regime that discriminates most strongly between seeding channels &mdash; can be populated with reliable measurements rather than upper limits.
 </p>
 
 <h2 class="fade-in">Literature Review</h2>
-<div class="placeholder-note fade-in">
-<p>Literature review for this theme is in preparation and will be added here.</p>
+<p class="fade-in">At the low-mass end, the seeds of today's black holes are unknown: did they form as light remnants of the first stars or as heavy direct-collapse objects (Volonteri 2010)? The occupation fraction of intermediate-mass black holes in dwarf galaxies &mdash; a direct discriminator between these channels &mdash; is still poorly constrained (Greene, Strader &amp; Ho 2020; Reines &amp; Volonteri 2015).</p>
+</div>
+
+<figure class="rn-figure rn-figure-wide rn-figure-narrow fade-in">
+  <svg viewBox="0 0 600 400" role="img" aria-label="Open questions in black hole demographics and coevolution" xmlns="http://www.w3.org/2000/svg">
+  <defs><radialGradient id="hub" cx="50%" cy="45%" r="60%"><stop offset="0%" stop-color="var(--gold-light)"/><stop offset="100%" stop-color="var(--gold)"/></radialGradient></defs>
+  <text x="30" y="34" fill="var(--heading)" font-size="15" font-family="var(--font-display)">Open questions</text>
+  <line x1="300" y1="200" x2="185.1" y2="103.6" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/><line x1="300" y1="200" x2="351.3" y2="59.0" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/><line x1="300" y1="200" x2="450.0" y2="200.0" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/><line x1="300" y1="200" x2="351.3" y2="341.0" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/><line x1="300" y1="200" x2="185.1" y2="296.4" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/>
+  <circle cx="300" cy="200" r="46" fill="url(#hub)" stroke="var(--gold)" stroke-width="1.2"/>
+  <text x="300" y="196" fill="var(--on-accent)" font-size="12.5" font-family="var(--font-display)" font-weight="600" text-anchor="middle">BH – galaxy</text>
+  <text x="300" y="213" fill="var(--on-accent)" font-size="12.5" font-family="var(--font-display)" font-weight="600" text-anchor="middle">coevolution</text>
+  <circle cx="185.1" cy="103.6" r="6" fill="var(--teal)" stroke="var(--teal-dark)" stroke-width="1"/><text x="175.1" y="101.6" fill="var(--heading)" font-size="12" font-family="var(--font-display)" text-anchor="end">Seed formation</text><text x="175.1" y="116.6" fill="var(--text-muted)" font-size="10" font-family="var(--font-body)" text-anchor="end">light vs heavy?</text><circle cx="351.3" cy="59.0" r="6" fill="var(--teal)" stroke="var(--teal-dark)" stroke-width="1"/><text x="361.3" y="57.0" fill="var(--heading)" font-size="12" font-family="var(--font-display)" text-anchor="start">IMBH occupation</text><text x="361.3" y="72.0" fill="var(--text-muted)" font-size="10" font-family="var(--font-body)" text-anchor="start">fraction in dwarfs</text><circle cx="450.0" cy="200.0" r="6" fill="var(--teal)" stroke="var(--teal-dark)" stroke-width="1"/><text x="460.0" y="198.0" fill="var(--heading)" font-size="12" font-family="var(--font-display)" text-anchor="start">High-mass end</text><text x="460.0" y="213.0" fill="var(--text-muted)" font-size="10" font-family="var(--font-body)" text-anchor="start">breaks &amp; scatter</text><circle cx="351.3" cy="341.0" r="6" fill="var(--teal)" stroke="var(--teal-dark)" stroke-width="1"/><text x="361.3" y="339.0" fill="var(--heading)" font-size="12" font-family="var(--font-display)" text-anchor="start">AGN feedback</text><text x="361.3" y="354.0" fill="var(--text-muted)" font-size="10" font-family="var(--font-body)" text-anchor="start">driver of coevolution?</text><circle cx="185.1" cy="296.4" r="6" fill="var(--teal)" stroke="var(--teal-dark)" stroke-width="1"/><text x="175.1" y="294.4" fill="var(--heading)" font-size="12" font-family="var(--font-display)" text-anchor="end">Selection &amp; resolution</text><text x="175.1" y="309.4" fill="var(--text-muted)" font-size="10" font-family="var(--font-body)" text-anchor="end">measurement biases</text>
+  </svg>
+  <figcaption class="rn-fig-caption"><span class="rn-fig-name">Fig. 2 — Open questions.</span> <span>The unresolved problems that connect black hole seeding, demographics and feedback to galaxy evolution.</span></figcaption>
+</figure>
+
+<div class="article-wrap">
+<div class="lit-refs fade-in">
+  <div class="lit-refs-title">Selected References</div>
+  <div class="lit-ref"><span class="lit-ref-key">Magorrian+ 98</span><span>Magorrian, J., Tremaine, S., et al. 1998, AJ — demography of massive dark objects in galaxy centres.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Ferrarese &amp; Merritt 00</span><span>Ferrarese, L. &amp; Merritt, D. 2000, ApJL — a fundamental relation between black holes and their host galaxies.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Gebhardt+ 00</span><span>Gebhardt, K., et al. 2000, ApJL — black hole mass and host velocity dispersion.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Gültekin+ 09</span><span>Gültekin, K., et al. 2009, ApJ — the M–σ and M–L relations and their intrinsic scatter.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Volonteri 10</span><span>Volonteri, M. 2010, A&amp;ARv — formation of supermassive black hole seeds.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Kormendy &amp; Ho 13</span><span>Kormendy, J. &amp; Ho, L. C. 2013, ARA&amp;A — coevolution of supermassive black holes and host galaxies.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Reines &amp; Volonteri 15</span><span>Reines, A. E. &amp; Volonteri, M. 2015, ApJ — black hole–stellar-mass relation into the low-mass regime.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Greene+ 20</span><span>Greene, J. E., Strader, J. &amp; Ho, L. C. 2020, ARA&amp;A — intermediate-mass black holes.</span></div>
 </div>
 
 <h2 class="fade-in">Summary of Findings</h2>
 <div class="placeholder-note fade-in">
 <p>A summary of key results and findings for this theme is in preparation and will be added here.</p>
 </div>
-
 </div>
 
 <div class="article-nav-more fade-in">
@@ -85,8 +117,8 @@ My work attacks this problem from the observational side by building homogeneous
 
 <footer>
 <div class="footer-inner">
-<div class="footer-copy">&copy; 2026 Hai Ngo Ngoc &middot; Galaxy Dynamics Lab</div>
-<div class="footer-copy">USAC Astrophysics Research Group</div>
+<div class="footer-copy">&copy; 2026 Hai Ngo Ngoc</div>
+<div class="footer-copy">Galaxy Dynamics Lab, University of Michigan</div>
 <div class="footer-links">
 <a href="index.html">Home</a>
 <a href="research.html">Research</a>
