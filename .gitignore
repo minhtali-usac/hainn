@@ -1,0 +1,7 @@
+# LaTeX build artifacts (the published CV is CV_HAI.pdf at the repo root)
+CV_overleaf/**/*.aux
+CV_overleaf/**/*.log
+CV_overleaf/**/*.out
+CV_overleaf/**/*.synctex.gz
+CV_overleaf/**/*.pdf
+.DS_Store

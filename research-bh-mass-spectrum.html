@@ -87,7 +87,7 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: 0.86rem; line-hei
 /* literature references */
 .lit-refs { margin: 8px 0 20px; border-top: 1px solid var(--border); padding-top: 20px; display: grid; gap: 12px; }
 .lit-refs-title { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
-.lit-ref { display: grid; grid-template-columns: 150px 1fr; gap: 16px; font-size: 0.86rem; line-height: 1.65; color: var(--text-muted); }
+.lit-ref { display: grid; grid-template-columns: 190px 1fr; gap: 16px; font-size: 0.86rem; line-height: 1.65; color: var(--text-muted); }
 .lit-ref-key { font-family: var(--font-mono); font-size: 0.76rem; color: var(--teal); }
 @media (max-width: 600px) { .lit-ref { grid-template-columns: 1fr; gap: 2px; } }
 
@@ -114,7 +114,7 @@ table.tbl { width: 100%; border-collapse: collapse; font-size: 0.86rem; line-hei
 <div class="article-hero">
 <div class="article-hero-inner">
 <a class="article-back fade-in" href="research.html#bh-mass-spectrum"><i class="fas fa-arrow-left"></i> Back to Research</a>
-<span class="article-badge fade-in fade-in-delay-1">Theme 02 &middot; JWST / ALMA / ELT</span>
+<span class="article-badge fade-in fade-in-delay-1">Theme 01 &middot; JWST / ALMA / ELT</span>
 <h1 class="article-title fade-in fade-in-delay-1">Massive Black Holes Across the Mass Spectrum</h1>
 <p class="article-lede fade-in fade-in-delay-2">Weighing black holes from about 10<sup>7</sup> to a few 10<sup>9</sup> M<sub>&#9737;</sub> today, and preparing to reach the intermediate-mass regime with the ELT, using two complementary dynamical tracers: stars and cold molecular gas.</p>
 <ul class="article-toc fade-in fade-in-delay-2">
@@ -352,13 +352,28 @@ Rather than fitting a one-dimensional rotation curve, we forward-model the full 
 <p class="fade-in">
 Taken together, these measurements show that a single, carefully controlled dynamical approach, with ensembles of models to capture systematic uncertainties, can deliver reliable masses from ~10<sup>7</sup> to a few 10<sup>9</sup>&nbsp;M<sub>&#9737;</sub>. Where an independent benchmark exists (the NGC 4258 maser), the stellar-dynamical mass agrees to within 5%. In several galaxies (NGC 4736, M81, NGC 4061), the new masses resolve long-standing discrepancies between earlier estimates. Our ELT simulations show that the same stellar-kinematic method can extend this census down into the intermediate-mass regime.
 </p>
+<p class="fade-in">
+These masses feed directly into the other themes. The push toward the intermediate-mass regime, and what it will reveal about black hole seeds, is the subject of <a class="cite" href="research-bh-formation-growth.html">Theme 02</a>. The billion-solar-mass black holes of NGC&nbsp;4061 and NGC&nbsp;7052 anchor the high-mass end of the black hole&ndash;galaxy relations in <a class="cite" href="research-bh-galaxy-coevolution.html">Theme 03</a>.
+</p>
 
 <h2 class="fade-in">Literature Review</h2>
-<p class="fade-in">Progress hinges on how the masses are measured. Stellar-dynamical modelling (Schwarzschild orbit superposition and Jeans anisotropic models) and ionised-gas kinematics were the early workhorses, complemented by the exquisite geometry of nuclear water megamasers where they exist.</p>
-<p class="fade-in">More recently, ALMA has opened cold molecular gas as a clean dynamical tracer, resolving regular circumnuclear disks whose rotation pins down the enclosed mass (e.g. Davis et al. 2013; Nguyen et al. 2021). JWST/NIRSpec now pushes spatially resolved stellar kinematics to fainter, more distant nuclei. My own work sits within this multi-tracer effort, cross-calibrating methods on the same targets to expose systematic differences.</p>
+<p class="fade-in">Progress hinges on how the masses are measured. Stellar-dynamical modelling and ionised-gas kinematics were the early workhorses. Stellar dynamics uses either Schwarzschild orbit superposition (e.g. van der Marel et al. 1998; Gebhardt et al. 2003) or Jeans Anisotropic Models (Cappellari 2008, 2020). Nuclear water megamasers, where they exist, give the most precise geometric masses. The maser disk of NGC&nbsp;4258 (Miyoshi et al. 1995; Herrnstein et al. 2005) is the benchmark against which other methods are tested. The comparison of methods across the full census is reviewed by Kormendy &amp; Ho (2013).</p>
+<p class="fade-in">Both the stellar and the gas methods need an accurate model of the stellar mass. This is usually built with the Multi-Gaussian Expansion (Emsellem, Monnet &amp; Bacon 1994; Cappellari 2002). Stellar kinematics are extracted by full-spectrum fitting with pPXF (Cappellari &amp; Emsellem 2004; Cappellari 2017).</p>
+<p class="fade-in">More recently, ALMA has opened cold molecular gas as a clean dynamical tracer, resolving regular circumnuclear disks whose rotation pins down the enclosed mass (e.g. Davis et al. 2013; Nguyen et al. 2021). JWST/NIRSpec now brings spatially resolved near-infrared stellar kinematics to dusty and AGN-dominated nuclei. My own work sits within this multi-tracer effort, cross-calibrating methods on the same targets to expose systematic differences.</p>
 <div class="lit-refs fade-in">
   <div class="lit-refs-title">Selected References</div>
-  <div class="lit-ref"><span class="lit-ref-key">Davis+ 13</span><span>Davis, T. A., et al. 2013, Nature/MNRAS — black hole masses from molecular-gas dynamics with (sub)mm interferometry.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Emsellem+ 94</span><span>Emsellem, E., Monnet, G. &amp; Bacon, R. 1994, A&amp;A &mdash; the Multi-Gaussian Expansion method for galaxy mass models.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Miyoshi+ 95</span><span>Miyoshi, M., et al. 1995, Nature &mdash; the water-maser disk in NGC&nbsp;4258 and evidence for a central black hole.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">van der Marel+ 98</span><span>van der Marel, R. P., et al. 1998, ApJ &mdash; Schwarzschild orbit-superposition models of M32 and its black hole.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Cappellari 02</span><span>Cappellari, M. 2002, MNRAS &mdash; efficient Multi-Gaussian Expansion fitting of galaxy images.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Gebhardt+ 03</span><span>Gebhardt, K., et al. 2003, ApJ &mdash; axisymmetric orbit models for black hole masses in early-type galaxies.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Cappellari &amp; Emsellem 04</span><span>Cappellari, M. &amp; Emsellem, E. 2004, PASP &mdash; penalized pixel-fitting (pPXF) of stellar kinematics.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Herrnstein+ 05</span><span>Herrnstein, J. R., et al. 2005, ApJ &mdash; the geometry and mass of the NGC&nbsp;4258 maser disk.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Cappellari 08</span><span>Cappellari, M. 2008, MNRAS &mdash; Jeans Anisotropic Models (JAM) of axisymmetric galaxies.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Davis+ 13</span><span>Davis, T. A., et al. 2013, Nature &mdash; a black hole mass from molecular-gas kinematics in NGC&nbsp;4526.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Kormendy &amp; Ho 13</span><span>Kormendy, J. &amp; Ho, L. C. 2013, ARA&amp;A &mdash; coevolution of supermassive black holes and host galaxies, including a review of measurement methods.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Cappellari 17</span><span>Cappellari, M. 2017, MNRAS &mdash; improvements to pPXF full-spectrum fitting.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Cappellari 20</span><span>Cappellari, M. 2020, MNRAS &mdash; JAM with cylindrically and spherically aligned velocity ellipsoids.</span></div>
 </div>
 
 <!-- ===================== PAPERS ===================== -->
@@ -391,8 +406,8 @@ Taken together, these measurements show that a single, carefully controlled dyna
 </div>
 
 <div class="article-nav-more fade-in">
-<a class="btn btn-outline" href="research-bh-formation-growth.html"><i class="fas fa-arrow-left"></i> Black Hole Formation and Growth</a>
-<a class="btn btn-outline" href="research-bh-galaxy-coevolution.html">Black Hole and Galaxy Coevolution <i class="fas fa-arrow-right"></i></a>
+<a class="btn btn-outline" href="research.html"><i class="fas fa-arrow-left"></i> Back to Research</a>
+<a class="btn btn-outline" href="research-bh-formation-growth.html">Formation and Evolution of IMBHs <i class="fas fa-arrow-right"></i></a>
 </div>
 
 <footer>

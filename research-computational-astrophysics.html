@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
   <script id="theme-fouc-guard">(function(){try{var t=localStorage.getItem("theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Simulating the ELT - Hai Ngo Ngoc</title>
+<title>Computational Astrophysics, Simulations, and Modelling - Hai Ngo Ngoc</title>
 <meta name="description" content="Virtual observations with ELT/HARMONI and MICADO to find out which black holes the Extremely Large Telescope will be able to weigh, from dwarf galaxies nearby to giant galaxies in the distant Universe." />
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -98,6 +98,7 @@
   <li><a href="#how">How it works</a></li>
   <li><a href="#dwarfs">Black holes in dwarf galaxies</a></li>
   <li><a href="#distant">Distant giants</a></li>
+  <li><a href="#modelling">Modelling real data</a></li>
   <li><a href="#papers">Papers</a></li>
 </ul>
 </div>
@@ -186,7 +187,7 @@ In our virtual HARMONI observations, a black hole reveals itself as a &ldquo;hot
 <!-- ===================== DISTANT ===================== -->
 <h3 class="fade-in" id="distant">Giant black holes in the distant Universe</h3>
 <p class="fade-in">
-Today, this kind of direct black hole weighing only works for galaxies relatively close to us, within about 100&nbsp;Mpc. We asked whether the ELT can push it much further, to galaxies at redshift 1&ndash;2, whose light left them roughly 8 to 10 billion years ago, when galaxies and their black holes were growing fastest.
+Today, this kind of direct black hole weighing only works for galaxies relatively close to us, within about 100&nbsp;Mpc. Building on HARMONI simulations of nearby ultramassive galaxies (Nguyen, Cappellari &amp; Pereira-Santaella 2023), we asked whether the ELT can push it much further, to galaxies at redshift 1&ndash;2. Their light left them roughly 8 to 10 billion years ago, when galaxies and their black holes were growing fastest (see <a class="cite" href="research-bh-galaxy-coevolution.html#cosmic-noon">Theme 03</a>).
 </p>
 
 <figure class="fig fade-in">
@@ -210,19 +211,30 @@ Yes. In both cases, the black hole masses we recover from the virtual observatio
   <figcaption><b>Fig. 4 &mdash; Putting in a mass, getting it back.</b> Black hole mass put into the simulation (vertical axis) versus the mass recovered from the virtual observations (horizontal axis). <em>Left:</em> intermediate-mass black holes in the dwarf galaxies NGC 300 and NGC 3115 dw01. <em>Right:</em> billion-solar-mass black holes in five galaxies at redshift 1&ndash;2.<span class="credit">Left: Nguyen, Cappellari, Ngo et al. 2025, AJ. Right: Nguyen, Cappellari, Le, Ngo et al. 2026, MNRAS, 546, 4.</span></figcaption>
 </figure>
 
+<!-- ===================== MODELLING REAL DATA ===================== -->
+<h2 class="fade-in" id="modelling">Modelling Real Data</h2>
+<p class="fade-in">
+The same computational machinery powers my measurements from real JWST and ALMA observations (<a class="cite" href="research-bh-mass-spectrum.html">Theme 01</a>). In practice, the modelling choices, rather than the noise in the data, usually dominate the uncertainty of a black hole mass. My analyses are therefore designed to expose those choices rather than hide them:
+</p>
+<ul class="finds fade-in">
+  <li><span><strong>Separating the AGN from the stars.</strong> In active nuclei, non-thermal light from the accreting black hole dilutes the stellar absorption lines. I am developing a Python pipeline for JWST/NIRSpec data cubes that separates the AGN continuum from the stellar light before the kinematics are extracted with pPXF. I used it for NGC&nbsp;4258 and am now applying it to M87.</span></li>
+  <li><span><strong>Ensembles of models, not a single best fit.</strong> For NGC&nbsp;4258 we fitted 12 JAM models that vary the point-spread function, the mass-to-light ratio profile and the orientation of the velocity ellipsoid, and we quote the median and spread of the ensemble. The adopted mass lies within 5% of the independent maser value (<a class="cite" href="https://doi.org/10.3847/1538-4357/ae32f2" target="_blank" rel="noopener">ApJ 2026</a>).</span></li>
+  <li><span><strong>Forward-modelling ALMA data cubes.</strong> With KinMS, I build a three-dimensional model of the rotating gas disk, convolve it with the ALMA beam and compare it with the full data cube, sampling the parameters with MCMC (10<sup>5</sup> iterations for NGC&nbsp;7052). I repeat the fit with different descriptions of the gas distribution and of the radial mass-to-light profile to measure the systematic error on the black hole mass (<a class="cite" href="https://doi.org/10.3847/1538-4357/ae0455" target="_blank" rel="noopener">ApJ 2025</a>) <span class="lead-flag">Lead author</span></span></li>
+</ul>
+
 <!-- ===================== TOOLS ===================== -->
 <h2 class="fade-in">Tools I Use</h2>
 <p class="fade-in">
-I write and run these pipelines mainly in Python, combining community tools for instrument simulation, dynamical modelling and Bayesian fitting.
+I write and run these pipelines mainly in Python, combining community tools for instrument simulation, dynamical modelling of stars and gas, and Bayesian fitting.
 </p>
 <div class="tools fade-in">
-  <span>Python</span><span>NumPy</span><span>Astropy</span><span>Matplotlib</span><span>HSIM (HARMONI)</span><span>SimCADO (MICADO)</span><span>MGE</span><span>JAM</span><span>pPXF</span><span>MCMC (AdaMet)</span>
+  <span>Python</span><span>NumPy</span><span>Astropy</span><span>Matplotlib</span><span>pandas</span><span>HSIM (HARMONI)</span><span>SimCADO (MICADO)</span><span>MGE</span><span>JAM</span><span>pPXF</span><span>KinMS (ALMA)</span><span>MCMC (AdaMet)</span><span>IRAF</span>
 </div>
 
 <!-- ===================== PAPERS ===================== -->
 <h2 class="fade-in" id="papers">Papers in This Theme</h2>
 <ul class="pubs fade-in">
-  <li><span class="pt">Simulating Intermediate-Mass Black Hole Mass Measurements for a Sample of Galaxies with Nuclear Star Clusters using ELT/HARMONI</span>Nguyen, D. D., Cappellari, M., <strong>Ngo, H. N.</strong>, et al. 2025, AJ<a href="https://doi.org/10.3847/1538-3881/ade9ba" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">Simulating Intermediate-Mass Black Hole Mass Measurements for a Sample of Galaxies with Nuclear Star Clusters using ELT/HARMONI</span>Nguyen, D. D., Cappellari, M., <strong>Ngo, H. N.</strong>, et al. 2025, AJ, 170, 124<a href="https://doi.org/10.3847/1538-3881/ade9ba" target="_blank" rel="noopener">doi&nearr;</a></li>
   <li><span class="pt">Detecting Intermediate-Mass Black Holes out to 20 Mpc with ELT/HARMONI: The Case of FCC 119</span><strong>Ngo, H. N.</strong>, Nguyen, D. D., et al. 2025, Universe, 11, 360<a href="https://doi.org/10.3390/universe11110360" target="_blank" rel="noopener">doi&nearr;</a></li>
   <li><span class="pt">Extending Simulations of Intermediate-Mass Black Hole Mass Measurements to the Virgo Cluster using ELT/HARMONI</span><strong>Ngo, H. N.</strong>, Nguyen, D. D., et al., submitted<a href="https://arxiv.org/abs/2509.03364" target="_blank" rel="noopener">arXiv&nearr;</a></li>
   <li><span class="pt">Probing the Effect of the Inner Surface-Brightness Profile of Nuclear Star Clusters on IMBH Mass Measurements using Mock ELT/MICADO and HARMONI Observations</span>Le, T. Q. T., Nguyen, D. D., <strong>Ngo, H. N.</strong>, et al. 2026, Universe, 12, 160<a href="https://doi.org/10.3390/universe12060160" target="_blank" rel="noopener">doi&nearr;</a></li>
@@ -233,7 +245,7 @@ I write and run these pipelines mainly in Python, combining community tools for 
 </div>
 
 <div class="article-nav-more fade-in">
-<a class="btn btn-outline" href="research-bh-galaxy-coevolution.html"><i class="fas fa-arrow-left"></i> Black Hole and Galaxy Coevolution</a>
+<a class="btn btn-outline" href="research-bh-galaxy-coevolution.html"><i class="fas fa-arrow-left"></i> Co-evolution of SMBHs and Their Hosts</a>
 <a class="btn btn-outline" href="research.html">Back to Research <i class="fas fa-arrow-right"></i></a>
 </div>
 

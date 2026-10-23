@@ -14,9 +14,9 @@ function injectNav(activePage, basePath = '') {
           <li class="nav-dropdown">
             <a href="${basePath}research.html" class="nav-dropdown-link ${activePage === 'research' ? 'active' : ''}">Research <i class="fas fa-chevron-down nav-dropdown-caret"></i></a>
             <div class="nav-dropdown-menu">
-              <a href="${basePath}research-bh-formation-growth.html">Black Hole Formation &amp; Growth</a>
               <a href="${basePath}research-bh-mass-spectrum.html">Massive BHs Across the Mass Spectrum</a>
-              <a href="${basePath}research-bh-galaxy-coevolution.html">BH &amp; Galaxy Coevolution</a>
+              <a href="${basePath}research-bh-formation-growth.html">Formation &amp; Evolution of IMBHs</a>
+              <a href="${basePath}research-bh-galaxy-coevolution.html">Co-evolution of SMBHs &amp; Hosts</a>
               <a href="${basePath}research-computational-astrophysics.html">Computational Astrophysics</a>
             </div>
           </li>

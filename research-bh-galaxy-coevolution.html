@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
   <script id="theme-fouc-guard">(function(){try{var t=localStorage.getItem("theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Black Hole and Galaxy Coevolution - Hai Ngo Ngoc</title>
-<meta name="description" content="Detailed research theme page for Black Hole and Galaxy Coevolution: literature review and research findings by Hai Ngo Ngoc." />
+<title>Co-evolution of Supermassive Black Holes and Their Hosts - Hai Ngo Ngoc</title>
+<meta name="description" content="How supermassive black holes grow together with their host galaxies, with a focus on the high-mass end: ALMA and JWST dynamical masses in massive radio galaxies and ELT simulations at redshift 1-2. Research by Hai Ngo Ngoc." />
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <style>
@@ -15,19 +15,75 @@
 .article-back:hover { color: var(--gold); gap: 12px; }
 .article-badge { display: inline-block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-accent); background: linear-gradient(135deg, var(--gold-light), var(--gold)); padding: 5px 14px; border-radius: 0; margin-bottom: 22px; }
 .article-title { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.9rem, 4.2vw, 2.7rem); line-height: 1.15; color: var(--heading); margin-bottom: 16px; }
-.article-subtitle { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+.article-lede { font-size: 1rem; line-height: 1.8; color: var(--text-muted); max-width: 760px; }
+.article-toc { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.article-toc a { display: inline-block; padding: 7px 14px; border: 1px solid var(--border); background: var(--bg-card); font-size: 0.8rem; color: var(--heading); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.article-toc a:hover { border-color: var(--border-accent); color: var(--gold); }
+
 .article-wrap { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; padding: 60px 60px 40px; }
-.article-wrap p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.95; margin-bottom: 26px; text-align: justify; }
-.article-wrap h2 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; color: var(--heading); margin: 44px 0 18px; line-height: 1.3; }
-.placeholder-note { padding: 22px 26px; background: var(--bg-card); border: 1px dashed var(--border-accent); border-radius: 0; }
-.placeholder-note p { margin-bottom: 0 !important; font-size: 0.88rem !important; font-style: italic; }
-.lit-refs { margin: 8px 0 20px; border-top: 1px solid var(--border); padding-top: 24px; display: grid; gap: 12px; }
+.article-wrap p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.95; margin-bottom: 22px; text-align: justify; }
+.article-wrap h2 { font-family: var(--font-display); font-size: 1.55rem; font-weight: 500; color: var(--heading); margin: 64px 0 18px; line-height: 1.3; scroll-margin-top: calc(var(--nav-h) + 24px); }
+.article-wrap h2:first-child { margin-top: 0; }
+.article-wrap h3 { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin: 34px 0 12px; scroll-margin-top: calc(var(--nav-h) + 24px); }
+.article-wrap a.cite { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(var(--gold-rgb),0.3); }
+.article-wrap a.cite:hover { border-bottom-color: var(--gold); }
+.article-wrap em { color: var(--text-bright); }
+
+/* result callouts */
+.result { border-left: 2px solid var(--gold); padding: 4px 0 4px 18px; margin: 0 0 22px; }
+.result.gas { border-left-color: var(--teal); }
+.result-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 6px; }
+.result-name { font-family: var(--font-display); font-size: 1.1rem; color: var(--heading); }
+.result-mass { font-family: var(--font-mono); font-size: 0.8rem; color: var(--heading); }
+.result-ref { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); }
+.result-ref a { color: var(--gold); text-decoration: none; }
+.result p { margin-bottom: 0 !important; font-size: 0.9rem !important; line-height: 1.8 !important; }
+.lead-flag { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 1px 6px; border: 1px solid rgba(var(--teal-rgb),0.4); color: var(--teal); white-space: nowrap; }
+
+/* figures */
+.fig { margin: 8px 0 30px; border: 1px solid var(--border); background: var(--bg-card); padding: 22px 22px 16px; }
+.fig img { display: block; width: 100%; height: auto; }
+.fig figcaption { font-size: 0.84rem; color: var(--text-muted); line-height: 1.7; margin-top: 12px; }
+.fig figcaption b { color: var(--heading); font-weight: 600; }
+.fig figcaption .credit { display: block; margin-top: 4px; font-size: 0.76rem; font-style: italic; }
+
+/* tables */
+.tbl-wrap { overflow-x: auto; margin: 8px 0 28px; border: 1px solid var(--border); background: var(--bg-card); }
+table.tbl { width: 100%; border-collapse: collapse; font-size: 0.86rem; line-height: 1.6; }
+.tbl th, .tbl td { text-align: left; vertical-align: top; padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+.tbl tr:last-child td { border-bottom: none; }
+.tbl thead th { font-family: var(--font-mono); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--heading); background: var(--bg-2); }
+.tbl td.num { white-space: nowrap; color: var(--heading); font-variant-numeric: tabular-nums; }
+.tbl td.gal { white-space: nowrap; color: var(--heading); font-weight: 500; }
+.tbl .tag-s, .tbl .tag-g { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.06em; white-space: nowrap; }
+.tbl .tag-s { color: var(--gold); }
+.tbl .tag-g { color: var(--teal); }
+
+/* findings */
+.finds { list-style: none; margin: 4px 0 24px; border-top: 1px solid var(--border); }
+.finds li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; padding: 13px 0; border-bottom: 1px solid var(--border); font-size: 0.93rem; line-height: 1.75; color: var(--text-muted); }
+.finds li::before { content: '\2713'; color: var(--gold); font-weight: 600; }
+.finds strong { color: var(--heading); font-weight: 600; }
+
+/* literature references */
+.lit-refs { margin: 8px 0 20px; border-top: 1px solid var(--border); padding-top: 20px; display: grid; gap: 12px; }
 .lit-refs-title { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
-.lit-ref { display: grid; grid-template-columns: 150px 1fr; gap: 16px; font-size: 0.86rem; line-height: 1.65; color: var(--text-muted); }
+.lit-ref { display: grid; grid-template-columns: 190px 1fr; gap: 16px; font-size: 0.86rem; line-height: 1.65; color: var(--text-muted); }
 .lit-ref-key { font-family: var(--font-mono); font-size: 0.76rem; color: var(--teal); }
 @media (max-width: 600px) { .lit-ref { grid-template-columns: 1fr; gap: 2px; } }
+
+/* publication list */
+.pubs { list-style: none; border-top: 1px solid var(--border); }
+.pubs li { padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 0.86rem; line-height: 1.65; color: var(--text-muted); }
+.pubs .pt { display: block; color: var(--heading); font-family: var(--font-display); font-size: 1rem; margin-bottom: 2px; }
+.pubs a { font-family: var(--font-mono); font-size: 0.7rem; color: var(--gold); text-decoration: none; margin-left: 6px; }
+
 .article-nav-more { max-width: 980px; margin: 0 auto; padding: 10px 60px 100px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; position: relative; z-index: 1; }
-@media (max-width: 768px) { .article-hero, .article-wrap, .article-nav-more { padding-left: 24px; padding-right: 24px; } }
+@media (max-width: 768px) {
+  .article-hero, .article-wrap, .article-nav-more { padding-left: 24px; padding-right: 24px; }
+  .article-wrap p { text-align: left; }
+  .fig { padding: 14px 14px 12px; }
+}
 </style>
 </head>
 <body>
@@ -36,40 +92,165 @@
 <div class="article-hero">
 <div class="article-hero-inner">
 <a class="article-back fade-in" href="research.html#bh-galaxy-coevolution"><i class="fas fa-arrow-left"></i> Back to Research</a>
-<span class="article-badge fade-in fade-in-delay-1">Theme 03 &middot; Scaling Relations</span>
-<h1 class="article-title fade-in fade-in-delay-1">Black Hole and Galaxy Coevolution</h1>
+<span class="article-badge fade-in fade-in-delay-1">Theme 03 &middot; The High-Mass End</span>
+<h1 class="article-title fade-in fade-in-delay-1">Co-evolution of Supermassive Black Holes and Their Hosts</h1>
+<p class="article-lede fade-in fade-in-delay-2">A black hole's event horizon is roughly a billion times smaller than its host galaxy, yet the black hole's mass tracks the galaxy's stars. I use precise dynamical masses, especially in the most massive galaxies, to test how this coupling arose and whether it still holds where growth is driven by mergers and regulated by radio jets.</p>
+<ul class="article-toc fade-in fade-in-delay-2">
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#high-mass">The high-mass end</a></li>
+  <li><a href="#results">My results</a></li>
+  <li><a href="#cosmic-noon">Towards cosmic noon</a></li>
+  <li><a href="#findings">Findings</a></li>
+  <li><a href="#papers">Papers</a></li>
+</ul>
 </div>
 </div>
 
 <div class="article-wrap">
 
-<h2 class="fade-in">Overview</h2>
+<!-- ===================== OVERVIEW ===================== -->
+<h2 class="fade-in" id="overview">Black Holes That Know Their Galaxies</h2>
 <p class="fade-in">
-The energy released by an accreting black hole is far larger than the binding energy of its host galaxy, which makes it plausible that black holes regulate the star formation and gas content of the systems in which they live. This idea underpins the feedback prescriptions of essentially all modern cosmological simulations, and it is invoked to explain the quenching of massive galaxies and the shape of the galaxy stellar mass function. The observational picture, however, is still ambiguous: correlations between black hole mass and host properties could reflect genuine causal coupling, or they could emerge statistically from repeated mergers averaging over initially uncorrelated distributions. Distinguishing these possibilities requires accurate black hole masses in galaxies of many different types, together with equally careful measurements of the stellar structure, kinematics and stellar populations of the hosts.
+The modern picture began when dynamical surveys of nearby galaxies showed that black hole mass correlates tightly with the properties of the surrounding stellar bulge. Magorrian et al. (1998) found the link to bulge mass, and two years later the tight relation with stellar velocity dispersion, the $M_{\rm BH}$&ndash;$\sigma$ relation, was reported independently by Ferrarese &amp; Merritt (2000) and Gebhardt et al. (2000). The small scatter of these relations (Fig.&nbsp;1) implies that black holes and their hosts did not evolve independently.
 </p>
 
-<h2 class="fade-in">My Research</h2>
+<figure class="fig fade-in">
+  <img src="fig/BH-gal_correlation.jpg" width="2200" height="701" loading="lazy" alt="Compiled dynamical black hole masses versus stellar velocity dispersion, host stellar mass, and a near-fundamental-plane combination of K-band luminosity and effective radius" />
+  <figcaption><b>Fig. 1 &mdash; Black hole&ndash;galaxy scaling relations.</b> Compiled dynamical black hole masses versus stellar velocity dispersion (left), host stellar mass (middle), and a combination of <em>K</em>-band luminosity and effective radius that behaves like a fundamental plane (right). Colours mark the tracer used: masers, gas, stars or reverberation mapping. Note the most massive black holes in brightest cluster galaxies (BCGs) at the top right, which tend to lie above the mean relations.<span class="credit">van den Bosch 2016, ApJ, 831, 134.</span></figcaption>
+</figure>
+
 <p class="fade-in">
-For every galaxy in my samples I combine the dynamical black hole mass with a full structural and kinematic description of the host: multi-Gaussian expansion models of the surface photometry, stellar population and kinematic measurements from integral-field spectroscopy, and molecular-gas distributions from ALMA. This lets me look for systematic differences between quiescent ellipticals, gas-rich spirals and dwarfs. I am also quantifying, through simulated HARMONI observations, how far beyond 100 Mpc dynamical mass measurements can be pushed, since reaching those distances begins to probe the era when black hole and galaxy growth were most vigorous.
+Two broad explanations compete. In the <em>causal</em> picture, energy from the accreting black hole (AGN feedback) regulates the gas supply of the host: quasar-driven winds can expel gas during rapid growth, and radio jets can keep the hot gas around massive galaxies from cooling and forming stars. In the <em>statistical</em> picture, repeated galaxy mergers average black hole and stellar masses together, so a correlation emerges even if the two were initially unrelated. Telling them apart requires accurate black hole masses in many types of galaxies, measured together with equally careful descriptions of their hosts.
 </p>
 
+<!-- ===================== HIGH-MASS END ===================== -->
+<h2 class="fade-in" id="high-mass">Growth at the High-Mass End</h2>
+<p class="fade-in">
+The most massive galaxies, the giant ellipticals and brightest cluster galaxies, grew late in cosmic history mainly through gas-poor (&ldquo;dry&rdquo;) mergers. In such mergers the black hole and stellar masses add up, but the velocity dispersion barely changes. The $M_{\rm BH}$&ndash;$\sigma$ relation may therefore saturate or steepen at the top end, and the most massive black holes, which approach 10<sup>10</sup>&nbsp;M<sub>&#9737;</sub>, lie above the standard relations (Lauer et al. 2007; McConnell et al. 2011; Thomas et al. 2016). Many of these galaxies also host radio jets, the clearest sign of the &ldquo;radio-mode&rdquo; feedback thought to keep them from forming new stars.
+</p>
+<p class="fade-in">
+The high-mass end is where the growth mechanism changes, but it is also where measurements are hardest. These galaxies are rare and therefore distant. Their central surface brightness is often low, which makes stellar kinematics expensive to obtain. Their masses are sensitive to the adopted distance, the stellar mass model and the velocity dispersion used to place them on the relations. A black hole that seems to lie off the relation may be a genuine outlier, or the result of a biased host measurement. Separating the two is the focus of my work in this theme.
+</p>
+
+<!-- ===================== RESULTS ===================== -->
+<h2 class="fade-in" id="results">My Results: Precise Anchors for the Top of the Relations</h2>
+<p class="fade-in">
+I measure black hole masses in massive early-type galaxies with ALMA observations of cold molecular gas, which settles into regular disks and traces the central gravity cleanly, and with JWST stellar kinematics. The methods are described in <a class="cite" href="research-bh-mass-spectrum.html">Theme 01</a>. Here I focus on what the measurements tell us about the hosts.
+</p>
+
+<div class="result gas fade-in">
+  <div class="result-head"><span class="result-name">NGC 7052</span><span class="lead-flag">Lead author</span><span class="result-mass">$M_{\rm BH} \approx (2.50 \pm 0.37_{\rm stat} \pm 0.8_{\rm sys})\times10^9\,M_\odot$</span><span class="result-ref">ApJ 992, 211 (2025) &middot; <a href="https://doi.org/10.3847/1538-4357/ae0455" target="_blank" rel="noopener">doi&nearr;</a></span></div>
+  <p>An isolated elliptical radio galaxy with a stellar mass of about 5.6&times;10<sup>11</sup>&nbsp;M<sub>&#9737;</sub>, well-defined Fanaroff&ndash;Riley type&nbsp;I radio jets, and a circumnuclear dust and gas disk. Its boxy outer structure suggests a history of significant mergers. My ALMA measurement agrees with the earlier value, but a more complete mass model of the host, including the molecular gas and the extended stellar mass of the outer galaxy, lowers the stellar mass-to-light ratio by 10%. The adopted distance alone (69.3 versus 46.4&nbsp;Mpc) implies a systematic uncertainty of about 30% in $M_{\rm BH}$. At the high-mass end, the description of the host matters as much as the kinematics.</p>
+</div>
+
+<div class="result gas fade-in">
+  <div class="result-head"><span class="result-name">NGC 4061</span><span class="result-mass">$M_{\rm BH} = (1.17^{+0.08}_{-0.10} \pm 0.43)\times10^9\,M_\odot$</span><span class="result-ref">ApJ 1005, 94 (2026) &middot; <a href="https://doi.org/10.3847/1538-4357/ae771c" target="_blank" rel="noopener">doi&nearr;</a></span></div>
+  <p>A massive early-type galaxy (stellar mass about 4.3&times;10<sup>11</sup>&nbsp;M<sub>&#9737;</sub>) in the NGC&nbsp;4065 group, about 107&nbsp;Mpc away, and host of a bent-tail radio source. This is the first robust dynamical mass for its black hole. It resolves a long-standing discrepancy between earlier indirect estimates and shows that the exceptionally large velocity dispersion reported in the literature is likely spurious. This is a concrete example of how an error in a host property can make a galaxy appear to be an outlier from the scaling relations.</p>
+</div>
+
+<div class="result fade-in">
+  <div class="result-head"><span class="result-name">M87</span><span class="lead-flag">Lead author</span><span class="result-ref">In preparation</span></div>
+  <p>The giant elliptical at the centre of the Virgo Cluster hosts one of the most massive nearby black holes, the first to be imaged by the Event Horizon Telescope. Its stellar- and gas-dynamical masses have historically disagreed by nearly a factor of two (Gebhardt et al. 2011; Walsh et al. 2013). With JWST/NIRSpec stellar kinematics that resolve about one-tenth of the sphere-of-influence radius, I am re-measuring its mass to anchor the very top of the local relations.</p>
+</div>
+
+<div class="result gas fade-in">
+  <div class="result-head"><span class="result-name">NGC 2513</span><span class="result-ref">Harrisberg et al., in preparation</span></div>
+  <p>A high-precision ALMA molecular-gas measurement of the black hole in the massive elliptical NGC&nbsp;2513, adding another massive early-type galaxy to the sample.</p>
+</div>
+
+<h3 class="fade-in">Across galaxy types</h3>
+<p class="fade-in">
+The same methods applied to spiral galaxies anchor the lower part of the relations, so that massive ellipticals can be compared with spirals on an equal footing:
+</p>
+<div class="tbl-wrap fade-in">
+<table class="tbl">
+  <thead><tr><th>Galaxy</th><th>Host</th><th>Method</th><th>$M_{\rm BH}$ ($M_\odot$)</th><th>What it tells us</th></tr></thead>
+  <tbody>
+    <tr><td class="gal">NGC 4736 (M94)</td><td>Spiral</td><td><span class="tag-s">JWST stars</span></td><td class="num">$(1.60 \pm 0.16)\times10^7$</td><td>Consistent with the $M_{\rm BH}$&ndash;$\sigma$ and $M_{\rm BH}$&ndash;$M_\star$ relations</td></tr>
+    <tr><td class="gal">NGC 4258</td><td>Spiral, maser disk</td><td><span class="tag-s">JWST stars</span></td><td class="num">$(4.08^{+0.19}_{-0.33})\times10^7$</td><td>Within 5% of the maser benchmark</td></tr>
+    <tr><td class="gal">M81</td><td>Spiral</td><td><span class="tag-s">JWST stars</span></td><td class="num">$(4.78^{+0.07}_{-0.10})\times10^7$</td><td>A reliable anchor point for the scaling relations</td></tr>
+    <tr><td class="gal">NGC 4061</td><td>Massive ETG, group, radio</td><td><span class="tag-g">ALMA gas</span></td><td class="num">$(1.17^{+0.08}_{-0.10} \pm 0.43)\times10^9$</td><td>Literature $\sigma$ likely spurious</td></tr>
+    <tr><td class="gal">NGC 7052</td><td>Isolated elliptical, FR&nbsp;I radio</td><td><span class="tag-g">ALMA gas</span></td><td class="num">$(2.50 \pm 0.37 \pm 0.8)\times10^9$</td><td>Host mass model changes $M/L$ by 10%</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3 class="fade-in">Next: testing a break in the relations</h3>
+<p class="fade-in">
+Two accepted observing programmes extend this work (<a class="cite" href="research.html#proposals">details</a>). A Hubble Space Telescope Cycle&nbsp;34 programme (GO&nbsp;18383, 20 orbits) will test whether there is a fundamental break in the black hole&ndash;galaxy relations for the most massive black holes. An ALMA Cycle&nbsp;13 programme will cross-calibrate black hole mass methods in Seyfert nuclei using atomic [C&nbsp;I](1&ndash;0) gas, so that masses measured with different tracers can be combined in the same relation without hidden offsets.
+</p>
+
+<!-- ===================== COSMIC NOON ===================== -->
+<h2 class="fade-in" id="cosmic-noon">Towards Cosmic Noon</h2>
+<p class="fade-in">
+The local scaling relations are a snapshot of the present day. To learn whether black holes grew before, with or after their host galaxies, we need dynamical masses at earlier epochs, around redshift 1&ndash;2, when star formation and black hole accretion peaked and the most massive galaxies were shutting down star formation. Today, spatially resolved dynamical masses are limited to galaxies within about 100&nbsp;Mpc.
+</p>
+
+<figure class="fig fade-in">
+  <img src="fig/sim-hst-vs-micado.webp" width="1600" height="604" loading="lazy" alt="A distant galaxy at redshift 0.82 seen by Hubble and in a simulated MICADO image that zooms ten times closer into its centre" />
+  <figcaption><b>Fig. 2 &mdash; Resolving a massive galaxy at half the age of the Universe.</b> The massive quiescent galaxy LEGAC-86906 (z&nbsp;=&nbsp;0.82). <em>Left:</em> the real Hubble image (scale bar: 1&nbsp;kpc). <em>Right:</em> a simulated ELT/MICADO image of the central region (scale bar: 100&nbsp;pc), with pixels about ten times finer than Hubble's.<span class="credit">From Nguyen, Cappellari, Le, Ngo et al. 2026, MNRAS, 546, 4.</span></figcaption>
+</figure>
+
+<ul class="finds fade-in">
+  <li><span><strong>Black hole masses at 1&nbsp;&lesssim;&nbsp;z&nbsp;&lesssim;&nbsp;2.</strong> For five bright, massive, quiescent galaxies, MICADO mass models combined with HARMONI stellar kinematics recover black hole masses to about 10% (<a class="cite" href="https://doi.org/10.1093/mnras/stag238" target="_blank" rel="noopener">MNRAS 2026</a>). This makes it possible to test black hole&ndash;galaxy co-evolution at the top of the galaxy mass function.</span></li>
+  <li><span><strong>Realistic costs.</strong> About 1&nbsp;h of MICADO imaging per galaxy, and 5&ndash;7.5&nbsp;h of HARMONI integration depending on brightness.</span></li>
+  <li><span><strong>A survey of ultramassive galaxies.</strong> I developed the observing strategy and first simulated results for an ELT integral-field survey of ultramassive galaxies (<a class="cite" href="https://doi.org/10.58027/aqp1-1s17.295" target="_blank" rel="noopener">proceedings</a>) <span class="lead-flag">Lead author</span></span></li>
+</ul>
+<p class="fade-in">
+The simulation techniques behind these forecasts are described in <a class="cite" href="research-computational-astrophysics.html">Theme 04</a>.
+</p>
+
+<!-- ===================== FINDINGS ===================== -->
+<h2 class="fade-in" id="findings">Summary of Findings</h2>
+<ul class="finds fade-in">
+  <li><span><strong>New anchors at the top of the relations.</strong> Robust billion-solar-mass black holes in the radio galaxies NGC&nbsp;7052 and NGC&nbsp;4061, with M87 and NGC&nbsp;2513 in progress.</span></li>
+  <li><span><strong>Host measurements can create false outliers.</strong> In NGC&nbsp;4061 a spurious velocity dispersion, and in NGC&nbsp;7052 an incomplete mass model and distance uncertainty, would each bias where the galaxy sits relative to the relations.</span></li>
+  <li><span><strong>One method across galaxy types.</strong> The same dynamical approach gives consistent masses for spirals (NGC&nbsp;4736, NGC&nbsp;4258, M81) and giant ellipticals, which allows a like-for-like comparison.</span></li>
+  <li><span><strong>A path to earlier epochs.</strong> The ELT can measure dynamical black hole masses in massive galaxies at redshift 1&ndash;2 to about 10% precision, so the relations can be tested while they were forming.</span></li>
+</ul>
+
+<!-- ===================== LITERATURE ===================== -->
 <h2 class="fade-in">Literature Review</h2>
-<p class="fade-in">At the high-mass end, there are hints that the scaling relations bend or broaden for the most massive ellipticals, and the role of AGN feedback in maintaining the coupling is debated. Underlying all of this, resolution and selection biases can distort the inferred relations, motivating careful, homogeneous measurements.</p>
+<p class="fade-in">The scaling relations were established by Magorrian et al. (1998), Ferrarese &amp; Merritt (2000) and Gebhardt et al. (2000), with their intrinsic scatter quantified by G&uuml;ltekin et al. (2009) and the full census reviewed by Kormendy &amp; Ho (2013). The unified compilation of van den Bosch (2016) shows that the relations behave like a fundamental plane. Feedback as the causal link was proposed by Silk &amp; Rees (1998), built into simulations of galaxy mergers by Di Matteo, Springel &amp; Hernquist (2005) and, in its radio mode, into semi-analytic models by Croton et al. (2006); it is reviewed by Fabian (2012). The alternative, a non-causal origin through merger averaging, was put forward by Peng (2007) and Jahnke &amp; Macci&ograve; (2011).</p>
+<p class="fade-in">At the high-mass end, Lauer et al. (2007) argued that the $M_{\rm BH}$&ndash;$\sigma$ relation underpredicts the masses of the most luminous galaxies. The discovery of 10<sup>10</sup>&nbsp;M<sub>&#9737;</sub> black holes in brightest cluster galaxies (McConnell et al. 2011; Thomas et al. 2016) supports this. M87, a key benchmark, has stellar- and gas-dynamical masses that disagree (Gebhardt et al. 2011; Walsh et al. 2013). The Event Horizon Telescope image of its black hole shadow (EHT Collaboration 2019) provided a third, independent constraint.</p>
 <div class="lit-refs fade-in">
   <div class="lit-refs-title">Selected References</div>
-  <div class="lit-ref"><span class="lit-ref-key">Gültekin+ 09</span><span>Gültekin, K., et al. 2009, ApJ — the M–σ and M–L relations and their intrinsic scatter.</span></div>
-  <div class="lit-ref"><span class="lit-ref-key">Kormendy &amp; Ho 13</span><span>Kormendy, J. &amp; Ho, L. C. 2013, ARA&amp;A — coevolution of supermassive black holes and host galaxies.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Magorrian+ 98</span><span>Magorrian, J., et al. 1998, AJ &mdash; the demography of massive dark objects in galaxy centres.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Silk &amp; Rees 98</span><span>Silk, J. &amp; Rees, M. J. 1998, A&amp;A &mdash; quasars and galaxy formation.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Ferrarese &amp; Merritt 00</span><span>Ferrarese, L. &amp; Merritt, D. 2000, ApJL &mdash; a fundamental relation between black holes and their host galaxies.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Gebhardt+ 00</span><span>Gebhardt, K., et al. 2000, ApJL &mdash; black hole mass and host velocity dispersion.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Di Matteo+ 05</span><span>Di Matteo, T., Springel, V. &amp; Hernquist, L. 2005, Nature &mdash; energy input from quasars regulates black hole and host growth.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Croton+ 06</span><span>Croton, D. J., et al. 2006, MNRAS &mdash; radio-mode AGN feedback in galaxy formation.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Lauer+ 07</span><span>Lauer, T. R., et al. 2007, ApJ &mdash; black hole masses in luminous ellipticals and the space density of the most massive black holes.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Peng 07</span><span>Peng, C. Y. 2007, ApJ &mdash; how mergers may shape the black hole&ndash;galaxy scaling relations.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">G&uuml;ltekin+ 09</span><span>G&uuml;ltekin, K., et al. 2009, ApJ &mdash; the M&ndash;&sigma; and M&ndash;L relations and their intrinsic scatter.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Gebhardt+ 11</span><span>Gebhardt, K., et al. 2011, ApJ &mdash; the black hole mass in M87 from stellar dynamics.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Jahnke &amp; Macci&ograve; 11</span><span>Jahnke, K. &amp; Macci&ograve;, A. V. 2011, ApJ &mdash; a non-causal origin of the scaling relations.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">McConnell+ 11</span><span>McConnell, N. J., et al. 2011, Nature &mdash; two ten-billion-solar-mass black holes in giant ellipticals.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Fabian 12</span><span>Fabian, A. C. 2012, ARA&amp;A &mdash; observational evidence of AGN feedback.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Kormendy &amp; Ho 13</span><span>Kormendy, J. &amp; Ho, L. C. 2013, ARA&amp;A &mdash; coevolution of supermassive black holes and host galaxies.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Walsh+ 13</span><span>Walsh, J. L., et al. 2013, ApJ &mdash; the M87 black hole mass from gas-dynamical models.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Thomas+ 16</span><span>Thomas, J., et al. 2016, Nature &mdash; a 17-billion-solar-mass black hole in NGC&nbsp;1600.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">van den Bosch 16</span><span>van den Bosch, R. C. E. 2016, ApJ &mdash; unification of the fundamental plane and black hole masses.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">EHT 19</span><span>Event Horizon Telescope Collaboration 2019, ApJL &mdash; first M87 Event Horizon Telescope results.</span></div>
 </div>
 
-<h2 class="fade-in">Summary of Findings</h2>
-<div class="placeholder-note fade-in">
-<p>A summary of key results and findings for this theme is in preparation and will be added here.</p>
-</div>
+<!-- ===================== PAPERS ===================== -->
+<h2 class="fade-in" id="papers">Papers in This Theme</h2>
+<ul class="pubs fade-in">
+  <li><span class="pt">Revisiting the Supermassive Black Hole Mass of NGC 7052 using High Spatial Resolution Molecular Gas Observed with ALMA</span><strong>Ngo, H. N.</strong>, Nguyen, D. D., et al. 2025, ApJ, 992, 211<a href="https://doi.org/10.3847/1538-4357/ae0455" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">Dynamical Evidence for a Billion Solar-Mass Black Hole in the Galaxy NGC 4061 from ALMA $^{12}$CO(2&ndash;1) Kinematics</span>Nguyen, D. D., Nguyen, L. Q. T., Gallo, E., <strong>Ngo, H. N.</strong>, et al. 2026, ApJ, 1005, 94<a href="https://doi.org/10.3847/1538-4357/ae771c" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">Extending the Frontier of Spatially Resolved SMBH Mass Measurements to 1 &lt; z &lt; 2 with ELT/MICADO and HARMONI</span>Nguyen, D. D., Cappellari, M., Le, T. Q. T., <strong>Ngo, H. N.</strong>, et al. 2026, MNRAS, 546, 4<a href="https://doi.org/10.1093/mnras/stag238" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">ELT High Spatial Resolution IFS Survey of Ultramassive Galaxies: Observational Strategy and First Simulated Results</span><strong>Ngo, H. N.</strong>, Nguyen, D. D., Cappellari, M., &amp; Pereira-Santaella, M., Windows on the Universe (proceedings)<a href="https://doi.org/10.58027/aqp1-1s17.295" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">The Supermassive Black Hole in the Nearby Spiral Galaxy M81: A Robust Mass from JWST/NIRSpec Stellar Dynamics</span>Nguyen, D. D., Le, T. N., Cappellari, M., <strong>Ngo, H. N.</strong>, et al. 2026, ApJ, 1003, 98<a href="https://doi.org/10.3847/1538-4357/ae64f0" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">Resolving One-Tenth of the Sphere-of-Influence Radius: The M87 Supermassive Black Hole Mass from JWST/NIRSpec Stellar Kinematics</span><strong>Ngo, H. N.</strong>, Nguyen, D. D., Cappellari, M., et al., in preparation</li>
+  <li><span class="pt">A High-Precision Mass Measurement of the Central Black Hole in the Massive Elliptical NGC 2513 with ALMA Molecular Gas Dynamics</span>Harrisberg, S.-A., Thater, S., Nguyen, D. D., Hacar, A., &amp; <strong>Ngo, H. N.</strong>, in preparation</li>
+</ul>
 
 </div>
 
 <div class="article-nav-more fade-in">
-<a class="btn btn-outline" href="research-bh-mass-spectrum.html"><i class="fas fa-arrow-left"></i> Massive Black Holes Across the Mass Spectrum</a>
+<a class="btn btn-outline" href="research-bh-formation-growth.html"><i class="fas fa-arrow-left"></i> Formation and Evolution of IMBHs</a>
 <a class="btn btn-outline" href="research-computational-astrophysics.html">Computational Astrophysics, Simulations, and Modelling <i class="fas fa-arrow-right"></i></a>
 </div>
 

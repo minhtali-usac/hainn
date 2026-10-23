@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
   <script id="theme-fouc-guard">(function(){try{var t=localStorage.getItem("theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Black Hole Formation and Growth - Hai Ngo Ngoc</title>
-<meta name="description" content="Detailed research theme page for Black Hole Formation and Growth: literature review and research findings by Hai Ngo Ngoc." />
+<title>Formation and Evolution of Intermediate-Mass Black Holes - Hai Ngo Ngoc</title>
+<meta name="description" content="How intermediate-mass black holes form and evolve in nuclear star clusters, dwarf galaxies and the young Universe, and how ELT/HARMONI will weigh them out to the Virgo and Fornax clusters. Research by Hai Ngo Ngoc." />
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <style>
@@ -15,27 +15,80 @@
 .article-back:hover { color: var(--gold); gap: 12px; }
 .article-badge { display: inline-block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-accent); background: linear-gradient(135deg, var(--gold-light), var(--gold)); padding: 5px 14px; border-radius: 0; margin-bottom: 22px; }
 .article-title { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.9rem, 4.2vw, 2.7rem); line-height: 1.15; color: var(--heading); margin-bottom: 16px; }
-.article-subtitle { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
-.article-wrap { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; padding: 60px 60px 10px; }
-.article-wrap + .article-wrap { padding-top: 0; }
-.article-wrap p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.95; margin-bottom: 26px; text-align: justify; }
-.article-wrap h2 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; color: var(--heading); margin: 44px 0 18px; line-height: 1.3; }
-.rn-figure { overflow: hidden; margin-bottom: 12px; }
-.rn-figure img, .rn-figure svg { display: block; width: 100%; height: auto; }
-.rn-figure-wide { max-width: 980px; margin: 0 auto 56px; padding: 0 60px; box-sizing: border-box; }
-.rn-fig-caption { font-size: 0.82rem; color: var(--text-muted); padding: 14px 0px 0; line-height: 1.6; }
-.rn-fig-caption .rn-fig-name { font-weight: 700; color: var(--um-blue); }
-.rn-fig-caption span { display: block; margin-top: 4px; }
-.placeholder-note { padding: 22px 26px; background: var(--bg-card); border: 1px dashed var(--border-accent); border-radius: 0; }
-.placeholder-note p { margin-bottom: 0 !important; font-size: 0.88rem !important; font-style: italic; }
-.rn-figure-narrow { max-width: 820px; }
-.lit-refs { margin: 8px 0 20px; border-top: 1px solid var(--border); padding-top: 24px; display: grid; gap: 12px; }
+.article-lede { font-size: 1rem; line-height: 1.8; color: var(--text-muted); max-width: 760px; }
+.article-toc { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.article-toc a { display: inline-block; padding: 7px 14px; border: 1px solid var(--border); background: var(--bg-card); font-size: 0.8rem; color: var(--heading); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.article-toc a:hover { border-color: var(--border-accent); color: var(--gold); }
+
+.article-wrap { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; padding: 60px 60px 40px; }
+.article-wrap p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.95; margin-bottom: 22px; text-align: justify; }
+.article-wrap h2 { font-family: var(--font-display); font-size: 1.55rem; font-weight: 500; color: var(--heading); margin: 64px 0 18px; line-height: 1.3; scroll-margin-top: calc(var(--nav-h) + 24px); }
+.article-wrap h2:first-child { margin-top: 0; }
+.article-wrap h3 { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin: 34px 0 12px; scroll-margin-top: calc(var(--nav-h) + 24px); }
+.article-wrap a.cite { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(var(--gold-rgb),0.3); }
+.article-wrap a.cite:hover { border-bottom-color: var(--gold); }
+.article-wrap em { color: var(--text-bright); }
+
+/* three settings */
+.win-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 8px 0 28px; }
+.win { display: block; border: 1px solid var(--border); background: var(--bg-card); padding: 20px 22px; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
+.win:hover { border-color: var(--border-accent); background: var(--bg-card-hover); }
+.win-n { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.win-t { font-family: var(--font-display); font-size: 1.12rem; color: var(--heading); margin-bottom: 6px; line-height: 1.3; }
+.win-d { font-size: 0.86rem; line-height: 1.7; color: var(--text-muted); }
+
+/* result callouts */
+.result { border-left: 2px solid var(--gold); padding: 4px 0 4px 18px; margin: 0 0 22px; }
+.result-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 6px; }
+.result-name { font-family: var(--font-display); font-size: 1.1rem; color: var(--heading); }
+.result-mass { font-family: var(--font-mono); font-size: 0.8rem; color: var(--heading); }
+.result-ref { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); }
+.result-ref a { color: var(--gold); text-decoration: none; }
+.result p { margin-bottom: 0 !important; font-size: 0.9rem !important; line-height: 1.8 !important; }
+.lead-flag { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 1px 6px; border: 1px solid rgba(var(--teal-rgb),0.4); color: var(--teal); white-space: nowrap; }
+
+/* figures */
+.fig { margin: 8px 0 30px; border: 1px solid var(--border); background: var(--bg-card); padding: 22px 22px 16px; }
+.fig img { display: block; width: 100%; height: auto; }
+.fig figcaption { font-size: 0.84rem; color: var(--text-muted); line-height: 1.7; margin-top: 12px; }
+.fig figcaption b { color: var(--heading); font-weight: 600; }
+.fig figcaption .credit { display: block; margin-top: 4px; font-size: 0.76rem; font-style: italic; }
+
+/* reach table */
+.tbl-wrap { overflow-x: auto; margin: 8px 0 28px; border: 1px solid var(--border); background: var(--bg-card); }
+table.tbl { width: 100%; border-collapse: collapse; font-size: 0.86rem; line-height: 1.6; }
+.tbl th, .tbl td { text-align: left; vertical-align: top; padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+.tbl tr:last-child td { border-bottom: none; }
+.tbl thead th { font-family: var(--font-mono); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--heading); background: var(--bg-2); }
+.tbl td.gal { white-space: nowrap; color: var(--heading); font-weight: 500; }
+.tbl td.num { white-space: nowrap; color: var(--heading); }
+
+/* findings */
+.finds { list-style: none; margin: 4px 0 24px; border-top: 1px solid var(--border); }
+.finds li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; padding: 13px 0; border-bottom: 1px solid var(--border); font-size: 0.93rem; line-height: 1.75; color: var(--text-muted); }
+.finds li::before { content: '\2713'; color: var(--gold); font-weight: 600; }
+.finds strong { color: var(--heading); font-weight: 600; }
+
+/* literature references */
+.lit-refs { margin: 8px 0 20px; border-top: 1px solid var(--border); padding-top: 20px; display: grid; gap: 12px; }
 .lit-refs-title { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
-.lit-ref { display: grid; grid-template-columns: 180px 1fr; gap: 16px; font-size: 0.86rem; line-height: 1.65; color: var(--text-muted); }
+.lit-ref { display: grid; grid-template-columns: 190px 1fr; gap: 16px; font-size: 0.86rem; line-height: 1.65; color: var(--text-muted); }
 .lit-ref-key { font-family: var(--font-mono); font-size: 0.76rem; color: var(--teal); }
 @media (max-width: 600px) { .lit-ref { grid-template-columns: 1fr; gap: 2px; } }
+
+/* publication list */
+.pubs { list-style: none; border-top: 1px solid var(--border); }
+.pubs li { padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 0.86rem; line-height: 1.65; color: var(--text-muted); }
+.pubs .pt { display: block; color: var(--heading); font-family: var(--font-display); font-size: 1rem; margin-bottom: 2px; }
+.pubs a { font-family: var(--font-mono); font-size: 0.7rem; color: var(--gold); text-decoration: none; margin-left: 6px; }
+
 .article-nav-more { max-width: 980px; margin: 0 auto; padding: 10px 60px 100px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; position: relative; z-index: 1; }
-@media (max-width: 768px) { .article-hero, .article-wrap, .article-nav-more, .rn-figure-wide { padding-left: 24px; padding-right: 24px; } }
+@media (max-width: 860px) { .win-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) {
+  .article-hero, .article-wrap, .article-nav-more { padding-left: 24px; padding-right: 24px; }
+  .article-wrap p { text-align: left; }
+  .fig { padding: 14px 14px 12px; }
+}
 </style>
 </head>
 <body>
@@ -44,75 +97,191 @@
 <div class="article-hero">
 <div class="article-hero-inner">
 <a class="article-back fade-in" href="research.html#bh-formation-growth"><i class="fas fa-arrow-left"></i> Back to Research</a>
-<span class="article-badge fade-in fade-in-delay-1">Theme 01 &middot; Seeds &amp; Growth</span>
-<h1 class="article-title fade-in fade-in-delay-1">Black Hole Formation and Growth</h1>
+<span class="article-badge fade-in fade-in-delay-1">Theme 02 &middot; IMBHs &amp; Black Hole Seeds</span>
+<h1 class="article-title fade-in fade-in-delay-1">Formation and Evolution of Intermediate-Mass Black Holes</h1>
+<p class="article-lede fade-in fade-in-delay-2">Intermediate-mass black holes are the least explored black holes in the Universe, and the closest surviving relatives of the seeds from which supermassive black holes grew. I study where they form and how they evolve: in the dense nuclear star clusters and dwarf galaxies of the nearby Universe today, and, through JWST, in the young Universe.</p>
+<ul class="article-toc fade-in fade-in-delay-2">
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#nsc">Nuclear star clusters</a></li>
+  <li><a href="#dwarfs">Dwarf galaxies</a></li>
+  <li><a href="#high-z">High redshift &amp; Little Red Dots</a></li>
+  <li><a href="#findings">Findings</a></li>
+  <li><a href="#papers">Papers</a></li>
+</ul>
 </div>
 </div>
 
 <div class="article-wrap">
-  <h2 class="fade-in">Overview</h2>
-  <p>Essentially every massive galaxy hosts a central black hole, yet the origin of these objects remains one of the central open problems in astrophysics. Three families of seeding channels are usually considered: light seeds of order 10<sup>2</sup> M<sub>&#9737;</sub> left behind by the first generation of metal-free stars, heavy seeds of 10<sup>4</sup>&ndash;10<sup>5</sup> M<sub>&#9737;</sub> produced by the direct collapse of pristine gas clouds, and intermediate seeds built by runaway stellar and stellar-remnant mergers in the dense cores of young clusters. Each scenario predicts a distinct black hole occupation fraction and mass distribution in low-mass galaxies today, and each is subsequently reshaped by gas accretion and by galaxy&ndash;galaxy mergers. The existence of billion-solar-mass quasars already at z &gt; 6 demands extremely rapid early growth, while the black holes in nearby dwarf galaxies and star clusters are the least-evolved relics available and therefore retain the clearest memory of the seeds themselves.</p>
-</div>
 
-<div class="article-wrap">
-  <h2 class="fade-in"> Supermassive Black Holes & Host Galaxies Correlations</h2>
-  <p>The modern picture began when dynamical surveys of nearby galaxies revealed that black-hole mass correlates tightly with properties of the surrounding stellar bulge. Magorrian et al. (1998) established the link to bulge mass, and within two years the remarkably tight relation with stellar velocity dispersion; the $M_{\rm BH}-\sigma$ relation was reported independently by Ferrarese &amp; Merritt (2000) and Gebhardt et al. (2000).</p>
-  <p>The small scatter of these relations &mdash; and of related combinations of host luminosity and effective radius that behave like a black-hole fundamental plane &mdash; implies that black holes and their hosts are not independent, but grow in concert. Reviews by Gültekin et al. (2009) and Kormendy &amp; Ho (2013) consolidated the census and refined the slopes, while raising a question that still drives the field: what physical mechanism keeps a black hole and a galaxy &mdash; separated by more than nine orders of magnitude in scale &mdash; so closely coupled?</p>
-</div>
-
-<figure class="rn-figure rn-figure-wide">
-  <img src="fig/BH-gal_correlation.jpg" alt="Compiled dynamical black hole masses versus stellar velocity dispersion, host stellar mass, and a near-fundamental-plane combination of K-band luminosity and effective radius" loading="lazy" />
-  <figcaption class="rn-fig-caption"><span class="rn-fig-name">Fig. 1 — Black hole&ndash;galaxy scaling relations.</span> <span>Compiled dynamical masses versus stellar velocity dispersion (left), host stellar mass (middle), and a near&ndash;fundamental-plane combination of <em>K</em>-band luminosity and effective radius (right). Colours mark the tracer &mdash; masers, cold gas, stars, or reverberation mapping &mdash; and the tight, near-linear correlations across nine orders of magnitude in mass are the empirical backbone of black hole&ndash;galaxy coevolution.</span></figcaption>
-</figure>
-
-
-
-
-<div class="article-wrap">
-<h2 class="fade-in">My Research</h2>
+<!-- ===================== OVERVIEW ===================== -->
+<h2 class="fade-in" id="overview">The Missing Link in the Black Hole Mass Spectrum</h2>
 <p class="fade-in">
-My work attacks this problem from the observational side by building homogeneous, dynamically measured black hole masses across the whole accessible mass range. Using JWST/NIRSpec and NIRCam data, ALMA molecular-gas observations, and end-to-end simulations of ELT instruments, I measure masses in systems from dwarf galaxies and nuclear star clusters up to giant ellipticals, so that the low-mass end of the local mass function &mdash; the regime that discriminates most strongly between seeding channels &mdash; can be populated with reliable measurements rather than upper limits.
+Most known black holes belong to one of two families. Stellar-mass black holes, of roughly 5 to 100&nbsp;M<sub>&#9737;</sub>, are the remnants of massive stars. Supermassive black holes, of 10<sup>6</sup> to 10<sup>10</sup>&nbsp;M<sub>&#9737;</sub>, sit at the centres of large galaxies. Between them lies the regime of <em>intermediate-mass black holes</em> (IMBHs), roughly 10<sup>2</sup>&ndash;10<sup>5</sup>&nbsp;M<sub>&#9737;</sub>, where only a handful of robust detections exist (Fig.&nbsp;1).
 </p>
 
-<h2 class="fade-in">Literature Review</h2>
-<p class="fade-in">At the low-mass end, the seeds of today's black holes are unknown: did they form as light remnants of the first stars or as heavy direct-collapse objects (Volonteri 2010)? The occupation fraction of intermediate-mass black holes in dwarf galaxies &mdash; a direct discriminator between these channels &mdash; is still poorly constrained (Greene, Strader &amp; Ho 2020; Reines &amp; Volonteri 2015).</p>
-</div>
-
-<figure class="rn-figure rn-figure-wide rn-figure-narrow fade-in">
-  <svg viewBox="0 0 600 400" role="img" aria-label="Open questions in black hole demographics and coevolution" xmlns="http://www.w3.org/2000/svg">
-  <defs><radialGradient id="hub" cx="50%" cy="45%" r="60%"><stop offset="0%" stop-color="var(--gold-light)"/><stop offset="100%" stop-color="var(--gold)"/></radialGradient></defs>
-  <text x="30" y="34" fill="var(--heading)" font-size="15" font-family="var(--font-display)">Open questions</text>
-  <line x1="300" y1="200" x2="185.1" y2="103.6" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/><line x1="300" y1="200" x2="351.3" y2="59.0" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/><line x1="300" y1="200" x2="450.0" y2="200.0" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/><line x1="300" y1="200" x2="351.3" y2="341.0" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/><line x1="300" y1="200" x2="185.1" y2="296.4" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"/>
-  <circle cx="300" cy="200" r="46" fill="url(#hub)" stroke="var(--gold)" stroke-width="1.2"/>
-  <text x="300" y="196" fill="var(--on-accent)" font-size="12.5" font-family="var(--font-display)" font-weight="600" text-anchor="middle">BH – galaxy</text>
-  <text x="300" y="213" fill="var(--on-accent)" font-size="12.5" font-family="var(--font-display)" font-weight="600" text-anchor="middle">coevolution</text>
-  <circle cx="185.1" cy="103.6" r="6" fill="var(--teal)" stroke="var(--teal-dark)" stroke-width="1"/><text x="175.1" y="101.6" fill="var(--heading)" font-size="12" font-family="var(--font-display)" text-anchor="end">Seed formation</text><text x="175.1" y="116.6" fill="var(--text-muted)" font-size="10" font-family="var(--font-body)" text-anchor="end">light vs heavy?</text><circle cx="351.3" cy="59.0" r="6" fill="var(--teal)" stroke="var(--teal-dark)" stroke-width="1"/><text x="361.3" y="57.0" fill="var(--heading)" font-size="12" font-family="var(--font-display)" text-anchor="start">IMBH occupation</text><text x="361.3" y="72.0" fill="var(--text-muted)" font-size="10" font-family="var(--font-body)" text-anchor="start">fraction in dwarfs</text><circle cx="450.0" cy="200.0" r="6" fill="var(--teal)" stroke="var(--teal-dark)" stroke-width="1"/><text x="460.0" y="198.0" fill="var(--heading)" font-size="12" font-family="var(--font-display)" text-anchor="start">High-mass end</text><text x="460.0" y="213.0" fill="var(--text-muted)" font-size="10" font-family="var(--font-body)" text-anchor="start">breaks &amp; scatter</text><circle cx="351.3" cy="341.0" r="6" fill="var(--teal)" stroke="var(--teal-dark)" stroke-width="1"/><text x="361.3" y="339.0" fill="var(--heading)" font-size="12" font-family="var(--font-display)" text-anchor="start">AGN feedback</text><text x="361.3" y="354.0" fill="var(--text-muted)" font-size="10" font-family="var(--font-body)" text-anchor="start">driver of coevolution?</text><circle cx="185.1" cy="296.4" r="6" fill="var(--teal)" stroke="var(--teal-dark)" stroke-width="1"/><text x="175.1" y="294.4" fill="var(--heading)" font-size="12" font-family="var(--font-display)" text-anchor="end">Selection &amp; resolution</text><text x="175.1" y="309.4" fill="var(--text-muted)" font-size="10" font-family="var(--font-body)" text-anchor="end">measurement biases</text>
-  </svg>
-  <figcaption class="rn-fig-caption"><span class="rn-fig-name">Fig. 2 — Open questions.</span> <span>The unresolved problems that connect black hole seeding, demographics and feedback to galaxy evolution.</span></figcaption>
+<figure class="fig fade-in">
+  <img src="fig/BHmass_spectrum.jpg.webp" width="1041" height="586" loading="lazy" alt="Observed mass ranges of compact objects: white dwarfs and neutron stars near one solar mass, stellar black holes up to about 100 solar masses, supermassive black holes above a million solar masses, and a question mark over the intermediate-mass range in between" />
+  <figcaption><b>Fig. 1 &mdash; The intermediate-mass gap.</b> Observed mass ranges of compact objects, from white dwarfs and neutron stars to stellar-mass and supermassive black holes. The range between about 100 and 100,000 solar masses remains largely empty; filling it is the goal of this theme.<span class="credit">Illustration: NASA.</span></figcaption>
 </figure>
 
-<div class="article-wrap">
-<div class="lit-refs fade-in">
-  <div class="lit-refs-title">Selected References</div>
-  <div class="lit-ref"><span class="lit-ref-key">Magorrian+ 98</span><span>Magorrian, J., Tremaine, S., et al. 1998, AJ — demography of massive dark objects in galaxy centres.</span></div>
-  <div class="lit-ref"><span class="lit-ref-key">Ferrarese &amp; Merritt 00</span><span>Ferrarese, L. &amp; Merritt, D. 2000, ApJL — a fundamental relation between black holes and their host galaxies.</span></div>
-  <div class="lit-ref"><span class="lit-ref-key">Gebhardt+ 00</span><span>Gebhardt, K., et al. 2000, ApJL — black hole mass and host velocity dispersion.</span></div>
-  <div class="lit-ref"><span class="lit-ref-key">Gültekin+ 09</span><span>Gültekin, K., et al. 2009, ApJ — the M–σ and M–L relations and their intrinsic scatter.</span></div>
-  <div class="lit-ref"><span class="lit-ref-key">Volonteri 10</span><span>Volonteri, M. 2010, A&amp;ARv — formation of supermassive black hole seeds.</span></div>
-  <div class="lit-ref"><span class="lit-ref-key">Kormendy &amp; Ho 13</span><span>Kormendy, J. &amp; Ho, L. C. 2013, ARA&amp;A — coevolution of supermassive black holes and host galaxies.</span></div>
-  <div class="lit-ref"><span class="lit-ref-key">Reines &amp; Volonteri 15</span><span>Reines, A. E. &amp; Volonteri, M. 2015, ApJ — black hole–stellar-mass relation into the low-mass regime.</span></div>
-  <div class="lit-ref"><span class="lit-ref-key">Greene+ 20</span><span>Greene, J. E., Strader, J. &amp; Ho, L. C. 2020, ARA&amp;A — intermediate-mass black holes.</span></div>
+<p class="fade-in">
+The gap matters because every supermassive black hole must once have been smaller. Quasars powered by billion-solar-mass black holes are already in place less than a billion years after the Big Bang, which leaves little time to grow. Three families of formation channels, or <em>seeds</em>, are usually considered:
+</p>
+<ul class="finds fade-in">
+  <li><span><strong>Light seeds.</strong> Remnants of about 100&nbsp;M<sub>&#9737;</sub> left behind by the first, metal-free stars, which must then grow quickly through accretion and mergers.</span></li>
+  <li><span><strong>Heavy seeds.</strong> Black holes of 10<sup>4</sup>&ndash;10<sup>5</sup>&nbsp;M<sub>&#9737;</sub> formed by the direct collapse of pristine gas clouds, skipping the stellar stage.</span></li>
+  <li><span><strong>Dense-cluster seeds.</strong> IMBHs built in the cores of very dense star clusters, through runaway collisions of massive stars or repeated mergers of stellar-mass black holes.</span></li>
+</ul>
+<p class="fade-in">
+Each channel predicts a different number and mass distribution of black holes left over in small galaxies and star clusters today. The IMBHs that never grew much are therefore a fossil record of how black holes were seeded. I study them in three complementary settings:
+</p>
+
+<div class="win-grid fade-in">
+  <a class="win" href="#nsc">
+    <div class="win-n">01 &middot; Today</div>
+    <div class="win-t">Nuclear star clusters</div>
+    <div class="win-d">The densest stellar systems known, and natural factories for IMBHs.</div>
+  </a>
+  <a class="win" href="#dwarfs">
+    <div class="win-n">02 &middot; Today</div>
+    <div class="win-t">Dwarf galaxies</div>
+    <div class="win-d">Galaxies with quiet histories, whose black holes still remember their seeds.</div>
+  </a>
+  <a class="win" href="#high-z">
+    <div class="win-n">03 &middot; Early Universe</div>
+    <div class="win-t">Little Red Dots</div>
+    <div class="win-d">Compact JWST sources that appear to host black holes caught while growing.</div>
+  </a>
 </div>
 
-<h2 class="fade-in">Summary of Findings</h2>
-<div class="placeholder-note fade-in">
-<p>A summary of key results and findings for this theme is in preparation and will be added here.</p>
+<!-- ===================== NSC ===================== -->
+<h2 class="fade-in" id="nsc">IMBHs in Nuclear Star Clusters</h2>
+<p class="fade-in">
+Most galaxies with stellar masses around 10<sup>9</sup>&nbsp;M<sub>&#9737;</sub> host a <em>nuclear star cluster</em> (NSC) at their centre: a few parsecs across, yet containing millions of stars (Fig.&nbsp;2). Two routes are thought to build these clusters. Stars can form <em>in situ</em> from gas funnelled into the nucleus, or globular clusters can spiral inward through dynamical friction and merge at the centre. Both routes matter for black holes. The extreme stellar densities favour runaway growth of an IMBH inside the cluster, and in-spiralling clusters can carry their own black holes into the nucleus. Measuring the black hole mass together with the mass and structure of its host cluster is therefore a direct test of how the nucleus, and its black hole, were assembled.
+</p>
+<p class="fade-in">
+The best recent evidence for an IMBH in a star cluster comes from fast-moving stars at the centre of &omega;&nbsp;Centauri (H&auml;berle et al. 2024), an object widely thought to be the stripped nucleus of a dwarf galaxy that merged with the Milky Way. Beyond the Local Group, however, the sphere of influence of an IMBH shrinks far below what current telescopes can resolve. Dynamically confirmed IMBHs in nuclear star clusters are therefore limited to galaxies within about 3.5&nbsp;Mpc.
+</p>
+
+<figure class="fig fade-in">
+  <img src="fig/sim-fcc119-hst-nsc.webp" width="1400" height="607" loading="lazy" alt="Hubble image of the dwarf galaxy FCC 119, with a zoom into its bright nuclear star cluster" />
+  <figcaption><b>Fig. 2 &mdash; A nucleated dwarf galaxy.</b> Hubble image of FCC 119, one of the faintest dwarf galaxies in the Fornax Cluster, about 20&nbsp;Mpc away. The zoom shows its compact nuclear star cluster (NSC), the kind of environment where an IMBH is expected to form and survive.<span class="credit">From Ngo, Nguyen, Le et al. 2025, Universe, 11, 360.</span></figcaption>
+</figure>
+
+<h3 class="fade-in">My work: how far can we search for IMBHs?</h3>
+<p class="fade-in">
+To grow the sample of IMBHs in nuclear star clusters, we need a telescope that can resolve them well beyond 3.5&nbsp;Mpc. The Extremely Large Telescope (ELT) will provide this. With my collaborators, I have built end-to-end simulations of its HARMONI integral-field spectrograph and MICADO camera (see <a class="cite" href="research-computational-astrophysics.html">Theme 04</a>) to find out which IMBHs it can detect and weigh, and at what distances.
+</p>
+
+<div class="result fade-in">
+  <div class="result-head"><span class="result-name">44 nucleated galaxies within 10&nbsp;Mpc</span><span class="result-ref">AJ 170, 124 (2025) &middot; <a href="https://doi.org/10.3847/1538-3881/ade9ba" target="_blank" rel="noopener">doi&nearr;</a></span></div>
+  <p>We selected 44 dwarf galaxies with nuclear star clusters within 10&nbsp;Mpc and simulated HARMONI observations of two representative targets, NGC&nbsp;300 and NGC&nbsp;3115&nbsp;dw01, across six near-infrared gratings at 10&nbsp;mas resolution. HARMONI resolves the IMBH sphere of influence and recovers black hole masses down to about 0.5% of the cluster mass within feasible exposure times.</p>
 </div>
+
+<div class="result fade-in">
+  <div class="result-head"><span class="result-name">FCC 119, Fornax Cluster</span><span class="lead-flag">Lead author</span><span class="result-mass">$M_{\rm BH} \gtrsim 10^5\,M_\odot$ at 20&nbsp;Mpc</span><span class="result-ref">Universe 11, 360 (2025) &middot; <a href="https://doi.org/10.3390/universe11110360" target="_blank" rel="noopener">doi&nearr;</a></span></div>
+  <p>I extended the search to the two nearest rich galaxy clusters: Virgo in the northern sky and Fornax in the southern sky. I first identified dwarf galaxies that host nuclear star clusters, the likely nurseries of IMBHs in the local Universe. For FCC&nbsp;119, the second-faintest dwarf in Fornax and fainter than most Virgo members, HARMONI can detect the kinematic signature of an IMBH and measure its mass for $M_{\rm BH} \gtrsim 10^5\,M_\odot$ out to about 20&nbsp;Mpc.</p>
+</div>
+
+<div class="result fade-in">
+  <div class="result-head"><span class="result-name">VCC 1861, Virgo Cluster</span><span class="lead-flag">Lead author</span><span class="result-mass">5% of the NSC mass</span><span class="result-ref">Submitted &middot; <a href="https://arxiv.org/abs/2509.03364" target="_blank" rel="noopener">arXiv&nearr;</a></span></div>
+  <p>VCC&nbsp;1861 is one of the faintest galaxies in the Virgo Cluster. From HST-based stellar density profiles, JAM models and HSIM mock data, I showed that the ELT can detect IMBHs with masses of about 5% of the nuclear cluster's mass at the distance of Virgo.</p>
+</div>
+
+<div class="result fade-in">
+  <div class="result-head"><span class="result-name">The inner structure of the cluster</span><span class="result-ref">Universe 12, 160 (2026) &middot; <a href="https://doi.org/10.3390/universe12060160" target="_blank" rel="noopener">doi&nearr;</a></span></div>
+  <p>A dense stellar cusp and a central black hole both make stars move faster near the centre, so the two must be separated carefully. Mock MICADO images give sharper stellar-mass models of the cluster core, and analysing them jointly with HARMONI kinematics shows how the inner surface-brightness slope of the cluster changes the inferred IMBH mass. The combined analysis gives tighter constraints on low-mass black holes.</p>
+</div>
+
+<div class="tbl-wrap fade-in">
+<table class="tbl">
+  <thead><tr><th>Target</th><th>Distance</th><th>What the ELT can recover</th><th>Paper</th></tr></thead>
+  <tbody>
+    <tr><td class="gal">NGC 300, NGC 3115 dw01</td><td class="num">&le; 10 Mpc</td><td>IMBHs down to &approx;0.5% of the NSC mass</td><td>Nguyen, Cappellari, Ngo et al. 2025</td></tr>
+    <tr><td class="gal">VCC 1861 (Virgo)</td><td class="num">Virgo Cluster</td><td>IMBHs of &approx;5% of the NSC mass</td><td>Ngo, Nguyen et al., submitted</td></tr>
+    <tr><td class="gal">FCC 119 (Fornax)</td><td class="num">&approx; 20 Mpc</td><td>$M_{\rm BH} \gtrsim 10^5\,M_\odot$</td><td>Ngo, Nguyen et al. 2025</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="fade-in">
+Moving the search horizon from about 3.5 to 20&nbsp;Mpc increases the surveyed volume by roughly a factor of 200. It also brings in the large populations of nucleated dwarf galaxies in the Virgo and Fornax clusters, which will turn a few individual detections into a statistical sample.
+</p>
+
+<!-- ===================== DWARFS ===================== -->
+<h2 class="fade-in" id="dwarfs">Black Holes in Dwarf Galaxies</h2>
+<p class="fade-in">
+Dwarf galaxies have had comparatively quiet lives, with few major mergers and little gas feeding their nuclei. Their central black holes have therefore grown little since they formed, and their masses stay close to the original seed masses. The seeding channels make different predictions here. If most seeds were heavy, direct-collapse black holes, which could form only in rare haloes, many dwarfs should have no central black hole at all. If most were light stellar remnants, nearly every dwarf should host one. The <em>occupation fraction</em> (how many dwarfs host a black hole) and the masses of those black holes are therefore two of the cleanest observational tests of black hole seeding.
+</p>
+<p class="fade-in">
+So far, dynamical masses in this regime exist only for a handful of very nearby, low-mass early-type nuclei, such as NGC&nbsp;205, NGC&nbsp;5102, NGC&nbsp;5206, M32 and NGC&nbsp;404 (Nguyen et al. 2018; Davis et al. 2020). My work pushes the measurements toward lower masses and larger distances with two instruments:
+</p>
+<ul class="finds fade-in">
+  <li><span><strong>JWST, now.</strong> Our JWST/NIRSpec measurement of NGC&nbsp;4736 showed that NIRSpec can detect black holes of about 5&times;10<sup>6</sup>&nbsp;M<sub>&#9737;</sub> in galaxies within 5&nbsp;Mpc with velocity dispersions of about 100&nbsp;km&nbsp;s<sup>&minus;1</sup> (<a class="cite" href="https://doi.org/10.1051/0004-6361/202554672" target="_blank" rel="noopener">A&amp;A 2025</a>), close to the low-mass regime of supermassive black holes.</span></li>
+  <li><span><strong>The ELT, next.</strong> The simulations above show that HARMONI will reach IMBHs of about 10<sup>5</sup>&nbsp;M<sub>&#9737;</sub> in dwarf galaxies out to 20&nbsp;Mpc, which is what a census of the occupation fraction requires.</span></li>
+</ul>
+
+<!-- ===================== HIGH-Z ===================== -->
+<h2 class="fade-in" id="high-z">Growing Black Holes at High Redshift: Little Red Dots</h2>
+<p class="fade-in">
+JWST has opened a direct view of black holes while they were still young. One of its most surprising discoveries is a population of compact, red sources in the first one to two billion years of cosmic history, nicknamed <em>Little Red Dots</em> (LRDs). Many of them show broad hydrogen emission lines, the signature of fast-moving gas around an accreting black hole, and they are far more numerous than the bright quasars known at the same epochs (Matthee et al. 2024; Greene et al. 2024).
+</p>
+<p class="fade-in">
+If their broad lines are interpreted in the same way as in nearby active galaxies, many early black holes appear <em>overmassive</em> relative to the stars of their host galaxies compared with the local scaling relations (Pacucci et al. 2023; Maiolino et al. 2024). This would favour heavy seeds or very rapid early growth. These mass estimates, however, rely on calibrations derived for nearby active galaxies, and the physical nature of LRDs is still actively debated, so whether their black holes are truly overmassive remains an open question.
+</p>
+<p class="fade-in">
+The early and the local Universe tell two ends of the same story. A population of black holes that started heavy and grew fast should leave a different imprint on the occupation fraction and on the low-mass end of the scaling relations today than one grown from light seeds. My dynamical measurements, and the ELT forecasts above, provide the present-day side of this comparison. Their masses come directly from stellar and gas motions and do not depend on calibrations of active galaxies. Connecting the black holes that JWST sees growing at high redshift with their fossil descendants in nearby nuclear star clusters and dwarf galaxies is the long-term goal of this theme.
+</p>
+
+<!-- ===================== FINDINGS ===================== -->
+<h2 class="fade-in" id="findings">Summary of Findings</h2>
+<ul class="finds fade-in">
+  <li><span><strong>The ELT can open the IMBH regime.</strong> Within 10&nbsp;Mpc, HARMONI can weigh IMBHs down to about 0.5% of their host cluster's mass, using a sample of 44 nucleated galaxies.</span></li>
+  <li><span><strong>The search can reach Virgo and Fornax.</strong> IMBHs above about 10<sup>5</sup>&nbsp;M<sub>&#9737;</sub>, or about 5% of the cluster mass, are detectable out to 20&nbsp;Mpc, even in some of the faintest dwarfs of both clusters. This is about 200 times the volume where IMBHs in nuclear star clusters have been dynamically confirmed.</span></li>
+  <li><span><strong>Cluster structure matters.</strong> The inner stellar profile of the nuclear star cluster affects the recovered IMBH mass, so sharp MICADO imaging is needed alongside HARMONI spectroscopy.</span></li>
+  <li><span><strong>A local test of seeding.</strong> Together, these measurements will constrain the occupation fraction and the low-mass end of the scaling relations, which can then be compared with the growing black holes that JWST finds at high redshift.</span></li>
+</ul>
+
+<!-- ===================== LITERATURE ===================== -->
+<h2 class="fade-in">Literature Review</h2>
+<p class="fade-in">The seeding problem is reviewed by Volonteri (2010) and Inayoshi, Visbal &amp; Haiman (2020), and the observational status of IMBHs by Greene, Strader &amp; Ho (2020). Formation in dense star clusters was proposed through runaway stellar collisions (Portegies Zwart et al. 2004) and repeated black hole mergers (Miller &amp; Hamilton 2002). Nuclear star clusters and their two formation routes, cluster in-spiral (Tremaine, Ostriker &amp; Spitzer 1975; Antonini et al. 2012) and in-situ star formation, are reviewed by Neumayer, Seth &amp; B&ouml;ker (2020).</p>
+<p class="fade-in">Occupation fractions in low-mass galaxies as a test of seeding are discussed by Volonteri, Lodato &amp; Natarajan (2008) and Greene (2012), and the low-mass end of the black hole&ndash;stellar mass relation by Reines &amp; Volonteri (2015). At high redshift, JWST has revealed abundant faint, broad-line active galaxies and Little Red Dots (Matthee et al. 2024; Greene et al. 2024), whose black holes may lie above the local relations (Pacucci et al. 2023; Maiolino et al. 2024).</p>
+<div class="lit-refs fade-in">
+  <div class="lit-refs-title">Selected References</div>
+  <div class="lit-ref"><span class="lit-ref-key">Tremaine+ 75</span><span>Tremaine, S. D., Ostriker, J. P. &amp; Spitzer, L. 1975, ApJ &mdash; galactic nuclei built by in-spiralling globular clusters.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Miller &amp; Hamilton 02</span><span>Miller, M. C. &amp; Hamilton, D. P. 2002, MNRAS &mdash; IMBH growth through black hole mergers in dense clusters.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Portegies Zwart+ 04</span><span>Portegies Zwart, S. F., et al. 2004, Nature &mdash; IMBH formation via runaway collisions in young dense clusters.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Volonteri+ 08</span><span>Volonteri, M., Lodato, G. &amp; Natarajan, P. 2008, MNRAS &mdash; the evolution of massive black hole seeds.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Volonteri 10</span><span>Volonteri, M. 2010, A&amp;ARv &mdash; formation of supermassive black holes.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Antonini+ 12</span><span>Antonini, F., et al. 2012, ApJ &mdash; dissipationless formation of nuclear star clusters.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Greene 12</span><span>Greene, J. E. 2012, Nature Communications &mdash; low-mass black holes as remnants of primordial seeds.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Reines &amp; Volonteri 15</span><span>Reines, A. E. &amp; Volonteri, M. 2015, ApJ &mdash; black hole&ndash;stellar mass relation into the low-mass regime.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Nguyen+ 18</span><span>Nguyen, D. D., et al. 2018, ApJ &mdash; dynamical black hole masses in nearby low-mass early-type nuclei, including the first for NGC&nbsp;205.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Davis+ 20</span><span>Davis, T. A., et al. 2020, MNRAS &mdash; the IMBH in the dwarf galaxy NGC&nbsp;404 with sub-parsec ALMA observations.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Greene+ 20</span><span>Greene, J. E., Strader, J. &amp; Ho, L. C. 2020, ARA&amp;A &mdash; intermediate-mass black holes.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Inayoshi+ 20</span><span>Inayoshi, K., Visbal, E. &amp; Haiman, Z. 2020, ARA&amp;A &mdash; the assembly of the first massive black holes.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Neumayer+ 20</span><span>Neumayer, N., Seth, A. &amp; B&ouml;ker, T. 2020, A&amp;ARv &mdash; nuclear star clusters.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Pacucci+ 23</span><span>Pacucci, F., et al. 2023, ApJL &mdash; JWST active galaxies at z&nbsp;=&nbsp;4&ndash;7 above the local black hole&ndash;stellar mass relation.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Greene+ 24</span><span>Greene, J. E., et al. 2024, ApJ &mdash; UNCOVER spectroscopy of compact red sources hosting broad-line AGN.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Matthee+ 24</span><span>Matthee, J., et al. 2024, ApJ &mdash; Little Red Dots: an abundant population of faint AGN at z&nbsp;&asymp;&nbsp;5.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">Maiolino+ 24</span><span>Maiolino, R., et al. 2024, A&amp;A &mdash; JADES: the diverse population of infant black holes at 4&nbsp;&lt;&nbsp;z&nbsp;&lt;&nbsp;11.</span></div>
+  <div class="lit-ref"><span class="lit-ref-key">H&auml;berle+ 24</span><span>H&auml;berle, M., et al. 2024, Nature &mdash; fast-moving stars around an IMBH in &omega;&nbsp;Centauri.</span></div>
+</div>
+
+<!-- ===================== PAPERS ===================== -->
+<h2 class="fade-in" id="papers">Papers in This Theme</h2>
+<ul class="pubs fade-in">
+  <li><span class="pt">Detecting Intermediate-Mass Black Holes out to 20 Mpc with ELT/HARMONI: The Case of FCC 119</span><strong>Ngo, H. N.</strong>, Nguyen, D. D., Le, T. Q. T., et al. 2025, Universe, 11, 360<a href="https://doi.org/10.3390/universe11110360" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">Extending Simulations of Intermediate-Mass Black Hole Mass Measurements to the Virgo Cluster using ELT/HARMONI</span><strong>Ngo, H. N.</strong>, Nguyen, D. D., et al., submitted<a href="https://arxiv.org/abs/2509.03364" target="_blank" rel="noopener">arXiv&nearr;</a></li>
+  <li><span class="pt">Simulating Intermediate-Mass Black Hole Mass Measurements for a Sample of Galaxies with Nuclear Star Clusters using ELT/HARMONI</span>Nguyen, D. D., Cappellari, M., <strong>Ngo, H. N.</strong>, et al. 2025, AJ, 170, 124<a href="https://doi.org/10.3847/1538-3881/ade9ba" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">Probing the Effect of the Inner Surface-Brightness Profile of Nuclear Star Clusters on IMBH Mass Measurements using Mock ELT/MICADO and HARMONI Observations</span>Le, T. Q. T., Nguyen, D. D., <strong>Ngo, H. N.</strong>, et al. 2026, Universe, 12, 160<a href="https://doi.org/10.3390/universe12060160" target="_blank" rel="noopener">doi&nearr;</a></li>
+  <li><span class="pt">Supermassive Black Hole Mass Measurement in the Spiral Galaxy NGC 4736 using JWST/NIRSpec Stellar Kinematics</span>Nguyen, D. D., <strong>Ngo, H. N.</strong>, et al. 2025, A&amp;A, 698, L9<a href="https://doi.org/10.1051/0004-6361/202554672" target="_blank" rel="noopener">doi&nearr;</a></li>
+</ul>
+
 </div>
 
 <div class="article-nav-more fade-in">
-<a class="btn btn-outline" href="research.html"><i class="fas fa-arrow-left"></i> Back to Research</a>
-<a class="btn btn-outline" href="research-bh-mass-spectrum.html">Massive Black Holes Across the Mass Spectrum <i class="fas fa-arrow-right"></i></a>
+<a class="btn btn-outline" href="research-bh-mass-spectrum.html"><i class="fas fa-arrow-left"></i> Massive Black Holes Across the Mass Spectrum</a>
+<a class="btn btn-outline" href="research-bh-galaxy-coevolution.html">Co-evolution of SMBHs and Their Hosts <i class="fas fa-arrow-right"></i></a>
 </div>
 
 <footer>
