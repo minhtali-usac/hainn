@@ -1,0 +1,360 @@
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage[left=0.4 in,top=0.4in,right=0.4 in,bottom=0.4in]{geometry} % Document margins
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}} 
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+\name{HAI N. NGO} % Your name
+% You can merge both of these into a single line, if you do not have a website.
+\address{(+84) 385-319898 \\ \href{mailto:hai10hoalk@gmail.com}{hai10hoalk@gmail.com} \\ ORCID: \href{https://orcid.org/0009-0006-5852-4538}{0009-0006-5852-4538}} 
+% \address{\textbf{Astronomy Ph.D. Application}}
+% \address{ \\ \href{https://www.linkedin.com/in/hai-ngoc-ngo/}{linkedin} }  %
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVE
+%----------------------------------------------------------------------------------------
+
+% \begin{rSection}{OBJECTIVE}
+
+% {Software Engineer with 2+ years of experience in XXX, seeking full-time XXX roles.}
+
+
+% \end{rSection}
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+{\bf M.Sc. in Theoretical $\&$ Mathematical Physics} \hfill {Expected 2026}\\
+\textit{University of Science, Vietnam National University}\\
+{
+\textbf{Cumulative GPA:} 8.54/10 (or 3.89/4.0). \\
+\textbf{Thesis}: ``\textit{Measuring the Supermassive Black Hole Mass of NGC 7052 Using High Spatial Resolution Molecular Gas Observed with ALMA}".\\
+\textbf{Supervisor}: Dr. Dieu D. Nguyen.
+}
+
+{\bf B.Sc. in Chemistry}  \hfill {2016 - 2021}\\
+\textit{University of Science, Vietnam National University}\\
+{\textbf{Thesis point}: 9.5/10 (or 4.0/4.0).}
+%Minor in Linguistics \smallskip \\
+%Member of Eta Kappa Nu \\
+%Member of Upsilon Pi Epsilon \\
+\end{rSection}
+
+%-------------------------------------------------------------------
+% TECHINICAL STRENGTHS	
+%-------------------------------------------------------------------
+
+\begin{rSection}{RESEARCH INTERESTS}
+    \begin{itemize}
+        \itemsep -5pt {} 
+        \item Black Hole Formation and Growth
+        \item Massive Back Holes Across Mass Spectrum (i.e., Intermediate-mass Black Holes and Supermassive Black Holes)
+        \item Black Hole and Galaxy Coevolution
+        \item Black Hole Scaling Relations and Their Evolutions
+        \item Stellar/Gas Kinematics and Galaxy Dynamics
+        \item Computational Astrophysics, Simulations, and Modelings
+        % \item Intermediate-mass black holes
+    \end{itemize}
+\end{rSection}
+
+%-------------------------------------------------------------------
+\begin{rSection}{SKILLS}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Programming: & Python ({\tt numpy, matplotlib, pandas, astropy}) and Matlab.
+\\
+{Software:} & % Category
+- Multi-Gaussian Expansion Fitting (\texttt{MGEfit})\\
+&- Jeans Anisotropic Modelling (\texttt{JAM}). \\
+&- Penalized Pixel-Fitting (\texttt{pPXF}). \\
+&- Image Reduction and Analysis Facility (\texttt{IRAF}).\\
+&- The HARMONI SIMulator (\texttt{HSIM}).\\
+&- Simulator for MICADO (\texttt{Simcado}). \\
+&- KINematic Molecular Simulation (\texttt{KinMS}). \\
+Space-based data: & JWST/NIRSpec $\&$ NIRCam and  HST Imaging. \\
+Ground-based data: & ALMA, Keck/OSIRIS, VLT/MUSE, and ELT/HARMONI $\&$ MICADO.\\
+% & ALMA, Pan-STARRS, SDSS Imaging $\&$ Spectrocopy, VLT/MUSE.
+% {Languages} &% Category
+% {English: IELTS 6.5 overall} % Skills
+\end{tabular}\\
+\end{rSection}
+
+\begin{rSection}{RESEARCH EXPERIENCE}
+
+\textbf{Measuring Massive Black Hole Mass Across Mass Spectrum} \\ % \hfill Jan 2017 - Jan 2019\\
+% \textit{University of Oxford Science Group}
+\textit{1. JWST/NIRSpec $\&$ NIRCam}
+\vspace{-2mm}
+\begin{itemize}
+    \itemsep -5pt {} 
+     \item Developing a Python pipeline to separate AGN continuum from stellar light for accurate kinematic extraction.
+     \item Leading measuring supermassive black holes (SMBHs) masses in NGC 4258 and M87.
+     % \item Modelling stellar kinematics using Jeans Anisotropic MGE model to construct galaxy gravitational potential
+ \end{itemize}
+\textit{2. ALMA}
+\vspace{-2mm}
+\begin{itemize}
+    \itemsep -5pt {} 
+     \item Modelling ALMA datacube with {\tt KinMS}.
+     % Measuring the SMBH Mass Using High Spatial Resolution Molecular Gas Observed.
+     \item Determining the SMBH masses in NGC 7052, NGC 4061, NGC 2513, and Circinus.
+ \end{itemize}
+ 
+\textbf{Simulations with Extremely Large Telescope (ELT) Instruments: HARMONI $\&$ MICADO}\\
+\textit{1. Intermediate‑mass black holes (IMBHs) in dwarf galaxies $\&$ star clusters (nuclear star cluster $\&$ globular cluster)} % \hfill Jan 2017 - Jan 2019\\
+\vspace{-2mm}
+% \textit{ELT/HARMONI Science Group}
+\begin{itemize}
+    \itemsep -5pt {} 
+     \item Simulating mock observations of HARMONI IFS datacubes and MICADO imaging data.
+     \item Deriving stellar/gas kinematics from mock HARMONI and MICADO. 
+     \item Recovering IMBH masses from mock observations and dynamical modelling.
+     \item Designing observational strategies to find IMBH kinematic signatures with HARMONI within 20 Mpc.
+     \item Investigating limitations of HARMONI in detecting IMBHs.
+ \end{itemize}
+
+\textit{2. SMBHs in giant elliptical galaxies} % \hfill Jan 2017 - Jan 2019\\
+% \textit{ELT/HARMONI Science Group}
+\vspace{-2mm}
+\begin{itemize}
+    \itemsep -3pt {} 
+    \item Simulating dynamical SMBH mass measurements beyond 100 Mpc.
+     % \item Simulating stellar kinematics observations of Brightest Cluster Galaxies with ELT.
+     \item Investigating the HARMONI's capacity in SMBH mass measurements at the edge of Cosmic Noon.
+ \end{itemize}
+
+ 
+\end{rSection} 
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{PUBLICATIONS}
+% \vspace{-1.25em}
+\textbf{First-author $\&$ Main-contribution author papers}
+\begin{enumerate}
+\item {Dieu D. Nguyen}, Long Q. T. Nguyen, Elena Gallo, \textbf{Hai N. Ngo} (\textcolor{blue}{{main contributor}}), Que T. Le, Fabio Pacucci, Tinh Q. T. Le, Tuan N. Le, Tien H. T. Ho, Sabine Thater, Huy G. Tong, and Nghi K. N. Le. \textcolor{blue}{\href{https://doi.org/10.3847/1538-4357/ae771c}{2026 ApJ, 1005, 94}}. \textit{Dynamical Evidence for a Billion Solar-mass Black Hole in Galaxy NGC~4061 from ALMA $^{12}$CO(2--1) Kinematics.}
+
+\item {Dieu D. Nguyen}, \textbf{Hai N. Ngo} (\textcolor{blue}{{main contributor}}), Michele Cappellari, Tinh Q. T. Le, Tien H. T. Ho, Tuan N. Le, Elena Gallo, Niranjan Thatte, Fan Zou, Michele Perna, and Miguel Pereira-Santaella. \textcolor{blue}{\href{https://doi.org/10.3847/1538-4357/ae32f2}{2026 ApJ, 999, 97}}. \textit{Measuring the Central Dark Mass in NGC 4258 with JWST/NIRSpec Stellar Kinematics.}
+
+\item \textbf{Hai N. Ngo}, {Dieu D. Nguyen}, Tinh Q. T. Le, Khue N. H. Ho, Tien H. T. Ho, Elena Gallo, Kristina Nyland, Masatoshi Imanishi, Kouichiro Nakanishi, Que T. Le, Fabio Pacucci, and Eden Girma. \textcolor{blue}{\href{https://doi.org/10.3847/1538-4357/ae0455}{2025 ApJ, 992, 211}}. \textit{Revisiting the supermassive black hole mass of NGC 7052 using high spatial resolution molecular gas observed with ALMA.}
+
+\item \textbf{Hai N. Ngo}, {Dieu D. Nguyen}, Tinh Q. T. Le, Tien H. T. Ho, Truong N. Nguyen, and Trung H. Dang. \textcolor{blue}{\href{https://doi.org/10.3390/universe11110360}{2025 Universe, 11(11), 360}}. \textit{{Detecting Intermediate-Mass Black Holes out to 20 Mpc with ELT/HARMONI: The Case of FCC 119}.}
+
+\item \textbf{Hai N. Ngo}, {Dieu D. Nguyen}, Truong N. Nguyen, Trung H. Dang, and Tien H. T. Ho. \textcolor{blue}{\href{https://doi.org/10.29227/IM-2025-01-02-042}{2025 In\.{z}ynieria Mineralna, 2(1)}}; \textcolor{blue}{\href{https://arxiv.org/abs/2509.03364}{arXiv:2509.03364}}. \textit{Extending the simulations of intermediate-mass black hole mass measurements to Virgo Cluster using ELT/HARMONI high resolution integral-field stellar kinematics.}
+
+\item {Dieu D. Nguyen}, Michele Cappellari, \textbf{Hai N. Ngo} (\textcolor{blue}{{main contributor}}), Tinh Q. T. Le, Tuan N. Le, Khue N. H. Ho, An K. Nguyen, Phong T. On, Huy G. Tong, Niranjan Thatte, and Miguel Pereira-Santaella. \textcolor{blue}{\href{https://doi.org/10.3847/1538-3881/ade9ba}{2025 AJ, 170, 124}}. \textit{{Simulating intermediate black hole mass measurements for a sample of galaxies with nuclear star clusters using ELT/HARMONI high spatial resolution integral-field stellar kinematics}.}
+
+\item {Dieu D. Nguyen}, \textbf{Hai N. Ngo} (\textcolor{blue}{{main contributor}}), Tinh Q. T. Le, Alister W. Graham, Roberto Soria, Igor V. Chilingarian, Niranjan Thatte, N. T. Phuong, Thiem Hoang, Miguel Pereira-Santaella, Mark Durre, Diep N. Pham, Le Ngoc Tram, Nguyen B. Ngoc, and Ngân Lê. \textcolor{blue}{\href{https://doi.org/10.1051/0004-6361/202554672}{2025 A$\&$A, 698, L9}}. \textit{Supermassive black hole mass measurement in the spiral galaxy NGC 4736 using JWST/NIRSpec stellar kinematics.}
+
+\item Tue Nguyen‑Van, \textbf{Hai N. Ngo} (\textcolor{blue}{{main contributor}}), Yuya Hirano, Yoichi Itoh, Thuy Le‑Quang, An Nguyen‑Khanh, Felix Wood, John Hoang, D. N. Hoang, Thierry Montmerle, Quang Nguyen‑Luong. \href{https://doi.org/10.32231/starsandgalaxies.6.0_7}{Stars and Galaxies, 2023, 6,7}. \textit{First detection of exoplanet transit in Vietnam}.
+
+% Hai N. Ngo, Dieu D. Nguyen, Michele Cappellari and Miguel Pereira-Santaella. ELT high spatial resolution IFS survey for ultramassive galaxies: observational strategy and first simulated results on stellar kinematic and SMBH mass measurements Windows on the Universe  (Proceeding). https://doi.org/10.58027/aqp1-1s17.295
+\end{enumerate}
+\textbf{Co-authored papers}
+\begin{enumerate}
+\item {Dieu D. Nguyen}, Benjamin D. Boizelle, \textbf{Hai N. Ngo}, Elena Gallo, Tuan N. Le, Sabine Thater, Tien H. T. Ho, Tinh Q. T. Le, Que T. Le, Sam Norcross, Xueyi Li, Huy G. Tong, Nghi K. N. Le, and Huy M. B. Tran. \textcolor{blue}{\href{https://doi.org/10.3847/1538-4357/aea151}{2026 ApJ, 1010, 66}}. \textit{Atacama Large Millimeter/submillimeter Array (ALMA) $^{12}$CO(2--1) Gas Dynamics in NGC~315: A Multimethod Benchmark for Supermassive Black Hole Mass Measurement.}
+
+\item Tinh Q. T. Le, {Dieu D. Nguyen}, \textbf{Hai N. Ngo}, Tien H. T. Ho, Tuan N. Le, and Long Q. T. Nguyen. \textcolor{blue}{\href{https://doi.org/10.3390/universe12060160}{2026 Universe, 12(6), 160}}. \textit{Probing the Variation of the Inner Surface-Brightness Profile of Nuclear Star Clusters on the Intermediate-Mass Black Hole Mass Measurements Using Mock Observations of ELT/MICADO and HARMONI.}
+
+\item {Dieu D. Nguyen}, Tuan N. Le, Michele Cappellari, \textbf{Hai N. Ngo}, Tinh Q. T. Le, Tien H. T. Ho, Long Q. T. Nguyen, Elena Gallo, Fan Zou, Michele Perna, Niranjan Thatte, and Miguel Pereira-Santaella. \textcolor{blue}{\href{https://doi.org/10.3847/1538-4357/ae64f0}{2026 ApJ, 1003, 98}}. \textit{The Supermassive Black Hole in the Nearby Spiral Galaxy M81: A Robust Mass from JWST/NIRSpec Stellar Dynamics.}
+
+\item {Dieu D. Nguyen}, Michele Cappellari, Tinh Q. T. Le, \textbf{Hai N. Ngo}, Elena Gallo, Niranjan Thatte, Fan Zou, Tien H. T. Ho, Tuan N. Le, Huy G. Tong, and Miguel Pereira-Santaella. \textcolor{blue}{\href{https://doi.org/10.1093/mnras/stag238}{2026 MNRAS, 546, stag238}}. \textit{Extending the Frontier of Spatially Resolved Supermassive Black Hole Mass Measurements to $1 \lesssim z \lesssim 2$: Simulations with ELT/MICADO High-Resolution Mass Models and HARMONI Integral-Field Stellar Kinematics.}
+\end{enumerate}
+\textbf{In-preparation papers}
+\begin{enumerate}
+\item \textbf{Hai N. Ngo}, {Dieu D. Nguyen}, Michele Cappellari, Tien H. T. Ho,  Tinh Q. T. Le, Tuan N. Le, Elena Gallo, and Niranjan Thatte. \textit{Re-deriving the M87 supermassive black hole mass using stellar dynamics from JWST/NIRSpec.} %\textcolor{blue}{\href{--}{--}}.
+
+\item Tuan N. Le, {Dieu D. Nguyen}, \textbf{Hai N. Ngo}, Long Q. T. Nguyen, Tinh Q. T. Le, Tien H. T. Ho, Elena Gallo, and Michele Cappellari. \textit{Measurement of supermassive black hole mass in the active and optical jet galaxy 3C~264 (NGC~3862) using molecular gas kinematics observed with ALMA.}  % \textcolor{blue}{\href{--}{--}}.
+
+\item {Dieu D. Nguyen}, Tinh Q. T. Le, Michele Cappellari, \textbf{Hai N. Ngo}, Tuan N. Le, Tien H. T. Ho, Elena Gallo, Michele Perna, and Niranjan Thatte. \textit{Resolving the Heart of NGC 1052: JWST/NIRSpec Stellar Dynamical Black Hole Mass.} % \textcolor{blue}{\href{--}{XXX, XX}}.
+
+\item Tien H. T. Ho,  {Dieu D. Nguyen}, Michele Cappellari, \textbf{Hai N. Ngo}, Tinh Q. T. Le, Tuan N. Le, Elena Gallo, and Niranjan Thatte.  \textit{Weighing supermassive black hole mass in the Galaxy Sombrero (M94) using integral-field stellar dynamics with JWST/NIRSpec.} %\textcolor{blue}{\href{--}{--}}.
+
+\item Shelley-Anne Deborah Harrisberg, Sabine Thater, {Dieu D. Nguyen},\textbf{ Hai N. Ngo}, Tinh Q. T. Le, Tuan N. Le, and Tien H. T. Ho. \textit{A high precision mass measurement of the central black hole in the massive elliptical NGC~2513 with ALMA molecular gas dynamics.}  % \textcolor{blue}{\href{--}{--}}.
+\end{enumerate}
+\end{rSection} 
+
+%----------------------------------------------------------------------------------------
+\begin{rSection}{CONFERENCE TALKS} 
+\begin{itemize}
+    \item \textbf{Conference on Earth Sciences and Sustainable Development 2024} \hfill Vietnam/2024 \\
+    \textit{\small ``Extending the Simulations of Intermediate‑mass Black Hole Mass Measurements to Virgo Cluster Using ELT/HARMONI High Resolution Integral‑field Stellar Kinematics."} 
+    
+    \item \textbf{Austrian Early Career Conference 2024} \hfill Austria/2024\\
+    \textit{``A High Precision Mass Measurement of the Central Black Hole in the Massive Elliptical NGC 2513 with ALMA Molecular Gas Dynamics."} 
+
+    \item \textbf{SAGI Astrophysics Workshop on Dust Polarimetry} \hfill Vietnam/2023 \\
+    \textit{``ELT High Spatial Resolution IFS Survey for Ultra-Massive Galaxies: Observational Strategy and First Simulated Results on Stellar Kinematic and SMBH Mass Measurements."}
+    \item \textbf{Fourth ICEBA 2023 conference }\hfill Vietnam/2023 \\
+    \textit{``Simulating ELT High Spatial Resolution IFS and FCC 119 Intermediate‑Mass Black Hole Mass Measurements."}
+
+    \item \textbf{Windows on the Universe }\hfill Vietnam/2023 \\
+    \textit{``ELT High Spatial Resolution IFS Survey for Ultramassive Galaxies: Observational Strategy and First Simulated Results on Stellar‑Kinematic and SMBH Mass Measurements."}
+
+    \item \textbf{SAGI New Frontiers of Astrophysics in the Golden Era of Dust Polarimetry} \hfill  Vietnam/2022 \\
+    \textit{``Hunting Intermediate‑Mass Black Holes with Extremely Large Telescope."}
+
+\end{itemize}
+
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+\begin{rSection}{ADVANCED SCHOOLS} 
+\begin{itemize}
+    \item \textbf{SAGI Observational Astronomy School} \hfill July 17 – 28, 2023\\
+    - Practicing machine learning applications for classifying exoplanets and gamma-ray images.\\
+    - Learning about asteroid and exoplanet light curves and their data analysis.\\
+    - Project: Detecting the exoplanet WASP-3b using the Quy Nhon Observatory.
+
+    \item \textbf{Michigan Cosmology Summer School 2023} \hfill June 5 – 9, 2023\\
+    - Modelling the weak gravitational lenses.\\
+    - Deriving cosmological parameters (e.g., Hubble constant, baryonic density, etc) from the CMB.
+\end{itemize}
+\end{rSection}
+%----------------------------------------------------------------------------------------
+\begin{rSection}{HONORS $\&$ AWARDS} 
+\begin{tabular}{ll}
+    2025 & \textbf{Vietnam National University Scholar} \\
+    & \textit{Awarded to students with outstanding academic and research achievements.}
+\end{tabular}
+
+\begin{tabular}{ll}
+    2020 & \textbf{Best presentation}, Student scientific conference. \\
+    2020 & \textbf{1st prize}, Science in Harmoni 2020. \\
+    2019 & \textbf{1st prize}, Space engineering design competition. \\
+    2018 & \textbf{2nd prize}, Golden Erlen academic contest. \\ 
+\end{tabular}
+
+
+\end{rSection}
+
+%--------------------------------------------------------
+% \begin{rSection}{PERSONAL PROJECTS}
+% \textbf{Building a coordinate conversion system for Quy Nhon Observatory} \hfill ICISE 2023\\
+% \textit{Using neural network to build WCS converter for telescope system}
+% \end{rSection}
+
+%--------------------------------------------------------
+% \begin{rSection}{TEACHING EXPERIENCE}
+
+% \textbf{Teaching assistant, Advanced Astronomy} \hfill Sept 2025 - Dec 2025\\
+% \textit{University of Science, VNU-HCMC}
+% \vspace{-1.5mm}
+% \begin{itemize}
+%     \itemsep -10pt {} 
+%      \item Develop an instructional exercise on modeling spectra and orbital motion in gravitational potentials. 
+%      \item  Conducted weekly office hours and monthly exam review sessions.
+%  \end{itemize}
+ 
+% \end{rSection} 
+
+
+%--------------------------------------------------------
+\begin{rSection}{LEADERSHIP $\&$ PROFESSIONAL SERVICES}
+
+\textbf{Founder of University of Science Astronomy Club} \hfill \textit{University of Science, Vietnam National University}
+\begin{itemize}
+    \itemsep -3pt {} 
+     \item The largest and most active astronomy club in Vietnam for colleage students. 
+     \item Outreach on the latest Astronomy $\&$ Astrophysics discoveries for students and the general public.
+
+    \item Promoting observational training, learning, and camping activities.
+
+    \item Strengthening professional Astronomical research with active research groups, both domestic and international.
+ \end{itemize}
+\textbf{Advisor of University of Science Astronomy Club} \hfill \textit{University of Science, Vietnam National University}
+\begin{itemize}
+    \itemsep -3pt {} 
+     \item Providing academic support to the Club. 
+     \item Offering guidance and contribute ideas for activities.
+ \end{itemize} 
+\end{rSection} 
+
+%--------------------------------------------------------
+\begin{rSection}{PUBLIC TALKS}
+\begin{itemize}
+    \item \textbf{Tran Dai Nghia High School for Gifted}\\
+    \textit{``Black Hole $\&$ the Ways to Find Them."} \hfill July 2025
+    
+    \item \textbf{NASA Challenge Space Apps}\\
+    \textit{``Applications of Spatial Data in Astronomical Research."} \hfill June 2025 
+    
+    \item \textbf{University of Science, Vietnam National University}\\
+    \textit{``The James Webb Space Telescope's Recent Findings on Supermassive Black Holes."} \hfill November 2025 \\
+    \textit{``Galaxy Formation and Evolution: From Big Bang to Present Universe."} \hfill January 2025 \\
+    \textit{``Black Holes $\&$ the Ways to Find Them."} \hfill May 2023 \\
+    \textit{``Telescope: When the Naked Eyes Were Not Enough."} \hfill June 2022 
+    
+
+    
+\end{itemize}
+\end{rSection}
+%---------------------------
+\begin{rSection}{REFERENCES}
+\noindent\parbox{0.1\textwidth}{ % First block
+\begin{tabbing}
+\hspace{0.2cm} \= \hspace{0.2cm} \= \kill % Spacing within the block
+\href{https://scholar.google.com/citations?user=Koy8FSEAAAAJ&hl=vi&oi=ao}{\textbf{Dieu D. Nguyen}}\\
+Dr. of Astrophysics\\
+%Dept. of Physics $\&$ Astronomy\\ 
+University of Michigan\\
+Ann Arbor, MI 48109, USA\\ 
+dieun@umich.edu
+\end{tabbing}}
+\hfill % Horizontal space between the two blocks
+\parbox{0.1\textwidth}{ % Fifth block
+\begin{tabbing}
+\hspace{0.2cm} \= \hspace{0.2cm} \= \kill % Spacing within the block      
+\href{https://users.physics.ox.ac.uk/~cappellari/}{\textbf{Michele E. Cappellari}}\\
+Professor of Astrophysics\\
+%School of Physics $\&$ Astronomy\\ 
+University of Oxford\\
+Kele Road Oxford, OX1 3RH, UK\\ 
+michele.cappellari@physics.ox.ac.uk
+\end{tabbing}}
+% \hfill % Horizontal space between the two blocks
+% \parbox{0.1\textwidth}{ % Fourth block
+% \begin{tabbing}%\hspace{0.2cm} \= \hspace{0.2cm} \= \kill % Spacing within the block
+% \href{https://orcid.org/0000-0002-2808-0888}{\textbf{Diep N. Pham}}\\
+% Assoc. Professor of Astrophysics\\
+% Vietnam National Space Center \\
+% % 18 Hoang Quoc Viet,\\
+% Hanoi, Vietnam\\
+% pndiep@vnsc.org.vn
+% \end{tabbing}}
+% \hfill % Horizontal space between the two blocks
+% \parbox{0.1\textwidth}{ % Fifth block
+% \begin{tabbing}
+% \hspace{0.2cm} \= \hspace{0.2cm} \= \kill % Spacing within the block      
+% \href{https://www.researchgate.net/scientific-contributions/Khiem-Hong-Phan-2156145865}{\textbf{Khiem H. Phan}}\\
+% Professor of Physics\\
+% %School of Physics $\&$ Astronomy\\ 
+% University of Science, \\
+% % 227 Nguyen Van Cu, District 1,\\
+% Ho Chi Minh City, Vietnam\\
+% phanhongkhiem@duytan.edu.vn
+% \end{tabbing}}
+\hfill % Horizontal space between the two blocks
+\parbox{0.1\textwidth}{ % Fourth block
+\begin{tabbing}%\hspace{0.2cm} \= \hspace{0.2cm} \= \kill % Spacing within the block
+\href{https://scholar.google.com/citations?user=dFs0n0UAAAAJ&hl=vi&oi=ao}{\textbf{Trung H. Dang}}\\
+Professor of Geophysics\\
+%Department of Physics\\
+University of Science\\
+% 227 Nguyen Van Cu, District 1,\\
+Ho Chi Minh City, Vietnam\\
+dhtrung@hcmus.edu.vn
+\end{tabbing}}
+
+\end{rSection}
+
+
+\end{document}
