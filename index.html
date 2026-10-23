@@ -52,7 +52,7 @@
     <div class="stats-wrap">
       <div class="stats-bar fade-in">
         <div class="stat-item">
-          <div class="stat-num" id="stat-pub-count">15</div>
+          <div class="stat-num" id="stat-pub-count">13</div>
           <div class="stat-label">Publications</div>
         </div>
         <div class="stat-item">
@@ -60,11 +60,11 @@
           <div class="stat-label">Accepted Proposals</div>
         </div>
         <a href="https://scholar.google.com/citations?user=rnTm16cAAAAJ&hl=vi&oi=ao" target="_blank" rel="noopener noreferrer" class="stat-item" style="text-decoration:none;color:inherit;">
-          <div class="stat-num">51</div>
+          <div class="stat-num">89</div>
           <div class="stat-label">Citations</div>
         </a>
         <a href="https://scholar.google.com/citations?user=rnTm16cAAAAJ&hl=vi&oi=ao" target="_blank" rel="noopener noreferrer" class="stat-item" style="text-decoration:none;color:inherit;">
-          <div class="stat-num">5</div>
+          <div class="stat-num">6</div>
           <div class="stat-label">H-index</div>
         </a>
       </div>
@@ -279,7 +279,7 @@ alt="Computational Astrophysics, Simulations, and Modelling" />
       .then(function (res) { return res.text(); })
       .then(function (html) {
         var doc = new DOMParser().parseFromString(html, 'text/html');
-        var count = doc.querySelectorAll('.pub-full').length;
+        var count = doc.querySelectorAll('.pub-full:not([data-status="prep"])').length;
         if (count > 0) {
           var el = document.getElementById('stat-pub-count');
           if (el) el.textContent = count;
