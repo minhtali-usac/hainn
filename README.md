@@ -1,82 +1,45 @@
-# Hai Ngo Ngo — Research Group Website
+# Hai Ngo Ngoc — Personal Research Website
+
+Static HTML/CSS site served by GitHub Pages from `main` at https://hainn.clbtvusac.com. There is no build step.
 
 ## Structure
 
 ```
 /
-├── index.html            ← Home page
-├── research.html         ← Research projects detail
-├── publications.html     ← Full publication list with filter
-├── cv.html               ← Curriculum Vitae
-├── team.html             ← Team page + About Us
-├── outreach.html         ← Redirect stub → outreach/index.html (keeps old links alive)
-├── outreach-usactalk-04.html ← Redirect stub → outreach/usactalk-04.html
-├── styles.css            ← Global dark-cosmos stylesheet
-├── nav.js                ← Shared nav + starfield + fade-in animations (basePath-aware)
-├── outreach/              ← All outreach / USACTalk recap pages
-│   ├── index.html         ← Outreach listing page
-│   └── usactalk-04.html   ← USACTalk #04 recap
-└── assets/                ← All images, grouped by purpose
-    ├── img/                ← Profile photo + general science images
-    ├── fac/                ← Facility / telescope photos
-    ├── team/                ← Team member photos
-    └── outreach/            ← Outreach event photos, one subfolder per talk
-        └── usactalk-04/
+├── index.html, research.html, publications.html, cv.html, team.html
+├── research-bh-*.html, research-computational-astrophysics.html   ← research theme pages
+├── outreach/                 ← outreach listing and talk recap pages
+├── nav.js                    ← SITE settings (menu, footer), shared page scripts
+├── css/
+│   ├── theme.css             ← fonts, colours, sizes, widths: start here
+│   ├── styles.css            ← styles shared by every page (imports theme.css)
+│   ├── article.css           ← research theme pages
+│   ├── outreach-talk.css     ← outreach talk recap pages
+│   └── publications.css, research.css, cv.css, team.css, outreach.css
+├── assets/                   ← photos: img/, fac/, team/, outreach/<talk>/
+├── fig/                      ← figures for the research pages
+├── CV_HAI.pdf                ← published CV (source in CV_overleaf/)
+└── outreach.html, outreach-usactalk-04.html, research-bh-scaling-relations.html
+                              ← redirect stubs that keep old links alive
 ```
 
-Pages nested one level deep (e.g. `outreach/*.html`) call `initPage(activePage, '../')` so
-`nav.js` can prefix links back to the site root correctly.
+## Where to edit
 
-## Assets Needed
+| Change | File |
+|---|---|
+| Fonts, colours, base size, widths, corner radius | `css/theme.css` |
+| Menu, logo, footer | `SITE` block at the top of `nav.js` |
+| Page content | that page's `.html` |
+| Styles for one page | that page's file in `css/` |
+| Publications | `publications.html` (copy-paste template at the top of `#pub-list`) |
 
-Place the following image files under `assets/`.
-All images gracefully degrade with colored fallbacks if missing.
+Every page needs `<div class="page-content">` and a call to `initPage('<menu id>')`.
+Pages one level down use `initPage('<menu id>', '../')` and `../` in their asset paths.
 
-| File                                          | Description                            |
-|------------------------------------------------|----------------------------------------|
-| `img/photo.jpg`                                | Your main profile photo                |
-| `img/cluster.jpg`                              | Nuclear star cluster (e.g. HST image)  |
-| `img/dwarf.jpg`                                | Dwarf/spiral galaxy image              |
-| `img/merger.jpg`                               | Merging galaxies image                 |
-| `fac/elt.jpg`                                  | ELT telescope photo                    |
-| `fac/alma.jpg`                                 | ALMA array photo                       |
-| `fac/vlt.jpg`                                  | VLT photo                              |
-| `fac/hst.jpg`                                  | Hubble Space Telescope photo           |
-| `fac/jwst.jpg`                                 | JWST photo                             |
-| `team/cappellari.jpg`                          | Michele Cappellari photo               |
-| `team/dieu.jpg`                                | Dieu Nguyen photo                      |
-| `team/tinh.jpg`                                | Tinh Le photo                          |
-| `team/huy.jpg`                                 | Huy Tong photo                         |
-| `outreach/usactalk-04/cover.jpg`               | USACTalk #04 cover photo               |
-| `outreach/usactalk-04/photo-1.jpg` … `photo-4.jpg` | USACTalk #04 event photos          |
+## Preview
 
-## Design Theme
-
-**Deep Cosmos Observatory** — Dark luxury astrophysics aesthetic
-
-- Background: `#04070E` (deep space black-blue)
-- Accent Gold: `#D4A843` (stellar warmth)
-- Accent Teal: `#6ECECE` (nebula glow)
-- Typography: Cormorant Garamond (display) + Outfit (body) + Space Mono (labels)
-- Animated star field canvas in background
-- Nebula gradient blobs
-- Fade-in on scroll animations
-- Glassmorphism cards
-
-## Deployment (GitHub Pages)
-
-1. Push all files to your GitHub repo
-2. Go to Settings → Pages → Deploy from branch `main` / root
-3. Site live at `https://yourusername.github.io/repo-name/`
-
-## Customization
-
-All colors and fonts are CSS variables in `styles.css` at the top:
-```css
-:root {
-  --gold: #D4A843;
-  --teal: #6ECECE;
-  --bg: #04070E;
-  /* ... */
-}
+```bash
+python3 -m http.server 8000
 ```
+
+Then open http://localhost:8000. Publishing steps are in [PUSH_GUIDE.md](PUSH_GUIDE.md).

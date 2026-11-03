@@ -5,79 +5,9 @@
   <script id="theme-fouc-guard">(function(){try{var t=localStorage.getItem("theme");if(t==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Curriculum Vitae - Hai Ngo Ngoc</title>
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="css/styles.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<style>
-.cv-page-wrap {
-position: relative;
-z-index: 1;
-padding: calc(var(--nav-h) + 60px) 60px 100px;
-max-width: 1200px;
-margin: 0 auto;
-}
-.cv-page-title {
-font-family: var(--font-display);
-font-size: clamp(2.2rem, 5vw, 4rem);
-font-weight: 300;
-color: var(--heading);
-margin-bottom: 6px;
-}
-.cv-page-title strong { font-weight: 600; }
-
-.cv-interest-details { margin-top: 14px; }
-.cv-interest-details summary {
-cursor: pointer;
-font-family: var(--font-mono);
-font-size: 0.68rem;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-color: var(--gold);
-list-style: none;
-display: inline-flex;
-align-items: center;
-gap: 6px;
-padding: 6px 14px;
-border: 1px solid rgba(var(--gold-rgb),0.35);
-border-radius: 0;
-transition: background 0.25s, color 0.25s;
-}
-.cv-interest-details summary::-webkit-details-marker { display: none; }
-.cv-interest-details summary:hover { background: rgba(var(--gold-rgb),0.1); }
-.cv-interest-details summary::after { content: '+'; margin-left: 4px; font-size: 0.9rem; }
-.cv-interest-details[open] summary::after { content: '−'; }
-.cv-interest-detail-body {
-margin-top: 16px;
-padding: 18px 22px;
-background: var(--bg-2);
-border-left: 2px solid rgba(var(--teal-rgb),0.35);
-border-radius: 0;
-}
-.cv-detail-label {
-font-family: var(--font-mono);
-font-size: 0.62rem;
-letter-spacing: 0.16em;
-text-transform: uppercase;
-color: var(--teal);
-margin-bottom: 6px;
-margin-top: 0;
-}
-.cv-interest-detail-body p:not(.cv-detail-label) {
-font-size: 0.85rem;
-color: var(--text-muted);
-line-height: 1.85;
-margin-bottom: 18px;
-}
-.cv-interest-detail-body p:last-child { margin-bottom: 0; }
-
-.cv-interest-link { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); text-decoration: none; margin-top: 12px; }
-.cv-interest-link:hover { text-decoration: underline; }
-
-@media (max-width: 768px) {
-.cv-page-wrap { padding-left: 24px; padding-right: 24px; }
-.cv-layout { grid-template-columns: 1fr !important; }
-.cv-sidebar { position: static !important; }
-}
-</style>
+<link rel="stylesheet" href="css/cv.css" />
 </head>
 <body>
 <div class="page-content">
@@ -89,7 +19,7 @@ margin-bottom: 18px;
 Galaxy Dynamics Lab, University of Michigan, USA
 </p>
 
-<div class="cv-layout" style="display:grid; grid-template-columns: 280px 1fr; gap:60px; margin-top:0;">
+<div class="cv-layout">
 
 <!-- SIDEBAR -->
 <div class="cv-sidebar fade-in">
@@ -262,19 +192,19 @@ Using the HARMONI Simulator (HSIM) and the MICADO simulator (SimCADO), together 
 <div class="cv-entry">
 <div class="cv-entry-year">2025</div>
 <div class="cv-entry-title">Revisiting the supermassive black hole mass of NGC 7052 with ALMA</div>
-<div class="cv-entry-sub">The Astrophysical Journal 992, 211 (2025) &nbsp;&middot;&nbsp; <a href="https://doi.org/10.3847/1538-4357/ae0455" style="color:var(--gold);font-size:0.78rem;" target="_blank">doi</a></div>
+<div class="cv-entry-sub">The Astrophysical Journal 992, 211 (2025) &nbsp;&middot;&nbsp; <a href="https://doi.org/10.3847/1538-4357/ae0455" style="color:var(--accent);font-size:0.78rem;" target="_blank">doi</a></div>
 </div>
 
 <div class="cv-entry">
 <div class="cv-entry-year">2025</div>
 <div class="cv-entry-title">Detecting IMBHs out to 20 Mpc with ELT/HARMONI: FCC 119</div>
-<div class="cv-entry-sub">Universe 2025, 11(11), 360 &nbsp;&middot;&nbsp; <a href="https://doi.org/10.3390/universe11110360" style="color:var(--gold);font-size:0.78rem;" target="_blank">doi</a></div>
+<div class="cv-entry-sub">Universe 2025, 11(11), 360 &nbsp;&middot;&nbsp; <a href="https://doi.org/10.3390/universe11110360" style="color:var(--accent);font-size:0.78rem;" target="_blank">doi</a></div>
 </div>
 
 <div class="cv-entry">
 <div class="cv-entry-year">2025</div>
 <div class="cv-entry-title">Supermassive BH mass in NGC 4736 with JWST/NIRSpec stellar kinematics</div>
-<div class="cv-entry-sub">Astronomy &amp; Astrophysics 698, L9 (2025) &nbsp;&middot;&nbsp; <a href="https://doi.org/10.1051/0004-6361/202554672" style="color:var(--gold);font-size:0.78rem;" target="_blank">doi</a></div>
+<div class="cv-entry-sub">Astronomy &amp; Astrophysics 698, L9 (2025) &nbsp;&middot;&nbsp; <a href="https://doi.org/10.1051/0004-6361/202554672" style="color:var(--accent);font-size:0.78rem;" target="_blank">doi</a></div>
 </div>
 
 <div style="margin-top:24px">
@@ -285,19 +215,7 @@ Using the HARMONI Simulator (HSIM) and the MICADO simulator (SimCADO), together 
 </div><!-- /main -->
 </div><!-- /cv-layout -->
 </div>
-<footer>
-<div class="footer-inner">
-<div class="footer-copy">&copy; 2026 Hai Ngo Ngoc - NDDieu Team</div>
-<div class="footer-copy">Galaxy Dynamics Lab, University of Michigan</div>
-<div class="footer-links">
-<a href="index.html">Home</a>
-<a href="publications.html">Publications</a>
-<a href="research.html">Research</a>
-<a href="outreach/index.html">Outreach</a>
-<a href="team.html">Team</a>
-</div>
-</div>
-</footer>
+</div><!-- /page-content -->
 
 <script src="nav.js"></script>
 <script>initPage('cv');</script>

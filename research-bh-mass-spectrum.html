@@ -6,107 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Massive Black Holes Across the Mass Spectrum - Hai Ngo Ngoc</title>
 <meta name="description" content="Dynamical black hole mass measurements from intermediate-mass to billion-solar-mass black holes, using JWST/NIRSpec stellar kinematics with JAM and ALMA CO(2-1) molecular gas dynamics." />
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="css/styles.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<style>
-.article-hero { position: relative; z-index: 1; padding: calc(var(--nav-h) + 70px) 60px 60px; background: radial-gradient(circle at 82% 10%, rgba(var(--gold-rgb),0.14) 0%, transparent 45%), radial-gradient(circle at 10% 90%, rgba(var(--teal-rgb),0.08) 0%, transparent 50%); border-bottom: 1px solid var(--border); }
-.article-hero-inner { max-width: 860px; margin: 0 auto; }
-.article-back { display: flex; width: fit-content; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; margin-bottom: 28px; transition: color 0.2s, gap 0.2s; }
-.article-back:hover { color: var(--gold); gap: 12px; }
-.article-badge { display: inline-block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-accent); background: linear-gradient(135deg, var(--gold-light), var(--gold)); padding: 5px 14px; border-radius: 0; margin-bottom: 22px; }
-.article-title { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.9rem, 4.2vw, 2.7rem); line-height: 1.15; color: var(--heading); margin-bottom: 16px; }
-.article-lede { font-size: 1rem; line-height: 1.8; color: var(--text-muted); max-width: 760px; }
-.article-toc { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
-.article-toc a { display: inline-block; padding: 7px 14px; border: 1px solid var(--border); background: var(--bg-card); font-size: 0.8rem; color: var(--heading); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
-.article-toc a:hover { border-color: var(--border-accent); color: var(--gold); }
-.article-toc a.soon { color: var(--text-muted); border-style: dashed; }
-
-.article-wrap { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; padding: 60px 60px 40px; }
-.article-wrap p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.95; margin-bottom: 22px; text-align: justify; }
-.article-wrap h2 { font-family: var(--font-display); font-size: 1.55rem; font-weight: 500; color: var(--heading); margin: 64px 0 18px; line-height: 1.3; scroll-margin-top: calc(var(--nav-h) + 24px); }
-.article-wrap h2:first-child { margin-top: 0; }
-.article-wrap h3 { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin: 34px 0 12px; }
-.article-wrap ul.plain { margin: 0 0 22px 1.1em; }
-.article-wrap ul.plain li { font-size: 0.95rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 8px; }
-.article-wrap a.cite { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(var(--gold-rgb),0.3); }
-.article-wrap a.cite:hover { border-bottom-color: var(--gold); }
-
-.method-label { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: -6px; }
-.method-label .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); }
-.method-label.gas .dot { border-radius: 0; transform: rotate(45deg); background: var(--teal); }
-.method-label.stellar { color: var(--gold); }
-.method-label.gas { color: var(--teal); }
-
-/* comparison + results tables */
-.tbl-wrap { overflow-x: auto; margin: 8px 0 28px; border: 1px solid var(--border); background: var(--bg-card); }
-table.tbl { width: 100%; border-collapse: collapse; font-size: 0.86rem; line-height: 1.6; }
-.tbl th, .tbl td { text-align: left; vertical-align: top; padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text-muted); }
-.tbl tr:last-child td { border-bottom: none; }
-.tbl thead th { font-family: var(--font-mono); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--heading); background: var(--bg-2); }
-.tbl tbody th { font-family: var(--font-mono); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
-.tbl td.num { white-space: nowrap; color: var(--heading); font-variant-numeric: tabular-nums; }
-.tbl td.gal { white-space: nowrap; color: var(--heading); font-weight: 500; }
-.tbl .tag-s, .tbl .tag-g { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.06em; white-space: nowrap; }
-.tbl .tag-s { color: var(--gold); }
-.tbl .tag-g { color: var(--teal); }
-
-/* result callouts */
-.result { border-left: 2px solid var(--gold); padding: 4px 0 4px 18px; margin: 0 0 22px; }
-.result.gas { border-left-color: var(--teal); }
-.result-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 6px; }
-.result-name { font-family: var(--font-display); font-size: 1.1rem; color: var(--heading); }
-.result-mass { font-family: var(--font-mono); font-size: 0.8rem; color: var(--heading); }
-.result-ref { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); }
-.result-ref a { color: var(--gold); text-decoration: none; }
-.result p { margin-bottom: 0 !important; font-size: 0.9rem !important; line-height: 1.8 !important; }
-.lead-flag { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 1px 6px; border: 1px solid rgba(var(--teal-rgb),0.4); color: var(--teal); }
-
-/* figure */
-.fig { margin: 8px 0 30px; border: 1px solid var(--border); background: var(--bg-card); padding: 22px 22px 16px; }
-.fig-scroll { overflow-x: auto; }
-.fig svg { display: block; width: 100%; min-width: 640px; height: auto; }
-.fig figcaption { font-size: 0.84rem; color: var(--text-muted); line-height: 1.7; margin-top: 12px; }
-.fig figcaption b { color: var(--heading); font-weight: 600; }
-
-.fig img { display: block; width: 100%; height: auto; }
-.fig-grid { display: grid; gap: 16px; align-items: start; }
-.fig-grid.g-2 { grid-template-columns: 1fr 1fr; }
-.fig-grid.g-sig { grid-template-columns: 1fr 1.23fr; }
-.fig-grid.g-gas { grid-template-columns: 0.75fr 1.25fr; align-items: center; }
-.fig figcaption .credit { display: block; margin-top: 4px; font-size: 0.76rem; font-style: italic; }
-.result .fig { margin: 16px 0 6px; }
-@media (max-width: 640px) { .fig-grid.g-2, .fig-grid.g-sig, .fig-grid.g-gas { grid-template-columns: 1fr; } }
-
-/* upcoming methods */
-.soon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 8px 0 22px; }
-.placeholder-note { padding: 22px 26px; background: var(--bg-card); border: 1px dashed var(--border-accent); border-radius: 0; }
-.placeholder-note .pn-tag { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
-.placeholder-note .pn-title { font-family: var(--font-display); font-size: 1.1rem; color: var(--heading); margin-bottom: 6px; }
-.placeholder-note p { margin-bottom: 0 !important; font-size: 0.86rem !important; font-style: italic; text-align: left !important; }
-
-/* literature references */
-.lit-refs { margin: 8px 0 20px; border-top: 1px solid var(--border); padding-top: 20px; display: grid; gap: 12px; }
-.lit-refs-title { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
-.lit-ref { display: grid; grid-template-columns: 190px 1fr; gap: 16px; font-size: 0.86rem; line-height: 1.65; color: var(--text-muted); }
-.lit-ref-key { font-family: var(--font-mono); font-size: 0.76rem; color: var(--teal); }
-@media (max-width: 600px) { .lit-ref { grid-template-columns: 1fr; gap: 2px; } }
-
-/* publication list */
-.pubs { list-style: none; counter-reset: pub; border-top: 1px solid var(--border); }
-.pubs li { padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 0.86rem; line-height: 1.65; color: var(--text-muted); }
-.pubs .pt { display: block; color: var(--heading); font-family: var(--font-display); font-size: 1rem; margin-bottom: 2px; }
-.pubs a { font-family: var(--font-mono); font-size: 0.7rem; color: var(--gold); text-decoration: none; margin-left: 6px; }
-.pubs-group { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin: 26px 0 8px; }
-.pubs-group.gas { color: var(--teal); }
-
-.article-nav-more { max-width: 980px; margin: 0 auto; padding: 10px 60px 100px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; position: relative; z-index: 1; }
-@media (max-width: 768px) {
-  .article-hero, .article-wrap, .article-nav-more { padding-left: 24px; padding-right: 24px; }
-  .article-wrap p { text-align: left; }
-  .soon-grid { grid-template-columns: 1fr; }
-  .fig { padding: 14px 14px 12px; }
-}
-</style>
+<link rel="stylesheet" href="css/article.css" />
 </head>
 <body>
 <div class="page-content">
@@ -297,30 +199,30 @@ Rather than fitting a one-dimensional rotation curve, we forward-model the full 
   <title id="massfig-t">Our dynamical black hole masses along the mass spectrum</title>
   <desc id="massfig-d">Stellar-kinematic masses for NGC 4736, NGC 4258 and M81 lie between 1 and 5 times 10 to the 7 solar masses; molecular-gas masses for NGC 4061 and NGC 7052 lie between 1 and 3 times 10 to the 9. ELT/HARMONI simulations extend stellar-kinematic detections to intermediate-mass black holes above about 10 to the 5 solar masses.</desc>
   <!-- regime shading + labels (sit just above the axis, clear of the data) -->
-  <rect x="60" y="62" width="228.6" height="178" fill="var(--gold)" opacity="0.06"/>
+  <rect x="60" y="62" width="228.6" height="178" fill="var(--accent)" opacity="0.06"/>
   <text x="174.3" y="230" fill="var(--text-muted)" font-size="12" text-anchor="middle" font-family="var(--font-mono)" letter-spacing="1.5">INTERMEDIATE-MASS</text>
   <text x="631.4" y="230" fill="var(--text-muted)" font-size="12" text-anchor="middle" font-family="var(--font-mono)" letter-spacing="1.5">SUPERMASSIVE</text>
   <!-- legend -->
-  <circle cx="68" cy="28" r="6.5" fill="var(--gold)"/>
+  <circle cx="68" cy="28" r="6.5" fill="var(--accent)"/>
   <text x="82" y="33" fill="var(--heading)" font-size="14">Stellar · NIRSpec + JAM</text>
-  <path d="M326,20 L334,28 L326,36 L318,28 Z" fill="var(--teal)"/>
+  <path d="M326,20 L334,28 L326,36 L318,28 Z" fill="var(--accent-2)"/>
   <text x="342" y="33" fill="var(--heading)" font-size="14">Molecular gas · ALMA CO(2–1)</text>
-  <rect x="610" y="20" width="24" height="16" fill="var(--gold)" fill-opacity="0.08" stroke="var(--gold)" stroke-dasharray="4 3"/>
+  <rect x="610" y="20" width="24" height="16" fill="var(--accent)" fill-opacity="0.08" stroke="var(--accent)" stroke-dasharray="4 3"/>
   <text x="642" y="33" fill="var(--heading)" font-size="14">ELT/HARMONI (simulated)</text>
   <!-- ELT forecast band, stellar lane -->
-  <rect x="288.6" y="118" width="190" height="22" fill="var(--gold)" fill-opacity="0.08" stroke="var(--gold)" stroke-dasharray="4 3"/>
+  <rect x="288.6" y="118" width="190" height="22" fill="var(--accent)" fill-opacity="0.08" stroke="var(--accent)" stroke-dasharray="4 3"/>
   <text x="292" y="162" fill="var(--text-muted)" font-size="13">IMBHs ≳ 10⁵ M☉ out to ~20 Mpc →</text>
   <!-- stellar measurements -->
-  <circle cx="540.5" cy="129" r="6.5" fill="var(--gold)"/>
-  <circle cx="586.9" cy="129" r="6.5" fill="var(--gold)" stroke="var(--bg-card)" stroke-width="1.2"/>
-  <circle cx="594.8" cy="129" r="6.5" fill="var(--gold)" stroke="var(--bg-card)" stroke-width="1.2"/>
+  <circle cx="540.5" cy="129" r="6.5" fill="var(--accent)"/>
+  <circle cx="586.9" cy="129" r="6.5" fill="var(--accent)" stroke="var(--bg-card)" stroke-width="1.2"/>
+  <circle cx="594.8" cy="129" r="6.5" fill="var(--accent)" stroke="var(--bg-card)" stroke-width="1.2"/>
   <text x="533" y="112" fill="var(--heading)" font-size="14" text-anchor="end">NGC 4736</text>
   <line x1="586.9" y1="121" x2="586.9" y2="96" stroke="var(--text-muted)" stroke-width="0.8"/>
   <text x="586.9" y="90" fill="var(--heading)" font-size="14" text-anchor="middle">NGC 4258</text>
   <text x="603" y="112" fill="var(--heading)" font-size="14">M81</text>
   <!-- gas measurements -->
-  <path d="M753.5,178 L761.5,186 L753.5,194 L745.5,186 Z" fill="var(--teal)"/>
-  <path d="M791.2,178 L799.2,186 L791.2,194 L783.2,186 Z" fill="var(--teal)"/>
+  <path d="M753.5,178 L761.5,186 L753.5,194 L745.5,186 Z" fill="var(--accent-2)"/>
+  <path d="M791.2,178 L799.2,186 L791.2,194 L783.2,186 Z" fill="var(--accent-2)"/>
   <text x="744" y="170" fill="var(--heading)" font-size="14" text-anchor="end">NGC 4061</text>
   <text x="801" y="170" fill="var(--heading)" font-size="14">NGC 7052</text>
   <!-- axis -->
@@ -410,20 +312,6 @@ These masses feed directly into the other themes. The push toward the intermedia
 <a class="btn btn-outline" href="research-bh-formation-growth.html">Formation and Evolution of IMBHs <i class="fas fa-arrow-right"></i></a>
 </div>
 
-<footer>
-<div class="footer-inner">
-<div class="footer-copy">&copy; 2026 Hai Ngo Ngoc</div>
-<div class="footer-copy">Galaxy Dynamics Lab, University of Michigan</div>
-<div class="footer-links">
-<a href="index.html">Home</a>
-<a href="research.html">Research</a>
-<a href="publications.html">Publications</a>
-<a href="outreach/index.html">Outreach</a>
-<a href="cv.html">CV</a>
-<a href="team.html">Team</a>
-</div>
-</div>
-</footer>
 
 </div>
 <script src="nav.js"></script>
