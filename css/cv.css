@@ -1,0 +1,72 @@
+/* cv.html */
+
+.cv-page-wrap {
+position: relative;
+z-index: 1;
+padding: calc(var(--nav-h) + 60px) var(--page-padding) 100px;
+max-width: var(--page-width);
+margin: 0 auto;
+}
+.cv-page-title {
+font-family: var(--font-display);
+font-size: clamp(2.2rem, 5vw, 4rem);
+font-weight: 300;
+color: var(--heading);
+margin-bottom: 6px;
+}
+.cv-page-title strong { font-weight: 600; }
+.cv-layout { grid-template-columns: 280px 1fr; margin-top: 0; }
+
+.cv-interest-details { margin-top: 14px; }
+.cv-interest-details summary {
+cursor: pointer;
+font-family: var(--font-mono);
+font-size: 0.68rem;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(--accent);
+list-style: none;
+display: inline-flex;
+align-items: center;
+gap: 6px;
+padding: 6px 14px;
+border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+border-radius: var(--radius);
+transition: background 0.25s, color 0.25s;
+}
+.cv-interest-details summary::-webkit-details-marker { display: none; }
+.cv-interest-details summary:hover { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.cv-interest-details summary::after { content: '+'; margin-left: 4px; font-size: 0.9rem; }
+.cv-interest-details[open] summary::after { content: '−'; }
+.cv-interest-detail-body {
+margin-top: 16px;
+padding: 18px 22px;
+background: var(--bg-2);
+border-left: 2px solid color-mix(in srgb, var(--accent-2) 35%, transparent);
+border-radius: var(--radius);
+}
+.cv-detail-label {
+font-family: var(--font-mono);
+font-size: 0.62rem;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+color: var(--accent-2);
+margin-bottom: 6px;
+margin-top: 0;
+}
+.cv-interest-detail-body p:not(.cv-detail-label) {
+font-size: 0.85rem;
+color: var(--text-muted);
+line-height: 1.85;
+margin-bottom: 18px;
+}
+.cv-interest-detail-body p:last-child { margin-bottom: 0; }
+
+.cv-interest-link { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-2); text-decoration: none; margin-top: 12px; }
+.cv-interest-link:hover { text-decoration: underline; }
+
+@media (max-width: 768px) {
+.cv-page-wrap { padding-left: var(--page-padding-mobile); padding-right: var(--page-padding-mobile); }
+.cv-layout { grid-template-columns: 1fr !important; }
+.cv-sidebar { position: static !important; }
+}

@@ -6,253 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>USACTalk #04: Beyond the Darkness - Hai Ngo Ngoc</title>
   <meta name="description" content="Recap of USACTalk #04, 'Beyond the Darkness: What Has JWST Seen at the Edge of the Universe?', presented by Hai Ngo Ngoc for the University of Science Astronomy Club." />
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    .article-hero {
-      position: relative;
-      z-index: 1;
-      padding: calc(var(--nav-h) + 70px) 60px 70px;
-      background:
-        radial-gradient(circle at 82% 10%, rgba(var(--gold-rgb),0.16) 0%, transparent 45%),
-        radial-gradient(circle at 10% 90%, rgba(var(--teal-rgb),0.08) 0%, transparent 50%);
-      border-bottom: 1px solid var(--border);
-    }
-    .article-hero-inner { max-width: 860px; margin: 0 auto; }
-    .article-back {
-      display: flex;
-      width: fit-content;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      text-decoration: none;
-      margin-bottom: 28px;
-      transition: color 0.2s, gap 0.2s;
-    }
-    .article-back:hover { color: var(--gold); gap: 12px; }
-    .article-badge {
-      display: inline-block;
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--on-accent);
-      background: linear-gradient(135deg, var(--gold-light), var(--gold));
-      padding: 5px 14px;
-      border-radius: 0;
-      margin-bottom: 22px;
-    }
-    .article-title {
-      font-family: var(--font-display);
-      font-weight: 600;
-      text-transform: none;
-      font-size: clamp(1.9rem, 4.2vw, 3rem);
-      line-height: 1.1;
-      letter-spacing: -0.01em;
-      color: var(--heading);
-      margin-bottom: 16px;
-    }
-    .article-subtitle {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 1.15rem;
-      color: var(--text-bright);
-      margin-bottom: 30px;
-      max-width: 620px;
-    }
-    .article-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 22px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-    }
-    .article-meta-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-    .article-meta-item i { color: var(--gold); width: 16px; text-align: center; }
-    .article-meta-item strong { color: var(--heading); font-weight: 500; }
-
-    .article-cover {
-      max-width: 980px;
-      margin: -30px auto 0;
-      padding: 0 60px;
-      position: relative;
-      z-index: 1;
-    }
-    .article-cover img {
-      width: 100%;
-      display: block;
-      border-radius: 0;
-      border: 1px solid var(--border);
-      box-shadow: 0 30px 70px rgba(0,0,0,0.45);
-    }
-
-    .article-wrap {
-      position: relative;
-      z-index: 1;
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 70px 60px 40px;
-    }
-    .article-wrap p {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      line-height: 1.95;
-      margin-bottom: 26px;
-    }
-    .article-wrap h2 {
-      font-family: var(--font-display);
-      font-size: 1.55rem;
-      font-weight: 500;
-      color: var(--heading);
-      margin: 48px 0 20px;
-      line-height: 1.3;
-    }
-    .article-lede {
-      font-size: 1.08rem !important;
-      color: var(--text-bright) !important;
-    }
-
-    .seed-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin: 8px 0 32px;
-    }
-    .seed-card {
-      padding: 22px 22px 20px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 0;
-      transition: border-color 0.3s;
-    }
-    .seed-card:hover { border-color: var(--border-accent); }
-    .seed-card-label {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 10px;
-    }
-    .seed-card h4 {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--heading);
-      margin-bottom: 8px;
-    }
-    .seed-card p {
-      font-size: 0.85rem !important;
-      color: var(--text-muted);
-      line-height: 1.7 !important;
-      margin-bottom: 0 !important;
-    }
-
-    .pullquote {
-      margin: 8px 0 36px;
-      padding: 26px 30px;
-      border-left: 3px solid var(--gold);
-      background: var(--bg-card);
-      border-radius: 0;
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 1.15rem;
-      color: var(--text-bright);
-      line-height: 1.6;
-    }
-
-    .article-closing {
-      margin-top: 44px;
-      padding-top: 32px;
-      border-top: 1px solid var(--border);
-    }
-    .article-closing p { font-size: 0.95rem; }
-
-    .article-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 28px 0 8px;
-    }
-    .article-tag {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.06em;
-      color: var(--teal);
-      background: rgba(var(--teal-rgb),0.08);
-      border: 1px solid rgba(var(--teal-rgb),0.2);
-      border-radius: 0;
-      padding: 4px 11px;
-    }
-
-    .article-contact {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 24px;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-    }
-    .article-contact a { color: var(--gold); text-decoration: none; }
-    .article-contact a:hover { text-decoration: underline; }
-    .article-contact i { color: var(--gold); }
-
-    .article-nav-more {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 20px 60px 100px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .article-gallery {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin: 8px 0 32px;
-    }
-    .article-gallery figure {
-      margin: 0;
-      border-radius: 0;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      aspect-ratio: 4 / 3;
-    }
-    .article-gallery img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-    .article-gallery figure:hover img { transform: scale(1.05); }
-    .article-gallery-caption {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin: -22px 0 32px;
-    }
-
-    @media (max-width: 768px) {
-      .article-hero, .article-wrap, .article-nav-more { padding-left: 24px; padding-right: 24px; }
-      .article-cover { padding-left: 24px; padding-right: 24px; margin-top: -18px; }
-      .seed-grid { grid-template-columns: 1fr; }
-      .pullquote { padding: 20px 22px; font-size: 1.03rem; }
-      .article-gallery { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="../css/outreach-talk.css" />
 </head>
 <body>
   <div class="page-content">
@@ -281,7 +37,7 @@
         On April 19, 2026, the University of Science Astronomy Club (USAC), in collaboration with the
         Faculty of Physics and Engineering Physics, hosted <strong style="color:var(--heading)">USACTalk #04</strong>
         in a packed, lively room for a session titled <em>"Beyond the Darkness: What Has JWST Seen at the
-        Edge of the Universe?"</em>, presented by <strong style="color:var(--teal)">Hai Ngo Ngoc</strong>,
+        Edge of the Universe?"</em>, presented by <strong style="color:var(--accent-2)">Hai Ngo Ngoc</strong>,
         a Ph.D. candidate at the University of Michigan, Ann Arbor.
       </p>
 
@@ -298,8 +54,8 @@
         Ages"</strong> — the era in which the universe transformed from primordial clouds of gas into
         brilliant, star-filled galaxies. With the help of the James Webb Space Telescope, the speaker
         revealed striking results: galaxies formed far earlier than theoretical models had predicted.
-        Objects such as <strong style="color:var(--teal)">JADES-GS-z13-0</strong> (observed just 300
-        million years after the Big Bang) and <strong style="color:var(--teal)">GN-z11</strong> have
+        Objects such as <strong style="color:var(--accent-2)">JADES-GS-z13-0</strong> (observed just 300
+        million years after the Big Bang) and <strong style="color:var(--accent-2)">GN-z11</strong> have
         shattered previous observational limits, raising major questions for cosmologists about just how
         quickly the early universe assembled itself.
       </p>
@@ -375,18 +131,6 @@
       <a class="btn btn-outline" href="index.html"><i class="fas fa-arrow-left"></i> Back to Outreach</a>
     </div>
 
-    <footer>
-      <div class="footer-inner">
-        <div class="footer-copy">&copy; 2026 Hai Ngo Ngoc &middot; Galaxy Dynamics Lab, University of Michigan</div>
-        <div class="footer-links">
-          <a href="../index.html">Home</a>
-          <a href="../research.html">Research</a>
-          <a href="../publications.html">Publications</a>
-          <a href="../cv.html">CV</a>
-          <a href="../team.html">Team</a>
-        </div>
-      </div>
-    </footer>
 
   </div>
   <script src="../nav.js"></script>

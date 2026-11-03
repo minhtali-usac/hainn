@@ -5,3 +5,6 @@ CV_overleaf/**/*.out
 CV_overleaf/**/*.synctex.gz
 CV_overleaf/**/*.pdf
 .DS_Store
+
+# Local editing guide, not published on the website
+huong-dan/

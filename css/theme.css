@@ -1,0 +1,79 @@
+/* ============================================
+   CÀI ĐẶT GIAO DIỆN TOÀN WEBSITE
+   Đổi font, cỡ chữ, màu sắc, độ rộng ở file này là
+   áp dụng cho mọi trang. Lưu file rồi tải lại trình duyệt.
+   ============================================ */
+
+/* Font tải từ Google Fonts. Muốn đổi font: lấy đường link mới trên
+   fonts.google.com, thay vào dòng dưới, rồi sửa 3 biến --font-* bên dưới. */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  /* --- FONT --- */
+  --font-display: 'Source Serif 4', Georgia, serif;     /* tiêu đề, tên bài báo */
+  --font-body: 'Inter', -apple-system, sans-serif;      /* chữ thường, menu */
+  --font-mono: 'IBM Plex Mono', 'Space Mono', monospace; /* nhãn nhỏ, tên tạp chí */
+
+  /* --- CỠ CHỮ --- */
+  --base-font-size: 16px;   /* tăng/giảm là mọi chữ trên web to/nhỏ theo */
+  --line-height: 1.7;       /* khoảng cách dòng mặc định */
+
+  /* --- BỐ CỤC --- */
+  --content-width: 1080px;        /* độ rộng cột nội dung */
+  --article-width: 980px;         /* khối nội dung trang chủ đề nghiên cứu (đã gồm lề 2 bên) */
+  --article-hero-width: 860px;    /* phần tiêu đề đầu trang chủ đề nghiên cứu */
+  --page-padding: 60px;           /* lề trái/phải trên máy tính */
+  --page-padding-mobile: 24px;    /* lề trái/phải trên điện thoại */
+  --section-spacing: 100px;       /* khoảng trống trên/dưới mỗi phần */
+  --section-spacing-mobile: 64px; /* như trên, cho điện thoại */
+  --nav-h: 68px;                  /* chiều cao thanh menu */
+  --radius: 0;                    /* bo góc thẻ và nút: thử 8px để bo tròn */
+  --page-width: calc(var(--content-width) + 2 * var(--page-padding)); /* tự tính, không cần sửa */
+
+  /* --- MÀU: GIAO DIỆN SÁNG --- */
+  --bg: #faf9f6;              /* nền trang */
+  --bg-2: #f1efe8;            /* nền các dải ngang, đầu bảng */
+  --bg-card: #ffffff;         /* nền thẻ */
+  --bg-card-hover: #f6f4ee;   /* nền thẻ khi rê chuột */
+  --border: #e1ded3;          /* đường viền */
+  --border-accent: #26436b;   /* đường viền nổi bật, khi rê chuột */
+  --accent: #26436b;          /* màu nhấn chính: link, nhãn, nút */
+  --accent-light: #3c5c8a;    /* màu nhấn chính, nhạt hơn */
+  --accent-2: #6b5a48;        /* màu nhấn phụ: nhãn trên thẻ, tag */
+  --info: #4d5f8a;            /* huy hiệu "In Prep." */
+  --warn: #96593c;            /* huy hiệu "Proceeding" */
+  --on-accent: #f7f6f2;       /* chữ trên nền màu nhấn */
+  --hero-highlight: #00274c;  /* chữ "University of Michigan" ở trang chủ */
+  --my-name: #d40000;         /* tên của bạn trong danh sách publication */
+  --text: #000000;            /* chữ thường */
+  --text-muted: #000000;      /* chữ phụ */
+  --text-bright: #17160f;     /* chữ nổi bật */
+  --heading: #191912;         /* tiêu đề */
+  --nav-bg: color-mix(in srgb, var(--bg) 92%, transparent);           /* nền thanh menu */
+  --dropdown-bg: color-mix(in srgb, var(--bg-card) 97%, transparent); /* nền menu thả xuống */
+  color-scheme: light;
+}
+
+/* --- MÀU: GIAO DIỆN TỐI (khi bấm nút mặt trăng) --- */
+:root[data-theme="dark"] {
+  --bg: #14151a;
+  --bg-2: #191a20;
+  --bg-card: #1c1d23;
+  --bg-card-hover: #22232a;
+  --border: #34353e;
+  --border-accent: #7fa5da;
+  --accent: #7fa5da;
+  --accent-light: #9dbce6;
+  --accent-2: #c2ab90;
+  --info: #93a6d6;
+  --warn: #d19a76;
+  --on-accent: #14151a;
+  --hero-highlight: #6b9bd1;
+  --my-name: #ff6b6b;
+  --text: #dedcd4;
+  --text-muted: #9b998f;
+  --text-bright: #f7f6f2;
+  --heading: #f3f2ec;
+  --nav-bg: color-mix(in srgb, var(--bg) 86%, transparent);
+  color-scheme: dark;
+}
